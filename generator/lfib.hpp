@@ -1,3 +1,4 @@
+const char * lfib_prng_kernel = R"EOK(
 /**
 @file
 
@@ -148,3 +149,4 @@ Generates a random double using lfib RNG. Since lfib returns 64-bit numbers this
 @param state State of the RNG to use.
 */
 #define lfib_double2(state) lfib_double(state)
+)EOK";
