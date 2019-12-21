@@ -1,3 +1,4 @@
+const char * mwc64x_prng_kernel = R"EOK(
 /**
 @file
 
@@ -82,3 +83,4 @@ Generates a random double using mwc64x RNG. Generated using only 32 random bits.
 @param state State of the RNG to use.
 */
 #define mwc64x_double2(state) (mwc64x_uint(state)*mwc64x_DOUBLE2_MULTI)
+)EOK";
