@@ -1,3 +1,4 @@
+const char * philox2x32_10_prng_kernel = R"EOK(
 /**
 @file
 
@@ -92,3 +93,4 @@ Generates a random double using philox2x32_10 RNG. Since philox2x32_10 returns 6
 @param state State of the RNG to use.
 */
 #define philox2x32_10_double2(state) philox2x32_10_double(state)
+)EOK";
