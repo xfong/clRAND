@@ -1,3 +1,4 @@
+const char * lcg12864_prng_kernel = R"EOK(
 /**
 @file
 
@@ -92,3 +93,4 @@ Generates a random double using lcg12864 RNG. Since lcg12864 returns 64-bit numb
 @param state State of the RNG to use.
 */
 #define lcg12864_double2(state) lcg12864_double(state)
+)EOK";
