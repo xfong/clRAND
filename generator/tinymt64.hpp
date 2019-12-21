@@ -1,3 +1,4 @@
+const char * tinymt64_prng_kernel = R"EOK(
 /**
 @file
 
@@ -69,3 +70,4 @@ Generates a random double using tinymt64 RNG. Since tinymt64 returns 64-bit numb
 @param state State of the RNG to use.
 */
 #define tinymt64_double2(state) tinymt64_double(state)
+)EOK";
