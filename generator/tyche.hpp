@@ -1,3 +1,4 @@
+const char * tyche_prng_kernel = R"EOK(
 /**
 @file
 
@@ -101,3 +102,4 @@ Generates a random double using tyche RNG. Since tyche returns 64-bit numbers th
 @param state State of the RNG to use.
 */
 #define tyche_double2(state) tyche_double(state)
+)EOK";
