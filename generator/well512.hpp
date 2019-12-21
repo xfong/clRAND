@@ -1,3 +1,4 @@
+const char * well512_prng_kernel = R"EOK(
 /**
 @file
 
@@ -130,3 +131,4 @@ Generates a random double using WELL RNG. Generated using only 32 random bits.
 @param state State of the RNG to use.
 */
 #define well512_double2(state) (well512_uint(state)*WELL512_DOUBLE2_MULTI)
+)EOK";
