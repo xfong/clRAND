@@ -1,3 +1,4 @@
+const char * xorshift1024_prng_kernel = R"EOK(
 /**
 @file
 
@@ -175,3 +176,4 @@ generates a random double between 0 and 1 using xorshift1024 RNG. Generated usin
 @param stateblock pointer to buffer in local memory, that holds state of the generator.
 */
 #define xorshift1024_double2(state) (xorshift1024_uint(state)*XORSHIFT1024_DOUBLE2_MULTI)
+)EOK";
