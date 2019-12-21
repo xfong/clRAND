@@ -1,3 +1,4 @@
+const char * mrg63k3a_prng_kernel = R"EOK(
 /**
 @file
 
@@ -146,3 +147,4 @@ Generates a random double using mrg63k3a RNG. Since mrg63k3a returns 64-bit numb
 @param state State of the RNG to use.
 */
 #define mrg63k3a_double2(state) mrg63k3a_double(state)
+)EOK";
