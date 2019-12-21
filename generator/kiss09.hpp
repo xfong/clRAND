@@ -1,3 +1,4 @@
+const char * kiss09_prng_kernel = R"EOK(
 /**
 @file
 
@@ -104,3 +105,4 @@ Generates a random double using kiss09 RNG. Since kiss09 returns 64-bit numbers 
 @param state State of the RNG to use.
 */
 #define kiss09_double2(state) kiss09_double(state)
+)EOK";
