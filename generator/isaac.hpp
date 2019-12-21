@@ -1,3 +1,5 @@
+
+const char * isaac_prng_kernel = R"EOK(
 /**
 @file
 
@@ -127,3 +129,4 @@ Generates a random double using ISAAC RNG. Generated using only 32 random bits.
 @param state State of the RNG to use.
 */
 #define isaac_double2(state) (isaac_uint(state)*ISAAC_DOUBLE2_MULTI)
+)EOK";
