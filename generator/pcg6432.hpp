@@ -1,3 +1,4 @@
+const char * pcg6432_prng_kernel = R"EOK(
 /**
 @file
 
@@ -78,3 +79,4 @@ Generates a random double using pcg6432 RNG. Generated using only 32 random bits
 @param state State of the RNG to use.
 */
 #define pcg6432_double2(state) (pcg6432_uint(state)*PCG6432_DOUBLE2_MULTI)
+)EOK";
