@@ -1,3 +1,4 @@
+const char * xorshift6432star_prng_kernel = R"EOK(
 /**
 @file
 
@@ -77,3 +78,4 @@ Generates a random double using xorshift6432star RNG. Generated using only 32 ra
 @param state State of the RNG to use.
 */
 #define xorshift6432star_double2(state) (xorshift6432star_uint(state)*XORSHIFT6432STAR_DOUBLE2_MULTI)
+)EOK";
