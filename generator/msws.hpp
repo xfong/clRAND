@@ -1,3 +1,4 @@
+const char * msws_prng_kernel = R"EOK(
 /**
 @file
 
@@ -118,3 +119,4 @@ Generates a random double using msws RNG. Since msws returns 64-bit numbers this
 @param state State of the RNG to use.
 */
 #define msws_double2(state) msws_double(state)
+)EOK";
