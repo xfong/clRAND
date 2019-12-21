@@ -1,3 +1,4 @@
+const char * ran2_prng_kernel = R"EOK(
 /**
 @file
 
@@ -132,3 +133,4 @@ Generates a random double using ran2 RNG. Generated using only 32 random bits.
 @param state State of the RNG to use.
 */
 #define ran2_double2(state) (ran2_uint(state)*RAN2_DOUBLE2_MULTI)
+)EOK";
