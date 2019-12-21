@@ -1,3 +1,4 @@
+const char * mrg31k3p_prng_kernel = R"EOK(
 /**
 @file
 
@@ -136,3 +137,4 @@ Generates a random double using mrg31k3p RNG. Generated using only 32 random bit
 @param state State of the RNG to use.
 */
 #define mrg31k3p_double2(state) (mrg31k3p_uint(state)*MRG31K3P_DOUBLE2_MULTI)
+)EOK";
