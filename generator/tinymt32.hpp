@@ -1,3 +1,4 @@
+const char * tinymt32_prng_kernel = R"EOK(
 /**
 @file
 
@@ -73,3 +74,4 @@ Generates a random double using tinymt32 RNG. Generated using only 32 random bit
 @param state State of the RNG to use.
 */
 #define tinymt32_double2(state) (tinymt32_uint(state)*TINYMT32_DOUBLE2_MULTI)
+)EOK";
