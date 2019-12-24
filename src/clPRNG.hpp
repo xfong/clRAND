@@ -32,12 +32,20 @@ class ClPRNG {
         const char*       rng_name;
         std::string       rng_source;
 
+        bool              source_code;
         bool              init_flag;
+		
+		void generateBufferKernel(string name, string type, string src);
+		void generateBufferKernelLocal(string name, string type, string src);
 
     public:
         void Init(cl_device_id dev_id, const char * name);
         void Seed(uint32_t seed);
         void GenerateStream(cl_mem OutputBuffer);
+		bool IsSourceReady() { return source_code; }
+		bool IsInitialized() { return init_flag; }
         ClPRNG();
         ~ClPRNG();
 };
+
+// Internal functions
