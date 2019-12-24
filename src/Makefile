@@ -14,9 +14,11 @@ LDLIBS+=-lOpenCL
 #LDFLAGS= -L"$(AMDAPPSDKROOT)lib\x86_64" -lOpenCL
 
 library: clPRNG.cpp clPRNG.hpp
-	${CXX} ${CXXFLAGS} ${LDFLAGS} -shared clPRNG.cpp ${LDLIBS}
+	${CXX} ${CXXFLAGS} -c clPRNG.cpp -o clPRNG.o
+	${AR} rcs clPRNG.a *.o
+	${CXX} ${LDFLAGS} -shared clPRNG.o -o libclPRNG.so.0.0.1 ${LDLIBS}
 
 all: library
 
 clean:
-	rm -f *.o *.lib *.so
+	rm -f *.o *.lib *.so *.a

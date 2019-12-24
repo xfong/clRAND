@@ -2,12 +2,12 @@
 
 // Main C interface functions
 
-extern "C" ClPRNG create_clPRNG_stream() {
+ClPRNG create_clPRNG_stream() {
 	static ClPRNG p;
     return p;
 }
 
-extern "C" void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name) {
+void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name) {
     p->Init(dev_id, name);
 }
 

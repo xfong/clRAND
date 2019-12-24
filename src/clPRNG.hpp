@@ -76,4 +76,12 @@ class ClPRNG {
         ~ClPRNG();
 };
 
-// Internal functions
+// External functions
+#ifdef _cplusplus
+extern "C" {
+#endif
+void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
+ClPRNG create_clPRNG_stream();
+#ifdef _cplusplus
+}
+#endif

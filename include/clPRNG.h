@@ -9,6 +9,9 @@
 
 #ifndef __CLPRNG_H
     #define __CLPRNG_H
+    #define CLPRNG_VERSION_MAJOR 0
+    #define CLPRNG_VERSION_MINOR 0
+    #define CLPRNG_VERSION_REV   1
 #endif
 
 typedef ClPRNG;
