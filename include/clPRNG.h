@@ -2,13 +2,13 @@
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS
 
 #if defined(__APPLE__) || defined(__MACOSX)
-    #include <OpenCL/cl.hpp>
+    #include <OpenCL/cl.h>
 #else
-    #include <CL/cl.hpp>
+    #include <CL/cl.h>
 #endif
 
-#ifndef __CLPRNG_HPP
-    #define __CLPRNG_HPP
+#ifndef __CLPRNG_H
+    #define __CLPRNG_H
 #endif
 
 typedef ClPRNG;
@@ -18,4 +18,3 @@ ClPRNG create_clPRNG_stream();
 
 // Initialize the PRNG
 void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
-
