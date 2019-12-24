@@ -3,7 +3,8 @@
 // Main C interface functions
 
 extern "C" ClPRNG create_clPRNG_stream() {
-    return new ClPRNG{};
+	static ClPRNG p;
+    return p;
 }
 
 extern "C" void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name) {
@@ -11,7 +12,7 @@ extern "C" void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name) {
 }
 
 // Default constructor and destructor
-ClPRNG::~CPRNG() {
+ClPRNG::ClPRNG() {
     init_flag = false;
 	source_code = false;
 }
@@ -35,7 +36,7 @@ ClPRNG::~ClPRNG() {
 void ClPRNG::Init(cl_device_id dev_id, const char *name) {
     device = dev_id;
     cl_int err;
-    context = clCreateContext(NULL, cl_uint(1), &{ dev_id }, NULL, NULL, &err);
+    context = clCreateContext(NULL, cl_uint(1), &dev_id, NULL, NULL, &err);
 	if (err) {
 		std::cout << "ERROR: Unable to create context!" << std::endl;
 		return;
@@ -48,8 +49,8 @@ void ClPRNG::Init(cl_device_id dev_id, const char *name) {
 	init_flag = true;
 }
 
-void ClPRNG::generateBufferKernel(string name, string type, string src) {
-	static string tmp = string((type=="double") ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
+void ClPRNG::generateBufferKernel(std::string name, std::string type, std::string src) {
+	static std::string tmp = std::string((type=="double") ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
 	tmp += "\n"
 		"kernel void seed_prng(global ulong* seed, global " + name + "_state* stateBuf){\n"
 		"    uint gid=get_global_id(0);\n"
@@ -71,28 +72,21 @@ void ClPRNG::generateBufferKernel(string name, string type, string src) {
 	src = tmp;
 }
 
-void ClPRNG::generateBufferKernelLocal(string name, string type, string src) {
-	static string tmp =	string((type == "double") ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
+void ClPRNG::generateBufferKernelLocal(std::string name, std::string type, std::string src) {
+	static std::string tmp = std::string((type == "double") ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
 	tmp += "\n"
-		"kernel void seed_prng(uint num, global ulong* seed, global " + type + "* res, local " + name + "_state* state){\n"
+		"kernel void seed_prng(uint num, global ulong* seed, global " + name + "_state* state){\n"
 		"    uint gid=get_global_id(0);\n"
 		"    uint gsize=get_global_size(0);\n"
 		"\n"
 		"    " + name + "_seed(state,seed[gid]);\n"
-		"    uint num_gsize = ((num - 1) / gsize + 1)*gsize; //next multiple of gsize, larger or equal to N\n"
-		"    for (int i = gid; i<num_gsize; i += gsize) {\n"
-		"        " + type + " val = " + name + "_" + type + "(state); //all threads within workgroup must call generator, even if result is not needed!\n"
-		"        if (i<num) {\n"
-		"     	     res[i] = val;\n"
-		"     	 }\n"
-		"    }\n"
 		"}";
 		"\n"
-		"kernel void generate(uint num, global ulong* seed, global " + type + "* res, local " + name + "_state* state){\n"
+		"kernel void generate(uint num, global ulong* seed, global " + type + "* res, global " + name + "_state* stateBuf, local " + name + "_state* state){\n"
 		"    uint gid=get_global_id(0);\n"
 		"    uint gsize=get_global_size(0);\n"
 		"\n"
-		"    " + name + "_seed(state,seed[gid]);\n"
+		"    state = stateBuf;\n"
 		"    uint num_gsize = ((num - 1) / gsize + 1)*gsize; //next multiple of gsize, larger or equal to N\n"
 		"    for (int i = gid; i<num_gsize; i += gsize) {\n"
 		"        " + type + " val = " + name + "_" + type + "(state); //all threads within workgroup must call generator, even if result is not needed!\n"
