@@ -34,6 +34,9 @@
 
 #ifndef __CLPRNG_HPP
     #define __CLPRNG_HPP
+    #define CLPRNG_VERSION_MAJOR 0
+    #define CLPRNG_VERSION_MINOR 0
+    #define CLPRNG_VERSION_REV   1
 #endif
 
 // Prototype class
