@@ -17,11 +17,20 @@ typedef struct oclStruct__ {
     cl_device_id     target_device;
     cl_context       ctx;
     cl_command_queue queue;
+    bool             init_flag;
 } oclStruct;
 
 // Function to select a particular GPU in all GPUs found
 int chooseDeviceInPlatforms(int gpu_number, oclStruct* oclStructure);
+
 // Consolidate information about selected GPU into a data structure
 int makeOclStruct(int argc, char **argv, oclStruct* oclStructure);
+
 // Output information about selected GPU
 int printOclStructInfo(oclStruct* ComputeStructure);
+
+// Create context and queue in structure
+cl_int initStructure(oclStruct* ComputeStructure);
+
+// Delete and free data structure
+cl_int freeStructure(oclStruct* ComputeStructure);

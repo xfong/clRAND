@@ -172,3 +172,47 @@ int printOclStructInfo(oclStruct* ComputeStructure) {
 
     return 0;
 }
+
+// Set up context and queue in the structure
+cl_int initStructure(oclStruct* ComputeStructure) {
+    if (ComputeStructure->init_flag) {
+        return 0; // Already initialized and nothing to do
+    }
+    cl_int err = 0;
+    ComputeStructure->ctx = clCreateContext( NULL, 1, &ComputeStructure->target_device, NULL, NULL, &err );
+    if (err) {
+        fprintf(stderr,"Error creating context!\n");
+        return err;
+    }
+    ComputeStructure->queue = clCreateCommandQueue( ComputeStructure->ctx, ComputeStructure->target_device, NULL, &err);
+    if (err) {
+        fprintf(stderr,"Error creating command queue!\n");
+        return err;
+    }
+    ComputeStructure->init_flag = true;
+    return err;
+}
+
+// Delete and free data structure
+cl_int freeStructure(oclStruct* ComputeStructure) {
+    if (ComputeStructure->init_flag) {
+        cl_int err;
+        err = clReleaseCommandQueue(ComputeStructure->queue);
+        if (err) {
+            fprintf(stderr,"Error releasing command queue!\n");
+            return err;
+        }
+        err = clReleaseContext(ComputeStructure->ctx);
+        if (err) {
+            fprintf(stderr,"Error releasing context!\n");
+            return err;
+        }
+        err = clReleaseDevice(ComputeStructure->target_device);
+        if (err) {
+            fprintf(stderr,"Error releasing GPU device!\n");
+            return err;
+        }
+        return err;
+    }
+    return 0;
+}

@@ -17,6 +17,7 @@
 
 int main(int argc, char **argv) {
     cl_event          event = NULL;
+    cl_int            err = -1;
 
     oclStruct* tmpStructPtr = (oclStruct*) malloc(sizeof(oclStruct));
     int res = makeOclStruct(argc, argv, tmpStructPtr);
@@ -29,6 +30,9 @@ int main(int argc, char **argv) {
         fprintf(stderr,"Unable to print information about oclStruct!\n");
         return res;
     }
+
+    err = initStructure(tmpStructPtr);
+    err = freeStructure(tmpStructPtr);
     free(tmpStructPtr);
     return res;
 }
