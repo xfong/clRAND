@@ -15,10 +15,10 @@ LDLIBS+=-lOpenCL
 
 library: clPRNG.cpp clPRNG.hpp
 	${CXX} ${CXXFLAGS} -c clPRNG.cpp -o clPRNG.o
-	${AR} rcs clPRNG.a *.o
+	${AR} rcs libclPRNG.a *.o
 	${CXX} ${LDFLAGS} -shared clPRNG.o -o libclPRNG.so.0.0.1 ${LDLIBS}
 
 all: library
 
 clean:
-	rm -f *.o *.lib *.so *.a
+	rm -f *.o *.lib *.so.* *.a

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 #include <string>
 
 #include "../generator/isaac.hpp"
@@ -42,36 +43,44 @@
 // Prototype class
 class ClPRNG {
     private:
-        cl_device_id      device;
-        cl_context        context;
-        cl_command_queue  com_queue;
+        cl::Device        device;
+        cl::Context       context;
+        cl::CommandQueue  com_queue;
 
-        cl_program        rng_program;
-        cl_kernel         seed_rng;
-        cl_kernel         generate_bitstream;
+        cl::Program       rng_program;
+        cl::Kernel        seed_rng;
+        cl::Kernel        generate_bitstream;
 
-        cl_mem            stateBuffer;
-        cl_mem            tmpOutputBuffer;
+        cl::Buffer        stateBuffer;
+        cl::Buffer        tmpOutputBuffer;
         size_t            valid_cnt;
 
         size_t            wkgrp_size;
         size_t            wkgrp_count;
 
         const char*       rng_name;
+        const char*       rng_precision;
         std::string       rng_source;
 
-        bool              source_code;
+        bool              source_ready;
         bool              init_flag;
-		
-		void generateBufferKernel(std::string name, std::string type, std::string src);
-		void generateBufferKernelLocal(std::string name, std::string type, std::string src);
+
+        int LookupPRNG(std::string name);
+        void generateBufferKernel(std::string name, std::string type, std::string src);
 
     public:
         void Init(cl_device_id dev_id, const char * name);
+        void BuildSource();
+        cl_int BuildKernelProgram();
         void Seed(uint32_t seed);
         void GenerateStream(cl_mem OutputBuffer);
-		bool IsSourceReady() { return source_code; }
-		bool IsInitialized() { return init_flag; }
+        bool IsSourceReady() { return source_ready; }
+        bool IsInitialized() { return init_flag; }
+        std::string GetPrecision() { return std::string(rng_precision); }
+        void SetPrecision(const char * precision) { rng_precision = precision; }
+        std::string GetName() { return std::string(rng_name); }
+        void SetName(const char * name) { rng_name = name; }
+        std::string GetSource() { return rng_source; }
         ClPRNG();
         ~ClPRNG();
 };
@@ -80,8 +89,28 @@ class ClPRNG {
 #ifdef _cplusplus
 extern "C" {
 #endif
-void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
+void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
+
 ClPRNG create_clPRNG_stream();
+
+const char * get_precision(ClPRNG* p) {
+    return (*p).GetPrecision().c_str();
+}
+
+void set_precision(ClPRNG* p, const char* precision) {
+    (*p).SetPrecision(precision);
+}
+
+const char * get_name(ClPRNG* p) {
+    return (*p).GetName().c_str();
+}
+
+void set_name(ClPRNG* p, const char* name) {
+    return (*p).SetName(name);
+}
+
+cl_int buildPRNGKernelProgram(ClPRNG* p);
+
 #ifdef _cplusplus
 }
 #endif
