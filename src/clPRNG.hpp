@@ -77,7 +77,7 @@ class ClPRNG {
         bool IsSourceReady() { return source_ready; }
         bool IsInitialized() { return init_flag; }
         std::string GetPrecision() { return std::string(rng_precision); }
-        void SetPrecision(const char * precision) { rng_precision = precision; }
+        int SetPrecision(const char * precision);
         std::string GetName() { return std::string(rng_name); }
         void SetName(const char * name) { rng_name = name; }
         std::string GetSource() { return rng_source; }
@@ -91,14 +91,14 @@ extern "C" {
 #endif
 void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
 
-ClPRNG create_clPRNG_stream();
+ClPRNG* create_clPRNG_stream();
 
 const char * get_precision(ClPRNG* p) {
     return (*p).GetPrecision().c_str();
 }
 
-void set_precision(ClPRNG* p, const char* precision) {
-    (*p).SetPrecision(precision);
+int set_precision(ClPRNG* p, const char* precision) {
+    return (*p).SetPrecision(precision);
 }
 
 const char * get_name(ClPRNG* p) {
@@ -106,7 +106,7 @@ const char * get_name(ClPRNG* p) {
 }
 
 void set_name(ClPRNG* p, const char* name) {
-    return (*p).SetName(name);
+    (*p).SetName(name);
 }
 
 cl_int buildPRNGKernelProgram(ClPRNG* p);

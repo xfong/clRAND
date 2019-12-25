@@ -14,10 +14,27 @@
     #define CLPRNG_VERSION_REV   1
 #endif
 
-typedef ClPRNG;
+typedef
+    struct ClPRNG
+        ClPRNG;
 
 // Create PRNG object
-ClPRNG create_clPRNG_stream();
+ClPRNG* create_clPRNG_stream();
 
 // Initialize the PRNG
-void init_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
+void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
+
+// Get the precision setting of the PRNG
+const char * get_precision(ClPRNG* p);
+
+// Get the name setting of the PRNG
+const char * get_name(ClPRNG* p);
+
+// Set the precision setting of the PRNG
+int set_precision(ClPRNG* p, const char* precision);
+
+// Set the name setting of the PRNG
+void set_name(ClPRNG* p, const char* name);
+
+// Build the OpenCL program and kernels
+cl_int buildPRNGKernelProgram(ClPRNG* p);

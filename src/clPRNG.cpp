@@ -2,9 +2,8 @@
 
 // Main C interface functions
 
-ClPRNG create_clPRNG_stream() {
-    static ClPRNG p;
-    return p;
+ClPRNG* create_clPRNG_stream() {
+    return new ClPRNG;
 }
 
 void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name) {
@@ -50,6 +49,17 @@ void ClPRNG::Init(cl_device_id dev_id, const char *name) {
     rng_name = name;
     std::string prng_name = std::string(rng_name);
     init_flag = true;
+}
+
+int ClPRNG::SetPrecision(const char * precision) {
+    std::string str = std::string(precision);
+    if ((str == "uint") || (str == "ulong") || (str == "float") || (str == "double")) {
+        rng_precision = precision;
+    } else {
+        fprintf(stderr, "Can only generate numbers of types: uint, ulong, float, double!");
+        return -1;
+    }
+    return 0;
 }
 
 int ClPRNG::LookupPRNG(std::string name) {
