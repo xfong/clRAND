@@ -4,8 +4,8 @@ CCFLAGS=-fPIC -Wall -m64 -pthread -O3
 
 GCC ?= gcc
 ifeq ($(OS),Windows_NT)
-    CCFLAGS+= -I${CUDAROOT}\\include
-    LDFLAGS+=-L${CUDAROOT}\\lib\\x64 -L../src
+    CCFLAGS+= -I${CUDA_PATH}\\include
+    LDFLAGS+=-L${CUDA_PATH}\\lib\\x64 -L../src
 else
     CCFLAGS+= -I${CUDAROOT}/include
     LDFLAGS+=-L${CUDAROOT}/lib64 -L../src
