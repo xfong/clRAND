@@ -1,7 +1,6 @@
 // First example of using clPRNG to generate random bitstream
 #include <stdio.h>
 #include <stdlib.h>
-#include <string>
 #include <unistd.h>
 #include <getopt.h>
 #include "util.h"

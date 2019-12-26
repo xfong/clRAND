@@ -2,7 +2,6 @@
 // demonstrate use of clPRNG library
 #include <stdio.h>
 #include <stdlib.h>
-#include <string>
 #include <unistd.h>
 #include <getopt.h>
 #include "util.h"
@@ -125,10 +124,7 @@ int makeOclStruct(int argc, char **argv, oclStruct* oclStructure) {
                     if (optopt == 'n') {
                         fprintf (stderr, "Option -%c requires an argument.\n", optopt);
                     } else {
-                        if (isprint (optopt))
-                            fprintf (stderr, "Unknown option `-%c'.\n", optopt);
-                        else
-                            fprintf (stderr, "Unknown option character `\\x%x'.\n", optopt);
+                        fprintf (stderr, "Unknown option character `\\x%x'.\n", optopt);
                     }
                     return -1;
                 default:
