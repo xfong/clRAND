@@ -67,6 +67,7 @@ CLPRNG_DLL class ClPRNG {
         cl::Buffer        tmpOutputBuffer;
         size_t            state_size;
         size_t            valid_cnt;
+        size_t            offset;
 
         cl_uint           wkgrp_size;
         cl_uint           wkgrp_count;
@@ -74,6 +75,7 @@ CLPRNG_DLL class ClPRNG {
         const char*       rng_name;
         const char*       rng_precision;
         std::string       rng_source;
+        ulong             seedVal;
 
         bool              source_ready;
         bool              init_flag;
@@ -82,14 +84,15 @@ CLPRNG_DLL class ClPRNG {
         void generateBufferKernel(std::string name, std::string type, std::string src);
         cl_int fillBuffer();
         void SetStateSize();
+        cl_int PrivateGenerateStream(); // To implement
 
     public:
         void Init(cl_device_id dev_id, const char * name);
         void BuildSource();
         cl_int BuildKernelProgram();
-        cl_int ReadyGenerator();
-        cl_int SeedGenerator();
-        cl_int GenerateStream();
+        cl_int ReadyGenerator(); // To complete
+        cl_int SeedGenerator(); // To implement
+        cl_int GenerateStream(); // To implement
         void Seed(uint32_t seed);
         void GenerateStream(cl_mem OutputBuffer);
         bool IsSourceReady() { return source_ready; }

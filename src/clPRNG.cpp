@@ -21,6 +21,8 @@ ClPRNG::ClPRNG() {
     context = 0;
     com_queue = 0;
     valid_cnt = 0;
+    seedVal = 0;
+    offset = 0;
     wkgrp_size = 0;
     wkgrp_count = 0;
     init_flag = false;
@@ -295,17 +297,83 @@ cl_int ClPRNG::ReadyGenerator() {
         std::cout << "ERROR: Unable to create temporary buffer or PRNG!" << std::endl;
         return err;
     }
+    // At this point the buffers are set up...
+    // TODO:
+    // 1) Call (public) function to set the seed value
+    // 2) Call (private) function to initialize the PRNG states and save in stateBuffer
+    // 3) Call (private) function to generate a set of random numbers to fill the temporary buffer
+    // 4) Initialize the counters that tracks available random numbers
     return err;
 }
 
 void ClPRNG::SetStateSize() {
     switch(LookupPRNG(std::string(rng_name)))
     {
-        default :
-            state_size = 0;
-            break;
         case 1:
             state_size = sizeof(isaac_state);
+            break;
+        case 2:
+            state_size = sizeof(kiss09_state);
+            break;
+        case 3:
+            state_size = sizeof(kiss99_state);
+            break;
+        case 4:
+            state_size = sizeof(lcg6432_state);
+            break;
+        case 5:
+            state_size = sizeof(lcg12864_state);
+            break;
+        case 6:
+            state_size = sizeof(lfib_state);
+            break;
+        case 7:
+            state_size = sizeof(mrg31k3p_state);
+            break;
+        case 8:
+            state_size = sizeof(mrg63k3a_state);
+            break;
+        case 9:
+            state_size = sizeof(msws_state);
+            break;
+        case 10:
+            state_size = sizeof(mt19937_state);
+            break;
+        case 11:
+            state_size = sizeof(mwc64x_state);
+            break;
+        case 12:
+            state_size = sizeof(pcg6432_state);
+            break;
+        case 13:
+            state_size = sizeof(philox2x32_10_state);
+            break;
+        case 14:
+            state_size = sizeof(ran2_state);
+            break;
+        case 15:
+            state_size = sizeof(tinymt32_state);
+            break;
+        case 16:
+            state_size = sizeof(tinymt64_state);
+            break;
+        case 17:
+            state_size = sizeof(tyche_state);
+            break;
+        case 18:
+            state_size = sizeof(tyche_i_state);
+            break;
+        case 19:
+            state_size = sizeof(well512_state);
+            break;
+        case 20:
+            state_size = sizeof(xorshift1024_state);
+            break;
+        case 21:
+            state_size = sizeof(xorshift6432star_state);
+            break;
+        default :
+            state_size = 0;
             break;
     }
 }
