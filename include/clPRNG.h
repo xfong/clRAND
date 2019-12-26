@@ -51,8 +51,6 @@ CLPRNG_DLL int set_precision(ClPRNG* p, const char* precision);
 // Set the name setting of the PRNG
 CLPRNG_DLL void set_name(ClPRNG* p, const char* name);
 
-// Build the OpenCL program and kernels
-CLPRNG_DLL cl_int buildPRNGKernelProgram(ClPRNG* p);
 #ifdef __cplusplus
 }
 #endif

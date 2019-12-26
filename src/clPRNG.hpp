@@ -97,6 +97,9 @@ CLPRNG_DLL class ClPRNG {
         ~ClPRNG();
 };
 
+// Internal functions
+cl_int buildPRNGKernelProgram(ClPRNG* p);
+
 // External functions
 #ifdef __cplusplus
 extern "C" {
@@ -117,11 +120,10 @@ CLPRNG_DLL const char * get_name(ClPRNG* p) {
     return (*p).GetName().c_str();
 }
 
-CLPRNG_DLL void set_name(ClPRNG* p, const char* name) {
+CLPRNG_DLL cl_int set_name(ClPRNG* p, const char* name) {
     (*p).SetName(name);
+    return buildPRNGKernelProgram(p);
 }
-
-CLPRNG_DLL cl_int buildPRNGKernelProgram(ClPRNG* p);
 
 #ifdef __cplusplus
 }

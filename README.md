@@ -21,3 +21,6 @@ TODO:
        kernel is to initialize the PRNG state. The other kernel
        is called to generate the random bitstream
 
+2) Need function to set the workgroup sizes and global number
+   of work-items when kernel is called. This should be part of
+   the initialization step.
