@@ -2,15 +2,15 @@
 
 // Main C interface functions
 
-ClPRNG* create_clPRNG_stream() {
+CLPRNG_DLL ClPRNG* create_clPRNG_stream() {
     return new ClPRNG;
 }
 
-void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name) {
+CLPRNG_DLL void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name) {
     (*p).Init(dev_id, name);
 }
 
-cl_int buildPRNGKernelProgram(ClPRNG* p) {
+CLPRNG_DLL cl_int buildPRNGKernelProgram(ClPRNG* p) {
     (*p).BuildSource();
     return (*p).BuildKernelProgram();
 }

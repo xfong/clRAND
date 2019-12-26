@@ -14,27 +14,46 @@
     #define CLPRNG_VERSION_REV   1
 #endif
 
+#if defined( __WIN32 )
+    #if defined( CLPRNG_STATIC )
+        #define CLPRNG_DLL
+    #elif  defined( CLPRNG_EXPORT )
+        #define CLPRNG_DLL __declspec(dllexport)
+    #else
+        #define CLPRNG_DLL __declspec(dllimport)
+    #endif
+#else
+    #define CLPRNG_DLL
+#endif
+
 typedef
     struct ClPRNG
         ClPRNG;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 // Create PRNG object
-ClPRNG* create_clPRNG_stream();
+CLPRNG_DLL ClPRNG* create_clPRNG_stream();
 
 // Initialize the PRNG
-void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
+CLPRNG_DLL void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
 
 // Get the precision setting of the PRNG
-const char * get_precision(ClPRNG* p);
+CLPRNG_DLL const char * get_precision(ClPRNG* p);
 
 // Get the name setting of the PRNG
-const char * get_name(ClPRNG* p);
+CLPRNG_DLL const char * get_name(ClPRNG* p);
 
 // Set the precision setting of the PRNG
-int set_precision(ClPRNG* p, const char* precision);
+CLPRNG_DLL int set_precision(ClPRNG* p, const char* precision);
 
 // Set the name setting of the PRNG
-void set_name(ClPRNG* p, const char* name);
+CLPRNG_DLL void set_name(ClPRNG* p, const char* name);
 
 // Build the OpenCL program and kernels
-cl_int buildPRNGKernelProgram(ClPRNG* p);
+CLPRNG_DLL cl_int buildPRNGKernelProgram(ClPRNG* p);
+#ifdef __cplusplus
+}
+#endif
+

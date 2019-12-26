@@ -7,13 +7,16 @@ CXX ?= g++
 LDFLAGS+=-L${CUDAROOT}/lib/x64
 LDLIBS+=-lOpenCL
 
+MAJOR_VERSION=0
+MINOR_VERSION=0
+REV_VERSION=1
 ifeq ($(OS),Windows_NT)
-    CXXFLAGS+=-DDLLEXPORT
+    CXXFLAGS+=-D__WIN32 -DCLPRNG_EXPORT
     DLLFLAGS=-Wl,--out-implib,libclPRNG.a -Wl,--major-image-version,0,--minor-image-version,1
     LIBEXT=.dll
 else
-    LIBEXT=.so
-    DLLFLAGS=
+    LIBEXT=.so.${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
+    DLLFLAGS=-Wl,-soname,libclPRNG.so.${MAJOR_VERSION}
 endif
 
 #On Windows specify the path to the OpenCL lib file
@@ -22,12 +25,17 @@ endif
 #LDFLAGS= -L"$(CUDA_PATH)\lib\x64" -lOpenCL
 #LDFLAGS= -L"$(AMDAPPSDKROOT)lib\x86_64" -lOpenCL
 
-library: clPRNG.cpp clPRNG.hpp
+library/shared: clPRNG.cpp clPRNG.hpp
+	${CXX} ${CXXFLAGS} -c clPRNG.cpp -o clPRNG.o
+	${CXX} ${LDFLAGS} -shared clPRNG.o -o libclPRNG${LIBEXT} ${LDLIBS} ${DLLFLAGS}
+	ln -s libclPRNG${LIBEXT} libclPRNG.so.${MAJOR_VERSION}
+	ln -s libclPRNG.so.${MAJOR_VERSION} libclPRNG.so
+
+library/static: clPRNG.cpp clPRNG.hpp
 	${CXX} ${CXXFLAGS} -c clPRNG.cpp -o clPRNG.o
 	${AR} rcs libclPRNG.a *.o
-	${CXX} ${LDFLAGS} -shared clPRNG.o -o libclPRNG${LIBEXT} ${LDLIBS} ${DLLFLAGS}
 
-all: library
+all: library/shared
 
 clean:
-	rm -f *.o *.lib *.so *.a *.dll
+	rm -f *.o *.lib lib*.so* *.a *.dll

@@ -40,8 +40,20 @@
     #define CLPRNG_VERSION_REV   1
 #endif
 
+#if defined( __WIN32 )
+    #if defined( CLPRNG_STATIC )
+        #define CLPRNG_DLL
+    #elif  defined( CLPRNG_EXPORT )
+        #define CLPRNG_DLL __declspec(dllexport)
+    #else
+        #define CLPRNG_DLL __declspec(dllimport)
+    #endif
+#else
+    #define CLPRNG_DLL
+#endif
+
 // Prototype class
-class ClPRNG {
+CLPRNG_DLL class ClPRNG {
     private:
         cl::Device        device;
         cl::Context       context;
@@ -86,31 +98,31 @@ class ClPRNG {
 };
 
 // External functions
-#ifdef _cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
-void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
+CLPRNG_DLL void initialize_prng(ClPRNG* p, cl_device_id dev_id, const char *name);
 
-ClPRNG* create_clPRNG_stream();
+CLPRNG_DLL ClPRNG* create_clPRNG_stream();
 
-const char * get_precision(ClPRNG* p) {
+CLPRNG_DLL const char * get_precision(ClPRNG* p) {
     return (*p).GetPrecision().c_str();
 }
 
-int set_precision(ClPRNG* p, const char* precision) {
+CLPRNG_DLL int set_precision(ClPRNG* p, const char* precision) {
     return (*p).SetPrecision(precision);
 }
 
-const char * get_name(ClPRNG* p) {
+CLPRNG_DLL const char * get_name(ClPRNG* p) {
     return (*p).GetName().c_str();
 }
 
-void set_name(ClPRNG* p, const char* name) {
+CLPRNG_DLL void set_name(ClPRNG* p, const char* name) {
     (*p).SetName(name);
 }
 
-cl_int buildPRNGKernelProgram(ClPRNG* p);
+CLPRNG_DLL cl_int buildPRNGKernelProgram(ClPRNG* p);
 
-#ifdef _cplusplus
+#ifdef __cplusplus
 }
 #endif
