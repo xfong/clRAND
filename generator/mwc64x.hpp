@@ -1,3 +1,11 @@
+typedef union {
+        ulong xc;
+        struct{
+                uint x;
+                uint c;
+        };
+} mwc64x_state;
+
 const char * mwc64x_prng_kernel = R"EOK(
 /**
 @file
@@ -19,7 +27,7 @@ State of mwc64x RNG.
 */
 typedef union {
 	ulong xc;
-	struct{ 
+	struct{
 		uint x;
 		uint c;
 	};
@@ -36,11 +44,11 @@ uint _mwc64x_uint(mwc64x_state *s)
 	uint res = s->x ^ s->c;
 	uint X = s->x;
 	uint C = s->c;
-	
+
 	uint Xn=4294883355U*X+C;
 	uint carry=(uint)(Xn<C);
-	uint Cn=mad_hi(4294883355U,X,carry); 
-	
+	uint Cn=mad_hi(4294883355U,X,carry);
+
 	s->x=Xn;
 	s->c=Cn;
 	return res;

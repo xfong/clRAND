@@ -1,3 +1,7 @@
+typedef struct{
+        uint x10, x11, x12, x20, x21, x22;
+} mrg31k3p_state;
+
 const char * mrg31k3p_prng_kernel = R"EOK(
 /**
 @file
@@ -37,7 +41,7 @@ uint _mrg31k3p_uint(mrg31k3p_state* state){
 	uint y1, y2;
 	//first component
 	y1 = (((state->x11 & MRG31K3P_MASK12) << 22) + (state->x11 >> 9)) + (((state->x12 & MRG31K3P_MASK13) << 7) + (state->x12 >> 24));
-	if (y1 > MRG31K3P_M1){ 
+	if (y1 > MRG31K3P_M1){
 		y1 -= MRG31K3P_M1;
 	}
 	y1 += state->x12;
@@ -96,15 +100,15 @@ void mrg31k3p_seed(mrg31k3p_state* state, ulong j){
 	if (state->x10 > MRG31K3P_M1) state->x10 -= MRG31K3P_M1;
 	if (state->x11 > MRG31K3P_M1) state->x11 -= MRG31K3P_M1;
 	if (state->x12 > MRG31K3P_M1) state->x12 -= MRG31K3P_M1;
-	
+
 	if (state->x20 > MRG31K3P_M2) state->x20 -= MRG31K3P_M2;
 	if (state->x21 > MRG31K3P_M2) state->x21 -= MRG31K3P_M2;
 	if (state->x22 > MRG31K3P_M2) state->x22 -= MRG31K3P_M2;
-	
+
 	if (state->x10 > MRG31K3P_M1) state->x10 -= MRG31K3P_M1;
 	if (state->x11 > MRG31K3P_M1) state->x11 -= MRG31K3P_M1;
 	if (state->x12 > MRG31K3P_M1) state->x12 -= MRG31K3P_M1;
-	
+
 	if (state->x20 > MRG31K3P_M2) state->x20 -= MRG31K3P_M2;
 	if (state->x21 > MRG31K3P_M2) state->x21 -= MRG31K3P_M2;
 	if (state->x22 > MRG31K3P_M2) state->x22 -= MRG31K3P_M2;

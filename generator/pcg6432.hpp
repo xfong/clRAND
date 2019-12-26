@@ -1,3 +1,5 @@
+typedef unsigned long pcg6432_state;
+
 const char * pcg6432_prng_kernel = R"EOK(
 /**
 @file

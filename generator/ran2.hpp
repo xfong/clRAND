@@ -1,3 +1,12 @@
+#define   NTAB 32
+
+typedef struct{
+        int idum;
+        int idum2;
+        int iy;
+        int iv[NTAB];
+} ran2_state;
+
 const char * ran2_prng_kernel = R"EOK(
 /**
 @file
@@ -22,7 +31,7 @@ W. H. Press, S. A. Teukolsky, W. T. Vetterling, B. P. Flannery, Numerical recipe
 #define   IA2 40692
 #define   IQ1 53668
 #define   IQ2 52774
-#define   IR1 12211 
+#define   IR1 12211
 #define   IR2 3791
 #define   NTAB 32
 #define   NDIV (1+IMM1/NTAB)
@@ -46,19 +55,19 @@ Generates a random 32-bit unsigned integer using ran2 RNG. The lowest bit is alw
 */
 #define ran2_uint(state) (_ran2_uint(&state)<<1)
 ulong _ran2_uint(ran2_state* state){
-	
+
 	int k = state->idum / IQ1;
 	state->idum = IA1 * (state->idum - k*IQ1) - k*IR1;
 	if(state->idum < 0){
 		state->idum += IM1;
 	}
-	
+
 	k = state->idum2 / IQ2;
 	state->idum2 = IA2 * (state->idum2 - k*IQ2) - k*IR2;
 	if(state->idum2 < 0){
 		state->idum2 += IM2;
 	}
-	
+
 	short j = state->iy / NDIV;
 	state->iy = state->iv[j] - state->idum2;
 	state->iv[j] = state->idum;

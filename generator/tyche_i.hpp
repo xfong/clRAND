@@ -1,3 +1,10 @@
+typedef union{
+        struct{
+                uint a,b,c,d;
+        };
+        ulong res;
+} tyche_i_state;
+
 const char * tyche_i_prng_kernel = R"EOK(
 /**
 @file

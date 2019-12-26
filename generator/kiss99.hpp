@@ -1,3 +1,7 @@
+typedef struct {
+        uint z, w, jsr, jcong;
+} kiss99_state;
+
 const char * kiss99_prng_kernel = R"EOK(
 /**
 @file
@@ -42,7 +46,7 @@ This is alternative, macro implementation of kiss99 RNG.
 	\
 	(((state.z << 16) + state.w) ^ state.jcong) + state.jsr \
 	)
-	
+
 /**
 Generates a random 32-bit unsigned integer using kiss99 RNG.
 
@@ -53,15 +57,15 @@ uint _kiss99_uint(kiss99_state* state){
 	//multiply with carry
 	state->z = 36969 * (state->z & 65535) + (state->z >> 16);
 	state->w = 18000 * (state->w & 65535) + (state->w >> 16);
-	
+
 	//xorshift
 	state->jsr ^= state->jsr << 17;
 	state->jsr ^= state->jsr >> 13;
 	state->jsr ^= state->jsr << 5;
-	
+
 	//linear congruential
 	state->jcong = 69069 * state->jcong + 1234567;
-	
+
 	return (((state->z << 16) + state->w) ^ state->jcong) + state->jsr;
 }
 

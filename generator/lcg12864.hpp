@@ -1,3 +1,7 @@
+typedef struct{
+        ulong low, high;
+} lcg12864_state;
+
 const char * lcg12864_prng_kernel = R"EOK(
 /**
 @file

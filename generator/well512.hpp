@@ -1,3 +1,10 @@
+#define R 16
+
+typedef struct{
+        unsigned int s[R];
+        unsigned int i;
+}well512_state;
+
 const char * well512_prng_kernel = R"EOK(
 /**
 @file

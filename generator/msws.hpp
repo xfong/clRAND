@@ -1,3 +1,16 @@
+typedef struct{
+    uint x;
+    uint y;
+} uint2;
+
+typedef struct{
+        union{
+                ulong x;
+                uint2 x2;
+        };
+        ulong w;
+}msws_state;
+
 const char * msws_prng_kernel = R"EOK(
 /**
 @file

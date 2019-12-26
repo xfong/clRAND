@@ -1,11 +1,13 @@
+typedef uint xorshift1024_state;
+
 const char * xorshift1024_prng_kernel = R"EOK(
 /**
 @file
 
-Implements 1024-bit xorshift generator. State is shared between 32 threads. As it uses barriers, 
-all threads of a work group must call the generator at the same time, even if they do not require the 
-result. In `localRNGs.h` header is the function `RNGLocal::xorshift1024_local_mem` that calculates required 
-state size given local size. See "examplePrintLocal". 
+Implements 1024-bit xorshift generator. State is shared between 32 threads. As it uses barriers,
+all threads of a work group must call the generator at the same time, even if they do not require the
+result. In `localRNGs.h` header is the function `RNGLocal::xorshift1024_local_mem` that calculates required
+state size given local size. See "examplePrintLocal".
 
 M. Manssen, M. Weigel, A. K. Hartmann, Random number generators for massively parallel simulations on GPU, The European Physical Journal-Special Topics 210 (1) (2012) 53–71.
 */
@@ -46,7 +48,7 @@ uint xorshift1024_uint(local xorshift1024_state* stateblock){
 	int lm = lid - XORSHIFT1024_WORDSHIFT; // Right word shift
 
 	uint state;
-	
+
 	/* << A. */
 	state = stateblock[woff + lid]; // Read states
 	state ^= stateblock[woff + lp] << XORSHIFT1024_RAND_A; // Left part
@@ -69,7 +71,7 @@ uint xorshift1024_uint(local xorshift1024_state* stateblock){
 
 	stateblock[woff + lid] = state; // Share states
 	barrier(CLK_LOCAL_MEM_FENCE);
-	
+
 	return state;
 }
 
@@ -92,7 +94,7 @@ uint xorshift1024_no_sync_uint(local xorshift1024_state* stateblock){
 	int lm = lid - XORSHIFT1024_WORDSHIFT; // Right word shift
 
 	uint state;
-	
+
 	/* << A. */
 	state = stateblock[woff + lid]; // Read states
 	state ^= stateblock[woff + lp] << XORSHIFT1024_RAND_A; // Left part
@@ -115,7 +117,7 @@ uint xorshift1024_no_sync_uint(local xorshift1024_state* stateblock){
 
 	stateblock[woff + lid] = state; // Share states
 	//barrier(CLK_LOCAL_MEM_FENCE);
-	
+
 	return state;
 }
 
@@ -131,13 +133,13 @@ void xorshift1024_seed(local xorshift1024_state* stateblock, ulong seed){
 	int lid = tid % XORSHIFT1024_WARPSIZE; // Thread index in warp
 	int woff = wid * (XORSHIFT1024_WARPSIZE + XORSHIFT1024_WORDSHIFT + 1) + XORSHIFT1024_WORDSHIFT + 1;
 	//printf("tid: %d, lid %d, wid %d, woff %d \n", tid, (uint)get_local_id(0), wid, woff);
-	
+
 	uint mem = (XORSHIFT1024_WARPSIZE + XORSHIFT1024_WORDSHIFT + 1) * (get_local_size(0) * get_local_size(1) * get_local_size(2) / XORSHIFT1024_WARPSIZE) + XORSHIFT1024_WORDSHIFT + 1;
-	
+
 	if(lid==13 && (uint)seed==0){ //shouldnt be seeded with all zeroes in wrap, but such check is simpler
 		seed=1;
 	}
-	
+
 	if(lid<XORSHIFT1024_WORDSHIFT + 1){
 		//printf("%d setting %d to 0\n",(uint)get_global_id(0), woff - XORSHIFT1024_WORDSHIFT - 1 + lid);
 		stateblock[woff - XORSHIFT1024_WORDSHIFT - 1 + lid] = 0;

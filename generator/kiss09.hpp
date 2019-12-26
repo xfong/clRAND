@@ -1,3 +1,7 @@
+typedef struct {
+        ulong x,c,y,z;
+} kiss09_state;
+
 const char * kiss09_prng_kernel = R"EOK(
 /**
 @file

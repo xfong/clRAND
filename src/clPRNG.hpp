@@ -2,6 +2,15 @@
 #include <map>
 #include <string>
 
+#define __CL_ENABLE_EXCEPTIONS
+#define CL_USE_DEPRECATED_OPENCL_1_2_APIS
+
+#if defined(__APPLE__) || defined(__MACOSX)
+    #include <OpenCL/cl.hpp>
+#else
+    #include <CL/cl.hpp>
+#endif
+
 #include "../generator/isaac.hpp"
 #include "../generator/kiss09.hpp"
 #include "../generator/kiss99.hpp"
@@ -23,15 +32,6 @@
 #include "../generator/well512.hpp"
 #include "../generator/xorshift1024.hpp"
 #include "../generator/xorshift6432star.hpp"
-
-#define __CL_ENABLE_EXCEPTIONS
-#define CL_USE_DEPRECATED_OPENCL_1_2_APIS
-
-#if defined(__APPLE__) || defined(__MACOSX)
-    #include <OpenCL/cl.hpp>
-#else
-    #include <CL/cl.hpp>
-#endif
 
 #ifndef __CLPRNG_HPP
     #define __CLPRNG_HPP
@@ -65,10 +65,11 @@ CLPRNG_DLL class ClPRNG {
 
         cl::Buffer        stateBuffer;
         cl::Buffer        tmpOutputBuffer;
+        size_t            state_size;
         size_t            valid_cnt;
 
-        size_t            wkgrp_size;
-        size_t            wkgrp_count;
+        cl_uint           wkgrp_size;
+        cl_uint           wkgrp_count;
 
         const char*       rng_name;
         const char*       rng_precision;
@@ -79,11 +80,16 @@ CLPRNG_DLL class ClPRNG {
 
         int LookupPRNG(std::string name);
         void generateBufferKernel(std::string name, std::string type, std::string src);
+        cl_int fillBuffer();
+        void SetStateSize();
 
     public:
         void Init(cl_device_id dev_id, const char * name);
         void BuildSource();
         cl_int BuildKernelProgram();
+        cl_int ReadyGenerator();
+        cl_int SeedGenerator();
+        cl_int GenerateStream();
         void Seed(uint32_t seed);
         void GenerateStream(cl_mem OutputBuffer);
         bool IsSourceReady() { return source_ready; }

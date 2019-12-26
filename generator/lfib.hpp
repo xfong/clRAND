@@ -1,3 +1,10 @@
+#define LFIB_LAG1 17
+
+typedef struct{
+        ulong s[LFIB_LAG1];
+        char p1,p2;
+}lfib_state;
+
 const char * lfib_prng_kernel = R"EOK(
 /**
 @file
@@ -21,7 +28,7 @@ typedef struct{
 	ulong s[LFIB_LAG1];
 	char p1,p2;
 }lfib_state;
-	
+
 /**
 Generates a random 64-bit unsigned integer using lfib RNG.
 

@@ -1,3 +1,17 @@
+#define ISAAC_RANDSIZL   (8)
+#define ISAAC_RANDSIZ    (1<<ISAAC_RANDSIZL)
+
+/**
+State of ISAAC RNG.
+*/
+typedef struct{
+  uint rr[ISAAC_RANDSIZ];
+  uint mm[ISAAC_RANDSIZ];
+  uint aa;
+  uint bb;
+  uint cc;
+  uint idx;
+} isaac_state;
 
 const char * isaac_prng_kernel = R"EOK(
 /**

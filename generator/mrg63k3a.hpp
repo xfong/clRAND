@@ -1,3 +1,7 @@
+typedef struct{
+        long s10, s11, s12, s20, s21, s22;
+} mrg63k3a_state;
+
 const char * mrg63k3a_prng_kernel = R"EOK(
 /**
 @file

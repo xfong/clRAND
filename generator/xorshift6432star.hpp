@@ -1,3 +1,5 @@
+typedef unsigned long xorshift6432star_state;
+
 const char * xorshift6432star_prng_kernel = R"EOK(
 /**
 @file

@@ -1,3 +1,10 @@
+typedef union{
+        ulong LR;
+        struct{
+                uint L, R;
+        };
+} philox2x32_10_state;
+
 const char * philox2x32_10_prng_kernel = R"EOK(
 /**
 @file

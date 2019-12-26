@@ -48,6 +48,7 @@ void ClPRNG::Init(cl_device_id dev_id, const char *name) {
     }
     rng_name = name;
     std::string prng_name = std::string(rng_name);
+    rng_precision = "uint";
     init_flag = true;
 }
 
@@ -252,4 +253,59 @@ cl_int ClPRNG::BuildKernelProgram() {
         return err;
     }
     return -1;
+}
+
+cl_int ClPRNG::ReadyGenerator() {
+    cl_int err;
+    err = device.getInfo<cl_uint>(CL_DEVICE_MAX_WORK_GROUP_SIZE, &wkgrp_size);
+    if (err) {
+        std::cout << "ERROR: failed to get max workgroup size on device!" << std::endl;
+        return err;
+    }
+    err = device.getInfo<cl_uint>(CL_DEVICE_MAX_COMPUTE_UNITS, &wkgrp_count);
+    if (err) {
+        std::cout << "ERROR: failed to get max number of compute unites on device!" << std::endl;
+        return err;
+    }
+    if (wkgrp_size > 256) {
+        wkgrp_size = 256;
+    }
+    if (std::string(rng_name) == "xorshift1024") {
+        wkgrp_size = 32;
+    }
+    size_t typeSize = 4;
+    if (std::string(rng_precision) == "uint") {
+        typeSize = 2;
+    } else if (std::string(rng_precision) == "double") {
+        typeSize = 8;
+    } else {
+        std::cout << "ERROR: Unknown rng_precision detected!" << std::endl;
+        return -1;
+    }
+    SetStateSize();
+    size_t stateBufSize = (size_t)(wkgrp_count * wkgrp_size) * state_size;
+    size_t outBufSize = (size_t)(wkgrp_count * wkgrp_size) * typeSize;
+    stateBuffer = cl::Buffer(context, CL_MEM_READ_WRITE, stateBufSize, NULL, &err);
+    if (err) {
+        std::cout << "ERROR: Unable to create state buffer or PRNG!" << std::endl;
+        return err;
+    }
+    tmpOutputBuffer = cl::Buffer(context, CL_MEM_READ_WRITE, outBufSize, NULL, &err);
+    if (err) {
+        std::cout << "ERROR: Unable to create temporary buffer or PRNG!" << std::endl;
+        return err;
+    }
+    return err;
+}
+
+void ClPRNG::SetStateSize() {
+    switch(LookupPRNG(std::string(rng_name)))
+    {
+        default :
+            state_size = 0;
+            break;
+        case 1:
+            state_size = sizeof(isaac_state);
+            break;
+    }
 }
