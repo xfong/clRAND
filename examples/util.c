@@ -1,6 +1,7 @@
 // Utility functions for example files to
 // demonstrate use of clPRNG library
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <getopt.h>
