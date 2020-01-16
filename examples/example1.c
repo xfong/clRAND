@@ -1,10 +1,10 @@
-// First example of using clPRNG to generate random bitstream
+// First example of using clrand to generate random bitstream
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <getopt.h>
 #include "util.h"
-#include "../include/clPRNG.h"
+#include "../include/clrand.h"
 
 #define __CL_ENABLE_EXCEPTIONS
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
         return res;
     }
 
-    ClPRNG* test = create_clPRNG_stream();
+    clrand* test = create_clrand_stream();
     initialize_prng(test, (*tmpStructPtr).target_device, "tinymt32");
     err = set_precision(test, "uint");
     free(tmpStructPtr);
