@@ -85,8 +85,8 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
 }
 
 // Main call to initialize the stream object
-CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, const char *name) {
-    (*p).Init(dev_id, name);
+CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, clrandRngType rng_type_) {
+    (*p).Init(dev_id, rng_type_);
     (*p).BuildSource();
     return (*p).BuildKernelProgram();
 }
@@ -115,7 +115,7 @@ clRAND::~clRAND() {
 }
 
 // Internal function to initialize the stream object
-void clRAND::Init(cl_device_id dev_id, const char *name) {
+void clRAND::Init(cl_device_id dev_id, clrandRngType rng_type_) {
     this->device_id = dev_id;
     this->device = device_id;
     cl_int err;
@@ -131,7 +131,7 @@ void clRAND::Init(cl_device_id dev_id, const char *name) {
         return;
     }
     this->com_queue = com_queue_id;
-    this->rng_name = name;
+    this->SetRNGType(rng_type_);
     this->rng_precision = "uint";
     this->init_flag = true;
     this->source_ready = false;
@@ -157,158 +157,187 @@ int clRAND::SetPrecision(const char * precision) {
     return 0;
 }
 
-// Internal function that maps RNG names to an integer id
-int clRAND::LookupPRNG(std::string name) {
-    if (name == "isaac") {
-        return 1;
-    } else if (name == "kiss09") {
-        return 2;
-    } else if (name == "kiss99") {
-        return 3;
-    } else if (name == "lcg6432") {
-        return 4;
-    } else if (name == "lcg12864") {
-        return 5;
-    } else if (name == "lfib") {
-        return 6;
-    } else if (name == "mrg31k3p") {
-        return 7;
-    } else if (name == "mrg63k3a") {
-        return 8;
-    } else if (name == "msws") {
-        return 9;
-    } else if (name == "mt19937") {
-        return 10;
-    } else if (name == "mwc64x") {
-        return 11;
-    } else if (name == "pcg6432") {
-        return 12;
-    } else if (name == "philox2x32_10") {
-        return 13;
-    } else if (name == "ran2") {
-        return 14;
-    } else if (name == "tinymt32") {
-        return 15;
-    } else if (name == "tinymt64") {
-        return 16;
-    } else if (name == "tyche") {
-        return 17;
-    } else if (name == "tyche_i") {
-        return 18;
-    } else if (name == "well512") {
-        return 19;
-    } else if (name == "xorshift1024") {
-        return 20;
-    } else if (name == "xorshift6432star") {
-        return 21;
-    } else {
-        return -1;
-    }
-    return -1;
+void clRAND::SetRNGType(clrandRngType rng_type_) {
+    this->rng_type = rng_type_;
+    this->LookupPRNG();
 }
 
-// Internal function to generate the kernel codes for the PRNGs
-void clRAND::generateBufferKernel(std::string name, std::string type, std::string src) {
-    this->source_ready = false;
-    this->program_ready = false;
-    this->generator_ready = false;
-    static std::string tmp = std::string((type=="double") ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
-    switch(this->LookupPRNG(name)) {
-        case 1 :
-            tmp += isaac_prng_kernel;
+// Internal function that maps RNG names to an integer id
+void clRAND::LookupPRNG() {
+    switch (this->rng_type) {
+        case CLRAND_GENERATOR_ISAAC :
+            this->rng_name = "isaac";
             break;
-        case 2 :
-            tmp += kiss09_prng_kernel;
+        case CLRAND_GENERATOR_KISS09 :
+            this->rng_name = "kiss09";
             break;
-        case 3 :
-            tmp += kiss99_prng_kernel;
+        case CLRAND_GENERATOR_KISS99 :
+            this->rng_name = "kiss99";
             break;
-        case 4 :
-            tmp += lcg6432_prng_kernel;
+        case CLRAND_GENERATOR_LCG6432 :
+            this->rng_name = "lcg6432";
             break;
-        case 5 :
-            tmp += lcg12864_prng_kernel;
+        case CLRAND_GENERATOR_LCG12864 :
+            this->rng_name = "lcg12864";
             break;
-        case 6 :
-            tmp += lfib_prng_kernel;
+        case CLRAND_GENERATOR_LFIB :
+            this->rng_name = "lfib";
             break;
-        case 7 :
-            tmp += mrg31k3p_prng_kernel;
+        case CLRAND_GENERATOR_MRG31K3P :
+            this->rng_name = "mrg31k3p";
             break;
-        case 8 :
-            tmp += mrg63k3a_prng_kernel;
+        case CLRAND_GENERATOR_MRG63K3A :
+            this->rng_name = "mrg63k3a";
             break;
-        case 9 :
-            tmp += msws_prng_kernel;
+        case CLRAND_GENERATOR_MSWS :
+            this->rng_name = "msws";
             break;
-        case 10 :
-            tmp += mt19937_prng_kernel;
+        case CLRAND_GENERATOR_MT19937 :
+            this->rng_name = "mt19937";
             break;
-        case 11 :
-            tmp += mwc64x_prng_kernel;
+        case CLRAND_GENERATOR_MWC64X :
+            this->rng_name = "mwc64x";
             break;
-        case 12 :
-            tmp += pcg6432_prng_kernel;
+        case CLRAND_GENERATOR_PCG6432 :
+            this->rng_name = "pcg6432";
             break;
-        case 13 :
-            tmp += philox2x32_10_prng_kernel;
+        case CLRAND_GENERATOR_PHILOX2X32_10 :
+            this->rng_name = "philox2x32_10";
             break;
-        case 14 :
-            tmp += ran2_prng_kernel;
+        case CLRAND_GENERATOR_RAN2 :
+            this->rng_name = "ran2";
             break;
-        case 15 :
-            tmp += tinymt32_prng_kernel;
+        case CLRAND_GENERATOR_TINYMT32 :
+            this->rng_name = "tinymt32";
             break;
-        case 16 :
-            tmp += tinymt64_prng_kernel;
+        case CLRAND_GENERATOR_TINYMT64 :
+            this->rng_name = "tinymt64";
             break;
-        case 17 :
-            tmp += tyche_prng_kernel;
+        case CLRAND_GENERATOR_TYCHE :
+            this->rng_name = "tyche";
             break;
-        case 18 :
-            tmp += tyche_i_prng_kernel;
+        case CLRAND_GENERATOR_TYCHE_I :
+            this->rng_name = "tyche_i";
             break;
-        case 19 :
-            tmp += well512_prng_kernel;
+        case CLRAND_GENERATOR_WELL512 :
+            this->rng_name = "well512";
             break;
-        case 20 :
-            tmp += xorshift1024_prng_kernel;
+        case CLRAND_GENERATOR_XORSHIFT1024 :
+            this->rng_name = "xorshift1024";
             break;
-        case 21 :
-            tmp += xorshift6432star_prng_kernel;
+        case CLRAND_GENERATOR_XORSHIFT6432STAR :
+            this->rng_name = "xorshift6432star";
             break;
         default :
             std::cout << "Unknown PRNG. No implementation found!" << std::endl;
             break;
     }
-    switch(this->LookupPRNG(name)) {
-        case 20 :
-            tmp += "\n"
-                   "kernel void seed_prng_by_value(ulong seedVal, global " + name + "_state* state){\n"
+}
+
+// Internal function to generate the kernel codes for the PRNGs
+void clRAND::generateBufferKernel(std::string type) {
+    this->source_ready = false;
+    this->program_ready = false;
+    this->generator_ready = false;
+    this->rng_source = std::string((type=="double") ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
+    switch(this->rng_type) {
+        case CLRAND_GENERATOR_ISAAC :
+            this->rng_source += isaac_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_KISS09 :
+            this->rng_source += kiss09_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_KISS99 :
+            this->rng_source += kiss99_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_LCG6432 :
+            this->rng_source += lcg6432_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_LCG12864 :
+            this->rng_source += lcg12864_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_LFIB :
+            this->rng_source += lfib_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MRG31K3P :
+            this->rng_source += mrg31k3p_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MRG63K3A :
+            this->rng_source += mrg63k3a_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MSWS :
+            this->rng_source += msws_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MT19937 :
+            this->rng_source += mt19937_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MWC64X :
+            this->rng_source += mwc64x_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_PCG6432 :
+            this->rng_source += pcg6432_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_PHILOX2X32_10 :
+            this->rng_source += philox2x32_10_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_RAN2 :
+            this->rng_source += ran2_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_TINYMT32 :
+            this->rng_source += tinymt32_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_TINYMT64 :
+            this->rng_source += tinymt64_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_TYCHE :
+            this->rng_source += tyche_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_TYCHE_I :
+            this->rng_source += tyche_i_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_WELL512 :
+            this->rng_source += well512_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_XORSHIFT1024 :
+            this->rng_source += xorshift1024_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_XORSHIFT6432STAR :
+            this->rng_source += xorshift6432star_prng_kernel;
+            break;
+        default :
+            std::cout << "Unknown PRNG. No implementation found!" << std::endl;
+            break;
+    }
+    switch(this->rng_type) {
+        case CLRAND_GENERATOR_XORSHIFT1024 :
+            this->rng_source += "\n"
+                   "kernel void seed_prng_by_value(ulong seedVal, global " + this->rng_name + "_state* state){\n"
                    "    uint gid=get_global_id(0);\n"
-                   "    ulong seed = seedVal<<1;\n"
+                   "    ulong seed = (ulong)(gid);\n"
+                   "    seed <<= 1;\n"
+                   "    seed += seedVal;\n"
                    "    if (seed == 0) {\n"
                    "        seed += 1;\n"
                    "    }\n"
                    "\n"
-                   "    " + name + "_seed(state,seed);\n"
+                   "    " + this->rng_name + "_seed(state,seed);\n"
                    "}";
                    "\n"
-                   "kernel void seed_prng_by_array(global ulong* seedArr, global " + name + "_state* state){\n"
+                   "kernel void seed_prng_by_array(global ulong* seedArr, global " + this->rng_name + "_state* state){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    ulong seed = seedArr[gid];\n"
                    "\n"
-                   "    " + name + "_seed(state,seed);\n"
+                   "    " + this->rng_name + "_seed(state,seed);\n"
                    "}";
                    "\n"
-                   "kernel void generate(uint num, global ulong* seed, global " + type + "* res, global " + name + "_state* stateBuf, local " + name + "_state* state){\n"
+                   "kernel void generate(uint num, global ulong* seed, global " + type + "* res, global " + this->rng_name + "_state* stateBuf, local " + this->rng_name + "_state* state){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    uint gsize=get_global_size(0);\n"
                    "\n"
                    "    state = stateBuf;\n"
                    "    uint num_gsize = ((num - 1) / gsize + 1)*gsize; //next multiple of gsize, larger or equal to N\n"
                    "    for (int i = gid; i<num_gsize; i += gsize) {\n"
-                   "        " + type + " val = " + name + "_" + type + "(state); //all threads within workgroup must call generator, even if result is not needed!\n"
+                   "        " + type + " val = " + this->rng_name + "_" + type + "(state); //all threads within workgroup must call generator, even if result is not needed!\n"
                    "        if (i<num) {\n"
                    "            res[i] = val;\n"
                    "        }\n"
@@ -316,39 +345,40 @@ void clRAND::generateBufferKernel(std::string name, std::string type, std::strin
                    "}";
                    break;
         default :
-            tmp += "\n"
-                   "kernel void seed_prng_by_value(ulong seedVal, global " + name + "_state* stateBuf){\n"
+            this->rng_source += "\n"
+                   "kernel void seed_prng_by_value(ulong seedVal, global " + this->rng_name + "_state* stateBuf){\n"
                    "    uint gid=get_global_id(0);\n"
-                   "    ulong seed = seedVal<<1;\n"
+                   "    ulong seed = (ulong)(gid);\n"
+                   "    seed <<= 1;\n"
+                   "    seed += seedVal;\n"
                    "    if (seed == 0) {\n"
                    "        seed += 1;\n"
                    "    }\n"
-                   "    " + name + "_state state;\n"
-                   "    " + name + "_seed(&state,seed);\n"
+                   "    " + this->rng_name + "_state state;\n"
+                   "    " + this->rng_name + "_seed(&state,seed);\n"
                    "    stateBuf[gid] = state;\n"
                    "}"
                    "\n"
-                   "kernel void seed_prng_by_array(global ulong* seedArr, global " + name + "_state* stateBuf){\n"
+                   "kernel void seed_prng_by_array(global ulong* seedArr, global " + this->rng_name + "_state* stateBuf){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    ulong seed = seedArr[gid];\n"
-                   "    " + name + "_state state;\n"
-                   "    " + name + "_seed(&state,seed);\n"
+                   "    " + this->rng_name + "_state state;\n"
+                   "    " + this->rng_name + "_seed(&state,seed);\n"
                    "    stateBuf[gid] = state;\n"
                    "}"
                    "\n"
-                   "kernel void generate(uint num, global " + name + "_state* stateBuf, global " + type + "* res){\n"
+                   "kernel void generate(uint num, global " + this->rng_name + "_state* stateBuf, global " + type + "* res){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    uint gsize=get_global_size(0);\n"
-                   "    " + name + "_state state;\n"
+                   "    " + this->rng_name + "_state state;\n"
                    "    state = stateBuf[gid];\n"
                    "    for(uint i=gid;i<num;i+=gsize){\n"
-                   "        res[i]=" + name + "_" + type + "(state);\n"
+                   "        res[i]=" + this->rng_name + "_" + type + "(state);\n"
                    "    }\n"
                    "    stateBuf[gid] = state;\n"
                    "}";
                    break;
     }
-    src = tmp;
 }
 
 // Internal function to build the kernel source codes
@@ -357,8 +387,7 @@ void clRAND::BuildSource() {
     this->source_ready = false;
     this->program_ready = false;
     this->generator_ready = false;
-    std::string &kernel_src = rng_source;
-    this->generateBufferKernel(std::string(rng_name), std::string(rng_precision), kernel_src);
+    this->generateBufferKernel(std::string(rng_precision));
     this->source_ready = true;
 }
 
@@ -370,14 +399,26 @@ cl_int clRAND::BuildKernelProgram() {
     cl_int err;
     if (init_flag && source_ready) {
         cl::Program::Sources sources(1, std::make_pair(rng_source.c_str(), rng_source.length()));
+#ifdef DEBUG1
+        std::cout << "Preparing to build program..." << std::endl;
+#endif
         this->rng_program = cl::Program(context, sources);
         std::string build_args = "-cl-std=CL1.2 -cl-kernel-arg-info";
         err = this->rng_program.build(std::vector<cl::Device>({device}), build_args.c_str());
+#ifdef DEBUG1
+        std::cout << "Built program..." << std::endl;
+#endif
         if (err) {
             std::cout << "ERROR: Unable to build PRNG program!" << std::endl;
             return err;
         }
-        this->seed_rng = cl::Kernel(rng_program, "seed_prng");
+#ifdef DEBUG1
+        std::cout << "Create kernel to seed PRNG..." << std::endl;
+#endif DEBUG1
+        this->seed_rng = cl::Kernel(rng_program, "seed_prng_by_value");
+#ifdef DEBUG1
+        std::cout << "Create kernel to generate random bitstream..." << std::endl;
+#endif DEBUG1
         this->generate_bitstream = cl::Kernel(rng_program, "generate");
         this->program_ready = true;
         return err;
@@ -481,69 +522,69 @@ cl_int clRAND::ReadyGenerator() {
 // Function to set the size of the state for each PRNG
 void clRAND::SetStateSize() {
     this->generator_ready = false;
-    switch(LookupPRNG(std::string(rng_name)))
+    switch(this->rng_type)
     {
-        case 1:
+        case CLRAND_GENERATOR_ISAAC:
             this->state_size = sizeof(isaac_state);
             break;
-        case 2:
+        case CLRAND_GENERATOR_KISS09:
             this->state_size = sizeof(kiss09_state);
             break;
-        case 3:
+        case CLRAND_GENERATOR_KISS99:
             this->state_size = sizeof(kiss99_state);
             break;
-        case 4:
+        case CLRAND_GENERATOR_LCG6432:
             this->state_size = sizeof(lcg6432_state);
             break;
-        case 5:
+        case CLRAND_GENERATOR_LCG12864:
             this->state_size = sizeof(lcg12864_state);
             break;
-        case 6:
+        case CLRAND_GENERATOR_LFIB:
             this->state_size = sizeof(lfib_state);
             break;
-        case 7:
+        case CLRAND_GENERATOR_MRG31K3P:
             this->state_size = sizeof(mrg31k3p_state);
             break;
-        case 8:
+        case CLRAND_GENERATOR_MRG63K3A:
             this->state_size = sizeof(mrg63k3a_state);
             break;
-        case 9:
+        case CLRAND_GENERATOR_MSWS:
             this->state_size = sizeof(msws_state);
             break;
-        case 10:
+        case CLRAND_GENERATOR_MT19937:
             this->state_size = sizeof(mt19937_state);
             break;
-        case 11:
+        case CLRAND_GENERATOR_MWC64X:
             this->state_size = sizeof(mwc64x_state);
             break;
-        case 12:
+        case CLRAND_GENERATOR_PCG6432:
             this->state_size = sizeof(pcg6432_state);
             break;
-        case 13:
+        case CLRAND_GENERATOR_PHILOX2X32_10:
             this->state_size = sizeof(philox2x32_10_state);
             break;
-        case 14:
+        case CLRAND_GENERATOR_RAN2:
             this->state_size = sizeof(ran2_state);
             break;
-        case 15:
+        case CLRAND_GENERATOR_TINYMT32:
             this->state_size = sizeof(tinymt32_state);
             break;
-        case 16:
+        case CLRAND_GENERATOR_TINYMT64:
             this->state_size = sizeof(tinymt64_state);
             break;
-        case 17:
+        case CLRAND_GENERATOR_TYCHE:
             this->state_size = sizeof(tyche_state);
             break;
-        case 18:
+        case CLRAND_GENERATOR_TYCHE_I:
             this->state_size = sizeof(tyche_i_state);
             break;
-        case 19:
+        case CLRAND_GENERATOR_WELL512:
             this->state_size = sizeof(well512_state);
             break;
-        case 20:
+        case CLRAND_GENERATOR_XORSHIFT1024:
             this->state_size = sizeof(xorshift1024_state);
             break;
-        case 21:
+        case CLRAND_GENERATOR_XORSHIFT6432STAR:
             this->state_size = sizeof(xorshift6432star_state);
             break;
         default :

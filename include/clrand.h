@@ -26,6 +26,30 @@
     #define CLRAND_DLL
 #endif
 
+enum clrandRngType {
+    CLRAND_GENERATOR_ISAAC            = 1,
+    CLRAND_GENERATOR_KISS09           = 2,
+    CLRAND_GENERATOR_KISS99           = 3,
+    CLRAND_GENERATOR_LCG6432          = 4,
+    CLRAND_GENERATOR_LCG12864         = 5,
+    CLRAND_GENERATOR_LFIB             = 6,
+    CLRAND_GENERATOR_MRG31K3P         = 7,
+    CLRAND_GENERATOR_MRG63K3A         = 8,
+    CLRAND_GENERATOR_MSWS             = 9,
+    CLRAND_GENERATOR_MT19937          = 10,
+    CLRAND_GENERATOR_MWC64X           = 11,
+    CLRAND_GENERATOR_PCG6432          = 12,
+    CLRAND_GENERATOR_PHILOX2X32_10    = 13,
+    CLRAND_GENERATOR_RAN2             = 14,
+    CLRAND_GENERATOR_TINYMT32         = 15,
+    CLRAND_GENERATOR_TINYMT64         = 16,
+    CLRAND_GENERATOR_TYCHE            = 17,
+    CLRAND_GENERATOR_TYCHE_I          = 18,
+    CLRAND_GENERATOR_WELL512          = 19,
+    CLRAND_GENERATOR_XORSHIFT1024     = 20,
+    CLRAND_GENERATOR_XORSHIFT6432STAR = 21
+};
+
 typedef
     struct clRAND
         clRAND;
