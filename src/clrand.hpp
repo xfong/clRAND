@@ -133,7 +133,10 @@ CLRAND_DLL class clRAND {
         clRAND();
         ~clRAND();
 
-        void Init(cl_device_id dev_id, clrandRngType rng_type_);
+        void Init(cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_);
+        cl_device_id GetStreamDevice() { return device_id; }
+        cl_context GetStreamContext() { return context_id; }
+        cl_command_queue GetStreamQueue() { return com_queue_id; }
 
         void BuildSource();
         std::string GetSource() { return this->rng_source; }
@@ -190,7 +193,7 @@ extern "C" {
 #endif
 CLRAND_DLL clRAND* clrand_create_stream();
 
-CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, clrandRngType rng_type_);
+CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_);
 
 CLRAND_DLL const char * clrand_get_prng_precision(clRAND* p) {
     return (*p).GetPrecision().c_str();

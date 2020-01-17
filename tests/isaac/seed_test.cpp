@@ -45,8 +45,15 @@ int main(int argc, char **argv) {
         return res;
     }
 
+    cl_device_id tmpDev = (*tmpStructPtr).target_device;
+    (*tmpStructPtr).ctx = clCreateContext(NULL, 1, &tmpDev, NULL, NULL, &err);
+    if (err) {
+        std::cout << "ERROR: unable to create context to extract random uint!" << std::endl;
+        return -1;
+    }
+
     clRAND* test = clrand_create_stream();
-    clrand_initialize_prng(test, (*tmpStructPtr).target_device, CLRAND_GENERATOR_ISAAC);
+    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_ISAAC);
 
     err = test->SetupWorkConfigurations();
     if (err) {

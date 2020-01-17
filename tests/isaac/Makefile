@@ -26,10 +26,14 @@ seed_test: utils.o seed_test.cpp
 	${GCC} ${CCFLAGS} -c seed_test.cpp -o seed_test.o
 	${GCC} ${LDFLAGS} utils.o seed_test.o -o seed_test ${LDLIBS}
 
+generator_test: utils.o generator_test.cpp
+	${GCC} ${CCFLAGS} -c generator_test.cpp -o generator_test.o
+	${GCC} ${LDFLAGS} utils.o generator_test.o -o generator_test ${LDLIBS}
+
 utils.o: utils.h utils.c
 	${GCC} ${CCFLAGS} -c utils.c -o utils.o
 
-all: seed_test
+all: seed_test generator_test
 
 clean:
-	rm -f *.o seed_test
+	rm -f *.o seed_test generator_test

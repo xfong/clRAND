@@ -25,16 +25,16 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
         if (p->GetNumValidEntries() <= 0) {
             if (p->GetStateOfStateBuffer() == false) {
                 err = p->CopyStateToDevice();
-                if (err != 0) {
+                if (err) {
                     return err;
                 }
             }
             err = p->FillBuffer();
-            if (err != 0) {
+            if (err) {
                 std::cout << "ERROR: unable to generate random bit stream!" << std::endl;
                 if (p->GetStateOfStateBuffer()) {
                     err = p->CopyStateToHost(p->GetHostStatePtr());
-                    if (err != 0) {
+                    if (err) {
                         return err;
                     }
                 }
@@ -46,11 +46,11 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
         size_t dst_offset = 0;
         if (count <= p->GetNumValidEntries()) {
 	    err = p->CopyBufferEntries(dst, dst_offset, (size_t)(count));
-            if (err != 0) {
+            if (err) {
                 std::cout << "ERROR: unable to copy random bit stream from buffer to dst!" << std::endl;
                 if (p->GetStateOfStateBuffer()) {
                     err = p->CopyStateToHost(p->GetHostStatePtr());
-                    if (err != 0) {
+                    if (err) {
                         return err;
                     }
                 }
@@ -61,10 +61,10 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
             break;
         } else {
 	    err = p->CopyBufferEntries(dst, dst_offset, p->GetNumValidEntries());
-	    if (err != 0) {
+	    if (err) {
                 if (p->GetStateOfStateBuffer()) {
                     err = p->CopyStateToHost(p->GetHostStatePtr());
-                    if (err != 0) {
+                    if (err) {
                         return err;
                     }
                 }
@@ -77,7 +77,7 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
     }
     if (p->GetStateOfStateBuffer()) {
         err = p->CopyStateToHost(p->GetHostStatePtr());
-        if (err != 0) {
+        if (err) {
             return err;
         }
     }
@@ -85,8 +85,8 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
 }
 
 // Main call to initialize the stream object
-CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, clrandRngType rng_type_) {
-    (*p).Init(dev_id, rng_type_);
+CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_) {
+    (*p).Init(dev_id, ctx_id, rng_type_);
     (*p).BuildSource();
     return (*p).BuildKernelProgram();
 }
@@ -115,16 +115,12 @@ clRAND::~clRAND() {
 }
 
 // Internal function to initialize the stream object
-void clRAND::Init(cl_device_id dev_id, clrandRngType rng_type_) {
+void clRAND::Init(cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_) {
     this->device_id = dev_id;
     this->device = device_id;
-    cl_int err;
-    this->context_id = clCreateContext(NULL, 1, &device_id, NULL, NULL, &err);
-    if (err) {
-        std::cout << "ERROR: Unable to create context!" << std::endl;
-        return;
-    }
+    this->context_id = ctx_id;
     this->context = context_id;
+    cl_int err;
     this->com_queue_id = clCreateCommandQueue(context_id, device_id, NULL, &err);
     if (err) {
         std::cout << "ERROR: Unable to create command queue!" << std::endl;
@@ -451,7 +447,7 @@ cl_int clRAND::ReadyGenerator() {
     // Seed the PRNG
     this->generator_ready = true;
     err = this->SeedGenerator();
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: failed to seed PRNG" << std::endl;
         this->generator_ready = false;
         return err;
@@ -459,7 +455,7 @@ cl_int clRAND::ReadyGenerator() {
 
     // Generate a set of random numbers to fill the temporary buffer
     err = this->FillBuffer();
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: failed to fill temporary buffer while readying PRNG" << std::endl;
         this->generator_ready = false;
         return err;
@@ -505,11 +501,13 @@ cl_int clRAND::SetupStreamBuffers(size_t bufMult, size_t numPRNGs) {
     // Determine the number of bytes for each random number generated
     // by a workitem
     size_t typeSize = 4;
-    if (std::string(this->rng_precision) == "uint") {
-        typeSize = 2;
-    } else if (std::string(this->rng_precision) == "double") {
+    bool typeDetection = ((std::string)(this->rng_precision) == "uint") || 
+                         ((std::string)(this->rng_precision) == "ulong") || 
+                         ((std::string)(this->rng_precision) == "float") || 
+                         ((std::string)(this->rng_precision) == "double");
+    if (((std::string)(this->rng_precision) == "double") || ((std::string)(this->rng_precision) == "ulong")) {
         typeSize = 8;
-    } else {
+    } else if (typeDetection != true) {
         std::cout << "ERROR: Unknown rng_precision detected!" << std::endl;
         return -1;
     }
@@ -631,21 +629,21 @@ size_t clRAND::GetBufferOffset() {
 // Function to copy random numbers from temporary buffer to desired destination
 cl_int clRAND::CopyBufferEntries(cl_mem dst, size_t dst_offset, size_t count) {
     size_t numBytes = 4;
-    if ((std::string)(this->rng_precision) == "double") {
+    if (((std::string)(this->rng_precision) == "double") || ((std::string)(this->rng_precision) == "ulong")) {
         numBytes = 8;
     }
 
     // Copy buffer data in device
     cl_event eventFlag;
     cl_int err = clEnqueueCopyBuffer(this->com_queue_id, this->tmpOutputBuffer_id, dst, this->offset, dst_offset * numBytes, count * numBytes, 0, NULL, &eventFlag);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: unable to copy buffer entries in CopyBufferEntries!" << std::endl;
         return err;
     }
 
     // Wait for copy in device side to complete before returning
     err = clWaitForEvents(1, &eventFlag);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: unable to wait for copy buffer to complete in CopyBufferEntries!" << std::endl;
         return err;
     }
@@ -685,7 +683,7 @@ cl_int clRAND::SeedGenerator() {
     std::cout << "Setting stateBuffer" << std::endl;
 #endif
     err = seed_rng.setArg<cl::Buffer>(1, this->stateBuffer);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: Unable to set second argument to kernel to seed PRNG!" << std::endl;
         return err;
     }
@@ -695,13 +693,13 @@ cl_int clRAND::SeedGenerator() {
     std::cout << "Executing kernel to seed generator" << std::endl;
 #endif
     err = this->com_queue.enqueueNDRangeKernel(this->seed_rng, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: Unable to enqueue kernel to seed PRNG!" << std::endl;
         return err;
     }
     std::vector<cl::Event> eventList = { event };
     err = cl::WaitForEvents(eventList);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: Unable to wait for kernel to seed PRNG!" << std::endl;
         return err;
     }
@@ -728,13 +726,13 @@ cl_int clRAND::CopyStateToDevice() {
     // Copy PRNG states from host side to device side
     cl::Event event;
     cl_int err = this->com_queue.enqueueWriteBuffer(this->stateBuffer, true, 0, this->state_size * (size_t)(this->wkgrp_count * this->wkgrp_size), this->local_state_mem, NULL, &event);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: unable to copy state from host to device!" << std::endl;
         return err;
     }
     std::vector<cl::Event> eventList = { event };
     err = cl::WaitForEvents(eventList);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: unable to wait for copy state from host to device to finish!" << std::endl;
         return err;
     }
@@ -747,13 +745,13 @@ cl_int clRAND::CopyStateToHost(void* hostPtr) {
     // Copy PRNG states from device side back to host side
     cl::Event event;
     cl_int err = this->com_queue.enqueueReadBuffer(this->stateBuffer, true, 0, this->state_size * (size_t)(this->wkgrp_count * this->wkgrp_size), hostPtr, NULL, &event);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: unable to copy state from host to device!" << std::endl;
         return err;
     }
     std::vector<cl::Event> eventList = { event };
     err = cl::WaitForEvents(eventList);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: unable to wait for copy state from host to device to finish!" << std::endl;
         return err;
     }
@@ -768,7 +766,7 @@ cl_int clRAND::FillBuffer() {
     std::cout << "Setting total number of generators for kernel argument" << std::endl;
 #endif
     cl_int err = this->generate_bitstream.setArg<uint>(0, (uint)(this->total_count));
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: Unable to set first argument to kernel to generate bitstream!" << std::endl;
         return err;
     }
@@ -776,7 +774,7 @@ cl_int clRAND::FillBuffer() {
     std::cout << "Setting state buffer for kernel argument" << std::endl;
 #endif
     err = this->generate_bitstream.setArg<cl::Buffer>(1, this->stateBuffer);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: Unable to set second argument to kernel to generate bitstream!" << std::endl;
         return err;
     }
@@ -784,7 +782,7 @@ cl_int clRAND::FillBuffer() {
     std::cout << "Setting output buffer for kernel argument" << std::endl;
 #endif
     err = this->generate_bitstream.setArg<cl::Buffer>(2, this->tmpOutputBuffer);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: Unable to set third argument to kernel to generate bitstream!" << std::endl;
         return err;
     }
@@ -795,13 +793,13 @@ cl_int clRAND::FillBuffer() {
     std::cout << "Executing kernel" << std::endl;
 #endif
     err = this->com_queue.enqueueNDRangeKernel(this->generate_bitstream, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: Unable to enqueue kernel to generate bitstream!" << std::endl;
         return err;
     }
     std::vector<cl::Event> eventList = { event };
     err = cl::WaitForEvents(eventList);
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: unable to wait for copy state from host to device to finish!" << std::endl;
     }
 #ifdef DEBUG1
@@ -815,7 +813,7 @@ void clRAND::SetSeed(ulong seed) {
     this->seeded = false;
     cl_int err;
     err = this->SeedGenerator();
-    if (err != 0) {
+    if (err) {
         std::cout << "ERROR: failed to seed generator after setting seed value!" << std::endl;
         return;
     }

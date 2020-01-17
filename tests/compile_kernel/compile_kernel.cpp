@@ -30,9 +30,16 @@ int main(int argc, char **argv) {
         return res;
     }
 
+    cl_device_id tmpDev = (*tmpStructPtr).target_device;
+    (*tmpStructPtr).ctx = clCreateContext(NULL, 1, &tmpDev, NULL, NULL, &err);
+    if (err) {
+        std::cout << "ERROR: unable to create context to extract random uint!" << std::endl;
+        return -1;
+    }
+
     clRAND test;
     std::cout << "Initializing stream" << std::endl;
-    test.Init((*tmpStructPtr).target_device, CLRAND_GENERATOR_TYCHE_I);
+    test.Init((*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_TYCHE_I);
     std::cout << "Building kernel source" << std::endl;
     test.BuildSource();
     std::cout << test.GetSource() << std::endl;
