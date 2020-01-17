@@ -172,6 +172,8 @@ CLRAND_DLL class clRAND {
         bool IsSeeded() { return this->seeded; }
 
 	cl_int CopyBufferEntries(cl_mem dst, size_t dst_offset, size_t count);
+
+        void* GetLocalStateMem();
 };
 
 // External functions

@@ -435,12 +435,12 @@ cl_int clRAND::BuildKernelProgram() {
 cl_int clRAND::ReadyGenerator() {
     // Query number of workitems and workgroups supported by the device
     cl_int err;
-    err = this->device.getInfo<cl_uint>(CL_DEVICE_MAX_WORK_GROUP_SIZE, &this->wkgrp_size);
+    this->wkgrp_size = this->device.getInfo<CL_DEVICE_MAX_WORK_GROUP_SIZE>(&err);
     if (err) {
         std::cout << "ERROR: failed to get max workgroup size on device!" << std::endl;
         return err;
     }
-    err = this->device.getInfo<cl_uint>(CL_DEVICE_MAX_COMPUTE_UNITS, &this->wkgrp_count);
+    this->wkgrp_count = this->device.getInfo<CL_DEVICE_MAX_COMPUTE_UNITS>(&err);
     if (err) {
         std::cout << "ERROR: failed to get max number of compute unites on device!" << std::endl;
         return err;
@@ -656,18 +656,27 @@ cl_int clRAND::SeedGenerator() {
         return -4;
     }
     cl_int err;
-    err = this->seed_rng.setArg(0, (const ulong)(this->seedVal));
+#ifdef DEBUG1
+    std::cout << "Setting seedVal" << std::endl;
+#endif
+    err = this->seed_rng.setArg<ulong>(0, this->seedVal);
     if (err != 0) {
         std::cout << "ERROR: Unable to set first argument to kernel to seed PRNG!" << std::endl;
         return err;
     }
-    err = seed_rng.setArg(1, this->stateBuffer);
+#ifdef DEBUG1
+    std::cout << "Setting stateBuffer" << std::endl;
+#endif
+    err = seed_rng.setArg<cl::Buffer>(1, this->stateBuffer);
     if (err != 0) {
         std::cout << "ERROR: Unable to set second argument to kernel to seed PRNG!" << std::endl;
         return err;
     }
     cl_event event_id;
     cl::Event event;
+#ifdef DEBUG1
+    std::cout << "Executing kernel to seed generator" << std::endl;
+#endif
     err = this->com_queue.enqueueNDRangeKernel(this->seed_rng, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
     if (err != 0) {
         std::cout << "ERROR: Unable to enqueue kernel to seed PRNG!" << std::endl;
@@ -689,6 +698,9 @@ cl_int clRAND::SeedGenerator() {
     }
     err = this->CopyStateToHost();
     this->seeded = true;
+#ifdef DEBUG1
+    std::cout << "Done seeding generator" << std::endl;
+#endif
     return err;
 }
 
@@ -735,17 +747,26 @@ cl_int clRAND::CopyStateToHost() {
 // in the stream object by calling the kernel.
 cl_int clRAND::FillBuffer() {
     // Set up kernel to generate random bitstream
-    cl_int err = this->generate_bitstream.setArg(0, this->total_count);
+#ifdef DEBUG1
+    std::cout << "Setting total number of generators for kernel argument" << std::endl;
+#endif
+    cl_int err = this->generate_bitstream.setArg<uint>(0, (uint)(this->total_count));
     if (err != 0) {
         std::cout << "ERROR: Unable to set first argument to kernel to generate bitstream!" << std::endl;
         return err;
     }
-    err = this->generate_bitstream.setArg(1, this->stateBuffer);
+#ifdef DEBUG1
+    std::cout << "Setting state buffer for kernel argument" << std::endl;
+#endif
+    err = this->generate_bitstream.setArg<cl::Buffer>(1, this->stateBuffer);
     if (err != 0) {
         std::cout << "ERROR: Unable to set second argument to kernel to generate bitstream!" << std::endl;
         return err;
     }
-    err = this->generate_bitstream.setArg(2, this->tmpOutputBuffer);
+#ifdef DEBUG1
+    std::cout << "Setting output buffer for kernel argument" << std::endl;
+#endif
+    err = this->generate_bitstream.setArg<cl::Buffer>(2, this->tmpOutputBuffer);
     if (err != 0) {
         std::cout << "ERROR: Unable to set third argument to kernel to generate bitstream!" << std::endl;
         return err;
@@ -753,6 +774,9 @@ cl_int clRAND::FillBuffer() {
 
     // Execute kernel to generate random bitstream
     cl::Event event;
+#ifdef DEBUG1
+    std::cout << "Executing kernel" << std::endl;
+#endif
     err = this->com_queue.enqueueNDRangeKernel(this->generate_bitstream, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
     if (err != 0) {
         std::cout << "ERROR: Unable to enqueue kernel to generate bitstream!" << std::endl;
@@ -763,6 +787,9 @@ cl_int clRAND::FillBuffer() {
     if (err != 0) {
         std::cout << "ERROR: unable to wait for copy state from host to device to finish!" << std::endl;
     }
+#ifdef DEBUG1
+    std::cout << "Buffer of stream object is filled" << std::endl;
+#endif
     return err;
 }
 
