@@ -17,13 +17,16 @@
 #define ISAAC_RANDSIZL   (8)
 #define ISAAC_RANDSIZ    (1<<ISAAC_RANDSIZL)
 
-void* clRAND::GetLocalStateMem() {
-    static isaac_state* outState = new isaac_state[this->GetNumValidEntries()];
-    isaac_state* tmpPtr = (isaac_state*)(this->local_state_mem);
-    for (int idx = 0; idx < this->GetNumValidEntries(); idx++) {
-        outState[idx] = tmpPtr[idx];
-    }
-    return (void*)(outState);
+void isaac_seed(isaac_state* state, ulong j){
+	state->aa = j;
+	state->bb = j ^ 123456789;
+	state->cc = j + 123456789;
+	state->idx = ISAAC_RANDSIZ;
+	for(int i=0;i<ISAAC_RANDSIZ;i++){
+		j=6906969069UL * j + 1234567UL; //LCG
+		state->mm[i]=j;
+		//isaac_advance(state);
+	}
 }
 
 int main(int argc, char **argv) {
@@ -44,12 +47,87 @@ int main(int argc, char **argv) {
 
     clRAND* test = clrand_create_stream();
     clrand_initialize_prng(test, (*tmpStructPtr).target_device, CLRAND_GENERATOR_ISAAC);
-    err = clrand_ready_stream(test);
+
+    err = test->SetupWorkConfigurations();
     if (err) {
-        fprintf(stderr,"Unable to ready the bitstream!\n");
+        fprintf(stderr,"Unable to set the execution configuration!\n");
         return -1;
     }
-    isaac_state* tmpArray = (isaac_state*)(test->GetLocalStateMem());
+
+    // Initialize the counters that tracks available random number generators
+    size_t numPRNGs = test->GetNumberOfRNGs();
+    size_t bufMult = 2;
+
+    err = test->SetupStreamBuffers(bufMult, numPRNGs);
+    test->SetReady();
+
+    // Seed the RNGs
+    err = test->SeedGenerator();
+    if (err != 0) {
+        std::cout << "ERROR: failed to seed PRNG" << std::endl;
+        return -1;
+    }
+
+    size_t stateStructSize = test->GetStateStructSize();
+    size_t stateMemSize = test->GetStateBufferSize();
+    // Prepare host memory to copy RNG states from device to host
+    isaac_state* state_mem = new isaac_state[numPRNGs];
+    if (stateMemSize == numPRNGs * sizeof(isaac_state)) {
+        err = test->CopyStateToHost((void*)(state_mem));
+        if (err) {
+            std::cout << "ERROR: unable to copy state buffer to host!" << std::endl;
+        }
+    } else {
+        std::cout << "ERROR: something went wrong setting up memory sizes!" << std::endl;
+        std::cout << "State Structure Size (host side): " << sizeof(isaac_state) << std::endl;
+        std::cout << "State Structure Size (obj side): " << stateStructSize << std::endl;
+        std::cout << "Number of PRNGs: " << numPRNGs << std::endl;
+        std::cout << "Size of state buffer: " << stateMemSize << std::endl;
+    }
+
+    // Generate RNG states on host side
+    isaac_state* golden_states = new isaac_state[numPRNGs];
+    ulong init_seedVal = test->GetSeed();
+    uint err_counts = 0;
+    for (int idx = 0; idx < numPRNGs; idx++) {
+        ulong newSeed = (ulong)(idx);
+        newSeed <<= 1;
+        newSeed += init_seedVal;
+        if (newSeed == 0) {
+            newSeed += 1;
+        }
+        isaac_seed(&golden_states[idx], newSeed);
+        if (golden_states[idx].aa != state_mem[idx].aa) {
+            err_counts++;
+            std::cout << "Mismatch in aa at idx = " << idx << std::endl;
+            continue;
+        }
+        if (golden_states[idx].bb != state_mem[idx].bb) {
+            err_counts++;
+            std::cout << "Mismatch in bb at idx = " << idx << std::endl;
+            continue;
+        }
+        if (golden_states[idx].cc != state_mem[idx].cc) {
+            err_counts++;
+            std::cout << "Mismatch in cc at idx = " << idx << std::endl;
+            continue;
+        }
+        for (int idx1 = 0; idx1 < ISAAC_RANDSIZ ; idx1++) {
+            if (golden_states[idx].mm[idx1] != state_mem[idx].mm[idx1]) {
+                err_counts++;
+                std::cout << "Mismatch in mm at idx = " << idx << std::endl;
+                break;
+            }
+        }
+    }
+    if (err_counts == 0) {
+        std::cout << "No errors detected!" << std::endl;
+    }
+
+    // Completed checks...
+    std::cout << "Checks completed!..." << std::endl;
+    delete [] state_mem;
+    delete [] golden_states;
     free(tmpStructPtr);
     return res;
 }

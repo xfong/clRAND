@@ -139,12 +139,20 @@ CLRAND_DLL class clRAND {
         std::string GetSource() { return this->rng_source; }
 
         cl_int BuildKernelProgram();
-        cl_int ReadyGenerator(); // To complete
+        cl_int ReadyGenerator();
+        cl_int SetupWorkConfigurations();
         cl_int SeedGenerator();
+        size_t GetNumberOfRNGs() { return (this->wkgrp_size * this->wkgrp_count); }
+
+        cl_int SetupStreamBuffers(size_t bufMult, size_t numPRNGs);
         cl_int FillBuffer();
+
         bool GetStateOfStateBuffer() { return this->loaded_state; }
+        size_t GetStateStructSize() { return this->state_size; }
+        size_t GetStateBufferSize() { return (this->state_size * this->wkgrp_size * this->wkgrp_count); }
         cl_int CopyStateToDevice();
-        cl_int CopyStateToHost();
+        cl_int CopyStateToHost(void* hostPtr);
+        void* GetHostStatePtr() { return this->local_state_mem; }
 
         size_t GetNumBufferEntries() { return this->total_count; }
         void SetNumBufferEntries(size_t num) { this->total_count = num; }
@@ -172,8 +180,8 @@ CLRAND_DLL class clRAND {
         bool IsSeeded() { return this->seeded; }
 
 	cl_int CopyBufferEntries(cl_mem dst, size_t dst_offset, size_t count);
+        bool SetReady() { this->generator_ready = true; }
 
-        void* GetLocalStateMem();
 };
 
 // External functions

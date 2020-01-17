@@ -33,7 +33,7 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
             if (err != 0) {
                 std::cout << "ERROR: unable to generate random bit stream!" << std::endl;
                 if (p->GetStateOfStateBuffer()) {
-                    err = p->CopyStateToHost();
+                    err = p->CopyStateToHost(p->GetHostStatePtr());
                     if (err != 0) {
                         return err;
                     }
@@ -49,7 +49,7 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
             if (err != 0) {
                 std::cout << "ERROR: unable to copy random bit stream from buffer to dst!" << std::endl;
                 if (p->GetStateOfStateBuffer()) {
-                    err = p->CopyStateToHost();
+                    err = p->CopyStateToHost(p->GetHostStatePtr());
                     if (err != 0) {
                         return err;
                     }
@@ -63,7 +63,7 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
 	    err = p->CopyBufferEntries(dst, dst_offset, p->GetNumValidEntries());
 	    if (err != 0) {
                 if (p->GetStateOfStateBuffer()) {
-                    err = p->CopyStateToHost();
+                    err = p->CopyStateToHost(p->GetHostStatePtr());
                     if (err != 0) {
                         return err;
                     }
@@ -76,7 +76,7 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
         }
     }
     if (p->GetStateOfStateBuffer()) {
-        err = p->CopyStateToHost();
+        err = p->CopyStateToHost(p->GetHostStatePtr());
         if (err != 0) {
             return err;
         }
@@ -435,63 +435,17 @@ cl_int clRAND::BuildKernelProgram() {
 cl_int clRAND::ReadyGenerator() {
     // Query number of workitems and workgroups supported by the device
     cl_int err;
-    this->wkgrp_size = this->device.getInfo<CL_DEVICE_MAX_WORK_GROUP_SIZE>(&err);
+    err = this->SetupWorkConfigurations();
     if (err) {
-        std::cout << "ERROR: failed to get max workgroup size on device!" << std::endl;
+        std::cout << "ERROR: unable to set up workgroup configuration!" <<std::endl;
         return err;
-    }
-    this->wkgrp_count = this->device.getInfo<CL_DEVICE_MAX_COMPUTE_UNITS>(&err);
-    if (err) {
-        std::cout << "ERROR: failed to get max number of compute unites on device!" << std::endl;
-        return err;
-    }
-
-    // Upper limit for number of workitems per workgroup is set at 256...
-    if (this->wkgrp_size > 256) {
-        this->wkgrp_size = 256;
-    }
-
-    // Upper limit for number of workitems per workgroup is lowered if
-    // the PRNG is based on xorshift1024
-    if (std::string(this->rng_name) == "xorshift1024") {
-        this->wkgrp_size = 32;
-    }
-
-    // Determine the number of bytes for each random number generated
-    // by a workitem
-    size_t typeSize = 4;
-    if (std::string(this->rng_precision) == "uint") {
-        typeSize = 2;
-    } else if (std::string(this->rng_precision) == "double") {
-        typeSize = 8;
-    } else {
-        std::cout << "ERROR: Unknown rng_precision detected!" << std::endl;
-        return -1;
     }
 
     // Initialize the counters that tracks available random number generators
     size_t numPRNGs = (size_t)(this->wkgrp_count * this->wkgrp_size);
-
-    // Create the buffer storing the states of the PRNGs
-    this->SetStateSize();
-    size_t stateBufSize = numPRNGs * this->state_size;
-    this->stateBuffer_id = clCreateBuffer(this->context_id, CL_MEM_READ_WRITE, stateBufSize, NULL, &err);
-    if (err) {
-        std::cout << "ERROR: Unable to create state buffer or PRNG!" << std::endl;
-        return err;
-    }
-    this->stateBuffer = stateBuffer_id;
-
-    // Create the temporary buffer in which random numbers are generated.
-    // These numbers will be copied to the desired destination when required.
     size_t bufMult = 2;
-    this->total_count = bufMult * numPRNGs;
-    this->tmpOutputBuffer_id = clCreateBuffer(this->context_id, CL_MEM_READ_WRITE, this->total_count * typeSize, NULL, &err);
-    if (err) {
-        std::cout << "ERROR: Unable to create temporary buffer or PRNG!" << std::endl;
-        return err;
-    }
-    this->tmpOutputBuffer = tmpOutputBuffer_id;
+
+    err = this->SetupStreamBuffers(bufMult, numPRNGs);
 
     // At this point the buffers are set up...
     // Seed the PRNG
@@ -516,6 +470,69 @@ cl_int clRAND::ReadyGenerator() {
     this->offset = 0;
     this->valid_count = bufMult * numPRNGs;
 
+    return err;
+}
+
+cl_int clRAND::SetupWorkConfigurations() {
+    // Query number of workitems and workgroups supported by the device
+    cl_int err;
+    this->wkgrp_size = this->device.getInfo<CL_DEVICE_MAX_WORK_GROUP_SIZE>(&err);
+    if (err) {
+        std::cout << "ERROR: failed to get max workgroup size on device!" << std::endl;
+        return err;
+    }
+    this->wkgrp_count = this->device.getInfo<CL_DEVICE_MAX_COMPUTE_UNITS>(&err);
+    if (err) {
+        std::cout << "ERROR: failed to get max number of compute unites on device!" << std::endl;
+        return err;
+    }
+
+    // Upper limit for number of workitems per workgroup is set at 256...
+    if (this->wkgrp_size > 256) {
+        this->wkgrp_size = 256;
+    }
+
+    // Upper limit for number of workitems per workgroup is lowered if
+    // the PRNG is based on xorshift1024
+    if (std::string(this->rng_name) == "xorshift1024") {
+        this->wkgrp_size = 32;
+    }
+    return err;
+}
+
+cl_int clRAND::SetupStreamBuffers(size_t bufMult, size_t numPRNGs) {
+    cl_int err;
+    // Determine the number of bytes for each random number generated
+    // by a workitem
+    size_t typeSize = 4;
+    if (std::string(this->rng_precision) == "uint") {
+        typeSize = 2;
+    } else if (std::string(this->rng_precision) == "double") {
+        typeSize = 8;
+    } else {
+        std::cout << "ERROR: Unknown rng_precision detected!" << std::endl;
+        return -1;
+    }
+
+    // Create the buffer storing the states of the PRNGs
+    this->SetStateSize();
+    size_t stateBufSize = numPRNGs * this->state_size;
+    this->stateBuffer_id = clCreateBuffer(this->context_id, CL_MEM_READ_WRITE, stateBufSize, NULL, &err);
+    if (err) {
+        std::cout << "ERROR: Unable to create state buffer or PRNG!" << std::endl;
+        return err;
+    }
+    this->stateBuffer = stateBuffer_id;
+
+    // Create the temporary buffer in which random numbers are generated.
+    // These numbers will be copied to the desired destination when required.
+    this->total_count = bufMult * numPRNGs;
+    this->tmpOutputBuffer_id = clCreateBuffer(this->context_id, CL_MEM_READ_WRITE, this->total_count * typeSize, NULL, &err);
+    if (err) {
+        std::cout << "ERROR: Unable to create temporary buffer or PRNG!" << std::endl;
+        return err;
+    }
+    this->tmpOutputBuffer = tmpOutputBuffer_id;
     return err;
 }
 
@@ -696,7 +713,7 @@ cl_int clRAND::SeedGenerator() {
         static void *tmp_mem = malloc(state_size * (size_t)(this->wkgrp_size * this->wkgrp_count));
         this->local_state_mem = tmp_mem;
     }
-    err = this->CopyStateToHost();
+    err = this->CopyStateToHost(this->local_state_mem);
     this->seeded = true;
 #ifdef DEBUG1
     std::cout << "Done seeding generator" << std::endl;
@@ -726,10 +743,10 @@ cl_int clRAND::CopyStateToDevice() {
 
 // Internal function that copies the PRNG states from
 // device side to host side
-cl_int clRAND::CopyStateToHost() {
+cl_int clRAND::CopyStateToHost(void* hostPtr) {
     // Copy PRNG states from device side back to host side
     cl::Event event;
-    cl_int err = this->com_queue.enqueueReadBuffer(this->stateBuffer, true, 0, this->state_size * (size_t)(this->wkgrp_count * this->wkgrp_size), this->local_state_mem, NULL, &event);
+    cl_int err = this->com_queue.enqueueReadBuffer(this->stateBuffer, true, 0, this->state_size * (size_t)(this->wkgrp_count * this->wkgrp_size), hostPtr, NULL, &event);
     if (err != 0) {
         std::cout << "ERROR: unable to copy state from host to device!" << std::endl;
         return err;
