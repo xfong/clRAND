@@ -14,67 +14,6 @@
     #include <CL/cl.h>
 #endif
 
-#define RNG32
-
-#define ISAAC_RANDSIZL   (8)
-#define ISAAC_RANDSIZ    (1<<ISAAC_RANDSIZL)
-
-typedef unsigned char uchar;
-#define ind(mm,x) (*(uint *)((uchar *)(mm) + ((x) & (255 << 2))))
-//#define ind(mm,x) (*(uint *)((uint *)(mm) + (((x) >> 2) & 255)))
-#define rngstep(mix,a,b,mm,m,m2,r,x) \
-{\
-	x = *m; \
-	a = (a ^ (mix)) + *(m2++); \
-	*(m++) = y = ind(mm, x) + a + b; \
-	*(r++) = b = ind(mm, y >> 8) + x; \
-}
-
-void isaac_seed(isaac_state* state, ulong j){
-	state->aa = j;
-	state->bb = j ^ 123456789;
-	state->cc = j + 123456789;
-	state->idx = ISAAC_RANDSIZ;
-	for(int i=0;i<ISAAC_RANDSIZ;i++){
-		j=6906969069UL * j + 1234567UL; //LCG
-		state->mm[i]=j;
-		//isaac_advance(state);
-	}
-}
-
-void isaac_advance(isaac_state* state){
-	uint a, b, x, y, *m, *m2, *r, *mend;
-	m = state->mm;
-	r = state->rr;
-	a = state->aa;
-	b = state->bb + (++state->cc);
-	for (m = state->mm, mend = m2 = m+(ISAAC_RANDSIZ/2); m < mend; ){
-		rngstep(a << 13, a, b, state->mm, m, m2, r, x);
-		rngstep(a >> 6 , a, b, state->mm, m, m2, r, x);
-		rngstep(a << 2 , a, b, state->mm, m, m2, r, x);
-		rngstep(a >> 16, a, b, state->mm, m, m2, r, x);
-	}
-	for (m2 = state->mm; m2 < mend; ){
-		rngstep(a << 13, a, b, state->mm, m, m2, r, x);
-		rngstep(a >> 6 , a, b, state->mm, m, m2, r, x);
-		rngstep(a << 2 , a, b, state->mm, m, m2, r, x);
-		rngstep(a >> 16, a, b, state->mm, m, m2, r, x);
-	}
-	state->bb = b;
-	state->aa = a;
-}
-
-#define isaac_uint(state) _isaac_uint(&state)
-uint _isaac_uint(isaac_state* state){
-	//printf("%d\n", get_global_id(0));
-	if(state->idx == ISAAC_RANDSIZ){
-		isaac_advance(state);
-		state->idx=0;
-	}
-	return state->rr[state->idx++];
-}
-
-
 int main(int argc, char **argv) {
     cl_event          event = NULL;
     cl_int            err = -1;
@@ -151,27 +90,25 @@ int main(int argc, char **argv) {
             newSeed += 1;
         }
         isaac_seed(&golden_states[idx], newSeed);
-        if (golden_states[idx].aa != state_mem[idx].aa) {
+        if (golden_states[idx].x != state_mem[idx].x) {
             err_counts++;
-            std::cout << "Mismatch in aa at idx = " << idx << std::endl;
+            std::cout << "Mismatch in x at idx = " << idx << std::endl;
             continue;
         }
-        if (golden_states[idx].bb != state_mem[idx].bb) {
+        if (golden_states[idx].c != state_mem[idx].c) {
             err_counts++;
-            std::cout << "Mismatch in bb at idx = " << idx << std::endl;
+            std::cout << "Mismatch in c at idx = " << idx << std::endl;
             continue;
         }
-        if (golden_states[idx].cc != state_mem[idx].cc) {
+        if (golden_states[idx].y != state_mem[idx].y) {
             err_counts++;
-            std::cout << "Mismatch in cc at idx = " << idx << std::endl;
+            std::cout << "Mismatch in y at idx = " << idx << std::endl;
             continue;
         }
-        for (int idx1 = 0; idx1 < ISAAC_RANDSIZ ; idx1++) {
-            if (golden_states[idx].mm[idx1] != state_mem[idx].mm[idx1]) {
-                err_counts++;
-                std::cout << "Mismatch in mm at idx = " << idx << std::endl;
-                break;
-            }
+        if (golden_states[idx].z != state_mem[idx].z) {
+            err_counts++;
+            std::cout << "Mismatch in z at idx = " << idx << std::endl;
+            continue;
         }
     }
     if (err_counts == 0) {
