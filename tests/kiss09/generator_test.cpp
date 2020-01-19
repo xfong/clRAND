@@ -14,6 +14,32 @@
     #include <CL/cl.h>
 #endif
 
+#define kiss09_ulong(state) (\
+	/*multiply with carry*/ \
+	state.c = state.x >> 6, \
+	state.x += (state.x << 58) + state.c, \
+	state.c += state.x < (state.x << 58) + state.c, \
+	/*xorshift*/ \
+	state.y ^= state.y << 13, \
+	state.y ^= state.y >> 17, \
+	state.y ^= state.y << 43, \
+	/*linear congruential*/ \
+	state.z = 6906969069UL * state.z + 1234567UL, \
+	state.x + state.y + state.z \
+	)
+
+void kiss09_seed(kiss09_state* state, ulong j){
+	state->x = 1234567890987654321UL ^ j;
+	state->c = 123456123456123456UL ^ j;
+	state->y = 362436362436362436UL ^ j;
+	if(state->y==0){
+		state->y=1;
+	}
+	state->z = 1066149217761810UL ^ j;
+}
+
+#define kiss09_uint(state) ((uint)kiss09_ulong(state))
+
 int main(int argc, char **argv) {
     cl_event          event = NULL;
     cl_int            err = -1;
@@ -38,7 +64,7 @@ int main(int argc, char **argv) {
     }
 
     clRAND* test = clrand_create_stream();
-    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_ISAAC);
+    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_KISS09);
     (*tmpStructPtr).queue = test->GetStreamQueue();
 
     err = test->SetupWorkConfigurations();
@@ -64,8 +90,8 @@ int main(int argc, char **argv) {
     size_t stateStructSize = test->GetStateStructSize();
     size_t stateMemSize = test->GetStateBufferSize();
     // Prepare host memory to copy RNG states from device to host
-    isaac_state* state_mem = new isaac_state[numPRNGs];
-    if (stateMemSize == numPRNGs * sizeof(isaac_state)) {
+    kiss09_state* state_mem = new kiss09_state[numPRNGs];
+    if (stateMemSize == numPRNGs * sizeof(kiss09_state)) {
         err = test->CopyStateToHost((void*)(state_mem));
         if (err) {
             std::cout << "ERROR: unable to copy state buffer to host!" << std::endl;
@@ -79,7 +105,7 @@ int main(int argc, char **argv) {
     }
 
     // Generate RNG states on host side
-    isaac_state* golden_states = new isaac_state[numPRNGs];
+    kiss09_state* golden_states = new kiss09_state[numPRNGs];
     ulong init_seedVal = test->GetSeed();
     uint err_counts = 0;
     for (int idx = 0; idx < numPRNGs; idx++) {
@@ -89,7 +115,7 @@ int main(int argc, char **argv) {
         if (newSeed == 0) {
             newSeed += 1;
         }
-        isaac_seed(&golden_states[idx], newSeed);
+        kiss09_seed(&golden_states[idx], newSeed);
         if (golden_states[idx].x != state_mem[idx].x) {
             err_counts++;
             std::cout << "Mismatch in x at idx = " << idx << std::endl;
@@ -152,7 +178,7 @@ int main(int argc, char **argv) {
     err_counts = 0;
     uint* hostRandomNumbers = new uint[numPRNGs];
     for (int idx = 0; idx < numPRNGs; idx++) {
-        hostRandomNumbers[idx] = isaac_uint(golden_states[idx]);
+        hostRandomNumbers[idx] = kiss09_uint(golden_states[idx]);
         if (hostRandomNumbers[idx] != deviceRandomNumbers[idx]) {
             std::cout << "ERROR: numbers do not match at idx = " << idx << std::endl;
             err_counts++;
