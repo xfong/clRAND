@@ -14,6 +14,22 @@
     #include <CL/cl.h>
 #endif
 
+void kiss99_seed(kiss99_state* state, ulong j){
+	state->z=362436069 ^ (uint)j;
+	if(state->z==0){
+		state->z=1;
+	}
+	state->w=521288629 ^ (uint)(j >> 32);
+	if(state->w==0){
+		state->w=1;
+	}
+	state->jsr=123456789 ^ (uint)j;
+	if(state->jsr==0){
+		state->jsr=1;
+	}
+	state->jcong=380116160 ^ (uint)(j >> 32);
+}
+
 int main(int argc, char **argv) {
     cl_event          event = NULL;
     cl_int            err = -1;
@@ -38,7 +54,7 @@ int main(int argc, char **argv) {
     }
 
     clRAND* test = clrand_create_stream();
-    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_ISAAC);
+    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_KISS99);
 
     err = test->SetupWorkConfigurations();
     if (err) {

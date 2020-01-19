@@ -14,6 +14,39 @@
     #include <CL/cl.h>
 #endif
 
+#define kiss99_uint(state) _kiss99_uint(&state)
+uint _kiss99_uint(kiss99_state* state){
+	//multiply with carry
+	state->z = 36969 * (state->z & 65535) + (state->z >> 16);
+	state->w = 18000 * (state->w & 65535) + (state->w >> 16);
+
+	//xorshift
+	state->jsr ^= state->jsr << 17;
+	state->jsr ^= state->jsr >> 13;
+	state->jsr ^= state->jsr << 5;
+
+	//linear congruential
+	state->jcong = 69069 * state->jcong + 1234567;
+
+	return (((state->z << 16) + state->w) ^ state->jcong) + state->jsr;
+}
+
+void kiss99_seed(kiss99_state* state, ulong j){
+	state->z=362436069 ^ (uint)j;
+	if(state->z==0){
+		state->z=1;
+	}
+	state->w=521288629 ^ (uint)(j >> 32);
+	if(state->w==0){
+		state->w=1;
+	}
+	state->jsr=123456789 ^ (uint)j;
+	if(state->jsr==0){
+		state->jsr=1;
+	}
+	state->jcong=380116160 ^ (uint)(j >> 32);
+}
+
 int main(int argc, char **argv) {
     cl_event          event = NULL;
     cl_int            err = -1;
@@ -38,7 +71,7 @@ int main(int argc, char **argv) {
     }
 
     clRAND* test = clrand_create_stream();
-    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_ISAAC);
+    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_KISS99);
     (*tmpStructPtr).queue = test->GetStreamQueue();
 
     err = test->SetupWorkConfigurations();
