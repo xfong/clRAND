@@ -9,12 +9,12 @@ PREFIX?=/usr/local
 
 MAJOR_VERSION=0
 MINOR_VERSION=0
-REV_VERSION=1
+REV_VERSION=2
 ifeq ($(OS),Windows_NT)
     CXXFLAGS+=-I${CUDA_PATH}\\include
     CXXFLAGS+=-D__WIN32 -DCLRAND_EXPORT
     LDFLAGS+=-L${CUDA_PATH}\\lib\\x64
-    DLLFLAGS=-Wl,--out-implib,libclrand.a -Wl,--major-image-version,0,--minor-image-version,1
+    DLLFLAGS=-Wl,--out-implib,libclrand.a -Wl,--major-image-version,0,--minor-image-version,2
     LIBEXT=.dll
 else
     CXXFLAGS+= -I${CUDAROOT}/include
