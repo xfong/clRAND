@@ -23,8 +23,8 @@ else
     DLLFLAGS=-Wl,-soname,libclrand.so.${MAJOR_VERSION}
 endif
 
-INSTALL_INCLUDEDIR=$(PREFIX)/$(MAJOR_VERSION).$(MINOR_VERSION).$(REV_VERSION)/include
-INSTALL_LIBDIR=$(PREFIX)/$(MAJOR_VERSION).$(MINOR_VERSION).$(REV_VERSION)/lib
+INSTALL_INCLUDEDIR=$(PREFIX)/include
+INSTALL_LIBDIR=$(PREFIX)/lib
 
 #On Windows specify the path to the OpenCL lib file
 #the first commented line is the typical path for NVIDIA GPUs

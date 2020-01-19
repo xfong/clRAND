@@ -1,4 +1,4 @@
-# clPRNG
+# clRAND
 C++ library of pseudo-random number generators for OpenCL devices
 
 The PRNG is saved in a data structure which contains the command
@@ -11,16 +11,21 @@ replenish it fully. The storage in the temporary store should
 accomodate two random numbers from every workitem that will run
 
 TODO:
-1) Need functions to build the program for the PRNG
-    a) One function needs to build up the text source that is
-       stored in the data structure. A flag needs to be set
-       to say the source is ready.
-    b) One function takes the text source and builds the
-       program
-    c) One function builds two kernels from the program. One
-       kernel is to initialize the PRNG state. The other kernel
-       is called to generate the random bitstream
+1) Need functions to test the various PRNGs
 
-2) Need function to set the workgroup sizes and global number
-   of work-items when kernel is called. This should be part of
-   the initialization step.
+2) Need function to generate the random initial seeds for PRNGs
+
+3) Need functions to generate floats and double that are
+   uniformly distributed in [0, 1).
+    a) Can be generated quickly with some sacrifice in
+       number of possible values
+    b) Can be generated accurately by using more uint or ulong
+       random numbers to determine the exponent of the number
+
+4) Need functions to use floats and doubles that are
+   uniformly distributed in [0, 1) to:
+    a) Generate normally distributed random numbers
+    b) Generate log-normally distributed random numbers
+    b) Generate Poisson distributed random numbers
+
+5) Add XORWOW and Sobol Quasirandom number generators
