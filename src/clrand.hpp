@@ -32,12 +32,13 @@
 #include "../generator/well512.hpp"
 #include "../generator/xorshift1024.hpp"
 #include "../generator/xorshift6432star.hpp"
+#include "../generator/xorwow.hpp"
 
 #ifndef __CLRAND_HPP
     #define __CLRAND_HPP
     #define CLRAND_VERSION_MAJOR 0
-    #define CLRAND_VERSION_MINOR 0
-    #define CLRAND_VERSION_REV   2
+    #define CLRAND_VERSION_MINOR 1
+    #define CLRAND_VERSION_REV   0
 #endif
 
 #if defined( __WIN32 )
@@ -73,7 +74,8 @@ enum clrandRngType {
     CLRAND_GENERATOR_TYCHE_I          = 18,
     CLRAND_GENERATOR_WELL512          = 19,
     CLRAND_GENERATOR_XORSHIFT1024     = 20,
-    CLRAND_GENERATOR_XORSHIFT6432STAR = 21
+    CLRAND_GENERATOR_XORSHIFT6432STAR = 21,
+    CLRAND_GENERATOR_XORWOW           = 22
 };
 
 // Prototype class

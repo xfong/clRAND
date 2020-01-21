@@ -224,6 +224,9 @@ void clRAND::LookupPRNG() {
         case CLRAND_GENERATOR_XORSHIFT6432STAR :
             this->rng_name = "xorshift6432star";
             break;
+        case CLRAND_GENERATOR_XORWOW :
+            this->rng_name = "xorwow";
+            break;
         default :
             std::cout << "Unknown PRNG. No implementation found!" << std::endl;
             break;
@@ -299,6 +302,9 @@ void clRAND::generateBufferKernel(std::string type) {
             break;
         case CLRAND_GENERATOR_XORSHIFT6432STAR :
             this->rng_source += xorshift6432star_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_XORWOW :
+            this->rng_source += xorwow_prng_kernel;
             break;
         default :
             std::cout << "Unknown PRNG. No implementation found!" << std::endl;
@@ -601,6 +607,9 @@ void clRAND::SetStateSize() {
             break;
         case CLRAND_GENERATOR_XORSHIFT6432STAR:
             this->state_size = sizeof(xorshift6432star_state);
+            break;
+        case CLRAND_GENERATOR_XORWOW:
+            this->state_size = sizeof(xorwow_state);
             break;
         default :
             this->state_size = 0;
