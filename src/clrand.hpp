@@ -92,6 +92,7 @@ CLRAND_DLL class clRAND {
 
         cl::Program       rng_program;         // OpenCL C++ API
         cl::Kernel        seed_rng;            // OpenCL C++ API
+        cl::Kernel        seed_rng_array;      // OpenCL C++ API
         cl::Kernel        generate_bitstream;  // OpenCL C++ API
 
         cl::Buffer        stateBuffer;         // OpenCL C++ API
@@ -116,7 +117,10 @@ CLRAND_DLL class clRAND {
         const char*       rng_precision;       // Precision of PRNG
         std::string       rng_source;          // Kernel source code of PRNG
 
-        ulong             seedVal;             // Seed value used to seed the PRNG
+        ulong             seedVal;             // Seed value used to generate seed array
+        ulong*            seedArrayHost;       // Array of seed values used to seed the PRNGs (host side)
+        cl_mem            seedArray_id;        // Array of seed values used to seed the PRNGs (device side)
+        cl::Buffer        seedArray;           // Array of seed values used to seed the PRNGs (device side)
 
         bool              init_flag;           // Flag for whether stream object has been initialized
         bool              source_ready;        // Flag for whether kernel source is built
@@ -147,6 +151,7 @@ CLRAND_DLL class clRAND {
         cl_int ReadyGenerator();
         cl_int SetupWorkConfigurations();
         cl_int SeedGenerator();
+        cl_int SeedGeneratorByArray();
         size_t GetNumberOfRNGs() { return (this->wkgrp_size * this->wkgrp_count); }
 
         cl_int SetupStreamBuffers(size_t bufMult, size_t numPRNGs);

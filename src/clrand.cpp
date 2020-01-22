@@ -415,9 +415,13 @@ cl_int clRAND::BuildKernelProgram() {
             return err;
         }
 #ifdef DEBUG1
-        std::cout << "Create kernel to seed PRNG..." << std::endl;
+        std::cout << "Create kernel to seed PRNG by one value..." << std::endl;
 #endif DEBUG1
         this->seed_rng = cl::Kernel(rng_program, "seed_prng_by_value");
+#ifdef DEBUG1
+        std::cout << "Create kernel to seed PRNG by array of values..." << std::endl;
+#endif DEBUG1
+        this->seed_rng_array = cl::Kernel(rng_program, "seed_prng_by_array");
 #ifdef DEBUG1
         std::cout << "Create kernel to generate random bitstream..." << std::endl;
 #endif DEBUG1
@@ -728,6 +732,74 @@ cl_int clRAND::SeedGenerator() {
     return err;
 }
 
+// Internal function that seeds the PRNGs in the
+// stream object
+cl_int clRAND::SeedGeneratorByArray() {
+    this->seeded = false;
+    if (this->init_flag != true) {
+        std::cout << "ERROR: stream object has not been initialized!" << std::endl;
+        return -1;
+    }
+    if (this->source_ready != true) {
+        std::cout << "ERROR: source for stream object has not been built!" << std::endl;
+        return -2;
+    }
+    if (this->program_ready != true) {
+        std::cout << "ERROR: kernel programs for stream object has not been built!" << std::endl;
+        return -3;
+    }
+    if (this->generator_ready != true) {
+        std::cout << "ERROR: temporary buffers in stream object has not been set up!" << std::endl;
+        return -4;
+    }
+    cl_int err;
+#ifdef DEBUG1
+    std::cout << "Setting seed array" << std::endl;
+#endif
+    err = this->seed_rng_array.setArg<cl::Buffer>(0, this->seedArray);
+    if (err != 0) {
+        std::cout << "ERROR: Unable to set first argument to kernel to seed PRNG!" << std::endl;
+        return err;
+    }
+#ifdef DEBUG1
+    std::cout << "Setting stateBuffer" << std::endl;
+#endif
+    err = seed_rng_array.setArg<cl::Buffer>(1, this->stateBuffer);
+    if (err) {
+        std::cout << "ERROR: Unable to set second argument to kernel to seed PRNG!" << std::endl;
+        return err;
+    }
+    cl_event event_id;
+    cl::Event event;
+#ifdef DEBUG1
+    std::cout << "Executing kernel to seed generator" << std::endl;
+#endif
+    err = this->com_queue.enqueueNDRangeKernel(this->seed_rng_array, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
+    if (err) {
+        std::cout << "ERROR: Unable to enqueue kernel to seed PRNG!" << std::endl;
+        return err;
+    }
+    std::vector<cl::Event> eventList = { event };
+    err = cl::WaitForEvents(eventList);
+    if (err) {
+        std::cout << "ERROR: Unable to wait for kernel to seed PRNG!" << std::endl;
+        return err;
+    }
+    if (local_state_mem == NULL) {
+        static void *tmp_mem = malloc(state_size * (size_t)(this->wkgrp_size * this->wkgrp_count));
+        this->local_state_mem = tmp_mem;
+    } else {
+        free(this->local_state_mem);
+        static void *tmp_mem = malloc(state_size * (size_t)(this->wkgrp_size * this->wkgrp_count));
+        this->local_state_mem = tmp_mem;
+    }
+    err = this->CopyStateToHost(this->local_state_mem);
+    this->seeded = true;
+#ifdef DEBUG1
+    std::cout << "Done seeding generator" << std::endl;
+#endif
+    return err;
+}
 
 // Internal function that copies the PRNG states from
 // host side to device side
