@@ -24,7 +24,9 @@
 #include "../generator/mwc64x.hpp"
 #include "../generator/pcg6432.hpp"
 #include "../generator/philox2x32_10.hpp"
+#include "../generator/philox4x32_10.hpp"
 #include "../generator/ran2.hpp"
+#include "../generator/sobol32.hpp"
 #include "../generator/tinymt32.hpp"
 #include "../generator/tinymt64.hpp"
 #include "../generator/tyche.hpp"
@@ -67,15 +69,17 @@ enum clrandRngType {
     CLRAND_GENERATOR_MWC64X           = 11,
     CLRAND_GENERATOR_PCG6432          = 12,
     CLRAND_GENERATOR_PHILOX2X32_10    = 13,
-    CLRAND_GENERATOR_RAN2             = 14,
-    CLRAND_GENERATOR_TINYMT32         = 15,
-    CLRAND_GENERATOR_TINYMT64         = 16,
-    CLRAND_GENERATOR_TYCHE            = 17,
-    CLRAND_GENERATOR_TYCHE_I          = 18,
-    CLRAND_GENERATOR_WELL512          = 19,
-    CLRAND_GENERATOR_XORSHIFT1024     = 20,
-    CLRAND_GENERATOR_XORSHIFT6432STAR = 21,
-    CLRAND_GENERATOR_XORWOW           = 22
+    CLRAND_GENERATOR_PHILOX4X32_10    = 14,
+    CLRAND_GENERATOR_RAN2             = 15,
+    CLRAND_GENERATOR_SOBOL32          = 16,
+    CLRAND_GENERATOR_TINYMT32         = 17,
+    CLRAND_GENERATOR_TINYMT64         = 18,
+    CLRAND_GENERATOR_TYCHE            = 19,
+    CLRAND_GENERATOR_TYCHE_I          = 20,
+    CLRAND_GENERATOR_WELL512          = 21,
+    CLRAND_GENERATOR_XORSHIFT1024     = 22,
+    CLRAND_GENERATOR_XORSHIFT6432STAR = 23,
+    CLRAND_GENERATOR_XORWOW           = 24
 };
 
 // Prototype class

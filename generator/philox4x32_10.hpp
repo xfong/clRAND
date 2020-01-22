@@ -1,14 +1,20 @@
+#ifndef __UINT4__
+#define __UINT4__
 typedef struct{
     uint w;
     uint x;
     uint y;
     uint z;
 } uint4;
+#endif
 
+#ifndef __UINT2__
+#define __UINT2__
 typedef struct{
     uint x;
     uint y;
 } uint2;
+#endif
 
 typedef struct{
     uint4 counter;

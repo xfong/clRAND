@@ -200,8 +200,14 @@ void clRAND::LookupPRNG() {
         case CLRAND_GENERATOR_PHILOX2X32_10 :
             this->rng_name = "philox2x32_10";
             break;
+        case CLRAND_GENERATOR_PHILOX4X32_10 :
+            this->rng_name = "philox4x32_10";
+            break;
         case CLRAND_GENERATOR_RAN2 :
             this->rng_name = "ran2";
+            break;
+        case CLRAND_GENERATOR_SOBOL32 :
+            this->rng_name = "sobol32";
             break;
         case CLRAND_GENERATOR_TINYMT32 :
             this->rng_name = "tinymt32";
@@ -279,8 +285,14 @@ void clRAND::generateBufferKernel(std::string type) {
         case CLRAND_GENERATOR_PHILOX2X32_10 :
             this->rng_source += philox2x32_10_prng_kernel;
             break;
+        case CLRAND_GENERATOR_PHILOX4X32_10 :
+            this->rng_source += philox4x32_10_prng_kernel;
+            break;
         case CLRAND_GENERATOR_RAN2 :
             this->rng_source += ran2_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_SOBOL32 :
+            this->rng_source += sobol32_prng_kernel;
             break;
         case CLRAND_GENERATOR_TINYMT32 :
             this->rng_source += tinymt32_prng_kernel;

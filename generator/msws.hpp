@@ -1,7 +1,10 @@
+#ifndef __UINT2__
+#define __UINT2__
 typedef struct{
     uint x;
     uint y;
 } uint2;
+#endif
 
 typedef struct{
         union{
