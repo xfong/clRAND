@@ -147,8 +147,8 @@ Seeds philox4x32_10 RNG.
 @param seed Value used for seeding. Should be randomly generated for each instance of generator (thread).
 */
 void philox4x32_10_seed(philox4x32_10_state *state, ulong j){
-    state->key->x = (unsigned int)(seed_value);
-    state->key->y = (unsigned int)(seed_value >> 32);
+    state->key->x = (unsigned int)(j);
+    state->key->y = (unsigned int)(j >> 32);
     restart(0, 0);
 }
 
