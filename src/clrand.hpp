@@ -18,6 +18,7 @@
 #include "../generator/lcg12864.hpp"
 #include "../generator/lfib.hpp"
 #include "../generator/mrg31k3p.hpp"
+#include "../generator/mrg32k3a.hpp"
 #include "../generator/mrg63k3a.hpp"
 #include "../generator/msws.hpp"
 #include "../generator/mt19937.hpp"
@@ -63,23 +64,28 @@ enum clrandRngType {
     CLRAND_GENERATOR_LCG12864         = 5,
     CLRAND_GENERATOR_LFIB             = 6,
     CLRAND_GENERATOR_MRG31K3P         = 7,
-    CLRAND_GENERATOR_MRG63K3A         = 8,
-    CLRAND_GENERATOR_MSWS             = 9,
-    CLRAND_GENERATOR_MT19937          = 10,
-    CLRAND_GENERATOR_MWC64X           = 11,
-    CLRAND_GENERATOR_PCG6432          = 12,
-    CLRAND_GENERATOR_PHILOX2X32_10    = 13,
-    CLRAND_GENERATOR_PHILOX4X32_10    = 14,
-    CLRAND_GENERATOR_RAN2             = 15,
-    CLRAND_GENERATOR_SOBOL32          = 16,
-    CLRAND_GENERATOR_TINYMT32         = 17,
-    CLRAND_GENERATOR_TINYMT64         = 18,
-    CLRAND_GENERATOR_TYCHE            = 19,
-    CLRAND_GENERATOR_TYCHE_I          = 20,
-    CLRAND_GENERATOR_WELL512          = 21,
-    CLRAND_GENERATOR_XORSHIFT1024     = 22,
-    CLRAND_GENERATOR_XORSHIFT6432STAR = 23,
-    CLRAND_GENERATOR_XORWOW           = 24
+    CLRAND_GENERATOR_MRG32K3A         = 8,
+    CLRAND_GENERATOR_MRG63K3A         = 9,
+    CLRAND_GENERATOR_MSWS             = 10,
+    CLRAND_GENERATOR_MT11213          = 11,
+    CLRAND_GENERATOR_MT19937          = 12,
+    CLRAND_GENERATOR_MT23209          = 13,
+    CLRAND_GENERATOR_MT44497          = 14,
+    CLRAND_GENERATOR_MWC64X           = 15,
+    CLRAND_GENERATOR_PCG6432          = 16,
+    CLRAND_GENERATOR_PHILOX2X32_10    = 17,
+    CLRAND_GENERATOR_PHILOX4X32_10    = 18,
+    CLRAND_GENERATOR_RAN2             = 19,
+    CLRAND_GENERATOR_SOBOL32          = 20,
+    CLRAND_GENERATOR_THREEFRY         = 21,
+    CLRAND_GENERATOR_TINYMT32         = 22,
+    CLRAND_GENERATOR_TINYMT64         = 23,
+    CLRAND_GENERATOR_TYCHE            = 24,
+    CLRAND_GENERATOR_TYCHE_I          = 25,
+    CLRAND_GENERATOR_WELL512          = 26,
+    CLRAND_GENERATOR_XORSHIFT1024     = 27,
+    CLRAND_GENERATOR_XORSHIFT6432STAR = 28,
+    CLRAND_GENERATOR_XORWOW           = 29
 };
 
 // Prototype class

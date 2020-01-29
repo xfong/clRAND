@@ -96,6 +96,22 @@ unsigned long long mod_mul_m1(unsigned int i,
     return lo;
 }
 
+inline static
+unsigned long long mod_mul_m2(unsigned int i,
+                              unsigned long long j){
+    long long hi, lo, temp1, temp2;
+
+    hi = i / 131072;
+    lo = i - (hi * 131072);
+    temp1 = mod_m2(hi * j) * 131072;
+    temp2 = mod_m2(lo * j);
+    lo = mod_m2(temp1 + temp2);
+
+    if (lo < 0)
+        lo += MRG32K3A_M2;
+    return lo;
+}
+
 /**
 Generates a random 32-bit unsigned integer using mrg32k3a RNG.
 
@@ -103,7 +119,7 @@ Generates a random 32-bit unsigned integer using mrg32k3a RNG.
 */
 #define mrg32k3a_uint(state) _mrg32k3a_uint(&state)
 uint _mrg32k3a_uint(mrg32k3a_state* state){
-    const unsigned int p1 = mod_m1(
+    const unsigned int p1 = (unsigned int)mod_m1(
         mad_u64_u32(
             MRG32K3A_A12,
             state.g1[1],
@@ -119,7 +135,7 @@ uint _mrg32k3a_uint(mrg32k3a_state* state){
     state.g1[1] = state.g1[2];
     state.g1[2] = p1;
 
-    const unsigned int p2 = mod_m2(
+    const unsigned int p2 = (unsigned int)mod_m2(
         mad_u64_u32(
             MRG32K3A_A21,
             state.g2[2],

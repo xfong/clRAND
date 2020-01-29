@@ -182,6 +182,9 @@ void clRAND::LookupPRNG() {
         case CLRAND_GENERATOR_MRG31K3P :
             this->rng_name = "mrg31k3p";
             break;
+        case CLRAND_GENERATOR_MRG32K3A :
+            this->rng_name = "mrg32k3a";
+            break;
         case CLRAND_GENERATOR_MRG63K3A :
             this->rng_name = "mrg63k3a";
             break;
@@ -266,6 +269,9 @@ void clRAND::generateBufferKernel(std::string type) {
             break;
         case CLRAND_GENERATOR_MRG31K3P :
             this->rng_source += mrg31k3p_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MRG32K3A :
+            this->rng_source += mrg32k3a_prng_kernel;
             break;
         case CLRAND_GENERATOR_MRG63K3A :
             this->rng_source += mrg63k3a_prng_kernel;
@@ -582,6 +588,9 @@ void clRAND::SetStateSize() {
         case CLRAND_GENERATOR_MRG31K3P:
             this->state_size = sizeof(mrg31k3p_state);
             break;
+        case CLRAND_GENERATOR_MRG32K3A:
+            this->state_size = sizeof(mrg32k3a_state);
+            break;
         case CLRAND_GENERATOR_MRG63K3A:
             this->state_size = sizeof(mrg63k3a_state);
             break;
@@ -598,6 +607,9 @@ void clRAND::SetStateSize() {
             this->state_size = sizeof(pcg6432_state);
             break;
         case CLRAND_GENERATOR_PHILOX2X32_10:
+            this->state_size = sizeof(philox2x32_10_state);
+            break;
+        case CLRAND_GENERATOR_PHILOX4X32_10:
             this->state_size = sizeof(philox2x32_10_state);
             break;
         case CLRAND_GENERATOR_RAN2:
