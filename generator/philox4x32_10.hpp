@@ -54,8 +54,8 @@ typedef struct{
 inline static
 unsigned int mulhilo32(unsigned int x, unsigned int y, unsigned int& z)
 {
-    unsigned long long xy = mad_u64_u32(x, y, 0);
-    z = (unsigned int)(xy >> 32);
+    unsigned long long xy = mul_hi(x, y);
+    z = x * y;
     return (unsigned int)(xy);
 }
 
