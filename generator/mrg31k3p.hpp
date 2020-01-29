@@ -37,6 +37,7 @@ Generates a random 32-bit unsigned integer using mrg31k3p RNG.
 @param state State of the RNG to use.
 */
 #define mrg31k3p_uint(state) _mrg31k3p_uint(&state)
+inline
 uint _mrg31k3p_uint(mrg31k3p_state* state){
 	uint y1, y2;
 	//first component
@@ -86,13 +87,14 @@ Seeds mrg31k3p RNG.
 @param state Variable, that holds state of the generator to be seeded.
 @param seed Value used for seeding. Should be randomly generated for each instance of generator (thread).
 */
+inline
 void mrg31k3p_seed(mrg31k3p_state* state, ulong j){
 	state->x10 = (uint)j;
-	state->x11 = (uint)j >> 5;
-	state->x12 = (uint)j >> 11;
-	state->x20 = (uint)j >> 22;
-	state->x21 = (uint)j >> 30;
-	state->x22 = (uint)j >> 33;
+	state->x11 = (uint)(j >> 5);
+	state->x12 = (uint)(j >> 11);
+	state->x20 = (uint)(j >> 22);
+	state->x21 = (uint)(j >> 30);
+	state->x22 = (uint)(j >> 33);
 	if(j == 0){
 		state->x10++;
 		state->x21++;

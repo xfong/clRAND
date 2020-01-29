@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <bitset>
 #include <unistd.h>
 #include <getopt.h>
 #include "../../src/clrand.hpp"
@@ -18,12 +20,13 @@
 #define MRG31K3P_M2 2147462579
 
 void mrg31k3p_seed(mrg31k3p_state* state, ulong j){
+        uint64_t kk = (uint64_t)(j);
 	state->x10 = (uint)j;
-	state->x11 = (uint)j >> 5;
-	state->x12 = (uint)j >> 11;
-	state->x20 = (uint)j >> 22;
-	state->x21 = (uint)j >> 30;
-	state->x22 = (uint)j >> 33;
+	state->x11 = (uint)(j >> 5);
+	state->x12 = (uint)(j >> 11);
+	state->x20 = (uint)(j >> 22);
+	state->x21 = (uint)(j >> 30);
+	state->x22 = (uint)(j >> 33);
 	if(j == 0){
 		state->x10++;
 		state->x21++;
@@ -112,7 +115,7 @@ int main(int argc, char **argv) {
     mrg31k3p_state* golden_states = new mrg31k3p_state[numPRNGs];
     ulong init_seedVal = test->GetSeed();
     uint err_counts = 0;
-    for (int idx = 0; idx < numPRNGs; idx++) {
+    for (uint idx = 0; idx < numPRNGs; idx++) {
         ulong newSeed = (ulong)(idx);
         newSeed <<= 1;
         newSeed += init_seedVal;

@@ -8,10 +8,10 @@ INSTALL ?= install
 
 ifeq ($(OS),Windows_NT)
     CCFLAGS+= -I${CUDA_PATH}\\include
-    LDFLAGS+=-L${CUDA_PATH}\\lib\\x64 -L../../src
+    LDFLAGS+=-L${CUDA_PATH}\\lib\\x64 -m64 -L../../src
 else
     CCFLAGS+= -I${CUDAROOT}/include
-    LDFLAGS+=-L${CUDAROOT}/lib64 -L../../src
+    LDFLAGS+=-L${CUDAROOT}/lib64 -m64 -L../../src
 endif
 
 LDLIBS+=-lOpenCL -lclrand
