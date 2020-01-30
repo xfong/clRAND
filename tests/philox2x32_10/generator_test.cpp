@@ -207,6 +207,8 @@ int main(int argc, char **argv) {
         hostRandomNumbers[idx] = philox2x32_10_uint(golden_states[idx]);
         if (hostRandomNumbers[idx] != deviceRandomNumbers[idx]) {
             std::cout << "ERROR: numbers do not match at idx = " << idx << std::endl;
+            std::cout << "host num = " << hostRandomNumbers[idx] << std::endl;
+            std::cout << "dev num  = " << deviceRandomNumbers[idx] << std::endl;
             err_counts++;
         }
     }
