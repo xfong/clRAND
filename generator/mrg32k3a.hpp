@@ -1,6 +1,6 @@
 typedef struct {
-   unsigned int g1[3];
-   unsigned int g2[3];
+   ulong g1[3];
+   ulong g2[3];
 } mrg32k3a_state;
 
 const char * mrg32k3a_prng_kernel = R"EOK(
@@ -27,17 +27,8 @@ const char * mrg32k3a_prng_kernel = R"EOK(
 // Thomas Bradley, Parallelisation Techniques for Random Number Generators
 // https://www.nag.co.uk/IndustryArticles/gpu_gems_article.pdf
 
-#define MRG32K3A_POW32 4294967296
 #define MRG32K3A_M1 4294967087
-#define MRG32K3A_M1C 209
 #define MRG32K3A_M2 4294944443
-#define MRG32K3A_M2C 22853
-#define MRG32K3A_A12 1403580
-#define MRG32K3A_A13 (4294967087 -  810728)
-#define MRG32K3A_A13N 810728
-#define MRG32K3A_A21 527612
-#define MRG32K3A_A23 (4294944443 - 1370589)
-#define MRG32K3A_A23N 1370589
 #define MRG32K3A_NORM_DOUBLE (2.3283065498378288e-10) // 1/MRG32K3A_M1
 #define MRG32K3A_UINT_NORM (1.000000048661607) // (MRG32K3A_POW32 - 1)/(MRG32K3A_M1 - 1)
 
@@ -45,113 +36,42 @@ const char * mrg32k3a_prng_kernel = R"EOK(
 State of mrg32k3a RNG.
 */
 typedef struct {
-   unsigned int g1[3];
-   unsigned int g2[3];
+   ulong g1[3];
+   ulong g2[3];
 } mrg32k3a_state;
-
-inline static
-unsigned long long mad_u64_u32(const unsigned int x, const unsigned int y, const unsigned long long z)
-{
-    unsigned long long x0;
-    unsigned long long y0;
-    x0 = (unsigned long long)(x);
-    y0 = (unsigned long long)(y);
-    
-    return (x0*y0) + z;
-}
-
-inline static
-unsigned long long mod_m1(unsigned long long p){
-    p = mad_u64_u32(MRG32K3A_M1C, (p >> 32), p & (MRG32K3A_POW32 - 1));
-    if (p >= MRG32K3A_M1)
-        p -= MRG32K3A_M1;
-
-    return p;
-}
-
-inline static
-unsigned long long mod_m2(unsigned long long p){
-    p = mad_u64_u32(MRG32K3A_M2C, (p >> 32), p & (MRG32K3A_POW32 - 1));
-    p = mad_u64_u32(MRG32K3A_M2C, (p >> 32), p & (MRG32K3A_POW32 - 1));
-    if (p >= MRG32K3A_M2) {
-        p -= MRG32K3A_M2;
-    }
-
-    return p;
-}
-
-inline static
-unsigned long long mod_mul_m1(unsigned int i,
-                              unsigned long long j){
-    long long hi, lo, temp1, temp2;
-
-    hi = i / 131072;
-    lo = i - (hi * 131072);
-    temp1 = mod_m1(hi * j) * 131072;
-    temp2 = mod_m1(lo * j);
-    lo = mod_m1(temp1 + temp2);
-
-    if (lo < 0)
-        lo += MRG32K3A_M1;
-    return lo;
-}
-
-inline static
-unsigned long long mod_mul_m2(unsigned int i,
-                              unsigned long long j){
-    long long hi, lo, temp1, temp2;
-
-    hi = i / 131072;
-    lo = i - (hi * 131072);
-    temp1 = mod_m2(hi * j) * 131072;
-    temp2 = mod_m2(lo * j);
-    lo = mod_m2(temp1 + temp2);
-
-    if (lo < 0)
-        lo += MRG32K3A_M2;
-    return lo;
-}
 
 /**
 Generates a random 32-bit unsigned integer using mrg32k3a RNG.
 
 @param state State of the RNG to use.
 */
-#define mrg32k3a_uint(state) _mrg32k3a_uint(&state)
-uint _mrg32k3a_uint(mrg32k3a_state* state){
-    const unsigned int p1 = (unsigned int)mod_m1(
-        mad_u64_u32(
-            MRG32K3A_A12,
-            state.g1[1],
-            mad_u64_u32(
-                MRG32K3A_A13N,
-                (MRG32K3A_M1 - state.g1[0]),
-                0
-            )
-        )
-    );
+#define mrg32k3a_uint(state) (uint)_mrg32k3a_ulong(&state)
+#define mrg32k3a_ulong(state) _mrg32k3a_ulong(&state)
+ulong _mrg32k3a_ulong(mrg32k3a_state* state){
 
-    state.g1[0] = state.g1[1];
-    state.g1[1] = state.g1[2];
-    state.g1[2] = p1;
+    ulong* g1 = state->g1;
+    ulong* g2 = state->g2;
+    long p0, p1;
+    
+    /* component 1 */
+    p0 = 1403580 * state->g1[1] - 810728 * state->g1[0];
+    p0 %= MRG32K3A_M1;
+    if (p0 < 0)
+        p0 += MRG32K3A_M1;
+    g1[0] = g1[1];
+    g1[1] = g1[2];
+    g1[2] = p0;
 
-    const unsigned int p2 = (unsigned int)mod_m2(
-        mad_u64_u32(
-            MRG32K3A_A21,
-            state.g2[2],
-            mad_u64_u32(
-                MRG32K3A_A23N,
-                (MRG32K3A_M2 - state.g2[0]),
-                0
-            )
-        )
-    );
+    /* component 2 */
+    p1 = 527612 * g2[2] - 1370589 * g2[0];
+    p1 %= MRG32K3A_M2;
+    if (p1 < 0)
+        p1 += MRG32K3A_M2;
+    g2[0] = g2[1];
+    g2[1] = g2[2];
+    g2[2] = p1;
 
-    state.g2[0] = state.g2[1];
-    state.g2[1] = state.g2[2];
-    state.g2[2] = p2;
-
-    return (p1 - p2) + (p1 <= p2 ? MRG32K3A_M1 : 0);
+    return (p0 - p1) + (p0 <= p1 ? MRG32K3A_M1 : 0);
 }
 
 /**
@@ -161,13 +81,13 @@ Seeds mrg31k3p RNG.
 @param seed Value used for seeding. Should be randomly generated for each instance of generator (thread).
 */
 void mrg32k3a_seed(mrg32k3a_state* state, ulong j){
-    unsigned int x = (unsigned int) j ^ 0x55555555U;
-    unsigned int y = (unsigned int) ((j >> 32) ^ 0xAAAAAAAAU);
-    state.g1[0] = mod_mul_m1(x, j);
-    state.g1[1] = mod_mul_m1(y, j);
-    state.g1[2] = mod_mul_m1(x, j);
-    state.g2[0] = mod_mul_m2(y, j);
-    state.g2[1] = mod_mul_m2(x, j);
-    state.g2[2] = mod_mul_m2(y, j);
+    ulong* g1 = state->g1;
+    ulong* g2 = state->g2;
+    g1[0] = j % MRG32K3A_M1;
+    g1[1] = 1;
+    g1[2] = 1;
+    g2[0] = 1;
+    g2[1] = 1;
+    g2[2] = 1;
 }
 )EOK";
