@@ -18,27 +18,37 @@
     #undef R
 #endif
 
-typedef unsigned __int128 uint128_t;
-
 #define PHILOX2X32_10_MULTIPLIER 0xd256d193
 #define PHILOX2X32_10_KEY_INC 0x9E3779B9
 
-cl_ulong mul_hi(cl_ulong x, cl_ulong y)
-{
-    uint128_t x_ext = (uint128_t)x;
-    uint128_t y_ext = (uint128_t)y;
-
-    uint128_t res = x_ext * y_ext;
-
-    uint64_t mulhi = (uint64_t)(res >> 64);
-    return mulhi;
+/*
+  Returns most significant 64-bit of result of
+  multiplication between two 64-bit numbers
+*/
+uint32_t mul_hi32(const uint32_t x, const uint32_t y) {
+    uint32_t x_lo = x & 0x00000000ffff;
+    uint32_t x_hi = x >> 16;
+    uint32_t y_lo = y & 0x00000000ffff;
+    uint32_t y_hi = y >> 16;
+    uint32_t x_x_y_lo = x_lo * y_lo;
+    uint32_t x_x_y_mid = x_hi * y_lo;
+    uint32_t y_x_x_mid = y_hi * x_lo;
+    uint32_t x_x_y_hi = x_hi * y_hi;
+    uint32_t carry_bit = (x_x_y_mid & 0x0000ffff) +
+                         (y_x_x_mid & 0x0000ffff) +
+                         (x_x_y_lo >> 16);
+    carry_bit >>= 16;
+    uint64_t multhi = x_x_y_hi +
+                      (x_x_y_mid >> 16) + (y_x_x_mid >> 16) +
+                      carry_bit;
+    return multhi;
 }
 
-cl_ulong philox2x32_10(philox2x32_10_state& state, cl_uint key){
-	cl_uint tmp, L0 = state.L, R0 = state.R;
-	for(cl_uint i=0;i<10;i++){
-		cl_uint tmp = R0 * PHILOX2X32_10_MULTIPLIER;
-		R0 = mul_hi(R0,PHILOX2X32_10_MULTIPLIER) ^ L0 ^ key;
+ulong philox2x32_10(philox2x32_10_state& state, uint key){
+	uint tmp, L0 = state.L, R0 = state.R;
+	for(uint i=0;i<10;i++){
+		uint tmp = R0 * PHILOX2X32_10_MULTIPLIER;
+		R0 = mul_hi32(R0,PHILOX2X32_10_MULTIPLIER) ^ L0 ^ key;
 		L0 = tmp;
 		key += PHILOX2X32_10_KEY_INC;
 	}
@@ -48,12 +58,12 @@ cl_ulong philox2x32_10(philox2x32_10_state& state, cl_uint key){
 }
 
 #define philox2x32_10_ulong(state) _philox2x32_10_ulong(&state)
-cl_ulong _philox2x32_10_ulong(philox2x32_10_state *state){
+ulong _philox2x32_10_ulong(philox2x32_10_state *state){
 	state->LR++;
 	return philox2x32_10(*state, 12345);
 }
 
-void philox2x32_10_seed(philox2x32_10_state *state, cl_ulong j){
+void philox2x32_10_seed(philox2x32_10_state *state, ulong j){
 	state->LR = j;
 }
 
@@ -127,7 +137,7 @@ int main(int argc, char **argv) {
     philox2x32_10_state* golden_states = new philox2x32_10_state[numPRNGs];
     ulong init_seedVal = test->GetSeed();
     uint err_counts = 0;
-    for (int idx = 0; idx < numPRNGs; idx++) {
+    for (uint idx = 0; idx < numPRNGs; idx++) {
         ulong newSeed = (ulong)(idx);
         newSeed <<= 1;
         newSeed += init_seedVal;
@@ -181,12 +191,10 @@ int main(int argc, char **argv) {
 
     err_counts = 0;
     uint* hostRandomNumbers = new uint[numPRNGs];
-    for (int idx = 0; idx < numPRNGs; idx++) {
+    for (uint idx = 0; idx < numPRNGs; idx++) {
         hostRandomNumbers[idx] = philox2x32_10_uint(golden_states[idx]);
         if (hostRandomNumbers[idx] != deviceRandomNumbers[idx]) {
             std::cout << "ERROR: numbers do not match at idx = " << idx << std::endl;
-            std::cout << "host num = " << hostRandomNumbers[idx] << std::endl;
-            std::cout << "dev num  = " << deviceRandomNumbers[idx] << std::endl;
             err_counts++;
         }
     }
