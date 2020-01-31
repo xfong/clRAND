@@ -12,7 +12,7 @@ accomodate two random numbers from every workitem that will run
 
 TODO:
 1) Need functions to test the various PRNGs (Philox4x32_10,
-Threefry, Sobol32)
+Tyche, Tyche_i, xorshift1024, Threefry, Sobol32)
 
 2) Need function to generate the random initial seeds for PRNGs
 
