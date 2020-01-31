@@ -28,6 +28,7 @@
 #include "../generator/philox4x32_10.hpp"
 #include "../generator/ran2.hpp"
 #include "../generator/sobol32.hpp"
+#include "../generator/threefry.hpp"
 #include "../generator/tinymt32.hpp"
 #include "../generator/tinymt64.hpp"
 #include "../generator/tyche.hpp"

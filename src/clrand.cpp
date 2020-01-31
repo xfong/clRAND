@@ -212,6 +212,9 @@ void clRAND::LookupPRNG() {
         case CLRAND_GENERATOR_SOBOL32 :
             this->rng_name = "sobol32";
             break;
+        case CLRAND_GENERATOR_THREEFRY :
+            this->rng_name = "threefry";
+            break;
         case CLRAND_GENERATOR_TINYMT32 :
             this->rng_name = "tinymt32";
             break;
@@ -299,6 +302,9 @@ void clRAND::generateBufferKernel(std::string type) {
             break;
         case CLRAND_GENERATOR_SOBOL32 :
             this->rng_source += sobol32_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_THREEFRY :
+            this->rng_source += threefry_prng_kernel;
             break;
         case CLRAND_GENERATOR_TINYMT32 :
             this->rng_source += tinymt32_prng_kernel;
@@ -614,6 +620,12 @@ void clRAND::SetStateSize() {
             break;
         case CLRAND_GENERATOR_RAN2:
             this->state_size = sizeof(ran2_state);
+            break;
+        case CLRAND_GENERATOR_SOBOL32:
+            this->state_size = sizeof(sobol32_state);
+            break;
+        case CLRAND_GENERATOR_THREEFRY:
+            this->state_size = sizeof(threefry_state);
             break;
         case CLRAND_GENERATOR_TINYMT32:
             this->state_size = sizeof(tinymt32_state);

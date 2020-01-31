@@ -28,11 +28,11 @@ void tyche_advance(tyche_state* state){
 	state->b = TYCHE_ROT(state->b ^ state->c, 7);
 }
 
-void tyche_seed(tyche_state* state, ulong seed){
+void tyche_seed(tyche_state* state, ulong seed, ulong get_global_id){
 	state->a = seed >> 32;
 	state->b = seed;
 	state->c = 2654435769;
-	state->d = 1367130551 ^ (get_global_id(0) + get_global_size(0) * (get_global_id(1) + get_global_size(1) * get_global_id(2)));
+	state->d = 1367130551 ^ get_global_id;
 	for(uint i=0;i<20;i++){
 		tyche_advance(state);
 	}
@@ -108,14 +108,14 @@ int main(int argc, char **argv) {
     tyche_state* golden_states = new tyche_state[numPRNGs];
     ulong init_seedVal = test->GetSeed();
     uint err_counts = 0;
-    for (int idx = 0; idx < numPRNGs; idx++) {
-        ulong newSeed = (ulong)(idx);
+    for (ulong idx = 0; idx < numPRNGs; idx++) {
+        ulong newSeed = idx;
         newSeed <<= 1;
         newSeed += init_seedVal;
         if (newSeed == 0) {
             newSeed += 1;
         }
-        tyche_seed(&golden_states[idx], newSeed);
+        tyche_seed(&golden_states[idx], newSeed, idx);
         if (golden_states[idx].res != state_mem[idx].res) {
             err_counts++;
             std::cout << "Mismatch in res at idx = " << idx << std::endl;
