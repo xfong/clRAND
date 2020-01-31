@@ -18,64 +18,42 @@
     #undef R
 #endif
 
+typedef unsigned __int128 uint128_t;
+
 #define PHILOX2X32_10_MULTIPLIER 0xd256d193
 #define PHILOX2X32_10_KEY_INC 0x9E3779B9
-#define UINT_MAX 0xffffffff
 
-ulong hadd(ulong x, ulong y)
+cl_ulong mul_hi(cl_ulong x, cl_ulong y)
 {
-    return (x >> 1) + (y >> 1) + (x & y & 1);
-}
-    
-ulong mul_hi(ulong x, ulong y)
-{
-    ulong f, o, i;
-    ulong l;
+    uint128_t x_ext = (uint128_t)x;
+    uint128_t y_ext = (uint128_t)y;
 
-    //Move the high/low halves of x/y into the lower 32-bits of variables so
-    //that we can multiply them without worrying about overflow.
-    ulong x_hi = x >> 32;
-    ulong x_lo = x & UINT_MAX;
-    ulong y_hi = y >> 32;
-    ulong y_lo = y & UINT_MAX;
+    uint128_t res = x_ext * y_ext;
 
-    //Multiply all of the components according to FOIL method
-    f = x_hi * y_hi;
-    o = x_hi * y_lo;
-    i = x_lo * y_hi;
-    l = x_lo * y_lo;
-
-    //Now add the components back together, taking care to respect the fact that:
-    //F: doesn't need to be modified
-    //O/I: Need to be added together.
-    //L: Shift right by 32-bits, then add into the sum of O and I
-    //Once O/I/L are summed up, then shift the sum by 32-bits and add to F.
-    //
-    //We use hadd to give us a bit of extra precision for the intermediate sums
-    //but as a result, we shift by 31 bits instead of 32
-    return (f + (hadd(o, (i + (l>>32))) >> 31));
+    uint64_t mulhi = (uint64_t)(res >> 64);
+    return mulhi;
 }
 
-ulong philox2x32_10(philox2x32_10_state state, uint key){
-	uint tmp, L = state.L, R = state.R;
-	for(uint i=0;i<10;i++){
-		uint tmp = R * PHILOX2X32_10_MULTIPLIER;
-		R = mul_hi(R,PHILOX2X32_10_MULTIPLIER) ^ L ^ key;
-		L = tmp;
+cl_ulong philox2x32_10(philox2x32_10_state& state, cl_uint key){
+	cl_uint tmp, L0 = state.L, R0 = state.R;
+	for(cl_uint i=0;i<10;i++){
+		cl_uint tmp = R0 * PHILOX2X32_10_MULTIPLIER;
+		R0 = mul_hi(R0,PHILOX2X32_10_MULTIPLIER) ^ L0 ^ key;
+		L0 = tmp;
 		key += PHILOX2X32_10_KEY_INC;
 	}
-	state.L = L;
-	state.R = R;
+	state.L = L0;
+	state.R = R0;
 	return state.LR;
 }
 
 #define philox2x32_10_ulong(state) _philox2x32_10_ulong(&state)
-ulong _philox2x32_10_ulong(philox2x32_10_state *state){
+cl_ulong _philox2x32_10_ulong(philox2x32_10_state *state){
 	state->LR++;
 	return philox2x32_10(*state, 12345);
 }
 
-void philox2x32_10_seed(philox2x32_10_state *state, ulong j){
+void philox2x32_10_seed(philox2x32_10_state *state, cl_ulong j){
 	state->LR = j;
 }
 
