@@ -36,7 +36,7 @@ generates a random 32-bit unsigned integer using xorshift1024 RNG.
 
 @param stateblock pointer to buffer in local memory, that holds state of the generator.
 */
-uint xorshift1024_uint(local xorshift1024_state* stateblock){
+uint xorshift1024_uint(xorshift1024_state* stateblock){
 	/* Indices. */
 	int tid = get_local_id(0) + get_local_size(0) * (get_local_id(1) + get_local_size(1) * get_local_id(2));
 	int wid = tid / XORSHIFT1024_WARPSIZE; // Warp index in block
@@ -82,7 +82,7 @@ This alternative implementation does not use thread synchronizations, so it migh
 
 @param stateblock pointer to buffer in local memory, that holds state of the generator.
 */
-uint xorshift1024_no_sync_uint(local xorshift1024_state* stateblock){
+uint xorshift1024_no_sync_uint(xorshift1024_state* stateblock){
 	/* Indices. */
 	int tid = get_local_id(0) + get_local_size(0) * (get_local_id(1) + get_local_size(1) * get_local_id(2));
 	int wid = tid / XORSHIFT1024_WARPSIZE; // Warp index in block
@@ -127,7 +127,7 @@ Seeds xorshift1024 RNG
 @param stateblock Buffer in local memory, that holds state of the generator to be seeded.
 @param seed Value used for seeding. Should be randomly generated for each instance of generator (thread).
 */
-void xorshift1024_seed(local xorshift1024_state* stateblock, ulong seed){
+void xorshift1024_seed(xorshift1024_state* stateblock, ulong seed){
 	int tid = get_local_id(0) + get_local_size(0) * (get_local_id(1) + get_local_size(1) * get_local_id(2));
 	int wid = tid / XORSHIFT1024_WARPSIZE; // Warp index in block
 	int lid = tid % XORSHIFT1024_WARPSIZE; // Thread index in warp
