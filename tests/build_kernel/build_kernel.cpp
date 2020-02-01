@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
 
     clRAND test;
     std::cout << "Initializing stream" << std::endl;
-    test.Init((*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_ISAAC);
+    test.Init((*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_XORSHIFT1024);
     std::cout << "Building kernel source" << std::endl;
     test.BuildSource();
     std::cout << test.GetSource() << std::endl;

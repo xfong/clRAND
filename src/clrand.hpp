@@ -194,6 +194,9 @@ CLRAND_DLL class clRAND {
         ulong GetSeed() { return this->seedVal; }
         void SetSeed(ulong seed);
 
+        cl_uint GetWorkgroupSize() { return this->wkgrp_size; }
+        cl_uint GetNumberOfWorkgroups() { return this->wkgrp_count; }
+
         bool IsInitialized() { return this->init_flag; }
         bool IsSourceReady() { return this->source_ready; }
         bool IsProgramReady() { return this->program_ready; }

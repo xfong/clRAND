@@ -337,7 +337,7 @@ void clRAND::generateBufferKernel(std::string type) {
     switch(this->rng_type) {
         case CLRAND_GENERATOR_XORSHIFT1024 :
             this->rng_source += "\n"
-                   "kernel void seed_prng_by_value(ulong seedVal, global " + this->rng_name + "_state* state){\n"
+                   "kernel void seed_prng_by_value(ulong seedVal, global " + this->rng_name + "_state* stateBuf, local " + this->rng_name + "_state* local_state){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    ulong seed = (ulong)(gid);\n"
                    "    seed <<= 1;\n"
@@ -346,21 +346,23 @@ void clRAND::generateBufferKernel(std::string type) {
                    "        seed += 1;\n"
                    "    }\n"
                    "\n"
-                   "    " + this->rng_name + "_seed(state,seed);\n"
-                   "}";
+                   "    " + this->rng_name + "_seed(local_state,seed);\n"
+                   "    stateBuf[gid] = local_state[get_local_id(0)];\n"
+                   "}\n"
                    "\n"
-                   "kernel void seed_prng_by_array(global ulong* seedArr, global " + this->rng_name + "_state* state){\n"
+                   "kernel void seed_prng_by_array(global ulong* seedArr, global " + this->rng_name + "_state* stateBuf, local " + this->rng_name + "_state* local_state){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    ulong seed = seedArr[gid];\n"
                    "\n"
-                   "    " + this->rng_name + "_seed(state,seed);\n"
-                   "}";
+                   "    " + this->rng_name + "_seed(local_state,seed);\n"
+                   "    stateBuf[gid] = local_state[get_local_id(0)];\n"
+                   "}\n"
                    "\n"
                    "kernel void generate(uint num, global ulong* seed, global " + type + "* res, global " + this->rng_name + "_state* stateBuf, local " + this->rng_name + "_state* state){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    uint gsize=get_global_size(0);\n"
                    "\n"
-                   "    state = stateBuf;\n"
+                   "    state[get_local_id(0)] = stateBuf[gid];\n"
                    "    uint num_gsize = ((num - 1) / gsize + 1)*gsize; //next multiple of gsize, larger or equal to N\n"
                    "    for (int i = gid; i<num_gsize; i += gsize) {\n"
                    "        " + type + " val = " + this->rng_name + "_" + type + "(state); //all threads within workgroup must call generator, even if result is not needed!\n"
@@ -383,7 +385,7 @@ void clRAND::generateBufferKernel(std::string type) {
                    "    " + this->rng_name + "_state state;\n"
                    "    " + this->rng_name + "_seed(&state,seed);\n"
                    "    stateBuf[gid] = state;\n"
-                   "}"
+                   "}\n"
                    "\n"
                    "kernel void seed_prng_by_array(global ulong* seedArr, global " + this->rng_name + "_state* stateBuf){\n"
                    "    uint gid=get_global_id(0);\n"
@@ -391,7 +393,7 @@ void clRAND::generateBufferKernel(std::string type) {
                    "    " + this->rng_name + "_state state;\n"
                    "    " + this->rng_name + "_seed(&state,seed);\n"
                    "    stateBuf[gid] = state;\n"
-                   "}"
+                   "}\n"
                    "\n"
                    "kernel void generate(uint num, global " + this->rng_name + "_state* stateBuf, global " + type + "* res){\n"
                    "    uint gid=get_global_id(0);\n"
@@ -735,6 +737,21 @@ cl_int clRAND::SeedGenerator() {
     if (err) {
         std::cout << "ERROR: Unable to set second argument to kernel to seed PRNG!" << std::endl;
         return err;
+    }
+#ifdef DEBUG1
+    std::cout << "Allocating local memory for XORSHIFT1024" << std::endl;
+#endif
+    switch(this->rng_type)
+    {
+        case CLRAND_GENERATOR_XORSHIFT1024:
+            err = this->seed_rng.setArg<cl::LocalSpaceArg>(2, cl::Local((size_t)(xorshift1024_local_mem((size_t)(this->GetWorkgroupSize()))) * (size_t)(sizeof(xorshift1024_state))));
+            if (err) {
+                std::cout << "ERROR: Unable to set third argument to kernel to seed PRNG!" << std::endl;
+                return err;
+            }
+            break;
+        default:
+            break;
     }
     cl_event event_id;
     cl::Event event;
