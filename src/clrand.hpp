@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <ctime>
 #include <string>
 
 #define __CL_ENABLE_EXCEPTIONS
@@ -9,6 +10,11 @@
     #include <OpenCL/cl.hpp>
 #else
     #include <CL/cl.hpp>
+#endif
+
+#if defined (__WIN32)
+    typedef unsigned int uint;
+    typedef unsigned long ulong;
 #endif
 
 #include "../generator/isaac.hpp"
@@ -22,6 +28,8 @@
 #include "../generator/mrg63k3a.hpp"
 #include "../generator/msws.hpp"
 #include "../generator/mt19937.hpp"
+#include "../generator/mtgp32.hpp"
+#include "../generator/mtgp64.hpp"
 #include "../generator/mwc64x.hpp"
 #include "../generator/pcg6432.hpp"
 #include "../generator/philox2x32_10.hpp"
@@ -46,9 +54,9 @@
 #endif
 
 #if defined( __WIN32 )
-    #if defined( clRAND_STATIC )
+    #if defined( CLRAND_STATIC )
         #define CLRAND_DLL
-    #elif  defined( clRAND_EXPORT )
+    #elif  defined( CLRAND_EXPORT )
         #define CLRAND_DLL __declspec(dllexport)
     #else
         #define CLRAND_DLL __declspec(dllimport)

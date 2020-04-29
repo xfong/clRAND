@@ -442,15 +442,15 @@ cl_int clRAND::BuildKernelProgram() {
         }
 #ifdef DEBUG1
         std::cout << "Create kernel to seed PRNG by one value..." << std::endl;
-#endif DEBUG1
+#endif
         this->seed_rng = cl::Kernel(rng_program, "seed_prng_by_value");
 #ifdef DEBUG1
         std::cout << "Create kernel to seed PRNG by array of values..." << std::endl;
-#endif DEBUG1
+#endif
         this->seed_rng_array = cl::Kernel(rng_program, "seed_prng_by_array");
 #ifdef DEBUG1
         std::cout << "Create kernel to generate random bitstream..." << std::endl;
-#endif DEBUG1
+#endif
         this->generate_bitstream = cl::Kernel(rng_program, "generate");
         this->program_ready = true;
         return err;

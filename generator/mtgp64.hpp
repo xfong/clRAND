@@ -1,3 +1,16 @@
+typedef struct MTGP64_PARAMS_FAST_T {
+    int mexp;                   /**< Mersenne exponent. This is redundant. */
+    int pos;                    /**< pick up position. */
+    int sh1;                    /**< shift value 1. 0 < sh1 < 32. */
+    int sh2;                    /**< shift value 2. 0 < sh2 < 32. */
+    uint64_t tbl[16];           /**< a small matrix. */
+    uint64_t tmp_tbl[16];       /**< a small matrix for tempering. */
+    uint64_t flt_tmp_tbl[16];   /**< a small matrix for tempering and
+                                 converting to float. */
+    uint64_t mask;              /**< This is a mask for state space */
+//    std::string poly_sha1[21]; /**< SHA1 digest */
+} mtgp64_params_fast_t;
+
 const char * mtgp64_prng_kernel = R"EOK(
 /*
  * @file mtgp64.cl
