@@ -191,8 +191,17 @@ void clRAND::LookupPRNG() {
         case CLRAND_GENERATOR_MSWS :
             this->rng_name = "msws";
             break;
+        case CLRAND_GENERATOR_MT11213 :
+            this->rng_name = "mt11213";
+            break;
         case CLRAND_GENERATOR_MT19937 :
             this->rng_name = "mt19937";
+            break;
+        case CLRAND_GENERATOR_MT23209 :
+            this->rng_name = "mt23209";
+            break;
+        case CLRAND_GENERATOR_MT44497 :
+            this->rng_name = "mt44497";
             break;
         case CLRAND_GENERATOR_MWC64X :
             this->rng_name = "mwc64x";
@@ -282,8 +291,26 @@ void clRAND::generateBufferKernel(std::string type) {
         case CLRAND_GENERATOR_MSWS :
             this->rng_source += msws_prng_kernel;
             break;
+        case CLRAND_GENERATOR_MT11213 :
+		    this->rng_source += "#define MTGP32_MEXP 11213\n";
+            this->rng_source += mtgp32_prng_kernel;
+		    this->rng_source += "#define MTGP64_MEXP 11213\n";
+            this->rng_source += mtgp64_prng_kernel;
+            break;
         case CLRAND_GENERATOR_MT19937 :
             this->rng_source += mt19937_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MT23209 :
+		    this->rng_source += "#define MTGP32_MEXP 23209\n";
+            this->rng_source += mtgp32_prng_kernel;
+		    this->rng_source += "#define MTGP64_MEXP 23209\n";
+            this->rng_source += mtgp64_prng_kernel;
+            break;
+        case CLRAND_GENERATOR_MT44497 :
+		    this->rng_source += "#define MTGP32_MEXP 44497\n";
+            this->rng_source += mtgp32_prng_kernel;
+		    this->rng_source += "#define MTGP64_MEXP 44497\n";
+            this->rng_source += mtgp64_prng_kernel;
             break;
         case CLRAND_GENERATOR_MWC64X :
             this->rng_source += mwc64x_prng_kernel;
@@ -372,6 +399,12 @@ void clRAND::generateBufferKernel(std::string type) {
                    "    }\n"
                    "}";
                    break;
+        case CLRAND_GENERATOR_MT11213 :
+            break;
+        case CLRAND_GENERATOR_MT23209 :
+            break;
+        case CLRAND_GENERATOR_MT44497 :
+            break;
         default :
             this->rng_source += "\n"
                    "kernel void seed_prng_by_value(ulong seedVal, global " + this->rng_name + "_state* stateBuf){\n"
@@ -451,7 +484,32 @@ cl_int clRAND::BuildKernelProgram() {
 #ifdef DEBUG1
         std::cout << "Create kernel to generate random bitstream..." << std::endl;
 #endif
-        this->generate_bitstream = cl::Kernel(rng_program, "generate");
+        switch(this->rng_type) {
+			case CLRAND_GENERATOR_MT11213 :
+			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
+			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
+				} else {
+			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
+				}
+			    break;
+			case CLRAND_GENERATOR_MT23209 :
+			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
+			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
+				} else {
+			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
+				}
+			    break;
+			case CLRAND_GENERATOR_MT44497 :
+			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
+			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
+				} else {
+			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
+				}
+			    break;
+			default :
+			    this->generate_bitstream = cl::Kernel(rng_program, "generate");
+				break;
+		}
         this->program_ready = true;
         return err;
     }
