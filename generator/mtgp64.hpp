@@ -11,6 +11,10 @@ typedef struct MTGP64_PARAMS_FAST_T {
 //    std::string poly_sha1[21]; /**< SHA1 digest */
 } mtgp64_params_fast_t;
 
+#include "mtgp64dc-params-11213.hpp"
+#include "mtgp64dc-params-23209.hpp"
+//#include "mtgp64dc-params-44497.hpp"
+
 const char * mtgp64_prng_kernel = R"EOK(
 /*
  * @file mtgp64.cl
@@ -24,13 +28,28 @@ const char * mtgp64_prng_kernel = R"EOK(
  * Generator Parameters.
  */
 
-#define MTGP64_MEXP 11213
-#define MTGP64_N 176
-#define MTGP64_FLOOR_2P 128
-#define MTGP64_CEIL_2P 256
-#define MTGP64_TN MTGP64_FLOOR_2P
-#define MTGP64_LS (MTGP64_TN * 3)
-#define MTGP64_TS 16
+#if (MTGP64_MEXP==44497)
+    #define MTGP64_N 363
+    #define MTGP64_FLOOR_2P 512
+    #define MTGP64_CEIL_2P 1024
+    #define MTGP64_TN MTGP64_FLOOR_2P
+    #define MTGP64_LS (MTGP64_TN * 3)
+    #define MTGP64_TS 16
+#elsif (MTGP64_MEXP==23209)
+    #define MTGP64_N 363
+    #define MTGP64_FLOOR_2P 256
+    #define MTGP64_CEIL_2P 512
+    #define MTGP64_TN MTGP64_FLOOR_2P
+    #define MTGP64_LS (MTGP64_TN * 3)
+    #define MTGP64_TS 16
+#else
+    #define MTGP64_N 176
+    #define MTGP64_FLOOR_2P 128
+    #define MTGP64_CEIL_2P 256
+    #define MTGP64_TN MTGP64_FLOOR_2P
+    #define MTGP64_LS (MTGP64_TN * 3)
+    #define MTGP64_TS 16
+#endif
 
 /* =========================
    declarations

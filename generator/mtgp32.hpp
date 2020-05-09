@@ -27,14 +27,14 @@ const char * mtgp32_prng_kernel = R"EOK(
  * Generator Parameters.
  */
 
-#if MTGP32_MEXP == 44497
+#if (MTGP32_MEXP == 44497)
   #define MTGP32_N 1391
   #define MTGP32_FLOOR_2P 1024
   #define MTGP32_CEIL_2P 2048
   #define MTGP32_TN MTGP32_FLOOR_2P
   #define MTGP32_LS (MTGP32_TN * 3)
   #define MTGP32_TS 16
-#elsif MTGP32_MEXP == 23209
+#elsif (MTGP32_MEXP == 23209)
   #define MTGP32_N 726
   #define MTGP32_FLOOR_2P 512
   #define MTGP32_CEIL_2P 1024
