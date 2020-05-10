@@ -10,6 +10,10 @@ store becomes empty, we will generate a new bitstream to
 replenish it fully. The storage in the temporary store should
 accomodate two random numbers from every workitem that will run
 
+REQUIREMENTS:
+- GCC v5+
+- OpenCL 1.2
+
 TODO:
 1) Need functions to test the various PRNGs (Philox4x32_10,
    xorshift1024, Threefry, Sobol32)
