@@ -31,24 +31,18 @@ const char * mtgp32_prng_kernel = R"EOK(
   #define MTGP32_N 1391
   #define MTGP32_FLOOR_2P 1024
   #define MTGP32_CEIL_2P 2048
-  #define MTGP32_TN MTGP32_FLOOR_2P
-  #define MTGP32_LS (MTGP32_TN * 3)
-  #define MTGP32_TS 16
 #elsif (MTGP32_MEXP == 23209)
   #define MTGP32_N 726
   #define MTGP32_FLOOR_2P 512
   #define MTGP32_CEIL_2P 1024
-  #define MTGP32_TN MTGP32_FLOOR_2P
-  #define MTGP32_LS (MTGP32_TN * 3)
-  #define MTGP32_TS 16
 #else
   #define MTGP32_N 351
   #define MTGP32_FLOOR_2P 256
   #define MTGP32_CEIL_2P 512
-  #define MTGP32_TN MTGP32_FLOOR_2P
-  #define MTGP32_LS (MTGP32_TN * 3)
-  #define MTGP32_TS 16
 #endif
+#define MTGP32_TN MTGP32_FLOOR_2P
+#define MTGP32_LS (MTGP32_TN * 3)
+#define MTGP32_TS 16
 
 /* =========================
    declarations

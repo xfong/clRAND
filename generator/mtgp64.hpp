@@ -31,24 +31,18 @@ const char * mtgp64_prng_kernel = R"EOK(
   #define MTGP64_N 696
   #define MTGP64_FLOOR_2P 512
   #define MTGP64_CEIL_2P 1024
-  #define MTGP64_TN MTGP64_FLOOR_2P
-  #define MTGP64_LS (MTGP64_TN * 3)
-  #define MTGP64_TS 16
 #elsif (MTGP64_MEXP == 23209)
   #define MTGP64_N 363
   #define MTGP64_FLOOR_2P 256
   #define MTGP64_CEIL_2P 512
-  #define MTGP64_TN MTGP64_FLOOR_2P
-  #define MTGP64_LS (MTGP64_TN * 3)
-  #define MTGP64_TS 16
 #else
   #define MTGP64_N 176
   #define MTGP64_FLOOR_2P 128
   #define MTGP64_CEIL_2P 256
-  #define MTGP64_TN MTGP64_FLOOR_2P
-  #define MTGP64_LS (MTGP64_TN * 3)
-  #define MTGP64_TS 16
 #endif
+#define MTGP64_TN MTGP64_FLOOR_2P
+#define MTGP64_LS (MTGP64_TN * 3)
+#define MTGP64_TS 16
 
 /* =========================
    declarations
