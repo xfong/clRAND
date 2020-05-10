@@ -54,7 +54,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa81d29,
          0x3f94ad96,
          0x3fa29367},
-        0xffff8000},
+        },
     {
         /* No.1 delta:16446 weight:1889 */
         44497,
@@ -109,7 +109,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8688ad,
          0x3fb8ae84,
          0x3fa2c549},
-        0xffff8000},
+        },
     {
         /* No.2 delta:16869 weight:1893 */
         44497,
@@ -164,7 +164,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa6308e,
          0x3fba9763,
          0x3f85c7e4},
-        0xffff8000},
+        },
     {
         /* No.3 delta:17919 weight:1869 */
         44497,
@@ -219,7 +219,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f939291,
          0x3fb6cc3a,
          0x3fa2e994},
-        0xffff8000},
+        },
     {
         /* No.4 delta:16325 weight:1885 */
         44497,
@@ -274,7 +274,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb74455,
          0x3f9521cb,
          0x3f8b5127},
-        0xffff8000},
+        },
     {
         /* No.5 delta:15872 weight:1729 */
         44497,
@@ -329,7 +329,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb6b714,
          0x3f85140f,
          0x3fa8e6b2},
-        0xffff8000},
+        },
     {
         /* No.6 delta:16155 weight:1871 */
         44497,
@@ -384,7 +384,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faed1dc,
          0x3fb98d07,
          0x3f8d5f63},
-        0xffff8000},
+        },
     {
         /* No.7 delta:16435 weight:1811 */
         44497,
@@ -439,7 +439,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbdc27e,
          0x3fb21ae1,
          0x3f8954f5},
-        0xffff8000},
+        },
     {
         /* No.8 delta:16476 weight:1869 */
         44497,
@@ -494,7 +494,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f950f60,
          0x3f9b5ece,
          0x3fad2dd5},
-        0xffff8000},
+        },
     {
         /* No.9 delta:17020 weight:1875 */
         44497,
@@ -549,7 +549,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f853fc2,
          0x3f8f7710,
          0x3fb98626},
-        0xffff8000},
+        },
     {
         /* No.10 delta:16361 weight:1787 */
         44497,
@@ -604,7 +604,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a8f8e,
          0x3faf18eb,
          0x3fb4d308},
-        0xffff8000},
+        },
     {
         /* No.11 delta:17415 weight:1865 */
         44497,
@@ -659,7 +659,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb5a84,
          0x3f87393c,
          0x3fb0e288},
-        0xffff8000},
+        },
     {
         /* No.12 delta:19199 weight:1433 */
         44497,
@@ -714,7 +714,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c062f,
          0x3faa6cc9,
          0x3f9e3a84},
-        0xffff8000},
+        },
     {
         /* No.13 delta:16468 weight:1101 */
         44497,
@@ -769,7 +769,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb46fa1,
          0x3fa2e70b,
          0x3f8f15fc},
-        0xffff8000},
+        },
     {
         /* No.14 delta:15811 weight:1819 */
         44497,
@@ -824,7 +824,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f844c74,
          0x3fb8f6ea,
          0x3f92be58},
-        0xffff8000},
+        },
     {
         /* No.15 delta:17145 weight:1939 */
         44497,
@@ -879,7 +879,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f8e8a,
          0x3f85089b,
          0x3fb267f6},
-        0xffff8000},
+        },
     {
         /* No.16 delta:15798 weight:1835 */
         44497,
@@ -934,7 +934,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f96f53a,
          0x3f9831e1,
          0x3fa4843f},
-        0xffff8000},
+        },
     {
         /* No.17 delta:15799 weight:1857 */
         44497,
@@ -989,7 +989,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa45a68,
          0x3fba4715,
          0x3f8659f0},
-        0xffff8000},
+        },
     {
         /* No.18 delta:16255 weight:1721 */
         44497,
@@ -1044,7 +1044,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9dba9,
          0x3fa6f94a,
          0x3f912a4d},
-        0xffff8000},
+        },
     {
         /* No.19 delta:16706 weight:1747 */
         44497,
@@ -1099,7 +1099,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93a0a0,
          0x3fb0f332,
          0x3fad445c},
-        0xffff8000},
+        },
     {
         /* No.20 delta:16312 weight:1683 */
         44497,
@@ -1154,7 +1154,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb30e57,
          0x3f9f8dfe,
          0x3fa0bda2},
-        0xffff8000},
+        },
     {
         /* No.21 delta:15760 weight:1817 */
         44497,
@@ -1209,7 +1209,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d734d,
          0x3fb137ed,
          0x3f9e6d10},
-        0xffff8000},
+        },
     {
         /* No.22 delta:15835 weight:1783 */
         44497,
@@ -1264,7 +1264,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86a9d8,
          0x3fb48885,
          0x3fabea2a},
-        0xffff8000},
+        },
     {
         /* No.23 delta:17172 weight:1663 */
         44497,
@@ -1319,7 +1319,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f94a5cf,
          0x3fb7d686,
          0x3fa8f561},
-        0xffff8000},
+        },
     {
         /* No.24 delta:15837 weight:1715 */
         44497,
@@ -1374,7 +1374,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fa73e,
          0x3f8d929c,
          0x3fb34501},
-        0xffff8000},
+        },
     {
         /* No.25 delta:16813 weight:1885 */
         44497,
@@ -1429,7 +1429,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1c0e0,
          0x3f95a878,
          0x3f9fbb75},
-        0xffff8000},
+        },
     {
         /* No.26 delta:17352 weight:1817 */
         44497,
@@ -1484,7 +1484,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbde177,
          0x3f970039,
          0x3f8893e1},
-        0xffff8000},
+        },
     {
         /* No.27 delta:16641 weight:1293 */
         44497,
@@ -1539,7 +1539,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8efb0b,
          0x3facaceb,
          0x3f9a9e0e},
-        0xffff8000},
+        },
     {
         /* No.28 delta:18958 weight:1753 */
         44497,
@@ -1594,7 +1594,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84f10e,
          0x3f980c9d,
          0x3fb6fb3a},
-        0xffff8000},
+        },
     {
         /* No.29 delta:15806 weight:1767 */
         44497,
@@ -1649,7 +1649,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa90d96,
          0x3fa5bcce,
          0x3f9e5a7b},
-        0xffff8000},
+        },
     {
         /* No.30 delta:19633 weight:1201 */
         44497,
@@ -1704,7 +1704,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d9f90,
          0x3f98c014,
          0x3fa35c9f},
-        0xffff8000},
+        },
     {
         /* No.31 delta:17302 weight:1831 */
         44497,
@@ -1759,7 +1759,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fae1136,
          0x3f9afa7d,
          0x3f8941d9},
-        0xffff8000},
+        },
     {
         /* No.32 delta:16485 weight:1809 */
         44497,
@@ -1814,7 +1814,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f894958,
          0x3fa2a320,
          0x3fbcfcac},
-        0xffff8000},
+        },
     {
         /* No.33 delta:16818 weight:795 */
         44497,
@@ -1869,7 +1869,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9759c3,
          0x3fb8b796,
          0x3f8da513},
-        0xffff8000},
+        },
     {
         /* No.34 delta:16756 weight:1781 */
         44497,
@@ -1924,7 +1924,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb7f2a1,
          0x3fba131d,
          0x3f8940bd},
-        0xffff8000},
+        },
     {
         /* No.35 delta:17544 weight:1809 */
         44497,
@@ -1979,7 +1979,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb64fbd,
          0x3fa37292,
          0x3f9d6c3a},
-        0xffff8000},
+        },
     {
         /* No.36 delta:17377 weight:1745 */
         44497,
@@ -2034,7 +2034,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c226d,
          0x3fb8149d,
          0x3fb76218},
-        0xffff8000},
+        },
     {
         /* No.37 delta:15796 weight:1917 */
         44497,
@@ -2089,7 +2089,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2e364,
          0x3fa1b07d,
          0x3f9c4670},
-        0xffff8000},
+        },
     {
         /* No.38 delta:16108 weight:1871 */
         44497,
@@ -2144,7 +2144,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb9a7b7,
          0x3fa21742,
          0x3f8fd6de},
-        0xffff8000},
+        },
     {
         /* No.39 delta:16345 weight:1727 */
         44497,
@@ -2199,7 +2199,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa00cc6,
          0x3f8bcf9b,
          0x3fbf1d1e},
-        0xffff8000},
+        },
     {
         /* No.40 delta:16117 weight:1949 */
         44497,
@@ -2254,7 +2254,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa676a9,
          0x3f83823b,
          0x3fbd99a1},
-        0xffff8000},
+        },
     {
         /* No.41 delta:17301 weight:1917 */
         44497,
@@ -2309,7 +2309,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa7b66d,
          0x3f9a6b51,
          0x3f9598b0},
-        0xffff8000},
+        },
     {
         /* No.42 delta:17831 weight:1815 */
         44497,
@@ -2364,7 +2364,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9aebf1,
          0x3fb69ece,
          0x3fa829c9},
-        0xffff8000},
+        },
     {
         /* No.43 delta:17757 weight:1775 */
         44497,
@@ -2419,7 +2419,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0cb3c,
          0x3f8e1290,
          0x3f9cf834},
-        0xffff8000},
+        },
     {
         /* No.44 delta:16535 weight:1889 */
         44497,
@@ -2474,7 +2474,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2af93,
          0x3f95fa8b,
          0x3f8e897c},
-        0xffff8000},
+        },
     {
         /* No.45 delta:16393 weight:1887 */
         44497,
@@ -2529,7 +2529,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f911789,
          0x3fb20ef8,
          0x3fa55724},
-        0xffff8000},
+        },
     {
         /* No.46 delta:18731 weight:1703 */
         44497,
@@ -2584,7 +2584,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f872309,
          0x3fb3ed72,
          0x3fac52fd},
-        0xffff8000},
+        },
     {
         /* No.47 delta:16388 weight:1853 */
         44497,
@@ -2639,7 +2639,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fac6c,
          0x3f88c91c,
          0x3fbc9208},
-        0xffff8000},
+        },
     {
         /* No.48 delta:16491 weight:1689 */
         44497,
@@ -2694,7 +2694,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3e69d,
          0x3f84d390,
          0x3fb1cf05},
-        0xffff8000},
+        },
     {
         /* No.49 delta:16166 weight:1823 */
         44497,
@@ -2749,7 +2749,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a3b9a,
          0x3fb890ce,
          0x3f846e32},
-        0xffff8000},
+        },
     {
         /* No.50 delta:19297 weight:1393 */
         44497,
@@ -2804,7 +2804,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0a0e9,
          0x3f92def4,
          0x3fa981fd},
-        0xffff8000},
+        },
     {
         /* No.51 delta:17497 weight:1721 */
         44497,
@@ -2859,7 +2859,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf83a5,
          0x3f914cac,
          0x3f853638},
-        0xffff8000},
+        },
     {
         /* No.52 delta:16879 weight:1833 */
         44497,
@@ -2914,7 +2914,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa40790,
          0x3fa8be8b,
          0x3f9eee17},
-        0xffff8000},
+        },
     {
         /* No.53 delta:17720 weight:1679 */
         44497,
@@ -2969,7 +2969,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f865971,
          0x3f9b90a7,
          0x3fb44674},
-        0xffff8000},
+        },
     {
         /* No.54 delta:19074 weight:1593 */
         44497,
@@ -3024,7 +3024,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87e090,
          0x3fa8831e,
          0x3f93d0f6},
-        0xffff8000},
+        },
     {
         /* No.55 delta:17260 weight:1759 */
         44497,
@@ -3079,7 +3079,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe6623,
          0x3f92344e,
          0x3f8573f1},
-        0xffff8000},
+        },
     {
         /* No.56 delta:16945 weight:1725 */
         44497,
@@ -3134,7 +3134,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb34ba2,
          0x3f97bd7b,
          0x3f8d6ca4},
-        0xffff8000},
+        },
     {
         /* No.57 delta:19784 weight:1017 */
         44497,
@@ -3189,7 +3189,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4e8c2,
          0x3f8b6186,
          0x3fb7093a},
-        0xffff8000},
+        },
     {
         /* No.58 delta:18852 weight:1763 */
         44497,
@@ -3244,7 +3244,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86d334,
          0x3f94c0b8,
          0x3fb8b130},
-        0xffff8000},
+        },
     {
         /* No.59 delta:17532 weight:1655 */
         44497,
@@ -3299,7 +3299,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f982d95,
          0x3fb44811,
          0x3fbb3abd},
-        0xffff8000},
+        },
     {
         /* No.60 delta:16850 weight:1781 */
         44497,
@@ -3354,7 +3354,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9db4fb,
          0x3f894c62,
          0x3fa71215},
-        0xffff8000},
+        },
     {
         /* No.61 delta:15669 weight:1817 */
         44497,
@@ -3409,7 +3409,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f862930,
          0x3fb8483a,
          0x3fa4d612},
-        0xffff8000},
+        },
     {
         /* No.62 delta:17305 weight:1927 */
         44497,
@@ -3464,7 +3464,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac0149,
          0x3f99ab41,
          0x3fa214cf},
-        0xffff8000},
+        },
     {
         /* No.63 delta:17147 weight:1317 */
         44497,
@@ -3519,7 +3519,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbcca2a,
          0x3f992f70,
          0x3fa6b1fe},
-        0xffff8000},
+        },
     {
         /* No.64 delta:16378 weight:985 */
         44497,
@@ -3574,7 +3574,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab6fd3,
          0x3f87f5cf,
          0x3fb9085b},
-        0xffff8000},
+        },
     {
         /* No.65 delta:16345 weight:1937 */
         44497,
@@ -3629,7 +3629,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb014f,
          0x3fa5a297,
          0x3f97f710},
-        0xffff8000},
+        },
     {
         /* No.66 delta:15678 weight:1815 */
         44497,
@@ -3684,7 +3684,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4b667,
          0x3f8a779e,
          0x3f849853},
-        0xffff8000},
+        },
     {
         /* No.67 delta:17492 weight:1729 */
         44497,
@@ -3739,7 +3739,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f902367,
          0x3fa4fc64,
          0x3fbb8ee3},
-        0xffff8000},
+        },
     {
         /* No.68 delta:16375 weight:1697 */
         44497,
@@ -3794,7 +3794,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9b341,
          0x3f89f384,
          0x3fbd6549},
-        0xffff8000},
+        },
     {
         /* No.69 delta:19945 weight:921 */
         44497,
@@ -3849,7 +3849,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f870faf,
          0x3fa3aea5,
          0x3f98c12a},
-        0xffff8000},
+        },
     {
         /* No.70 delta:17234 weight:1811 */
         44497,
@@ -3904,7 +3904,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb5ef26,
          0x3f881b60,
          0x3f97c47d},
-        0xffff8000},
+        },
     {
         /* No.71 delta:17401 weight:1797 */
         44497,
@@ -3959,7 +3959,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ba3f7,
          0x3f9270fb,
          0x3fa1e724},
-        0xffff8000},
+        },
     {
         /* No.72 delta:16999 weight:1709 */
         44497,
@@ -4014,7 +4014,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91c6e8,
          0x3f8bf4fc,
          0x3fb7e16f},
-        0xffff8000},
+        },
     {
         /* No.73 delta:16293 weight:1865 */
         44497,
@@ -4069,7 +4069,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f889ffa,
          0x3f868972,
          0x3fb5fb66},
-        0xffff8000},
+        },
     {
         /* No.74 delta:15752 weight:1857 */
         44497,
@@ -4124,7 +4124,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac884c,
          0x3f9996dd,
          0x3fa6f0ca},
-        0xffff8000},
+        },
     {
         /* No.75 delta:16544 weight:1793 */
         44497,
@@ -4179,7 +4179,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa01377,
          0x3f8db08e,
          0x3fbb650b},
-        0xffff8000},
+        },
     {
         /* No.76 delta:15675 weight:1671 */
         44497,
@@ -4234,7 +4234,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4c55d,
          0x3fba560d,
          0x3f8714bb},
-        0xffff8000},
+        },
     {
         /* No.77 delta:17061 weight:1835 */
         44497,
@@ -4289,7 +4289,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3ec53,
          0x3f9e1958,
          0x3fa9bfd7},
-        0xffff8000},
+        },
     {
         /* No.78 delta:16986 weight:1631 */
         44497,
@@ -4344,7 +4344,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8511dc,
          0x3fa844ec,
          0x3f937398},
-        0xffff8000},
+        },
     {
         /* No.79 delta:15803 weight:1893 */
         44497,
@@ -4399,7 +4399,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9b27e7,
          0x3fb66f33,
          0x3fa910ec},
-        0xffff8000},
+        },
     {
         /* No.80 delta:16515 weight:1813 */
         44497,
@@ -4454,7 +4454,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4e8d3,
          0x3f8e6de9,
          0x3fb2923c},
-        0xffff8000},
+        },
     {
         /* No.81 delta:16156 weight:1855 */
         44497,
@@ -4509,7 +4509,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84bd2b,
          0x3fb893a1,
          0x3faeda04},
-        0xffff8000},
+        },
     {
         /* No.82 delta:20241 weight:641 */
         44497,
@@ -4564,7 +4564,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb13026,
          0x3f98753d,
          0x3fa337b2},
-        0xffff8000},
+        },
     {
         /* No.83 delta:17140 weight:1861 */
         44497,
@@ -4619,7 +4619,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa16dd2,
          0x3fb3cd21,
          0x3f9c46dd},
-        0xffff8000},
+        },
     {
         /* No.84 delta:15873 weight:1855 */
         44497,
@@ -4674,7 +4674,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89a496,
          0x3f9bf522,
          0x3fae03e6},
-        0xffff8000},
+        },
     {
         /* No.85 delta:16602 weight:1821 */
         44497,
@@ -4729,7 +4729,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b77b7,
          0x3fa46ddc,
          0x3f911d4a},
-        0xffff8000},
+        },
     {
         /* No.86 delta:17182 weight:1781 */
         44497,
@@ -4784,7 +4784,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faec4bf,
          0x3f892ecc,
          0x3fbc913a},
-        0xffff8000},
+        },
     {
         /* No.87 delta:16564 weight:1725 */
         44497,
@@ -4839,7 +4839,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f82984e,
          0x3fa9b62d,
          0x3f9f2dc9},
-        0xffff8000},
+        },
     {
         /* No.88 delta:17030 weight:1893 */
         44497,
@@ -4894,7 +4894,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85518e,
          0x3fa22796,
          0x3fbef12a},
-        0xffff8000},
+        },
     {
         /* No.89 delta:15645 weight:1829 */
         44497,
@@ -4949,7 +4949,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a87b0,
          0x3fbfdf44,
          0x3f84e9db},
-        0xffff8000},
+        },
     {
         /* No.90 delta:15854 weight:1567 */
         44497,
@@ -5004,7 +5004,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa75c93,
          0x3f9ca3f9,
          0x3f8add0e},
-        0xffff8000},
+        },
     {
         /* No.91 delta:15830 weight:1939 */
         44497,
@@ -5059,7 +5059,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85d727,
          0x3fa88f99,
          0x3f92b4d2},
-        0xffff8000},
+        },
     {
         /* No.92 delta:16690 weight:1715 */
         44497,
@@ -5114,7 +5114,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88ac48,
          0x3f93492e,
          0x3fafff32},
-        0xffff8000},
+        },
     {
         /* No.93 delta:17471 weight:1881 */
         44497,
@@ -5169,7 +5169,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8cbef1,
          0x3fb991ad,
          0x3f972c19},
-        0xffff8000},
+        },
     {
         /* No.94 delta:17311 weight:1907 */
         44497,
@@ -5224,7 +5224,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa38f5e,
          0x3fb534cb,
          0x3f8e6451},
-        0xffff8000},
+        },
     {
         /* No.95 delta:17384 weight:1857 */
         44497,
@@ -5279,7 +5279,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d6721,
          0x3f87947c,
          0x3fb1579a},
-        0xffff8000},
+        },
     {
         /* No.96 delta:16615 weight:1827 */
         44497,
@@ -5334,7 +5334,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f21b9,
          0x3fb4aa28,
          0x3f995d25},
-        0xffff8000},
+        },
     {
         /* No.97 delta:16529 weight:1769 */
         44497,
@@ -5389,7 +5389,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa96139,
          0x3fbafeb1,
          0x3f84c9b4},
-        0xffff8000},
+        },
     {
         /* No.98 delta:16126 weight:1895 */
         44497,
@@ -5444,7 +5444,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95b3fc,
          0x3fb6a24a,
          0x3fa04457},
-        0xffff8000},
+        },
     {
         /* No.99 delta:16980 weight:1749 */
         44497,
@@ -5499,7 +5499,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faa5da8,
          0x3f87c4c7,
          0x3fb9f279},
-        0xffff8000},
+        },
     {
         /* No.100 delta:16028 weight:951 */
         44497,
@@ -5554,7 +5554,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e3e09,
          0x3fa9d1c7,
          0x3f94af72},
-        0xffff8000},
+        },
     {
         /* No.101 delta:16847 weight:1767 */
         44497,
@@ -5609,7 +5609,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c4b06,
          0x3fb617c3,
          0x3f82713c},
-        0xffff8000},
+        },
     {
         /* No.102 delta:16166 weight:1829 */
         44497,
@@ -5664,7 +5664,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbee0b2,
          0x3f832244,
          0x3fad17a3},
-        0xffff8000},
+        },
     {
         /* No.103 delta:15693 weight:1869 */
         44497,
@@ -5719,7 +5719,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa8a679,
          0x3f9cdb9b,
          0x3f8ab06e},
-        0xffff8000},
+        },
     {
         /* No.104 delta:16218 weight:1813 */
         44497,
@@ -5774,7 +5774,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f5787,
          0x3fb9aa78,
          0x3f938d03},
-        0xffff8000},
+        },
     {
         /* No.105 delta:17021 weight:1681 */
         44497,
@@ -5829,7 +5829,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99fddd,
          0x3fbd0217,
          0x3f86bcd3},
-        0xffff8000},
+        },
     {
         /* No.106 delta:16242 weight:1701 */
         44497,
@@ -5884,7 +5884,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8677fe,
          0x3faca123,
          0x3fb3b6c7},
-        0xffff8000},
+        },
     {
         /* No.107 delta:17596 weight:1871 */
         44497,
@@ -5939,7 +5939,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c1186,
          0x3fa761f3,
          0x3f9a92b6},
-        0xffff8000},
+        },
     {
         /* No.108 delta:15672 weight:1827 */
         44497,
@@ -5994,7 +5994,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb5c665,
          0x3f8513c9,
          0x3fabf136},
-        0xffff8000},
+        },
     {
         /* No.109 delta:17648 weight:1775 */
         44497,
@@ -6049,7 +6049,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa944f4,
          0x3f847ab0,
          0x3fb3371c},
-        0xffff8000},
+        },
     {
         /* No.110 delta:16654 weight:1115 */
         44497,
@@ -6104,7 +6104,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a0054,
          0x3fa853a8,
          0x3fb77375},
-        0xffff8000},
+        },
     {
         /* No.111 delta:16234 weight:1825 */
         44497,
@@ -6159,7 +6159,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb7b036,
          0x3f85ecb3,
          0x3faa06a9},
-        0xffff8000},
+        },
     {
         /* No.112 delta:16922 weight:1861 */
         44497,
@@ -6214,7 +6214,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa5d98c,
          0x3f8c6a5b,
          0x3f863bd2},
-        0xffff8000},
+        },
     {
         /* No.113 delta:16520 weight:1849 */
         44497,
@@ -6269,7 +6269,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa86610,
          0x3fbc9819,
          0x3fa34ad5},
-        0xffff8000},
+        },
     {
         /* No.114 delta:15777 weight:1853 */
         44497,
@@ -6324,7 +6324,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f853d78,
          0x3f91da23,
          0x3faf0cf6},
-        0xffff8000},
+        },
     {
         /* No.115 delta:15808 weight:1829 */
         44497,
@@ -6379,7 +6379,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd496e,
          0x3f97e309,
          0x3f8958f6},
-        0xffff8000},
+        },
     {
         /* No.116 delta:16896 weight:1813 */
         44497,
@@ -6434,7 +6434,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb23a21,
          0x3fb8c569,
          0x3fadf76c},
-        0xffff8000},
+        },
     {
         /* No.117 delta:16960 weight:1829 */
         44497,
@@ -6489,7 +6489,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f873c42,
          0x3fabd652,
          0x3fb01fdd},
-        0xffff8000},
+        },
     {
         /* No.118 delta:16193 weight:1767 */
         44497,
@@ -6544,7 +6544,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa70a5c,
          0x3f9a6137,
          0x3fb5d2af},
-        0xffff8000},
+        },
     {
         /* No.119 delta:16891 weight:1731 */
         44497,
@@ -6599,7 +6599,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faa7c52,
          0x3fa0ff0e,
          0x3fbc01bb},
-        0xffff8000},
+        },
     {
         /* No.120 delta:18414 weight:1715 */
         44497,
@@ -6654,7 +6654,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c07e6,
          0x3f98949c,
          0x3fa2e369},
-        0xffff8000},
+        },
     {
         /* No.121 delta:16522 weight:1789 */
         44497,
@@ -6709,7 +6709,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f895e71,
          0x3fa6c6a6,
          0x3fb379de},
-        0xffff8000},
+        },
     {
         /* No.122 delta:17601 weight:1291 */
         44497,
@@ -6764,7 +6764,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f955ace,
          0x3faee5e6,
          0x3f9b3f7a},
-        0xffff8000},
+        },
     {
         /* No.123 delta:15764 weight:1807 */
         44497,
@@ -6819,7 +6819,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbfa285,
          0x3f9c418b,
          0x3f92b338},
-        0xffff8000},
+        },
     {
         /* No.124 delta:17307 weight:1615 */
         44497,
@@ -6874,7 +6874,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ce321,
          0x3fb994f8,
          0x3fab55a4},
-        0xffff8000},
+        },
     {
         /* No.125 delta:16416 weight:1867 */
         44497,
@@ -6929,7 +6929,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0d744,
          0x3f9f3294,
          0x3fb22e34},
-        0xffff8000},
+        },
     {
         /* No.126 delta:16808 weight:1805 */
         44497,
@@ -6984,7 +6984,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f989563,
          0x3fbcf3c6,
          0x3faa5275},
-        0xffff8000},
+        },
     {
         /* No.127 delta:16797 weight:1869 */
         44497,
@@ -7039,7 +7039,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f868d86,
          0x3f8c980a,
          0x3fb1e60e},
-        0xffff8000},
+        },
     {
         /* No.128 delta:18052 weight:1817 */
         44497,
@@ -7094,7 +7094,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85f991,
          0x3fa9e919,
          0x3f92669b},
-        0xffff8000},
+        },
     {
         /* No.129 delta:18404 weight:1829 */
         44497,
@@ -7149,7 +7149,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f83b911,
          0x3f9748fc,
          0x3fadf617},
-        0xffff8000},
+        },
     {
         /* No.130 delta:18457 weight:1869 */
         44497,
@@ -7204,7 +7204,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbbe6c6,
          0x3f94202d,
          0x3f87c23d},
-        0xffff8000},
+        },
     {
         /* No.131 delta:16433 weight:1815 */
         44497,
@@ -7259,7 +7259,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbdfcfe,
          0x3fb78bf1,
          0x3fa3b978},
-        0xffff8000},
+        },
     {
         /* No.132 delta:15786 weight:1793 */
         44497,
@@ -7314,7 +7314,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3ea44,
          0x3fa1b510,
          0x3f8e2abb},
-        0xffff8000},
+        },
     {
         /* No.133 delta:16419 weight:1821 */
         44497,
@@ -7369,7 +7369,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99498c,
          0x3fbc78c4,
          0x3fa26bbc},
-        0xffff8000},
+        },
     {
         /* No.134 delta:18248 weight:1727 */
         44497,
@@ -7424,7 +7424,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f892137,
          0x3f9ef297,
          0x3fa340bb},
-        0xffff8000},
+        },
     {
         /* No.135 delta:16018 weight:1783 */
         44497,
@@ -7479,7 +7479,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3d2b2,
          0x3f8f4fc6,
          0x3f99fa7e},
-        0xffff8000},
+        },
     {
         /* No.136 delta:17658 weight:1811 */
         44497,
@@ -7534,7 +7534,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b9a19,
          0x3fbe6132,
          0x3fa8333f},
-        0xffff8000},
+        },
     {
         /* No.137 delta:16603 weight:1817 */
         44497,
@@ -7589,7 +7589,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c77d7,
          0x3f998631,
          0x3fa7e107},
-        0xffff8000},
+        },
     {
         /* No.138 delta:16158 weight:1817 */
         44497,
@@ -7644,7 +7644,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fabdeec,
          0x3f981d4d,
          0x3f8c47f8},
-        0xffff8000},
+        },
     {
         /* No.139 delta:15861 weight:1447 */
         44497,
@@ -7699,7 +7699,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf1ef1,
          0x3f8d5d88,
          0x3fbbbd06},
-        0xffff8000},
+        },
     {
         /* No.140 delta:16483 weight:1743 */
         44497,
@@ -7754,7 +7754,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb66414,
          0x3f8cf6b8,
          0x3f9815ab},
-        0xffff8000},
+        },
     {
         /* No.141 delta:17688 weight:1791 */
         44497,
@@ -7809,7 +7809,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fade426,
          0x3f8695cd,
          0x3fb246b9},
-        0xffff8000},
+        },
     {
         /* No.142 delta:17180 weight:1789 */
         44497,
@@ -7864,7 +7864,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a6975,
          0x3f9f20e0,
          0x3f847ff1},
-        0xffff8000},
+        },
     {
         /* No.143 delta:18175 weight:1889 */
         44497,
@@ -7919,7 +7919,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f94aaaf,
          0x3fba589a,
          0x3f86b211},
-        0xffff8000},
+        },
     {
         /* No.144 delta:17310 weight:1683 */
         44497,
@@ -7974,7 +7974,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8cf069,
          0x3fb657e3,
          0x3f82e10c},
-        0xffff8000},
+        },
     {
         /* No.145 delta:17211 weight:1603 */
         44497,
@@ -8029,7 +8029,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa44fdd,
          0x3faa1b22,
          0x3f99a4aa},
-        0xffff8000},
+        },
     {
         /* No.146 delta:16980 weight:1783 */
         44497,
@@ -8084,7 +8084,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb2577,
          0x3f8bdb6f,
          0x3f98f5f1},
-        0xffff8000},
+        },
     {
         /* No.147 delta:17467 weight:1759 */
         44497,
@@ -8139,7 +8139,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fadf059,
          0x3f97937a,
          0x3fa36ba5},
-        0xffff8000},
+        },
     {
         /* No.148 delta:17188 weight:1739 */
         44497,
@@ -8194,7 +8194,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f96f61b,
          0x3f9ca0ff,
          0x3fa81667},
-        0xffff8000},
+        },
     {
         /* No.149 delta:16335 weight:1847 */
         44497,
@@ -8249,7 +8249,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95c745,
          0x3fbf84d4,
          0x3f843681},
-        0xffff8000},
+        },
     {
         /* No.150 delta:15814 weight:1909 */
         44497,
@@ -8304,7 +8304,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8abcb0,
          0x3fa065a9,
          0x3f9cc6b5},
-        0xffff8000},
+        },
     {
         /* No.151 delta:16941 weight:1123 */
         44497,
@@ -8359,7 +8359,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa340b8,
          0x3f88ee7f,
          0x3f8685b3},
-        0xffff8000},
+        },
     {
         /* No.152 delta:17180 weight:1341 */
         44497,
@@ -8414,7 +8414,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad34de,
          0x3f88a671,
          0x3f9bc1a6},
-        0xffff8000},
+        },
     {
         /* No.153 delta:16584 weight:1673 */
         44497,
@@ -8469,7 +8469,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f899871,
          0x3f876eef,
          0x3f95bcfa},
-        0xffff8000},
+        },
     {
         /* No.154 delta:16205 weight:1865 */
         44497,
@@ -8524,7 +8524,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb37744,
          0x3fa9fc4b,
          0x3f9f2ef9},
-        0xffff8000},
+        },
     {
         /* No.155 delta:17550 weight:1757 */
         44497,
@@ -8579,7 +8579,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa49b4b,
          0x3fb2b538,
          0x3f898b64},
-        0xffff8000},
+        },
     {
         /* No.156 delta:16100 weight:1831 */
         44497,
@@ -8634,7 +8634,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86aa9c,
          0x3fa84338,
          0x3f943444},
-        0xffff8000},
+        },
     {
         /* No.157 delta:16455 weight:1867 */
         44497,
@@ -8689,7 +8689,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa233d2,
          0x3f92e5d6,
          0x3f98c66d},
-        0xffff8000},
+        },
     {
         /* No.158 delta:16546 weight:1677 */
         44497,
@@ -8744,7 +8744,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f857e34,
          0x3fb6a06d,
          0x3fb9848a},
-        0xffff8000},
+        },
     {
         /* No.159 delta:16371 weight:1737 */
         44497,
@@ -8799,7 +8799,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f995383,
          0x3fae4109,
          0x3f93e48c},
-        0xffff8000},
+        },
     {
         /* No.160 delta:17445 weight:1831 */
         44497,
@@ -8854,7 +8854,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a94e4,
          0x3fb02ff8,
          0x3fae856e},
-        0xffff8000},
+        },
     {
         /* No.161 delta:17435 weight:1849 */
         44497,
@@ -8909,7 +8909,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf31cb,
          0x3fa020bf,
          0x3f9cf28c},
-        0xffff8000},
+        },
     {
         /* No.162 delta:17252 weight:1807 */
         44497,
@@ -8964,7 +8964,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85ec15,
          0x3f8ed696,
          0x3fb2f899},
-        0xffff8000},
+        },
     {
         /* No.163 delta:16195 weight:1713 */
         44497,
@@ -9019,7 +9019,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f861ccf,
          0x3f9d87ab,
          0x3fa1d448},
-        0xffff8000},
+        },
     {
         /* No.164 delta:16938 weight:1841 */
         44497,
@@ -9074,7 +9074,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f901d68,
          0x3f8c6ad2,
          0x3fbebc5d},
-        0xffff8000},
+        },
     {
         /* No.165 delta:16918 weight:1755 */
         44497,
@@ -9129,7 +9129,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8049c6,
          0x3f9c780a,
          0x3f9287cc},
-        0xffff8000},
+        },
     {
         /* No.166 delta:16797 weight:1881 */
         44497,
@@ -9184,7 +9184,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa363ab,
          0x3f8e6334,
          0x3fb1e2b7},
-        0xffff8000},
+        },
     {
         /* No.167 delta:16097 weight:1915 */
         44497,
@@ -9239,7 +9239,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a25dc,
          0x3fb74d21,
          0x3fa0ab24},
-        0xffff8000},
+        },
     {
         /* No.168 delta:16544 weight:1861 */
         44497,
@@ -9294,7 +9294,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2599a,
          0x3fb9e576,
          0x3f87970a},
-        0xffff8000},
+        },
     {
         /* No.169 delta:15824 weight:1621 */
         44497,
@@ -9349,7 +9349,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8cd90b,
          0x3faf27f7,
          0x3fbabf79},
-        0xffff8000},
+        },
     {
         /* No.170 delta:16613 weight:1093 */
         44497,
@@ -9404,7 +9404,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c7a14,
          0x3fbf50b3,
          0x3fa88b7e},
-        0xffff8000},
+        },
     {
         /* No.171 delta:16767 weight:1755 */
         44497,
@@ -9459,7 +9459,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f92fc55,
          0x3fb92d87,
          0x3fad82d0},
-        0xffff8000},
+        },
     {
         /* No.172 delta:17245 weight:1771 */
         44497,
@@ -9514,7 +9514,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d8c64,
          0x3fb7dfb0,
          0x3fa3accc},
-        0xffff8000},
+        },
     {
         /* No.173 delta:15871 weight:1765 */
         44497,
@@ -9569,7 +9569,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8577e1,
          0x3fbe6c42,
          0x3fa94ace},
-        0xffff8000},
+        },
     {
         /* No.174 delta:16162 weight:1887 */
         44497,
@@ -9624,7 +9624,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85d8f0,
          0x3fa86e89,
          0x3f9f9c74},
-        0xffff8000},
+        },
     {
         /* No.175 delta:16177 weight:1821 */
         44497,
@@ -9679,7 +9679,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a7159,
          0x3faf1355,
          0x3f9989f4},
-        0xffff8000},
+        },
     {
         /* No.176 delta:17440 weight:1835 */
         44497,
@@ -9734,7 +9734,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98beeb,
          0x3fa86b29,
          0x3f964cd2},
-        0xffff8000},
+        },
     {
         /* No.177 delta:16566 weight:1801 */
         44497,
@@ -9789,7 +9789,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb127ad,
          0x3fab6e42,
          0x3f9fc14e},
-        0xffff8000},
+        },
     {
         /* No.178 delta:17069 weight:1667 */
         44497,
@@ -9844,7 +9844,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa31308,
          0x3f8ee90c,
          0x3fb59370},
-        0xffff8000},
+        },
     {
         /* No.179 delta:17492 weight:1783 */
         44497,
@@ -9899,7 +9899,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faceb16,
          0x3fa76efe,
          0x3f92e809},
-        0xffff8000},
+        },
     {
         /* No.180 delta:16740 weight:1799 */
         44497,
@@ -9954,7 +9954,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa829c6,
          0x3fb55ebb,
          0x3fa3197f},
-        0xffff8000},
+        },
     {
         /* No.181 delta:16367 weight:1735 */
         44497,
@@ -10009,7 +10009,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa33f07,
          0x3fad5e37,
          0x3f92b8a3},
-        0xffff8000},
+        },
     {
         /* No.182 delta:15769 weight:1849 */
         44497,
@@ -10064,7 +10064,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb25e93,
          0x3fad361d,
          0x3f98c54f},
-        0xffff8000},
+        },
     {
         /* No.183 delta:15891 weight:1941 */
         44497,
@@ -10119,7 +10119,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8b41d,
          0x3f9c7c91,
          0x3f87aeef},
-        0xffff8000},
+        },
     {
         /* No.184 delta:18699 weight:1851 */
         44497,
@@ -10174,7 +10174,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa38575,
          0x3fac1cfd,
          0x3f9046d6},
-        0xffff8000},
+        },
     {
         /* No.185 delta:17988 weight:1833 */
         44497,
@@ -10229,7 +10229,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e1504,
          0x3fb2e767,
          0x3fa0d3d4},
-        0xffff8000},
+        },
     {
         /* No.186 delta:17378 weight:1949 */
         44497,
@@ -10284,7 +10284,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc8f69,
          0x3fa965b3,
          0x3f87b247},
-        0xffff8000},
+        },
     {
         /* No.187 delta:17505 weight:1827 */
         44497,
@@ -10339,7 +10339,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe9936,
          0x3f8b88e6,
          0x3f9c3a4a},
-        0xffff8000},
+        },
     {
         /* No.188 delta:17339 weight:1843 */
         44497,
@@ -10394,7 +10394,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9bcf9b,
          0x3faf3d96,
          0x3f907297},
-        0xffff8000},
+        },
     {
         /* No.189 delta:16438 weight:1921 */
         44497,
@@ -10449,7 +10449,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85d0ec,
          0x3f9f41a2,
          0x3fa9a23d},
-        0xffff8000},
+        },
     {
         /* No.190 delta:16576 weight:1717 */
         44497,
@@ -10504,7 +10504,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab5892,
          0x3f85f875,
          0x3f90cef9},
-        0xffff8000},
+        },
     {
         /* No.191 delta:17026 weight:1821 */
         44497,
@@ -10559,7 +10559,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f952ac5,
          0x3fa88078,
          0x3f876a2d},
-        0xffff8000},
+        },
     {
         /* No.192 delta:16228 weight:1767 */
         44497,
@@ -10614,7 +10614,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f893952,
          0x3f92f4da,
          0x3fa4afd5},
-        0xffff8000},
+        },
     {
         /* No.193 delta:16008 weight:1835 */
         44497,
@@ -10669,7 +10669,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4b309,
          0x3fbed291,
          0x3f914ddc},
-        0xffff8000},
+        },
     {
         /* No.194 delta:17880 weight:1829 */
         44497,
@@ -10724,7 +10724,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbae8f4,
          0x3f87263c,
          0x3f91fd1c},
-        0xffff8000},
+        },
     {
         /* No.195 delta:16267 weight:1769 */
         44497,
@@ -10779,7 +10779,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1656d,
          0x3fbedca5,
          0x3f8d43f5},
-        0xffff8000},
+        },
     {
         /* No.196 delta:18135 weight:1835 */
         44497,
@@ -10834,7 +10834,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ae528,
          0x3fae861a,
          0x3f907d85},
-        0xffff8000},
+        },
     {
         /* No.197 delta:17043 weight:1381 */
         44497,
@@ -10889,7 +10889,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9744b1,
          0x3fa357bb,
          0x3fbc954f},
-        0xffff8000},
+        },
     {
         /* No.198 delta:16743 weight:1675 */
         44497,
@@ -10944,7 +10944,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f949fc6,
          0x3fa62674,
          0x3f9ab09d},
-        0xffff8000},
+        },
     {
         /* No.199 delta:17484 weight:1813 */
         44497,
@@ -10999,7 +10999,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa237be,
          0x3f90c8e9,
          0x3f9e5167},
-        0xffff8000},
+        },
     {
         /* No.200 delta:15826 weight:1887 */
         44497,
@@ -11054,7 +11054,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab2d0d,
          0x3fb58f25,
          0x3f992588},
-        0xffff8000},
+        },
     {
         /* No.201 delta:17384 weight:1847 */
         44497,
@@ -11109,7 +11109,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91a10e,
          0x3fbc91cb,
          0x3fa3e6c7},
-        0xffff8000},
+        },
     {
         /* No.202 delta:17541 weight:1675 */
         44497,
@@ -11164,7 +11164,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8cdf1,
          0x3f85c33c,
          0x3fab3ce9},
-        0xffff8000},
+        },
     {
         /* No.203 delta:18848 weight:1745 */
         44497,
@@ -11219,7 +11219,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f5b90,
          0x3fb20737,
          0x3f85b51b},
-        0xffff8000},
+        },
     {
         /* No.204 delta:16881 weight:1429 */
         44497,
@@ -11274,7 +11274,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86e9fe,
          0x3fa5dbb7,
          0x3fba3f79},
-        0xffff8000},
+        },
     {
         /* No.205 delta:16733 weight:1901 */
         44497,
@@ -11329,7 +11329,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a368a,
          0x3fadc658,
          0x3f90512a},
-        0xffff8000},
+        },
     {
         /* No.206 delta:16612 weight:1713 */
         44497,
@@ -11384,7 +11384,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e72f1,
          0x3fa8f361,
          0x3fbb6bf4},
-        0xffff8000},
+        },
     {
         /* No.207 delta:18038 weight:1817 */
         44497,
@@ -11439,7 +11439,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa5ea76,
          0x3f9124b2,
          0x3f8e776f},
-        0xffff8000},
+        },
     {
         /* No.208 delta:16659 weight:1915 */
         44497,
@@ -11494,7 +11494,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3d045,
          0x3f8969fb,
          0x3f9713af},
-        0xffff8000},
+        },
     {
         /* No.209 delta:16612 weight:1761 */
         44497,
@@ -11549,7 +11549,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa67129,
          0x3f969e3b,
          0x3fa8c0ac},
-        0xffff8000},
+        },
     {
         /* No.210 delta:15890 weight:1819 */
         44497,
@@ -11604,7 +11604,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e6427,
          0x3fbca8b2,
          0x3f911f86},
-        0xffff8000},
+        },
     {
         /* No.211 delta:17130 weight:1721 */
         44497,
@@ -11659,7 +11659,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2ada2,
          0x3fa09073,
          0x3f8f67ee},
-        0xffff8000},
+        },
     {
         /* No.212 delta:17526 weight:1801 */
         44497,
@@ -11714,7 +11714,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f914a99,
          0x3f9ea531,
          0x3fac1b14},
-        0xffff8000},
+        },
     {
         /* No.213 delta:16776 weight:1807 */
         44497,
@@ -11769,7 +11769,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0133c,
          0x3f879e2b,
          0x3f9bc5ce},
-        0xffff8000},
+        },
     {
         /* No.214 delta:17793 weight:1833 */
         44497,
@@ -11824,7 +11824,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc03bb,
          0x3f8fed83,
          0x3f9ba325},
-        0xffff8000},
+        },
     {
         /* No.215 delta:17638 weight:1895 */
         44497,
@@ -11879,7 +11879,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88b13d,
          0x3f9b2099,
          0x3f865b2c},
-        0xffff8000},
+        },
     {
         /* No.216 delta:16271 weight:1583 */
         44497,
@@ -11934,7 +11934,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb6a069,
          0x3fad718d,
          0x3f91b670},
-        0xffff8000},
+        },
     {
         /* No.217 delta:16085 weight:1637 */
         44497,
@@ -11989,7 +11989,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9cc0b1,
          0x3fae59a0,
          0x3fb8ffbd},
-        0xffff8000},
+        },
     {
         /* No.218 delta:18600 weight:1749 */
         44497,
@@ -12044,7 +12044,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f8ce9,
          0x3fa261b9,
          0x3f993f35},
-        0xffff8000},
+        },
     {
         /* No.219 delta:15845 weight:1753 */
         44497,
@@ -12099,7 +12099,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb83fb,
          0x3f90e206,
          0x3f8d54f0},
-        0xffff8000},
+        },
     {
         /* No.220 delta:19608 weight:1219 */
         44497,
@@ -12154,7 +12154,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa50622,
          0x3f86a09d,
          0x3fbba3b6},
-        0xffff8000},
+        },
     {
         /* No.221 delta:16115 weight:739 */
         44497,
@@ -12209,7 +12209,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93f695,
          0x3f87bd31,
          0x3fb8ca3d},
-        0xffff8000},
+        },
     {
         /* No.222 delta:17668 weight:1759 */
         44497,
@@ -12264,7 +12264,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84d3cc,
          0x3fb945f8,
          0x3fafa6fc},
-        0xffff8000},
+        },
     {
         /* No.223 delta:17095 weight:1593 */
         44497,
@@ -12319,7 +12319,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a515d,
          0x3fbc1c88,
          0x3fa66fc5},
-        0xffff8000},
+        },
     {
         /* No.224 delta:16757 weight:1919 */
         44497,
@@ -12374,7 +12374,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c7e74,
          0x3f9989bc,
          0x3fb71760},
-        0xffff8000},
+        },
     {
         /* No.225 delta:17976 weight:1893 */
         44497,
@@ -12429,7 +12429,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb5b808,
          0x3f9a7ee3,
          0x3fa9a657},
-        0xffff8000},
+        },
     {
         /* No.226 delta:16220 weight:1581 */
         44497,
@@ -12484,7 +12484,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86f184,
          0x3fa9b06d,
          0x3fb25e49},
-        0xffff8000},
+        },
     {
         /* No.227 delta:17361 weight:1813 */
         44497,
@@ -12539,7 +12539,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb391dd,
          0x3f8442fc,
          0x3f99dc21},
-        0xffff8000},
+        },
     {
         /* No.228 delta:16801 weight:1851 */
         44497,
@@ -12594,7 +12594,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb7f10a,
          0x3f88d1cb,
          0x3f9ca2c1},
-        0xffff8000},
+        },
     {
         /* No.229 delta:15868 weight:1917 */
         44497,
@@ -12649,7 +12649,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f856713,
          0x3fbe5aa8,
          0x3fada10f},
-        0xffff8000},
+        },
     {
         /* No.230 delta:16870 weight:1773 */
         44497,
@@ -12704,7 +12704,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa140c4,
          0x3f9489dc,
          0x3fbfba73},
-        0xffff8000},
+        },
     {
         /* No.231 delta:16943 weight:1625 */
         44497,
@@ -12759,7 +12759,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe9c08,
          0x3f955fb9,
          0x3fa8853c},
-        0xffff8000},
+        },
     {
         /* No.232 delta:18272 weight:1633 */
         44497,
@@ -12814,7 +12814,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb36d69,
          0x3fa8e011,
          0x3f8557f7},
-        0xffff8000},
+        },
     {
         /* No.233 delta:16434 weight:1785 */
         44497,
@@ -12869,7 +12869,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbcd471,
          0x3f89c4dc,
          0x3fa26775},
-        0xffff8000},
+        },
     {
         /* No.234 delta:16779 weight:1263 */
         44497,
@@ -12924,7 +12924,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2c027,
          0x3f8743f3,
          0x3fb97dae},
-        0xffff8000},
+        },
     {
         /* No.235 delta:16026 weight:1819 */
         44497,
@@ -12979,7 +12979,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb88959,
          0x3f93f8d2,
          0x3fa40e4d},
-        0xffff8000},
+        },
     {
         /* No.236 delta:16217 weight:1833 */
         44497,
@@ -13034,7 +13034,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a67d2,
          0x3fa6a366,
          0x3fb9f23b},
-        0xffff8000},
+        },
     {
         /* No.237 delta:16594 weight:1563 */
         44497,
@@ -13089,7 +13089,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf5418,
          0x3fa381a8,
          0x3f90efa4},
-        0xffff8000},
+        },
     {
         /* No.238 delta:16125 weight:1911 */
         44497,
@@ -13144,7 +13144,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa27615,
          0x3f94dde5,
          0x3fa81948},
-        0xffff8000},
+        },
     {
         /* No.239 delta:16503 weight:1933 */
         44497,
@@ -13199,7 +13199,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3c1a3,
          0x3f87e866,
          0x3f9123f9},
-        0xffff8000},
+        },
     {
         /* No.240 delta:16446 weight:1811 */
         44497,
@@ -13254,7 +13254,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8599b3,
          0x3fbfe3a4,
          0x3f8aa0fb},
-        0xffff8000},
+        },
     {
         /* No.241 delta:15890 weight:1819 */
         44497,
@@ -13309,7 +13309,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa76671,
          0x3fb310ce,
          0x3f8587f4},
-        0xffff8000},
+        },
     {
         /* No.242 delta:19079 weight:1639 */
         44497,
@@ -13364,7 +13364,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa284ae,
          0x3f8dc84a,
          0x3fb16ef2},
-        0xffff8000},
+        },
     {
         /* No.243 delta:17089 weight:1755 */
         44497,
@@ -13419,7 +13419,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd00c7,
          0x3f8d634a,
          0x3f928845},
-        0xffff8000},
+        },
     {
         /* No.244 delta:18206 weight:1889 */
         44497,
@@ -13474,7 +13474,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fae392f,
          0x3fa16698,
          0x3f9b7fab},
-        0xffff8000},
+        },
     {
         /* No.245 delta:16439 weight:1831 */
         44497,
@@ -13529,7 +13529,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0f59e,
          0x3fb6ab0a,
          0x3f989906},
-        0xffff8000},
+        },
     {
         /* No.246 delta:17352 weight:1881 */
         44497,
@@ -13584,7 +13584,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86fe28,
          0x3f9a936d,
          0x3fb460c2},
-        0xffff8000},
+        },
     {
         /* No.247 delta:17577 weight:1805 */
         44497,
@@ -13639,7 +13639,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbcbc52,
          0x3fb3122f,
          0x3f883dcf},
-        0xffff8000},
+        },
     {
         /* No.248 delta:17314 weight:1861 */
         44497,
@@ -13694,7 +13694,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f82e09a,
          0x3faf770d,
          0x3fbd0592},
-        0xffff8000},
+        },
     {
         /* No.249 delta:17220 weight:1693 */
         44497,
@@ -13749,7 +13749,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f869ea9,
          0x3fa42a33,
          0x3f88f855},
-        0xffff8000},
+        },
     {
         /* No.250 delta:16183 weight:1749 */
         44497,
@@ -13804,7 +13804,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb25630,
          0x3fbd8518,
          0x3fa8f7ac},
-        0xffff8000},
+        },
     {
         /* No.251 delta:16140 weight:1909 */
         44497,
@@ -13859,7 +13859,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa34f58,
          0x3f9aeb97,
          0x3f895038},
-        0xffff8000},
+        },
     {
         /* No.252 delta:16373 weight:1837 */
         44497,
@@ -13914,7 +13914,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0d1c8,
          0x3fb38c28,
          0x3f9d76d2},
-        0xffff8000},
+        },
     {
         /* No.253 delta:16206 weight:1839 */
         44497,
@@ -13969,7 +13969,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa64c54,
          0x3fbc3cf0,
          0x3f882e5f},
-        0xffff8000},
+        },
     {
         /* No.254 delta:18324 weight:1851 */
         44497,
@@ -14024,7 +14024,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87f43a,
          0x3f90d2e3,
          0x3fada6f6},
-        0xffff8000},
+        },
     {
         /* No.255 delta:15917 weight:1527 */
         44497,
@@ -14079,7 +14079,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e5eb8,
          0x3fa02790,
          0x3fae5504},
-        0xffff8000},
+        },
     {
         /* No.256 delta:15793 weight:1927 */
         44497,
@@ -14134,7 +14134,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0960a,
          0x3f8f802b,
          0x3f9b76a3},
-        0xffff8000},
+        },
     {
         /* No.257 delta:16545 weight:1709 */
         44497,
@@ -14189,7 +14189,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87ec1b,
          0x3faef192,
          0x3f951bed},
-        0xffff8000},
+        },
     {
         /* No.258 delta:17756 weight:1783 */
         44497,
@@ -14244,7 +14244,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f846baf,
          0x3faff19a,
          0x3f9bda9f},
-        0xffff8000},
+        },
     {
         /* No.259 delta:15678 weight:1885 */
         44497,
@@ -14299,7 +14299,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ac3e9,
          0x3fafb1e5,
          0x3f956975},
-        0xffff8000},
+        },
     {
         /* No.260 delta:16671 weight:1795 */
         44497,
@@ -14354,7 +14354,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa957ab,
          0x3fa38586,
          0x3f94029a},
-        0xffff8000},
+        },
     {
         /* No.261 delta:16384 weight:1593 */
         44497,
@@ -14409,7 +14409,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8255a5,
          0x3fb0e09c,
          0x3f9d52c2},
-        0xffff8000},
+        },
     {
         /* No.262 delta:16238 weight:1937 */
         44497,
@@ -14464,7 +14464,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa31daa,
          0x3f944644,
          0x3f869c71},
-        0xffff8000},
+        },
     {
         /* No.263 delta:18169 weight:1777 */
         44497,
@@ -14519,7 +14519,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb124e5,
          0x3fa831a3,
          0x3f9d66ae},
-        0xffff8000},
+        },
     {
         /* No.264 delta:17418 weight:1947 */
         44497,
@@ -14574,7 +14574,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3facc0a5,
          0x3f9da352,
          0x3f92952d},
-        0xffff8000},
+        },
     {
         /* No.265 delta:15844 weight:1819 */
         44497,
@@ -14629,7 +14629,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa68a4d,
          0x3f88631c,
          0x3fbc3061},
-        0xffff8000},
+        },
     {
         /* No.266 delta:17006 weight:1797 */
         44497,
@@ -14684,7 +14684,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f94a4ca,
          0x3fb32b71,
          0x3f8e1dea},
-        0xffff8000},
+        },
     {
         /* No.267 delta:15849 weight:1785 */
         44497,
@@ -14739,7 +14739,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faedd59,
          0x3f8789a8,
          0x3f997a34},
-        0xffff8000},
+        },
     {
         /* No.268 delta:16038 weight:1789 */
         44497,
@@ -14794,7 +14794,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f866a7f,
          0x3f99ab8b,
          0x3fb65c94},
-        0xffff8000},
+        },
     {
         /* No.269 delta:16225 weight:1833 */
         44497,
@@ -14849,7 +14849,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c826a,
          0x3fb9771a,
          0x3fa736ee},
-        0xffff8000},
+        },
     {
         /* No.270 delta:17045 weight:1355 */
         44497,
@@ -14904,7 +14904,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d435d,
          0x3fa3be77,
          0x3f96edd3},
-        0xffff8000},
+        },
     {
         /* No.271 delta:16431 weight:1855 */
         44497,
@@ -14959,7 +14959,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbbc1f6,
          0x3fa7ea8c,
          0x3f925871},
-        0xffff8000},
+        },
     {
         /* No.272 delta:16532 weight:1811 */
         44497,
@@ -15014,7 +15014,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa92bec,
          0x3f8764f1,
          0x3fb28ae2},
-        0xffff8000},
+        },
     {
         /* No.273 delta:15834 weight:1857 */
         44497,
@@ -15069,7 +15069,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbdf10b,
          0x3fa88637,
          0x3f9f41aa},
-        0xffff8000},
+        },
     {
         /* No.274 delta:16052 weight:1797 */
         44497,
@@ -15124,7 +15124,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f982e16,
          0x3fb4f6c0,
          0x3f87c5f5},
-        0xffff8000},
+        },
     {
         /* No.275 delta:17314 weight:1683 */
         44497,
@@ -15179,7 +15179,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbee48a,
          0x3fb0dd54,
          0x3f8b7ffe},
-        0xffff8000},
+        },
     {
         /* No.276 delta:15944 weight:1907 */
         44497,
@@ -15234,7 +15234,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa65b33,
          0x3f843b87,
          0x3f920e93},
-        0xffff8000},
+        },
     {
         /* No.277 delta:15953 weight:1857 */
         44497,
@@ -15289,7 +15289,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f921bbf,
          0x3fa52627,
          0x3fbf28aa},
-        0xffff8000},
+        },
     {
         /* No.278 delta:15780 weight:1869 */
         44497,
@@ -15344,7 +15344,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb6dfdb,
          0x3f9515cf,
          0x3f8a7ac3},
-        0xffff8000},
+        },
     {
         /* No.279 delta:15810 weight:1539 */
         44497,
@@ -15399,7 +15399,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84a27d,
          0x3fb0c2cb,
          0x3fbe71a6},
-        0xffff8000},
+        },
     {
         /* No.280 delta:16562 weight:1743 */
         44497,
@@ -15454,7 +15454,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84a0cb,
          0x3f8a8ed2,
          0x3fbd198a},
-        0xffff8000},
+        },
     {
         /* No.281 delta:16426 weight:1751 */
         44497,
@@ -15509,7 +15509,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0642b,
          0x3f95bd2f,
          0x3f8b2b7b},
-        0xffff8000},
+        },
     {
         /* No.282 delta:15965 weight:1829 */
         44497,
@@ -15564,7 +15564,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb52260,
          0x3f9f8158,
          0x3fa3f776},
-        0xffff8000},
+        },
     {
         /* No.283 delta:18080 weight:1927 */
         44497,
@@ -15619,7 +15619,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2a6d8,
          0x3fa89e38,
          0x3f86a73f},
-        0xffff8000},
+        },
     {
         /* No.284 delta:19793 weight:985 */
         44497,
@@ -15674,7 +15674,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faa2333,
          0x3f8a5076,
          0x3fb83327},
-        0xffff8000},
+        },
     {
         /* No.285 delta:16959 weight:1793 */
         44497,
@@ -15729,7 +15729,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f966357,
          0x3fb26152,
          0x3f9c42b4},
-        0xffff8000},
+        },
     {
         /* No.286 delta:16746 weight:1843 */
         44497,
@@ -15784,7 +15784,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8da71c,
          0x3fb885e8,
          0x3fa3c760},
-        0xffff8000},
+        },
     {
         /* No.287 delta:17217 weight:1663 */
         44497,
@@ -15839,7 +15839,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f988df9,
          0x3f93712b,
          0x3faf182e},
-        0xffff8000},
+        },
     {
         /* No.288 delta:16190 weight:1911 */
         44497,
@@ -15894,7 +15894,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf8101,
          0x3fb999fe,
          0x3f85eef0},
-        0xffff8000},
+        },
     {
         /* No.289 delta:17924 weight:1827 */
         44497,
@@ -15949,7 +15949,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86a9bd,
          0x3fbac918,
          0x3fac9355},
-        0xffff8000},
+        },
     {
         /* No.290 delta:18985 weight:1641 */
         44497,
@@ -16004,7 +16004,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e328f,
          0x3fa4a084,
          0x3fb29289},
-        0xffff8000},
+        },
     {
         /* No.291 delta:18589 weight:1833 */
         44497,
@@ -16059,7 +16059,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2ace5,
          0x3fa69d95,
          0x3fb8fee9},
-        0xffff8000},
+        },
     {
         /* No.292 delta:17951 weight:1873 */
         44497,
@@ -16114,7 +16114,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab0e54,
          0x3f9677f8,
          0x3fb8214c},
-        0xffff8000},
+        },
     {
         /* No.293 delta:16180 weight:1879 */
         44497,
@@ -16169,7 +16169,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9d6cf4,
          0x3fb50e10,
          0x3f8eb9e0},
-        0xffff8000},
+        },
     {
         /* No.294 delta:18284 weight:1891 */
         44497,
@@ -16224,7 +16224,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2e0de,
          0x3fa8aedb,
          0x3f861c5d},
-        0xffff8000},
+        },
     {
         /* No.295 delta:17015 weight:1863 */
         44497,
@@ -16279,7 +16279,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbbd8fa,
          0x3f9c19aa,
          0x3fa9fe5e},
-        0xffff8000},
+        },
     {
         /* No.296 delta:16736 weight:1681 */
         44497,
@@ -16334,7 +16334,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb66427,
          0x3fa9c4be,
          0x3f84b763},
-        0xffff8000},
+        },
     {
         /* No.297 delta:16897 weight:1697 */
         44497,
@@ -16389,7 +16389,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb19ff1,
          0x3f9ad174,
          0x3fa78e69},
-        0xffff8000},
+        },
     {
         /* No.298 delta:16370 weight:1395 */
         44497,
@@ -16444,7 +16444,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9dae85,
          0x3f8765b9,
          0x3fb8cc0f},
-        0xffff8000},
+        },
     {
         /* No.299 delta:17314 weight:1653 */
         44497,
@@ -16499,7 +16499,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa5a112,
          0x3f8be708,
          0x3f96de94},
-        0xffff8000},
+        },
     {
         /* No.300 delta:16541 weight:1761 */
         44497,
@@ -16554,7 +16554,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb9dd67,
          0x3f85afdb,
          0x3faa75ef},
-        0xffff8000},
+        },
     {
         /* No.301 delta:18025 weight:1909 */
         44497,
@@ -16609,7 +16609,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8771f7,
          0x3f95c37b,
          0x3fa2a3fc},
-        0xffff8000},
+        },
     {
         /* No.302 delta:16787 weight:1863 */
         44497,
@@ -16664,7 +16664,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad0555,
          0x3f95c0d8,
          0x3f86957c},
-        0xffff8000},
+        },
     {
         /* No.303 delta:15935 weight:1885 */
         44497,
@@ -16719,7 +16719,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0331d,
          0x3fb4958a,
          0x3f86f39b},
-        0xffff8000},
+        },
     {
         /* No.304 delta:16732 weight:1757 */
         44497,
@@ -16774,7 +16774,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f981aac,
          0x3f878987,
          0x3fbae615},
-        0xffff8000},
+        },
     {
         /* No.305 delta:17365 weight:1651 */
         44497,
@@ -16829,7 +16829,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc6bdd,
          0x3f894a77,
          0x3f9a0153},
-        0xffff8000},
+        },
     {
         /* No.306 delta:16747 weight:1845 */
         44497,
@@ -16884,7 +16884,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9eb189,
          0x3fbba750,
          0x3f8cf54c},
-        0xffff8000},
+        },
     {
         /* No.307 delta:16602 weight:1741 */
         44497,
@@ -16939,7 +16939,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa14b06,
          0x3f8e5199,
          0x3fb59289},
-        0xffff8000},
+        },
     {
         /* No.308 delta:16963 weight:1645 */
         44497,
@@ -16994,7 +16994,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f930d99,
          0x3fae5a8a,
          0x3fb4ed9d},
-        0xffff8000},
+        },
     {
         /* No.309 delta:17101 weight:1969 */
         44497,
@@ -17049,7 +17049,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab337f,
          0x3f8d2fba,
          0x3fbf142d},
-        0xffff8000},
+        },
     {
         /* No.310 delta:17196 weight:1693 */
         44497,
@@ -17104,7 +17104,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf9fb7,
          0x3fb5904a,
          0x3f8226ff},
-        0xffff8000},
+        },
     {
         /* No.311 delta:16942 weight:1763 */
         44497,
@@ -17159,7 +17159,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c42fa,
          0x3fa8653b,
          0x3fb675ee},
-        0xffff8000},
+        },
     {
         /* No.312 delta:16152 weight:1843 */
         44497,
@@ -17214,7 +17214,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f904809,
          0x3fb43d84,
          0x3f9bb30c},
-        0xffff8000},
+        },
     {
         /* No.313 delta:18777 weight:1841 */
         44497,
@@ -17269,7 +17269,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e25a8,
          0x3f997510,
          0x3fb5e645},
-        0xffff8000},
+        },
     {
         /* No.314 delta:17373 weight:1573 */
         44497,
@@ -17324,7 +17324,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c52a3,
          0x3f879089,
          0x3fa86284},
-        0xffff8000},
+        },
     {
         /* No.315 delta:17499 weight:1777 */
         44497,
@@ -17379,7 +17379,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa876ee,
          0x3f8c0565,
          0x3fbb5395},
-        0xffff8000},
+        },
     {
         /* No.316 delta:17262 weight:1823 */
         44497,
@@ -17434,7 +17434,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a5a28,
          0x3fb8ece0,
          0x3f8c2ffc},
-        0xffff8000},
+        },
     {
         /* No.317 delta:17167 weight:1765 */
         44497,
@@ -17489,7 +17489,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8fb32a,
          0x3fa40081,
          0x3fb2fb8d},
-        0xffff8000},
+        },
     {
         /* No.318 delta:16810 weight:1867 */
         44497,
@@ -17544,7 +17544,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8581a5,
          0x3f99e236,
          0x3f8a63b8},
-        0xffff8000},
+        },
     {
         /* No.319 delta:15832 weight:1585 */
         44497,
@@ -17599,7 +17599,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa98363,
          0x3f8d6d48,
          0x3f9baa6e},
-        0xffff8000},
+        },
     {
         /* No.320 delta:16469 weight:1911 */
         44497,
@@ -17654,7 +17654,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb93526,
          0x3fa4d09d,
          0x3f9ed633},
-        0xffff8000},
+        },
     {
         /* No.321 delta:15863 weight:1809 */
         44497,
@@ -17709,7 +17709,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9d06df,
          0x3f8f397b,
          0x3fb147eb},
-        0xffff8000},
+        },
     {
         /* No.322 delta:16937 weight:1765 */
         44497,
@@ -17764,7 +17764,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f939b5a,
          0x3f8c4929,
          0x3fb8bb8f},
-        0xffff8000},
+        },
     {
         /* No.323 delta:17491 weight:1849 */
         44497,
@@ -17819,7 +17819,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f862d44,
          0x3faa8a7f,
          0x3f9cb53b},
-        0xffff8000},
+        },
     {
         /* No.324 delta:16587 weight:1791 */
         44497,
@@ -17874,7 +17874,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa8a76f,
          0x3f863a7b,
          0x3fb4dc74},
-        0xffff8000},
+        },
     {
         /* No.325 delta:16227 weight:1865 */
         44497,
@@ -17929,7 +17929,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c2c6d,
          0x3fb80716,
          0x3f9286e8},
-        0xffff8000},
+        },
     {
         /* No.326 delta:17353 weight:1599 */
         44497,
@@ -17984,7 +17984,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87d3af,
          0x3f8d465b,
          0x3fbb8028},
-        0xffff8000},
+        },
     {
         /* No.327 delta:16922 weight:1829 */
         44497,
@@ -18039,7 +18039,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8d322,
          0x3f95a7eb,
          0x3f8f8e6e},
-        0xffff8000},
+        },
     {
         /* No.328 delta:16616 weight:1625 */
         44497,
@@ -18094,7 +18094,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb56a30,
          0x3f9ee6b7,
          0x3fa08c39},
-        0xffff8000},
+        },
     {
         /* No.329 delta:18367 weight:1729 */
         44497,
@@ -18149,7 +18149,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2e41b,
          0x3f8992e4,
          0x3fbe147b},
-        0xffff8000},
+        },
     {
         /* No.330 delta:16510 weight:1789 */
         44497,
@@ -18204,7 +18204,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9efe23,
          0x3fa9587b,
          0x3fa2cf53},
-        0xffff8000},
+        },
     {
         /* No.331 delta:16015 weight:1865 */
         44497,
@@ -18259,7 +18259,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f914386,
          0x3f8ab6b7,
          0x3fa53182},
-        0xffff8000},
+        },
     {
         /* No.332 delta:17924 weight:1875 */
         44497,
@@ -18314,7 +18314,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa67cda,
          0x3f953585,
          0x3fabcbd9},
-        0xffff8000},
+        },
     {
         /* No.333 delta:18523 weight:1829 */
         44497,
@@ -18369,7 +18369,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa02298,
          0x3fb2e393,
          0x3f9c9c1b},
-        0xffff8000},
+        },
     {
         /* No.334 delta:17064 weight:1897 */
         44497,
@@ -18424,7 +18424,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99a792,
          0x3fb6720e,
          0x3f8b157e},
-        0xffff8000},
+        },
     {
         /* No.335 delta:17653 weight:1769 */
         44497,
@@ -18479,7 +18479,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa94bdb,
          0x3fb39c57,
          0x3f862ad3},
-        0xffff8000},
+        },
     {
         /* No.336 delta:16998 weight:1891 */
         44497,
@@ -18534,7 +18534,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f844b44,
          0x3fb368ec,
          0x3f9927ca},
-        0xffff8000},
+        },
     {
         /* No.337 delta:16772 weight:1769 */
         44497,
@@ -18589,7 +18589,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91929b,
          0x3fbd761f,
          0x3f8b5493},
-        0xffff8000},
+        },
     {
         /* No.338 delta:17034 weight:1729 */
         44497,
@@ -18644,7 +18644,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f94cf27,
          0x3f830228,
          0x3f9e94a2},
-        0xffff8000},
+        },
     {
         /* No.339 delta:17539 weight:1941 */
         44497,
@@ -18699,7 +18699,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a36d1,
          0x3fa95a56,
          0x3f84cdc5},
-        0xffff8000},
+        },
     {
         /* No.340 delta:16874 weight:1815 */
         44497,
@@ -18754,7 +18754,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe8509,
          0x3f9534fa,
          0x3f89e265},
-        0xffff8000},
+        },
     {
         /* No.341 delta:16192 weight:1907 */
         44497,
@@ -18809,7 +18809,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8ff50,
          0x3f9d86f1,
          0x3fb778d9},
-        0xffff8000},
+        },
     {
         /* No.342 delta:16103 weight:1731 */
         44497,
@@ -18864,7 +18864,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9933e4,
          0x3face26f,
          0x3f87851f},
-        0xffff8000},
+        },
     {
         /* No.343 delta:15857 weight:1961 */
         44497,
@@ -18919,7 +18919,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0da2e,
          0x3f8ae81e,
          0x3f843e92},
-        0xffff8000},
+        },
     {
         /* No.344 delta:15643 weight:1959 */
         44497,
@@ -18974,7 +18974,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f978052,
          0x3fb1136c,
          0x3f8c55f9},
-        0xffff8000},
+        },
     {
         /* No.345 delta:16019 weight:1599 */
         44497,
@@ -19029,7 +19029,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f943a9b,
          0x3fb891dc,
          0x3f8e2c60},
-        0xffff8000},
+        },
     {
         /* No.346 delta:16050 weight:1873 */
         44497,
@@ -19084,7 +19084,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f862633,
          0x3fa54861,
          0x3f977376},
-        0xffff8000},
+        },
     {
         /* No.347 delta:16053 weight:1831 */
         44497,
@@ -19139,7 +19139,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0527e,
          0x3fbe81ec,
          0x3f857e9e},
-        0xffff8000},
+        },
     {
         /* No.348 delta:16002 weight:1813 */
         44497,
@@ -19194,7 +19194,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbae1ff,
          0x3fa6a349,
          0x3f98e0e2},
-        0xffff8000},
+        },
     {
         /* No.349 delta:17154 weight:1777 */
         44497,
@@ -19249,7 +19249,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8aebb3,
          0x3f96ceb6,
          0x3fb8bccc},
-        0xffff8000},
+        },
     {
         /* No.350 delta:16181 weight:1883 */
         44497,
@@ -19304,7 +19304,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb9f0df,
          0x3fa5544d,
          0x3f9be239},
-        0xffff8000},
+        },
     {
         /* No.351 delta:15962 weight:1681 */
         44497,
@@ -19359,7 +19359,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac4a0e,
          0x3f8955a3,
          0x3f972ff6},
-        0xffff8000},
+        },
     {
         /* No.352 delta:15901 weight:1487 */
         44497,
@@ -19414,7 +19414,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa94936,
          0x3f8dcf27,
          0x3fb2190a},
-        0xffff8000},
+        },
     {
         /* No.353 delta:17132 weight:1579 */
         44497,
@@ -19469,7 +19469,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87d21b,
          0x3fa5d295,
          0x3fb86728},
-        0xffff8000},
+        },
     {
         /* No.354 delta:20091 weight:753 */
         44497,
@@ -19524,7 +19524,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95295a,
          0x3f868b21,
          0x3fb0a7b6},
-        0xffff8000},
+        },
     {
         /* No.355 delta:16439 weight:1811 */
         44497,
@@ -19579,7 +19579,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa296b0,
          0x3fb3f859,
          0x3f99ab8e},
-        0xffff8000},
+        },
     {
         /* No.356 delta:15877 weight:1847 */
         44497,
@@ -19634,7 +19634,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac0257,
          0x3f865948,
          0x3f981bdd},
-        0xffff8000},
+        },
     {
         /* No.357 delta:17936 weight:1639 */
         44497,
@@ -19689,7 +19689,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb999f0,
          0x3faf0ad6,
          0x3f925e1f},
-        0xffff8000},
+        },
     {
         /* No.358 delta:18074 weight:1789 */
         44497,
@@ -19744,7 +19744,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac01f1,
          0x3fb81719,
          0x3f822cfd},
-        0xffff8000},
+        },
     {
         /* No.359 delta:16901 weight:1809 */
         44497,
@@ -19799,7 +19799,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84198f,
          0x3fa207e4,
          0x3f887a0a},
-        0xffff8000},
+        },
     {
         /* No.360 delta:19219 weight:1503 */
         44497,
@@ -19854,7 +19854,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9be615,
          0x3fa66778,
          0x3fb577dd},
-        0xffff8000},
+        },
     {
         /* No.361 delta:15821 weight:1829 */
         44497,
@@ -19909,7 +19909,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac9174,
          0x3f937a5f,
          0x3fb922f3},
-        0xffff8000},
+        },
     {
         /* No.362 delta:17120 weight:1581 */
         44497,
@@ -19964,7 +19964,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc8b92,
          0x3fb16b4e,
          0x3f8685ee},
-        0xffff8000},
+        },
     {
         /* No.363 delta:16622 weight:1301 */
         44497,
@@ -20019,7 +20019,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d362c,
          0x3fb952c9,
          0x3f866d5e},
-        0xffff8000},
+        },
     {
         /* No.364 delta:16738 weight:1785 */
         44497,
@@ -20074,7 +20074,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb04bdb,
          0x3f84ef6c,
          0x3f9fd9c7},
-        0xffff8000},
+        },
     {
         /* No.365 delta:17771 weight:1823 */
         44497,
@@ -20129,7 +20129,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb63e2,
          0x3f897c7e,
          0x3f950d7b},
-        0xffff8000},
+        },
     {
         /* No.366 delta:15813 weight:1741 */
         44497,
@@ -20184,7 +20184,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c7608,
          0x3fbf3d1f,
          0x3fa902e3},
-        0xffff8000},
+        },
     {
         /* No.367 delta:16259 weight:1703 */
         44497,
@@ -20239,7 +20239,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f1c5a,
          0x3f93fde3,
          0x3fa523b7},
-        0xffff8000},
+        },
     {
         /* No.368 delta:16100 weight:1891 */
         44497,
@@ -20294,7 +20294,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbde1dc,
          0x3f8a856e,
          0x3fbff7ab},
-        0xffff8000},
+        },
     {
         /* No.369 delta:16763 weight:1671 */
         44497,
@@ -20349,7 +20349,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87976f,
          0x3f9c7ff6,
          0x3faf9ee8},
-        0xffff8000},
+        },
     {
         /* No.370 delta:16048 weight:1845 */
         44497,
@@ -20404,7 +20404,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86147b,
          0x3fa898d4,
          0x3fbc7924},
-        0xffff8000},
+        },
     {
         /* No.371 delta:17257 weight:1639 */
         44497,
@@ -20459,7 +20459,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f904735,
          0x3fb2c905,
          0x3fa7f209},
-        0xffff8000},
+        },
     {
         /* No.372 delta:16687 weight:1851 */
         44497,
@@ -20514,7 +20514,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c6730,
          0x3fa39b8a,
          0x3f9f4995},
-        0xffff8000},
+        },
     {
         /* No.373 delta:17270 weight:1695 */
         44497,
@@ -20569,7 +20569,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8810a5,
          0x3f861130,
          0x3fab4739},
-        0xffff8000},
+        },
     {
         /* No.374 delta:17469 weight:1877 */
         44497,
@@ -20624,7 +20624,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad635c,
          0x3fa186fc,
          0x3f9bd528},
-        0xffff8000},
+        },
     {
         /* No.375 delta:17452 weight:1807 */
         44497,
@@ -20679,7 +20679,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f72cb,
          0x3f8ae550,
          0x3fa4f765},
-        0xffff8000},
+        },
     {
         /* No.376 delta:15968 weight:1371 */
         44497,
@@ -20734,7 +20734,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb3670a,
          0x3f85e944,
          0x3f9bde9b},
-        0xffff8000},
+        },
     {
         /* No.377 delta:16898 weight:1785 */
         44497,
@@ -20789,7 +20789,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac9643,
          0x3f87fd7b,
          0x3f936cf0},
-        0xffff8000},
+        },
     {
         /* No.378 delta:15881 weight:1855 */
         44497,
@@ -20844,7 +20844,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f966ad1,
          0x3f9d8d15,
          0x3fa2dda2},
-        0xffff8000},
+        },
     {
         /* No.379 delta:16582 weight:1871 */
         44497,
@@ -20899,7 +20899,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3b783,
          0x3f89e690,
          0x3f978d5f},
-        0xffff8000},
+        },
     {
         /* No.380 delta:16772 weight:1919 */
         44497,
@@ -20954,7 +20954,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f961b49,
          0x3fb9b29c,
          0x3f8de818},
-        0xffff8000},
+        },
     {
         /* No.381 delta:16071 weight:1783 */
         44497,
@@ -21009,7 +21009,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf44ac,
          0x3f8aafbb,
          0x3f8411fc},
-        0xffff8000},
+        },
     {
         /* No.382 delta:17186 weight:1809 */
         44497,
@@ -21064,7 +21064,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91ed30,
          0x3fbc20eb,
          0x3fa316e7},
-        0xffff8000},
+        },
     {
         /* No.383 delta:16140 weight:1817 */
         44497,
@@ -21119,7 +21119,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faac574,
          0x3f9dd73c,
          0x3f8e81cf},
-        0xffff8000},
+        },
     {
         /* No.384 delta:15876 weight:1757 */
         44497,
@@ -21174,7 +21174,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb740d3,
          0x3f853d96,
          0x3f921bb9},
-        0xffff8000},
+        },
     {
         /* No.385 delta:17562 weight:1857 */
         44497,
@@ -21229,7 +21229,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbdb015,
          0x3fb33284,
          0x3fae4d1c},
-        0xffff8000},
+        },
     {
         /* No.386 delta:18374 weight:1873 */
         44497,
@@ -21284,7 +21284,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa44b38,
          0x3fbad2e0,
          0x3f9529b4},
-        0xffff8000},
+        },
     {
         /* No.387 delta:19034 weight:1657 */
         44497,
@@ -21339,7 +21339,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f71aa,
          0x3fa4218c,
          0x3f8b9712},
-        0xffff8000},
+        },
     {
         /* No.388 delta:16201 weight:1833 */
         44497,
@@ -21394,7 +21394,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fa71c,
          0x3fabf9af,
          0x3fbd0e3a},
-        0xffff8000},
+        },
     {
         /* No.389 delta:17121 weight:1739 */
         44497,
@@ -21449,7 +21449,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98be0e,
          0x3f86c862,
          0x3fa9fd66},
-        0xffff8000},
+        },
     {
         /* No.390 delta:16677 weight:1869 */
         44497,
@@ -21504,7 +21504,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa931f1,
          0x3fa35b2b,
          0x3f9764e3},
-        0xffff8000},
+        },
     {
         /* No.391 delta:16083 weight:1805 */
         44497,
@@ -21559,7 +21559,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf0677,
          0x3fb12fb3,
          0x3f84b8dc},
-        0xffff8000},
+        },
     {
         /* No.392 delta:18347 weight:1863 */
         44497,
@@ -21614,7 +21614,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fafef3f,
          0x3f942202,
          0x3f8941b5},
-        0xffff8000},
+        },
     {
         /* No.393 delta:17405 weight:1929 */
         44497,
@@ -21669,7 +21669,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e2c94,
          0x3fb233f0,
          0x3f84519c},
-        0xffff8000},
+        },
     {
         /* No.394 delta:16504 weight:1871 */
         44497,
@@ -21724,7 +21724,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8660ec,
          0x3fac0410,
          0x3f93d2f8},
-        0xffff8000},
+        },
     {
         /* No.395 delta:15814 weight:1743 */
         44497,
@@ -21779,7 +21779,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f890ed4,
          0x3fb174ca,
          0x3fa3eb79},
-        0xffff8000},
+        },
     {
         /* No.396 delta:16867 weight:1831 */
         44497,
@@ -21834,7 +21834,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa76788,
          0x3fb51ca5,
          0x3f8e7aa0},
-        0xffff8000},
+        },
     {
         /* No.397 delta:16267 weight:1869 */
         44497,
@@ -21889,7 +21889,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4cb4f,
          0x3f8f10ae,
          0x3f9d0871},
-        0xffff8000},
+        },
     {
         /* No.398 delta:17150 weight:1713 */
         44497,
@@ -21944,7 +21944,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa25fe6,
          0x3f9ec612,
          0x3f945fba},
-        0xffff8000},
+        },
     {
         /* No.399 delta:15860 weight:1647 */
         44497,
@@ -21999,7 +21999,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb3fc4e,
          0x3fa7efb8,
          0x3f9838ad},
-        0xffff8000},
+        },
     {
         /* No.400 delta:19939 weight:951 */
         44497,
@@ -22054,7 +22054,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2a0fc,
          0x3fa8b6c8,
          0x3f876124},
-        0xffff8000},
+        },
     {
         /* No.401 delta:15869 weight:1575 */
         44497,
@@ -22109,7 +22109,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb45af3,
          0x3f9b9f7f,
          0x3fa8480f},
-        0xffff8000},
+        },
     {
         /* No.402 delta:17159 weight:1727 */
         44497,
@@ -22164,7 +22164,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9af8dc,
          0x3fb6e5a4,
          0x3f884a50},
-        0xffff8000},
+        },
     {
         /* No.403 delta:18768 weight:1757 */
         44497,
@@ -22219,7 +22219,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8752b9,
          0x3fb1b32a,
          0x3face293},
-        0xffff8000},
+        },
     {
         /* No.404 delta:16183 weight:1811 */
         44497,
@@ -22274,7 +22274,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8769a9,
          0x3f93ecce,
          0x3fa13a71},
-        0xffff8000},
+        },
     {
         /* No.405 delta:17351 weight:1763 */
         44497,
@@ -22329,7 +22329,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb44c53,
          0x3fa9d56a,
          0x3f86668f},
-        0xffff8000},
+        },
     {
         /* No.406 delta:17701 weight:1799 */
         44497,
@@ -22384,7 +22384,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98fbea,
          0x3f934d89,
          0x3faf3a0e},
-        0xffff8000},
+        },
     {
         /* No.407 delta:16027 weight:1827 */
         44497,
@@ -22439,7 +22439,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93e3dd,
          0x3fb56cf5,
          0x3fbac824},
-        0xffff8000},
+        },
     {
         /* No.408 delta:15853 weight:1933 */
         44497,
@@ -22494,7 +22494,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f885cbf,
          0x3fb6d869,
          0x3fa2abdd},
-        0xffff8000},
+        },
     {
         /* No.409 delta:16134 weight:1905 */
         44497,
@@ -22549,7 +22549,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb29084,
          0x3fb86a55,
          0x3f949c45},
-        0xffff8000},
+        },
     {
         /* No.410 delta:16130 weight:1773 */
         44497,
@@ -22604,7 +22604,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f986b74,
          0x3fa7220d,
          0x3f8b4df0},
-        0xffff8000},
+        },
     {
         /* No.411 delta:16595 weight:1869 */
         44497,
@@ -22659,7 +22659,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0cf8c,
          0x3fabf98b,
          0x3f844e97},
-        0xffff8000},
+        },
     {
         /* No.412 delta:16151 weight:1137 */
         44497,
@@ -22714,7 +22714,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f946f7e,
          0x3fa92de6,
          0x3fbfdffa},
-        0xffff8000},
+        },
     {
         /* No.413 delta:16774 weight:1757 */
         44497,
@@ -22769,7 +22769,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa19cf9,
          0x3f8c8477,
          0x3fbba605},
-        0xffff8000},
+        },
     {
         /* No.414 delta:19225 weight:1465 */
         44497,
@@ -22824,7 +22824,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a00dd,
          0x3f9642b9,
          0x3fa9f04d},
-        0xffff8000},
+        },
     {
         /* No.415 delta:16477 weight:1809 */
         44497,
@@ -22879,7 +22879,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87bd92,
          0x3f9c6d54,
          0x3f89fee0},
-        0xffff8000},
+        },
     {
         /* No.416 delta:15717 weight:1675 */
         44497,
@@ -22934,7 +22934,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87d1bc,
          0x3faae3e9,
          0x3f94bf34},
-        0xffff8000},
+        },
     {
         /* No.417 delta:16774 weight:1667 */
         44497,
@@ -22989,7 +22989,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89996f,
          0x3fa42310,
          0x3f9a60cf},
-        0xffff8000},
+        },
     {
         /* No.418 delta:17769 weight:1795 */
         44497,
@@ -23044,7 +23044,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f935692,
          0x3f9e851b,
          0x3f835396},
-        0xffff8000},
+        },
     {
         /* No.419 delta:16543 weight:1939 */
         44497,
@@ -23099,7 +23099,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f859aca,
          0x3fa9177e,
          0x3fb7acfa},
-        0xffff8000},
+        },
     {
         /* No.420 delta:16389 weight:1929 */
         44497,
@@ -23154,7 +23154,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0daf7,
          0x3f8e9b2f,
          0x3f932ca1},
-        0xffff8000},
+        },
     {
         /* No.421 delta:16970 weight:1887 */
         44497,
@@ -23209,7 +23209,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbec917,
          0x3f8c5f73,
          0x3f98e1e7},
-        0xffff8000},
+        },
     {
         /* No.422 delta:16639 weight:1663 */
         44497,
@@ -23264,7 +23264,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8bb272,
          0x3f999ea3,
          0x3fb4fdcc},
-        0xffff8000},
+        },
     {
         /* No.423 delta:16415 weight:1813 */
         44497,
@@ -23319,7 +23319,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb48278,
          0x3f93aebc,
          0x3fb9e060},
-        0xffff8000},
+        },
     {
         /* No.424 delta:17398 weight:1739 */
         44497,
@@ -23374,7 +23374,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f877ee4,
          0x3f88d81c,
          0x3fb4ae60},
-        0xffff8000},
+        },
     {
         /* No.425 delta:16820 weight:827 */
         44497,
@@ -23429,7 +23429,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8bd779,
          0x3fbc1290,
          0x3f919864},
-        0xffff8000},
+        },
     {
         /* No.426 delta:19299 weight:1361 */
         44497,
@@ -23484,7 +23484,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a02e8,
          0x3f8fe5a7,
          0x3fa47719},
-        0xffff8000},
+        },
     {
         /* No.427 delta:16253 weight:1801 */
         44497,
@@ -23539,7 +23539,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2c46e,
          0x3f963a5d,
          0x3fa9a4ca},
-        0xffff8000},
+        },
     {
         /* No.428 delta:17520 weight:1757 */
         44497,
@@ -23594,7 +23594,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe9fb1,
          0x3f98b56e,
          0x3f8a48db},
-        0xffff8000},
+        },
     {
         /* No.429 delta:16870 weight:1879 */
         44497,
@@ -23649,7 +23649,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac961a,
          0x3fa267fa,
          0x3f967436},
-        0xffff8000},
+        },
     {
         /* No.430 delta:16528 weight:1879 */
         44497,
@@ -23704,7 +23704,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe11fb,
          0x3fa27edb,
          0x3f940146},
-        0xffff8000},
+        },
     {
         /* No.431 delta:15895 weight:1859 */
         44497,
@@ -23759,7 +23759,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2fb17,
          0x3f949e98,
          0x3f88e526},
-        0xffff8000},
+        },
     {
         /* No.432 delta:16752 weight:1701 */
         44497,
@@ -23814,7 +23814,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f873a99,
          0x3fbc2a07,
          0x3f92d9fa},
-        0xffff8000},
+        },
     {
         /* No.433 delta:16225 weight:1861 */
         44497,
@@ -23869,7 +23869,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8753cd,
          0x3fad0ca7,
          0x3f983aca},
-        0xffff8000},
+        },
     {
         /* No.434 delta:15773 weight:1701 */
         44497,
@@ -23924,7 +23924,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87abc7,
          0x3fb722ab,
          0x3f888b4f},
-        0xffff8000},
+        },
     {
         /* No.435 delta:18676 weight:2003 */
         44497,
@@ -23979,7 +23979,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c9987,
          0x3f8fa827,
          0x3fb9ffa2},
-        0xffff8000},
+        },
     {
         /* No.436 delta:16013 weight:1895 */
         44497,
@@ -24034,7 +24034,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89175b,
          0x3fa227a1,
          0x3fb85d76},
-        0xffff8000},
+        },
     {
         /* No.437 delta:17247 weight:1845 */
         44497,
@@ -24089,7 +24089,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87e7ec,
          0x3fa6658e,
          0x3fb37d60},
-        0xffff8000},
+        },
     {
         /* No.438 delta:16285 weight:1815 */
         44497,
@@ -24144,7 +24144,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f45ef,
          0x3f945a28,
          0x3fa32453},
-        0xffff8000},
+        },
     {
         /* No.439 delta:16674 weight:1823 */
         44497,
@@ -24199,7 +24199,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe3270,
          0x3f8528a4,
          0x3f9968a0},
-        0xffff8000},
+        },
     {
         /* No.440 delta:15893 weight:1627 */
         44497,
@@ -24254,7 +24254,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84e24b,
          0x3f8bf9f4,
          0x3fb7af13},
-        0xffff8000},
+        },
     {
         /* No.441 delta:17170 weight:1761 */
         44497,
@@ -24309,7 +24309,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb4c538,
          0x3f9f27d9,
          0x3fa28352},
-        0xffff8000},
+        },
     {
         /* No.442 delta:17752 weight:1765 */
         44497,
@@ -24364,7 +24364,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fae1749,
          0x3f9229e2,
          0x3f8448fd},
-        0xffff8000},
+        },
     {
         /* No.443 delta:16606 weight:1725 */
         44497,
@@ -24419,7 +24419,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf286c,
          0x3fb17a08,
          0x3f8bc4ea},
-        0xffff8000},
+        },
     {
         /* No.444 delta:16701 weight:1863 */
         44497,
@@ -24474,7 +24474,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa23c18,
          0x3fafb908,
          0x3fb9ca0c},
-        0xffff8000},
+        },
     {
         /* No.445 delta:15852 weight:1815 */
         44497,
@@ -24529,7 +24529,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb3063,
          0x3fb06dce,
          0x3f851aa8},
-        0xffff8000},
+        },
     {
         /* No.446 delta:17404 weight:1845 */
         44497,
@@ -24584,7 +24584,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87c3b0,
          0x3fa24c51,
          0x3f94374e},
-        0xffff8000},
+        },
     {
         /* No.447 delta:16922 weight:1615 */
         44497,
@@ -24639,7 +24639,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3a512,
          0x3fa8b9bb,
          0x3f92e326},
-        0xffff8000},
+        },
     {
         /* No.448 delta:18845 weight:1743 */
         44497,
@@ -24694,7 +24694,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa30887,
          0x3fb0a65d,
          0x3f8dffca},
-        0xffff8000},
+        },
     {
         /* No.449 delta:16333 weight:1617 */
         44497,
@@ -24749,7 +24749,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faaf132,
          0x3fbcb0fc,
          0x3f89cfe8},
-        0xffff8000},
+        },
     {
         /* No.450 delta:17440 weight:1797 */
         44497,
@@ -24804,7 +24804,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2443c,
          0x3fb044a3,
          0x3f846237},
-        0xffff8000},
+        },
     {
         /* No.451 delta:17299 weight:1891 */
         44497,
@@ -24859,7 +24859,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e0acc,
          0x3f8a23b4,
          0x3fb0f928},
-        0xffff8000},
+        },
     {
         /* No.452 delta:17388 weight:1821 */
         44497,
@@ -24914,7 +24914,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1f78a,
          0x3f9e10a2,
          0x3fb26726},
-        0xffff8000},
+        },
     {
         /* No.453 delta:16553 weight:1773 */
         44497,
@@ -24969,7 +24969,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88c4c8,
          0x3fa6e5e4,
          0x3f9217f1},
-        0xffff8000},
+        },
     {
         /* No.454 delta:18303 weight:1855 */
         44497,
@@ -25024,7 +25024,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2670b,
          0x3fadef9a,
          0x3f91d51f},
-        0xffff8000},
+        },
     {
         /* No.455 delta:16498 weight:1503 */
         44497,
@@ -25079,7 +25079,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1786d,
          0x3fb2ce74,
          0x3f85bd08},
-        0xffff8000},
+        },
     {
         /* No.456 delta:15862 weight:1553 */
         44497,
@@ -25134,7 +25134,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faab456,
          0x3f9927e9,
          0x3f84d4c7},
-        0xffff8000},
+        },
     {
         /* No.457 delta:15932 weight:1499 */
         44497,
@@ -25189,7 +25189,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbbf2fa,
          0x3f90f5a2,
          0x3f86b7f5},
-        0xffff8000},
+        },
     {
         /* No.458 delta:16987 weight:1879 */
         44497,
@@ -25244,7 +25244,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f845b42,
          0x3f8897e2,
          0x3fbfe44c},
-        0xffff8000},
+        },
     {
         /* No.459 delta:17250 weight:1853 */
         44497,
@@ -25299,7 +25299,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ff6df,
          0x3facb989,
          0x3fb14a27},
-        0xffff8000},
+        },
     {
         /* No.460 delta:16349 weight:1751 */
         44497,
@@ -25354,7 +25354,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa47785,
          0x3fa2b5a9,
          0x3fbf02bc},
-        0xffff8000},
+        },
     {
         /* No.461 delta:18650 weight:1907 */
         44497,
@@ -25409,7 +25409,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb740ba,
          0x3fb8759a,
          0x3f875b0f},
-        0xffff8000},
+        },
     {
         /* No.462 delta:17614 weight:1885 */
         44497,
@@ -25464,7 +25464,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86fd1f,
          0x3fbda1d8,
          0x3fb6caf7},
-        0xffff8000},
+        },
     {
         /* No.463 delta:17452 weight:1807 */
         44497,
@@ -25519,7 +25519,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9272b4,
          0x3f8769ce,
          0x3fa91350},
-        0xffff8000},
+        },
     {
         /* No.464 delta:15794 weight:1841 */
         44497,
@@ -25574,7 +25574,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa37bbf,
          0x3f8c35c7,
          0x3fb14f37},
-        0xffff8000},
+        },
     {
         /* No.465 delta:15679 weight:1713 */
         44497,
@@ -25629,7 +25629,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86e7b0,
          0x3fbcf09c,
          0x3fa8c110},
-        0xffff8000},
+        },
     {
         /* No.466 delta:16950 weight:1779 */
         44497,
@@ -25684,7 +25684,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86d2dc,
          0x3fa3e9d7,
          0x3f990253},
-        0xffff8000},
+        },
     {
         /* No.467 delta:15743 weight:1777 */
         44497,
@@ -25739,7 +25739,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fafa533,
          0x3f99522d,
          0x3fb272f9},
-        0xffff8000},
+        },
     {
         /* No.468 delta:18359 weight:1881 */
         44497,
@@ -25794,7 +25794,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8eb438,
          0x3fb72c57,
          0x3f99d344},
-        0xffff8000},
+        },
     {
         /* No.469 delta:15814 weight:1537 */
         44497,
@@ -25849,7 +25849,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f842af8,
          0x3fa3dd68,
          0x3f90f753},
-        0xffff8000},
+        },
     {
         /* No.470 delta:20079 weight:787 */
         44497,
@@ -25904,7 +25904,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad80b4,
          0x3fb1d17b,
          0x3f8680c5},
-        0xffff8000},
+        },
     {
         /* No.471 delta:16801 weight:1841 */
         44497,
@@ -25959,7 +25959,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2a3e1,
          0x3f8dd4dd,
          0x3f916450},
-        0xffff8000},
+        },
     {
         /* No.472 delta:16383 weight:1391 */
         44497,
@@ -26014,7 +26014,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a6221,
          0x3fb70f56,
          0x3fa9f898},
-        0xffff8000},
+        },
     {
         /* No.473 delta:16181 weight:1839 */
         44497,
@@ -26069,7 +26069,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f994bfa,
          0x3fad018b,
          0x3fbbba15},
-        0xffff8000},
+        },
     {
         /* No.474 delta:17006 weight:1663 */
         44497,
@@ -26124,7 +26124,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0a61b,
          0x3f9c3bd1,
          0x3fa34924},
-        0xffff8000},
+        },
     {
         /* No.475 delta:15778 weight:1855 */
         44497,
@@ -26179,7 +26179,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ba6d2,
          0x3fa550cb,
          0x3fb1e5df},
-        0xffff8000},
+        },
     {
         /* No.476 delta:17067 weight:1907 */
         44497,
@@ -26234,7 +26234,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8aa153,
          0x3f86ee0b,
          0x3fb0710f},
-        0xffff8000},
+        },
     {
         /* No.477 delta:18915 weight:1739 */
         44497,
@@ -26289,7 +26289,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb90728,
          0x3fa3b5ba,
          0x3f8c97bc},
-        0xffff8000},
+        },
     {
         /* No.478 delta:15841 weight:1827 */
         44497,
@@ -26344,7 +26344,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa43530,
          0x3f9ae4f8,
          0x3fb1735c},
-        0xffff8000},
+        },
     {
         /* No.479 delta:17588 weight:1879 */
         44497,
@@ -26399,7 +26399,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb137ae,
          0x3f962133,
          0x3fa2c764},
-        0xffff8000},
+        },
     {
         /* No.480 delta:16487 weight:1777 */
         44497,
@@ -26454,7 +26454,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2d229,
          0x3f9f397d,
          0x3fb165a0},
-        0xffff8000},
+        },
     {
         /* No.481 delta:15802 weight:1705 */
         44497,
@@ -26509,7 +26509,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84c884,
          0x3f8af960,
          0x3fbf5f04},
-        0xffff8000},
+        },
     {
         /* No.482 delta:17099 weight:1313 */
         44497,
@@ -26564,7 +26564,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f9ba8,
          0x3fbb82c8,
          0x3fa83dcf},
-        0xffff8000},
+        },
     {
         /* No.483 delta:15848 weight:1785 */
         44497,
@@ -26619,7 +26619,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f948e4d,
          0x3f9f4d16,
          0x3fa12480},
-        0xffff8000},
+        },
     {
         /* No.484 delta:15757 weight:1829 */
         44497,
@@ -26674,7 +26674,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f94b529,
          0x3fb0579d,
          0x3f86e735},
-        0xffff8000},
+        },
     {
         /* No.485 delta:17002 weight:1891 */
         44497,
@@ -26729,7 +26729,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f2d11,
          0x3f85a48a,
          0x3fb91fb5},
-        0xffff8000},
+        },
     {
         /* No.486 delta:16640 weight:1843 */
         44497,
@@ -26784,7 +26784,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f912547,
          0x3faaf86d,
          0x3fb499be},
-        0xffff8000},
+        },
     {
         /* No.487 delta:16372 weight:1673 */
         44497,
@@ -26839,7 +26839,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f92016f,
          0x3f989c8a,
          0x3fae3197},
-        0xffff8000},
+        },
     {
         /* No.488 delta:17910 weight:1749 */
         44497,
@@ -26894,7 +26894,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8427f0,
          0x3fb5dde0,
          0x3f9baf77},
-        0xffff8000},
+        },
     {
         /* No.489 delta:17494 weight:1755 */
         44497,
@@ -26949,7 +26949,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3f2d5,
          0x3f93c3b2,
          0x3fbd95bc},
-        0xffff8000},
+        },
     {
         /* No.490 delta:18551 weight:1901 */
         44497,
@@ -27004,7 +27004,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f94d5e9,
          0x3fbb7130,
          0x3f86c5e7},
-        0xffff8000},
+        },
     {
         /* No.491 delta:17103 weight:1899 */
         44497,
@@ -27059,7 +27059,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9271f7,
          0x3fb74d0f,
          0x3f895384},
-        0xffff8000},
+        },
     {
         /* No.492 delta:16150 weight:1861 */
         44497,
@@ -27114,7 +27114,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb37646,
          0x3f91b415,
          0x3f86c332},
-        0xffff8000},
+        },
     {
         /* No.493 delta:16428 weight:1421 */
         44497,
@@ -27169,7 +27169,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87c932,
          0x3fb508ea,
          0x3fa85e96},
-        0xffff8000},
+        },
     {
         /* No.494 delta:16234 weight:1865 */
         44497,
@@ -27224,7 +27224,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f0523,
          0x3fb7ada5,
          0x3f85b82b},
-        0xffff8000},
+        },
     {
         /* No.495 delta:15660 weight:1845 */
         44497,
@@ -27279,7 +27279,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb56fbe,
          0x3faf02c7,
          0x3f902df1},
-        0xffff8000},
+        },
     {
         /* No.496 delta:16603 weight:1855 */
         44497,
@@ -27334,7 +27334,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f902eb2,
          0x3fb26121,
          0x3facd19a},
-        0xffff8000},
+        },
     {
         /* No.497 delta:15750 weight:1881 */
         44497,
@@ -27389,7 +27389,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb1717e,
          0x3f9a3a49,
          0x3f8941c5},
-        0xffff8000},
+        },
     {
         /* No.498 delta:16745 weight:1809 */
         44497,
@@ -27444,7 +27444,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e6777,
          0x3fa906d0,
          0x3f9c5247},
-        0xffff8000},
+        },
     {
         /* No.499 delta:17501 weight:1945 */
         44497,
@@ -27499,7 +27499,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f3703,
          0x3fa8194c,
          0x3fb6c7db},
-        0xffff8000},
+        },
     {
         /* No.500 delta:15878 weight:1685 */
         44497,
@@ -27554,7 +27554,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c426d,
          0x3fb731d1,
          0x3fa52254},
-        0xffff8000},
+        },
     {
         /* No.501 delta:16919 weight:1767 */
         44497,
@@ -27609,7 +27609,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0de2f,
          0x3f992574,
          0x3f8b46e0},
-        0xffff8000},
+        },
     {
         /* No.502 delta:15855 weight:1957 */
         44497,
@@ -27664,7 +27664,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8585e0,
          0x3fa0b62c,
          0x3f9f2479},
-        0xffff8000},
+        },
     {
         /* No.503 delta:16168 weight:1761 */
         44497,
@@ -27719,7 +27719,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d2ccf,
          0x3fa762f9,
          0x3f91db77},
-        0xffff8000},
+        },
     {
         /* No.504 delta:17635 weight:1823 */
         44497,
@@ -27774,7 +27774,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87dba3,
          0x3f9db2e4,
          0x3fab85c2},
-        0xffff8000},
+        },
     {
         /* No.505 delta:16569 weight:1787 */
         44497,
@@ -27829,7 +27829,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ff9a3,
          0x3f926815,
          0x3fa197f0},
-        0xffff8000},
+        },
     {
         /* No.506 delta:16167 weight:1705 */
         44497,
@@ -27884,7 +27884,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8715f8,
          0x3facd4d8,
          0x3f93c7f4},
-        0xffff8000},
+        },
     {
         /* No.507 delta:17150 weight:1977 */
         44497,
@@ -27939,7 +27939,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f961916,
          0x3fb9642c,
          0x3f8542c3},
-        0xffff8000},
+        },
     {
         /* No.508 delta:17227 weight:1761 */
         44497,
@@ -27994,7 +27994,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9eab5b,
          0x3f8bd5b2,
          0x3fbc082c},
-        0xffff8000},
+        },
     {
         /* No.509 delta:18094 weight:1645 */
         44497,
@@ -28049,7 +28049,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ff7fb,
          0x3f8e09b6,
          0x3fa1f331},
-        0xffff8000},
+        },
     {
         /* No.510 delta:16714 weight:1769 */
         44497,
@@ -28104,7 +28104,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa0a5bc,
          0x3f9d3444,
          0x3f8ffbd3},
-        0xffff8000},
+        },
     {
         /* No.511 delta:17131 weight:1725 */
         44497,
@@ -28159,7 +28159,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9bf7d8,
          0x3fa8b97d,
          0x3fa6cf1c},
-        0xffff8000},
+        },
     {
         /* No.512 delta:15852 weight:1625 */
         44497,
@@ -28214,7 +28214,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa842f1,
          0x3f86d23f,
          0x3fb221b7},
-        0xffff8000},
+        },
     {
         /* No.513 delta:15817 weight:1743 */
         44497,
@@ -28269,7 +28269,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad6e3b,
          0x3fa779d6,
          0x3f90cf41},
-        0xffff8000},
+        },
     {
         /* No.514 delta:16372 weight:1945 */
         44497,
@@ -28324,7 +28324,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb37e5c,
          0x3fbf8ff1,
          0x3f95c024},
-        0xffff8000},
+        },
     {
         /* No.515 delta:16773 weight:1913 */
         44497,
@@ -28379,7 +28379,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faa0449,
          0x3f8850f6,
          0x3f866212},
-        0xffff8000},
+        },
     {
         /* No.516 delta:17576 weight:1697 */
         44497,
@@ -28434,7 +28434,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9795d,
          0x3f85f328,
          0x3fbb88a5},
-        0xffff8000},
+        },
     {
         /* No.517 delta:15857 weight:1869 */
         44497,
@@ -28489,7 +28489,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93ba8c,
          0x3fa6dfc6,
          0x3f9c3113},
-        0xffff8000},
+        },
     {
         /* No.518 delta:16747 weight:1755 */
         44497,
@@ -28544,7 +28544,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fadec88,
          0x3fb9d47b,
          0x3f8f216d},
-        0xffff8000},
+        },
     {
         /* No.519 delta:16152 weight:1821 */
         44497,
@@ -28599,7 +28599,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b8c86,
          0x3fa747ad,
          0x3f999971},
-        0xffff8000},
+        },
     {
         /* No.520 delta:16352 weight:1855 */
         44497,
@@ -28654,7 +28654,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86fd54,
          0x3fa550a6,
          0x3fbba243},
-        0xffff8000},
+        },
     {
         /* No.521 delta:16147 weight:793 */
         44497,
@@ -28709,7 +28709,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b9573,
          0x3fbe4334,
          0x3fa171f8},
-        0xffff8000},
+        },
     {
         /* No.522 delta:16836 weight:1493 */
         44497,
@@ -28764,7 +28764,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8569e0,
          0x3fae9f94,
          0x3fbd846a},
-        0xffff8000},
+        },
     {
         /* No.523 delta:16878 weight:1735 */
         44497,
@@ -28819,7 +28819,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91e9ac,
          0x3f9c8d78,
          0x3faf5a4f},
-        0xffff8000},
+        },
     {
         /* No.524 delta:16978 weight:1713 */
         44497,
@@ -28874,7 +28874,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f916d0a,
          0x3fbabf9b,
          0x3fa14996},
-        0xffff8000},
+        },
     {
         /* No.525 delta:16577 weight:1641 */
         44497,
@@ -28929,7 +28929,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faa7528,
          0x3fa426cb,
          0x3fb16034},
-        0xffff8000},
+        },
     {
         /* No.526 delta:15992 weight:1803 */
         44497,
@@ -28984,7 +28984,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f843a18,
          0x3f92a0ec,
          0x3fae1b1f},
-        0xffff8000},
+        },
     {
         /* No.527 delta:17715 weight:1817 */
         44497,
@@ -29039,7 +29039,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86f705,
          0x3fbcc40c,
          0x3fa2f381},
-        0xffff8000},
+        },
     {
         /* No.528 delta:15850 weight:1785 */
         44497,
@@ -29094,7 +29094,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f915634,
          0x3fba7398,
          0x3f87251c},
-        0xffff8000},
+        },
     {
         /* No.529 delta:17529 weight:1837 */
         44497,
@@ -29149,7 +29149,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb273fb,
          0x3f9941dc,
          0x3f8d0223},
-        0xffff8000},
+        },
     {
         /* No.530 delta:16216 weight:1799 */
         44497,
@@ -29204,7 +29204,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbdd43f,
          0x3fa69616,
          0x3f917b0a},
-        0xffff8000},
+        },
     {
         /* No.531 delta:16167 weight:1869 */
         44497,
@@ -29259,7 +29259,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9d3775,
          0x3fbe7997,
          0x3fa04a6b},
-        0xffff8000},
+        },
     {
         /* No.532 delta:16794 weight:1841 */
         44497,
@@ -29314,7 +29314,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b9aef,
          0x3faef8e8,
          0x3fa0ee64},
-        0xffff8000},
+        },
     {
         /* No.533 delta:16185 weight:1809 */
         44497,
@@ -29369,7 +29369,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8cedca,
          0x3faf5bae,
          0x3fbac93a},
-        0xffff8000},
+        },
     {
         /* No.534 delta:15914 weight:1265 */
         44497,
@@ -29424,7 +29424,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab5dcf,
          0x3f857272,
          0x3fb8bad5},
-        0xffff8000},
+        },
     {
         /* No.535 delta:16557 weight:1905 */
         44497,
@@ -29479,7 +29479,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd7ca6,
          0x3fa2928a,
          0x3f974f16},
-        0xffff8000},
+        },
     {
         /* No.536 delta:16196 weight:1869 */
         44497,
@@ -29534,7 +29534,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb5beae,
          0x3f852a58,
          0x3f9b12e7},
-        0xffff8000},
+        },
     {
         /* No.537 delta:16085 weight:1967 */
         44497,
@@ -29589,7 +29589,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f988d3d,
          0x3fae2ce9,
          0x3f835745},
-        0xffff8000},
+        },
     {
         /* No.538 delta:15911 weight:1921 */
         44497,
@@ -29644,7 +29644,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e5d43,
          0x3f84c627,
          0x3fb936f0},
-        0xffff8000},
+        },
     {
         /* No.539 delta:16802 weight:1871 */
         44497,
@@ -29699,7 +29699,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f878f4b,
          0x3f9b120e,
          0x3fb158ee},
-        0xffff8000},
+        },
     {
         /* No.540 delta:16855 weight:1851 */
         44497,
@@ -29754,7 +29754,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89cf1c,
          0x3fb41006,
          0x3fa3cf78},
-        0xffff8000},
+        },
     {
         /* No.541 delta:15816 weight:1729 */
         44497,
@@ -29809,7 +29809,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa89c92,
          0x3f851204,
          0x3f974f31},
-        0xffff8000},
+        },
     {
         /* No.542 delta:17695 weight:1897 */
         44497,
@@ -29864,7 +29864,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f941d1c,
          0x3f9b39c7,
          0x3fa77f58},
-        0xffff8000},
+        },
     {
         /* No.543 delta:16920 weight:1749 */
         44497,
@@ -29919,7 +29919,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d9763,
          0x3f91c73e,
          0x3fbf8776},
-        0xffff8000},
+        },
     {
         /* No.544 delta:15823 weight:1823 */
         44497,
@@ -29974,7 +29974,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa783d1,
          0x3f935cf6,
          0x3fb81648},
-        0xffff8000},
+        },
     {
         /* No.545 delta:16692 weight:1825 */
         44497,
@@ -30029,7 +30029,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa900ee,
          0x3f9a1add,
          0x3fb42f6a},
-        0xffff8000},
+        },
     {
         /* No.546 delta:15834 weight:1375 */
         44497,
@@ -30084,7 +30084,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f96f7bd,
          0x3fb8225c,
          0x3f8b55a5},
-        0xffff8000},
+        },
     {
         /* No.547 delta:16514 weight:1879 */
         44497,
@@ -30139,7 +30139,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e48c5,
          0x3f9805b6,
          0x3fa57a89},
-        0xffff8000},
+        },
     {
         /* No.548 delta:16156 weight:1889 */
         44497,
@@ -30194,7 +30194,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99338f,
          0x3f8a6418,
          0x3fb55c93},
-        0xffff8000},
+        },
     {
         /* No.549 delta:15857 weight:1851 */
         44497,
@@ -30249,7 +30249,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f921333,
          0x3f8c9bd3,
          0x3fa2e1e7},
-        0xffff8000},
+        },
     {
         /* No.550 delta:16386 weight:1405 */
         44497,
@@ -30304,7 +30304,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93e134,
          0x3fb97c92,
          0x3f8c2f3d},
-        0xffff8000},
+        },
     {
         /* No.551 delta:17943 weight:1865 */
         44497,
@@ -30359,7 +30359,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9943ea,
          0x3f87f599,
          0x3f8d8f65},
-        0xffff8000},
+        },
     {
         /* No.552 delta:16444 weight:1829 */
         44497,
@@ -30414,7 +30414,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f852994,
          0x3f9e3e1e,
          0x3fa3f688},
-        0xffff8000},
+        },
     {
         /* No.553 delta:16192 weight:1719 */
         44497,
@@ -30469,7 +30469,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8748b3,
          0x3fad59de,
          0x3fbf8d28},
-        0xffff8000},
+        },
     {
         /* No.554 delta:16375 weight:1573 */
         44497,
@@ -30524,7 +30524,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb18a95,
          0x3fbf0b99,
          0x3f8a9165},
-        0xffff8000},
+        },
     {
         /* No.555 delta:16085 weight:1657 */
         44497,
@@ -30579,7 +30579,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86b1ac,
          0x3fb23a58,
          0x3f8c22a4},
-        0xffff8000},
+        },
     {
         /* No.556 delta:17687 weight:1841 */
         44497,
@@ -30634,7 +30634,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa89216,
          0x3f9df993,
          0x3f8a3b96},
-        0xffff8000},
+        },
     {
         /* No.557 delta:17505 weight:1791 */
         44497,
@@ -30689,7 +30689,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88a97a,
          0x3f84b285,
          0x3fae28a3},
-        0xffff8000},
+        },
     {
         /* No.558 delta:15966 weight:1923 */
         44497,
@@ -30744,7 +30744,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88cd5a,
          0x3fa7aac5,
          0x3fad9437},
-        0xffff8000},
+        },
     {
         /* No.559 delta:18396 weight:1747 */
         44497,
@@ -30799,7 +30799,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb613f9,
          0x3f9ad0fc,
          0x3fa50a7a},
-        0xffff8000},
+        },
     {
         /* No.560 delta:16577 weight:1657 */
         44497,
@@ -30854,7 +30854,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa5976c,
          0x3fb222cc,
          0x3f9f84f8},
-        0xffff8000},
+        },
     {
         /* No.561 delta:18808 weight:1729 */
         44497,
@@ -30909,7 +30909,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e23e3,
          0x3fa12eee,
          0x3fb44d78},
-        0xffff8000},
+        },
     {
         /* No.562 delta:15976 weight:1885 */
         44497,
@@ -30964,7 +30964,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2673c,
          0x3fb8598c,
          0x3f934911},
-        0xffff8000},
+        },
     {
         /* No.563 delta:16149 weight:1919 */
         44497,
@@ -31019,7 +31019,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d6eb9,
          0x3f991198,
          0x3fb67166},
-        0xffff8000},
+        },
     {
         /* No.564 delta:16382 weight:1829 */
         44497,
@@ -31074,7 +31074,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf9f5b,
          0x3f9d83ef,
          0x3fa87913},
-        0xffff8000},
+        },
     {
         /* No.565 delta:17112 weight:1729 */
         44497,
@@ -31129,7 +31129,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e0d6a,
          0x3f84da4e,
          0x3fb919c5},
-        0xffff8000},
+        },
     {
         /* No.566 delta:16653 weight:1891 */
         44497,
@@ -31184,7 +31184,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf6e97,
          0x3f962d2e,
          0x3fa14ce4},
-        0xffff8000},
+        },
     {
         /* No.567 delta:16278 weight:1597 */
         44497,
@@ -31239,7 +31239,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f78b2,
          0x3fa49390,
          0x3fb8a1bb},
-        0xffff8000},
+        },
     {
         /* No.568 delta:18188 weight:1835 */
         44497,
@@ -31294,7 +31294,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb58a58,
          0x3fa4e0c2,
          0x3f9edb56},
-        0xffff8000},
+        },
     {
         /* No.569 delta:15819 weight:1779 */
         44497,
@@ -31349,7 +31349,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb1955,
          0x3f912a38,
          0x3f8f64d8},
-        0xffff8000},
+        },
     {
         /* No.570 delta:17124 weight:1867 */
         44497,
@@ -31404,7 +31404,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf3c0b,
          0x3fa30f24,
          0x3fb04453},
-        0xffff8000},
+        },
     {
         /* No.571 delta:16516 weight:1837 */
         44497,
@@ -31459,7 +31459,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf3154,
          0x3f92a198,
          0x3fa5ef20},
-        0xffff8000},
+        },
     {
         /* No.572 delta:16330 weight:1723 */
         44497,
@@ -31514,7 +31514,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c34df,
          0x3fb2da48,
          0x3f86e547},
-        0xffff8000},
+        },
     {
         /* No.573 delta:16395 weight:1795 */
         44497,
@@ -31569,7 +31569,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fd750,
          0x3fb35395,
          0x3f84bd72},
-        0xffff8000},
+        },
     {
         /* No.574 delta:17244 weight:1781 */
         44497,
@@ -31624,7 +31624,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f883602,
          0x3fa411b1,
          0x3fb3c53f},
-        0xffff8000},
+        },
     {
         /* No.575 delta:16011 weight:1033 */
         44497,
@@ -31679,7 +31679,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f969262,
          0x3fb8e6c5,
          0x3f86dd4a},
-        0xffff8000},
+        },
     {
         /* No.576 delta:17318 weight:1779 */
         44497,
@@ -31734,7 +31734,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab8ac9,
          0x3f8762f5,
          0x3f9955e8},
-        0xffff8000},
+        },
     {
         /* No.577 delta:16854 weight:1657 */
         44497,
@@ -31789,7 +31789,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa07ed0,
          0x3f84dbae,
          0x3fb64cf3},
-        0xffff8000},
+        },
     {
         /* No.578 delta:16049 weight:1833 */
         44497,
@@ -31844,7 +31844,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f863ac2,
          0x3f981d39,
          0x3f8bf752},
-        0xffff8000},
+        },
     {
         /* No.579 delta:16726 weight:1781 */
         44497,
@@ -31899,7 +31899,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2b71d,
          0x3f84ed64,
          0x3fb13969},
-        0xffff8000},
+        },
     {
         /* No.580 delta:17159 weight:1661 */
         44497,
@@ -31954,7 +31954,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f917742,
          0x3fb20806,
          0x3fa65cd9},
-        0xffff8000},
+        },
     {
         /* No.581 delta:16808 weight:1837 */
         44497,
@@ -32009,7 +32009,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb63a99,
          0x3f9a01fc,
          0x3f846f9c},
-        0xffff8000},
+        },
     {
         /* No.582 delta:17501 weight:1807 */
         44497,
@@ -32064,7 +32064,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f919da4,
          0x3f85b08c,
          0x3fb34b20},
-        0xffff8000},
+        },
     {
         /* No.583 delta:16901 weight:1777 */
         44497,
@@ -32119,7 +32119,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fade934,
          0x3f9ef320,
          0x3f8b2e27},
-        0xffff8000},
+        },
     {
         /* No.584 delta:17750 weight:1845 */
         44497,
@@ -32174,7 +32174,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c2527,
          0x3f97e30a,
          0x3fa9518d},
-        0xffff8000},
+        },
     {
         /* No.585 delta:17487 weight:1721 */
         44497,
@@ -32229,7 +32229,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbea1ad,
          0x3fb2e339,
          0x3f84d0f5},
-        0xffff8000},
+        },
     {
         /* No.586 delta:17227 weight:1675 */
         44497,
@@ -32284,7 +32284,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84cf3a,
          0x3f92784e,
          0x3fae1bca},
-        0xffff8000},
+        },
     {
         /* No.587 delta:15902 weight:1709 */
         44497,
@@ -32339,7 +32339,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ee61f,
          0x3fb5c04e,
          0x3fa9d3a0},
-        0xffff8000},
+        },
     {
         /* No.588 delta:16270 weight:1761 */
         44497,
@@ -32394,7 +32394,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f903163,
          0x3f8a1a54,
          0x3fb62dc3},
-        0xffff8000},
+        },
     {
         /* No.589 delta:16559 weight:1657 */
         44497,
@@ -32449,7 +32449,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ce96c,
          0x3fbb81f3,
          0x3fa95774},
-        0xffff8000},
+        },
     {
         /* No.590 delta:16462 weight:1851 */
         44497,
@@ -32504,7 +32504,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8466b7,
          0x3f97dc88,
          0x3fa9e6bb},
-        0xffff8000},
+        },
     {
         /* No.591 delta:17371 weight:1823 */
         44497,
@@ -32559,7 +32559,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fade13f,
          0x3f87f6ed,
          0x3fb1d0ab},
-        0xffff8000},
+        },
     {
         /* No.592 delta:16758 weight:1181 */
         44497,
@@ -32614,7 +32614,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb3d126,
          0x3f848b08,
          0x3f98b9fe},
-        0xffff8000},
+        },
     {
         /* No.593 delta:17070 weight:1625 */
         44497,
@@ -32669,7 +32669,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9263e9,
          0x3fba1094,
          0x3fb03779},
-        0xffff8000},
+        },
     {
         /* No.594 delta:16677 weight:1829 */
         44497,
@@ -32724,7 +32724,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa87fa9,
          0x3f85668c,
          0x3f93e730},
-        0xffff8000},
+        },
     {
         /* No.595 delta:16778 weight:1815 */
         44497,
@@ -32779,7 +32779,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8f6de,
          0x3f95d31a,
          0x3f9a8239},
-        0xffff8000},
+        },
     {
         /* No.596 delta:16573 weight:1833 */
         44497,
@@ -32834,7 +32834,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88c6b2,
          0x3f97d3ea,
          0x3fb2294e},
-        0xffff8000},
+        },
     {
         /* No.597 delta:16089 weight:1839 */
         44497,
@@ -32889,7 +32889,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbff1f5,
          0x3f9c5969,
          0x3fa8be72},
-        0xffff8000},
+        },
     {
         /* No.598 delta:16439 weight:1767 */
         44497,
@@ -32944,7 +32944,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f854670,
          0x3f971174,
          0x3fa036f9},
-        0xffff8000},
+        },
     {
         /* No.599 delta:17963 weight:1885 */
         44497,
@@ -32999,7 +32999,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9534af,
          0x3fa29a17,
          0x3fbfed2a},
-        0xffff8000},
+        },
     {
         /* No.600 delta:17623 weight:1893 */
         44497,
@@ -33054,7 +33054,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f845678,
          0x3fbfb00e,
          0x3f90461b},
-        0xffff8000},
+        },
     {
         /* No.601 delta:15934 weight:1751 */
         44497,
@@ -33109,7 +33109,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84e37a,
          0x3f93d249,
          0x3f8eadee},
-        0xffff8000},
+        },
     {
         /* No.602 delta:16929 weight:1699 */
         44497,
@@ -33164,7 +33164,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f865d04,
          0x3fbe6cde,
          0x3f90470e},
-        0xffff8000},
+        },
     {
         /* No.603 delta:16117 weight:1851 */
         44497,
@@ -33219,7 +33219,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa98720,
          0x3fa3f268,
          0x3f97a5d4},
-        0xffff8000},
+        },
     {
         /* No.604 delta:16151 weight:1679 */
         44497,
@@ -33274,7 +33274,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb9dd19,
          0x3f949336,
          0x3f8074ba},
-        0xffff8000},
+        },
     {
         /* No.605 delta:16485 weight:1817 */
         44497,
@@ -33329,7 +33329,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a60b4,
          0x3f87920d,
          0x3fa9f1e5},
-        0xffff8000},
+        },
     {
         /* No.606 delta:16959 weight:1849 */
         44497,
@@ -33384,7 +33384,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93f49b,
          0x3fbfc3ce,
          0x3fa8e531},
-        0xffff8000},
+        },
     {
         /* No.607 delta:16604 weight:1839 */
         44497,
@@ -33439,7 +33439,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbaa105,
          0x3f94d3e3,
          0x3f8ff0f6},
-        0xffff8000},
+        },
     {
         /* No.608 delta:15914 weight:1317 */
         44497,
@@ -33494,7 +33494,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c6296,
          0x3fb8ee28,
          0x3fa6bd07},
-        0xffff8000},
+        },
     {
         /* No.609 delta:18734 weight:1827 */
         44497,
@@ -33549,7 +33549,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa33f22,
          0x3f92ded6,
          0x3f89eda0},
-        0xffff8000},
+        },
     {
         /* No.610 delta:16485 weight:1937 */
         44497,
@@ -33604,7 +33604,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ccdfd,
          0x3fa94167,
          0x3f921698},
-        0xffff8000},
+        },
     {
         /* No.611 delta:15833 weight:1823 */
         44497,
@@ -33659,7 +33659,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98467e,
          0x3f8a99f4,
          0x3fb4f3f9},
-        0xffff8000},
+        },
     {
         /* No.612 delta:16716 weight:1895 */
         44497,
@@ -33714,7 +33714,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84a168,
          0x3fa04eb7,
          0x3fb778d0},
-        0xffff8000},
+        },
     {
         /* No.613 delta:17329 weight:1747 */
         44497,
@@ -33769,7 +33769,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ae31f,
          0x3faca056,
          0x3fb0f351},
-        0xffff8000},
+        },
     {
         /* No.614 delta:16751 weight:1899 */
         44497,
@@ -33824,7 +33824,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fc09c,
          0x3fbdebec,
          0x3fa80de8},
-        0xffff8000},
+        },
     {
         /* No.615 delta:16690 weight:1789 */
         44497,
@@ -33879,7 +33879,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a364d,
          0x3f86331c,
          0x3f942059},
-        0xffff8000},
+        },
     {
         /* No.616 delta:16365 weight:1553 */
         44497,
@@ -33934,7 +33934,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ec2df,
          0x3fb42d92,
          0x3fa28fd9},
-        0xffff8000},
+        },
     {
         /* No.617 delta:18739 weight:1853 */
         44497,
@@ -33989,7 +33989,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9d1ea,
          0x3fbd41f3,
          0x3f8691ee},
-        0xffff8000},
+        },
     {
         /* No.618 delta:16200 weight:1857 */
         44497,
@@ -34044,7 +34044,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fafb51e,
          0x3fb99793,
          0x3f8a2745},
-        0xffff8000},
+        },
     {
         /* No.619 delta:16886 weight:1807 */
         44497,
@@ -34099,7 +34099,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84e4ca,
          0x3fa85e69,
          0x3fb22955},
-        0xffff8000},
+        },
     {
         /* No.620 delta:16836 weight:1847 */
         44497,
@@ -34154,7 +34154,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f899783,
          0x3f9a30f9,
          0x3fa7a61e},
-        0xffff8000},
+        },
     {
         /* No.621 delta:16416 weight:1865 */
         44497,
@@ -34209,7 +34209,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faae02d,
          0x3f83f7d5,
          0x3fbe11a5},
-        0xffff8000},
+        },
     {
         /* No.622 delta:15874 weight:1757 */
         44497,
@@ -34264,7 +34264,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98e960,
          0x3fb30f10,
          0x3f8c9ad4},
-        0xffff8000},
+        },
     {
         /* No.623 delta:15862 weight:1727 */
         44497,
@@ -34319,7 +34319,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa6b51d,
          0x3f98ca2d,
          0x3f8c2288},
-        0xffff8000},
+        },
     {
         /* No.624 delta:16765 weight:1641 */
         44497,
@@ -34374,7 +34374,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b7f87,
          0x3fae23f0,
          0x3fb19197},
-        0xffff8000},
+        },
     {
         /* No.625 delta:17859 weight:1851 */
         44497,
@@ -34429,7 +34429,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87ff4e,
          0x3fa29005,
          0x3fbcbf42},
-        0xffff8000},
+        },
     {
         /* No.626 delta:17030 weight:1821 */
         44497,
@@ -34484,7 +34484,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faedc5c,
          0x3f864311,
          0x3f9c16a4},
-        0xffff8000},
+        },
     {
         /* No.627 delta:16104 weight:1893 */
         44497,
@@ -34539,7 +34539,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8aa4d6,
          0x3f85ec84,
          0x3fb9461a},
-        0xffff8000},
+        },
     {
         /* No.628 delta:16901 weight:1551 */
         44497,
@@ -34594,7 +34594,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf71ec,
          0x3f861c34,
          0x3fb46368},
-        0xffff8000},
+        },
     {
         /* No.629 delta:15736 weight:1935 */
         44497,
@@ -34649,7 +34649,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb012f9,
          0x3f864399,
          0x3fadbcf1},
-        0xffff8000},
+        },
     {
         /* No.630 delta:16861 weight:1867 */
         44497,
@@ -34704,7 +34704,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f999c11,
          0x3fbcd2ac,
          0x3f8b4d35},
-        0xffff8000},
+        },
     {
         /* No.631 delta:16800 weight:1785 */
         44497,
@@ -34759,7 +34759,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fba9ffd,
          0x3f86204e,
          0x3fb1a4bb},
-        0xffff8000},
+        },
     {
         /* No.632 delta:19189 weight:1405 */
         44497,
@@ -34814,7 +34814,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8644b3,
          0x3fac06d8,
          0x3fb2765f},
-        0xffff8000},
+        },
     {
         /* No.633 delta:15865 weight:1683 */
         44497,
@@ -34869,7 +34869,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2ff53,
          0x3faf6de4,
          0x3f904beb},
-        0xffff8000},
+        },
     {
         /* No.634 delta:16286 weight:1793 */
         44497,
@@ -34924,7 +34924,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b1d27,
          0x3f9cfb04,
          0x3fa0c997},
-        0xffff8000},
+        },
     {
         /* No.635 delta:16224 weight:1839 */
         44497,
@@ -34979,7 +34979,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e2ced,
          0x3fa0b589,
          0x3f954f25},
-        0xffff8000},
+        },
     {
         /* No.636 delta:15816 weight:1869 */
         44497,
@@ -35034,7 +35034,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb4e5b4,
          0x3fab9908,
          0x3f877e8c},
-        0xffff8000},
+        },
     {
         /* No.637 delta:16826 weight:1899 */
         44497,
@@ -35089,7 +35089,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc332a,
          0x3fa34fb1,
          0x3f89745d},
-        0xffff8000},
+        },
     {
         /* No.638 delta:16497 weight:1699 */
         44497,
@@ -35144,7 +35144,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f96f120,
          0x3fad638d,
          0x3fb0a83c},
-        0xffff8000},
+        },
     {
         /* No.639 delta:16046 weight:1709 */
         44497,
@@ -35199,7 +35199,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93aad7,
          0x3f9d1dcc,
          0x3fafd8c3},
-        0xffff8000},
+        },
     {
         /* No.640 delta:16881 weight:1767 */
         44497,
@@ -35254,7 +35254,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9793fb,
          0x3faa4499,
          0x3fa4d710},
-        0xffff8000},
+        },
     {
         /* No.641 delta:16150 weight:1717 */
         44497,
@@ -35309,7 +35309,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89c8d4,
          0x3f92e68b,
          0x3fa67872},
-        0xffff8000},
+        },
     {
         /* No.642 delta:15932 weight:1727 */
         44497,
@@ -35364,7 +35364,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc21ac,
          0x3fa7e665,
          0x3f8bdecd},
-        0xffff8000},
+        },
     {
         /* No.643 delta:16152 weight:1123 */
         44497,
@@ -35419,7 +35419,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f944453,
          0x3f9fdcbe,
          0x3fa28258},
-        0xffff8000},
+        },
     {
         /* No.644 delta:15850 weight:1841 */
         44497,
@@ -35474,7 +35474,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa6f7c9,
          0x3fac528e,
          0x3f9644a9},
-        0xffff8000},
+        },
     {
         /* No.645 delta:17799 weight:1933 */
         44497,
@@ -35529,7 +35529,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f51e7,
          0x3f928a93,
          0x3fa15ddc},
-        0xffff8000},
+        },
     {
         /* No.646 delta:16149 weight:1409 */
         44497,
@@ -35584,7 +35584,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9865b9,
          0x3f97d861,
          0x3fbca2dd},
-        0xffff8000},
+        },
     {
         /* No.647 delta:17349 weight:1889 */
         44497,
@@ -35639,7 +35639,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbaf1b0,
          0x3f90129a,
          0x3f8ce3bd},
-        0xffff8000},
+        },
     {
         /* No.648 delta:16448 weight:1765 */
         44497,
@@ -35694,7 +35694,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88498c,
          0x3fbf2469,
          0x3fa3ae59},
-        0xffff8000},
+        },
     {
         /* No.649 delta:16567 weight:1783 */
         44497,
@@ -35749,7 +35749,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd950d,
          0x3fa81368,
          0x3f9bb9f4},
-        0xffff8000},
+        },
     {
         /* No.650 delta:16982 weight:1819 */
         44497,
@@ -35804,7 +35804,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb409df,
          0x3f997b7f,
          0x3f8a4c47},
-        0xffff8000},
+        },
     {
         /* No.651 delta:16695 weight:1791 */
         44497,
@@ -35859,7 +35859,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac530f,
          0x3f9e4072,
          0x3fb0a381},
-        0xffff8000},
+        },
     {
         /* No.652 delta:18842 weight:1623 */
         44497,
@@ -35914,7 +35914,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad9128,
          0x3fa2b422,
          0x3fbf821f},
-        0xffff8000},
+        },
     {
         /* No.653 delta:18794 weight:1695 */
         44497,
@@ -35969,7 +35969,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fac227d,
          0x3fa35099,
          0x3fb772d5},
-        0xffff8000},
+        },
     {
         /* No.654 delta:19159 weight:1461 */
         44497,
@@ -36024,7 +36024,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8911bf,
          0x3f858f21,
          0x3fb3ae3a},
-        0xffff8000},
+        },
     {
         /* No.655 delta:15876 weight:1715 */
         44497,
@@ -36079,7 +36079,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa5ae35,
          0x3f96bca2,
          0x3f82e90a},
-        0xffff8000},
+        },
     {
         /* No.656 delta:16004 weight:1843 */
         44497,
@@ -36134,7 +36134,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ca10a,
          0x3fbbc379,
          0x3f8e82c4},
-        0xffff8000},
+        },
     {
         /* No.657 delta:16888 weight:1729 */
         44497,
@@ -36189,7 +36189,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f986186,
          0x3f857933,
          0x3fb79eeb},
-        0xffff8000},
+        },
     {
         /* No.658 delta:15873 weight:1905 */
         44497,
@@ -36244,7 +36244,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95d977,
          0x3fbe4ac1,
          0x3fa3accc},
-        0xffff8000},
+        },
     {
         /* No.659 delta:15695 weight:1809 */
         44497,
@@ -36299,7 +36299,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbad025,
          0x3fa131a1,
          0x3f97015d},
-        0xffff8000},
+        },
     {
         /* No.660 delta:16320 weight:1827 */
         44497,
@@ -36354,7 +36354,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf75d9,
          0x3f8d4d63,
          0x3fa3b2fe},
-        0xffff8000},
+        },
     {
         /* No.661 delta:16210 weight:1399 */
         44497,
@@ -36409,7 +36409,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86d92a,
          0x3f9979a6,
          0x3fa3032f},
-        0xffff8000},
+        },
     {
         /* No.662 delta:16340 weight:1749 */
         44497,
@@ -36464,7 +36464,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86e239,
          0x3fa31b5b,
          0x3f884ee6},
-        0xffff8000},
+        },
     {
         /* No.663 delta:17292 weight:1835 */
         44497,
@@ -36519,7 +36519,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9679e9,
          0x3fbbb0da,
          0x3fa5d20f},
-        0xffff8000},
+        },
     {
         /* No.664 delta:18844 weight:1721 */
         44497,
@@ -36574,7 +36574,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc39a3,
          0x3f99f914,
          0x3fa20389},
-        0xffff8000},
+        },
     {
         /* No.665 delta:16913 weight:1917 */
         44497,
@@ -36629,7 +36629,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a6253,
          0x3fb14444,
          0x3fa637f3},
-        0xffff8000},
+        },
     {
         /* No.666 delta:17726 weight:1747 */
         44497,
@@ -36684,7 +36684,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a5f71,
          0x3fa3a9e3,
          0x3fb5cafc},
-        0xffff8000},
+        },
     {
         /* No.667 delta:15913 weight:1581 */
         44497,
@@ -36739,7 +36739,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb85dbd,
          0x3f8fb557,
          0x3f92d3a9},
-        0xffff8000},
+        },
     {
         /* No.668 delta:15881 weight:1865 */
         44497,
@@ -36794,7 +36794,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9941e6,
          0x3fa5d571,
          0x3f8a2653},
-        0xffff8000},
+        },
     {
         /* No.669 delta:16908 weight:1645 */
         44497,
@@ -36849,7 +36849,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f939595,
          0x3f8e8393,
          0x3fb8130d},
-        0xffff8000},
+        },
     {
         /* No.670 delta:16915 weight:1857 */
         44497,
@@ -36904,7 +36904,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8408a,
          0x3fb472da,
          0x3f8b1d27},
-        0xffff8000},
+        },
     {
         /* No.671 delta:17897 weight:1827 */
         44497,
@@ -36959,7 +36959,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f8d91,
          0x3fa23799,
          0x3f9c4214},
-        0xffff8000},
+        },
     {
         /* No.672 delta:16256 weight:1833 */
         44497,
@@ -37014,7 +37014,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f878df4,
          0x3fb25720,
          0x3f9dcd4c},
-        0xffff8000},
+        },
     {
         /* No.673 delta:16281 weight:1313 */
         44497,
@@ -37069,7 +37069,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb98229,
          0x3fb65293,
          0x3f8b14d5},
-        0xffff8000},
+        },
     {
         /* No.674 delta:16759 weight:1859 */
         44497,
@@ -37124,7 +37124,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbce1bd,
          0x3f88a633,
          0x3f8680b9},
-        0xffff8000},
+        },
     {
         /* No.675 delta:15916 weight:1795 */
         44497,
@@ -37179,7 +37179,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d2af9,
          0x3f974951,
          0x3fa893d5},
-        0xffff8000},
+        },
     {
         /* No.676 delta:16265 weight:1827 */
         44497,
@@ -37234,7 +37234,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87c12c,
          0x3f945abc,
          0x3fa9b4b8},
-        0xffff8000},
+        },
     {
         /* No.677 delta:17360 weight:1841 */
         44497,
@@ -37289,7 +37289,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b1707,
          0x3fb9cd53,
          0x3f94764d},
-        0xffff8000},
+        },
     {
         /* No.678 delta:16232 weight:1829 */
         44497,
@@ -37344,7 +37344,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3e728,
          0x3f90e7ff,
          0x3faf820c},
-        0xffff8000},
+        },
     {
         /* No.679 delta:17278 weight:1827 */
         44497,
@@ -37399,7 +37399,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85cba2,
          0x3fb23f98,
          0x3fae5f21},
-        0xffff8000},
+        },
     {
         /* No.680 delta:16273 weight:1387 */
         44497,
@@ -37454,7 +37454,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa133a1,
          0x3f8bd31d,
          0x3fbfb1a9},
-        0xffff8000},
+        },
     {
         /* No.681 delta:16875 weight:1809 */
         44497,
@@ -37509,7 +37509,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1dbe7,
          0x3f93ea10,
          0x3faf7c7c},
-        0xffff8000},
+        },
     {
         /* No.682 delta:16771 weight:1157 */
         44497,
@@ -37564,7 +37564,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa51f18,
          0x3fbe0fdc,
          0x3f8abf08},
-        0xffff8000},
+        },
     {
         /* No.683 delta:16890 weight:1923 */
         44497,
@@ -37619,7 +37619,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f9e77,
          0x3f8caf8c,
          0x3fa36123},
-        0xffff8000},
+        },
     {
         /* No.684 delta:15883 weight:1697 */
         44497,
@@ -37674,7 +37674,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf7bb8,
          0x3fa51ede,
          0x3f881c33},
-        0xffff8000},
+        },
     {
         /* No.685 delta:16257 weight:1725 */
         44497,
@@ -37729,7 +37729,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd5631,
          0x3f86b3d4,
          0x3f9a976d},
-        0xffff8000},
+        },
     {
         /* No.686 delta:16220 weight:1849 */
         44497,
@@ -37784,7 +37784,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbfe8a7,
          0x3fa8652a,
          0x3f93be7f},
-        0xffff8000},
+        },
     {
         /* No.687 delta:15712 weight:1815 */
         44497,
@@ -37839,7 +37839,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98e291,
          0x3faa45dc,
          0x3fbf6511},
-        0xffff8000},
+        },
     {
         /* No.688 delta:15776 weight:1717 */
         44497,
@@ -37894,7 +37894,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fabb5fc,
          0x3f9d8b5a,
          0x3fb1c7b6},
-        0xffff8000},
+        },
     {
         /* No.689 delta:16900 weight:1877 */
         44497,
@@ -37949,7 +37949,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ff390,
          0x3fbbb594,
          0x3f85c305},
-        0xffff8000},
+        },
     {
         /* No.690 delta:15629 weight:1797 */
         44497,
@@ -38004,7 +38004,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1373c,
          0x3fb309d4,
          0x3f846931},
-        0xffff8000},
+        },
     {
         /* No.691 delta:15766 weight:1833 */
         44497,
@@ -38059,7 +38059,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d8a53,
          0x3fb820f8,
          0x3fa7c07c},
-        0xffff8000},
+        },
     {
         /* No.692 delta:18504 weight:1731 */
         44497,
@@ -38114,7 +38114,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89778a,
          0x3f98e5b3,
          0x3fa382a5},
-        0xffff8000},
+        },
     {
         /* No.693 delta:17994 weight:1739 */
         44497,
@@ -38169,7 +38169,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f859cd7,
          0x3f9fb1ad,
          0x3fa32223},
-        0xffff8000},
+        },
     {
         /* No.694 delta:16789 weight:1709 */
         44497,
@@ -38224,7 +38224,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f936215,
          0x3f99286a,
          0x3f8ddb74},
-        0xffff8000},
+        },
     {
         /* No.695 delta:15996 weight:1841 */
         44497,
@@ -38279,7 +38279,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb21829,
          0x3f88bf71,
          0x3f9c8e84},
-        0xffff8000},
+        },
     {
         /* No.696 delta:15769 weight:1717 */
         44497,
@@ -38334,7 +38334,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa24727,
          0x3f978dad,
          0x3fb92abe},
-        0xffff8000},
+        },
     {
         /* No.697 delta:15923 weight:1661 */
         44497,
@@ -38389,7 +38389,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa831b3,
          0x3f970b15,
          0x3f8d7c29},
-        0xffff8000},
+        },
     {
         /* No.698 delta:18320 weight:1877 */
         44497,
@@ -38444,7 +38444,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa7852c,
          0x3f9a56bd,
          0x3f85b3a8},
-        0xffff8000},
+        },
     {
         /* No.699 delta:15855 weight:1619 */
         44497,
@@ -38499,7 +38499,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85713e,
          0x3fa99c62,
          0x3f9a5e7a},
-        0xffff8000},
+        },
     {
         /* No.700 delta:16777 weight:1771 */
         44497,
@@ -38554,7 +38554,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8cc228,
          0x3f9144d1,
          0x3fa2b35c},
-        0xffff8000},
+        },
     {
         /* No.701 delta:19099 weight:1679 */
         44497,
@@ -38609,7 +38609,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa04fc7,
          0x3faa425a,
          0x3f9f81bf},
-        0xffff8000},
+        },
     {
         /* No.702 delta:16766 weight:1887 */
         44497,
@@ -38664,7 +38664,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa90153,
          0x3fbc9469,
          0x3f877096},
-        0xffff8000},
+        },
     {
         /* No.703 delta:17016 weight:1733 */
         44497,
@@ -38719,7 +38719,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9be75b,
          0x3fa6d7ff,
          0x3f9049c4},
-        0xffff8000},
+        },
     {
         /* No.704 delta:16134 weight:1801 */
         44497,
@@ -38774,7 +38774,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa18b34,
          0x3fbcad93,
          0x3f97d82f},
-        0xffff8000},
+        },
     {
         /* No.705 delta:16074 weight:1837 */
         44497,
@@ -38829,7 +38829,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa381de,
          0x3f919505,
          0x3fbe27f9},
-        0xffff8000},
+        },
     {
         /* No.706 delta:15871 weight:1721 */
         44497,
@@ -38884,7 +38884,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa38b01,
          0x3f966fd0,
          0x3fbdc896},
-        0xffff8000},
+        },
     {
         /* No.707 delta:16148 weight:1849 */
         44497,
@@ -38939,7 +38939,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb41db6,
          0x3f99af3d,
          0x3fa38d62},
-        0xffff8000},
+        },
     {
         /* No.708 delta:17781 weight:1825 */
         44497,
@@ -38994,7 +38994,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb56735,
          0x3f974eff,
          0x3f8b504d},
-        0xffff8000},
+        },
     {
         /* No.709 delta:16986 weight:1785 */
         44497,
@@ -39049,7 +39049,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb1698c,
          0x3fa02fe4,
          0x3f9ac954},
-        0xffff8000},
+        },
     {
         /* No.710 delta:17425 weight:1761 */
         44497,
@@ -39104,7 +39104,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb1821f,
          0x3f943d14,
          0x3fa240d2},
-        0xffff8000},
+        },
     {
         /* No.711 delta:16215 weight:1795 */
         44497,
@@ -39159,7 +39159,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa3d299,
          0x3fb954b6,
          0x3f939ba4},
-        0xffff8000},
+        },
     {
         /* No.712 delta:15894 weight:1743 */
         44497,
@@ -39214,7 +39214,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f855836,
          0x3fa3c7aa,
          0x3f8e94a1},
-        0xffff8000},
+        },
     {
         /* No.713 delta:16450 weight:1105 */
         44497,
@@ -39269,7 +39269,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9129bd,
          0x3f8c5a12,
          0x3fbf78a3},
-        0xffff8000},
+        },
     {
         /* No.714 delta:17473 weight:1839 */
         44497,
@@ -39324,7 +39324,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f849a2a,
          0x3fb7080c,
          0x3f99ffa2},
-        0xffff8000},
+        },
     {
         /* No.715 delta:17108 weight:1963 */
         44497,
@@ -39379,7 +39379,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95ff09,
          0x3fb9b82d,
          0x3f87665d},
-        0xffff8000},
+        },
     {
         /* No.716 delta:17639 weight:1789 */
         44497,
@@ -39434,7 +39434,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4c245,
          0x3f9151d2,
          0x3f8f8341},
-        0xffff8000},
+        },
     {
         /* No.717 delta:17302 weight:1835 */
         44497,
@@ -39489,7 +39489,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88eedf,
          0x3fa5fbeb,
          0x3faa4e05},
-        0xffff8000},
+        },
     {
         /* No.718 delta:16392 weight:999 */
         44497,
@@ -39544,7 +39544,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9031b6,
          0x3fbd8c52,
          0x3fa37aca},
-        0xffff8000},
+        },
     {
         /* No.719 delta:16125 weight:1791 */
         44497,
@@ -39599,7 +39599,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb27e04,
          0x3fadc5a0,
          0x3f87ff0f},
-        0xffff8000},
+        },
     {
         /* No.720 delta:15862 weight:1777 */
         44497,
@@ -39654,7 +39654,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb780f0,
          0x3f9c4d15,
          0x3f8a3669},
-        0xffff8000},
+        },
     {
         /* No.721 delta:15950 weight:1719 */
         44497,
@@ -39709,7 +39709,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2a08d,
          0x3f8d95bc,
          0x3f994b05},
-        0xffff8000},
+        },
     {
         /* No.722 delta:17619 weight:1811 */
         44497,
@@ -39764,7 +39764,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2ff4f,
          0x3f87aeb2,
          0x3fbd3948},
-        0xffff8000},
+        },
     {
         /* No.723 delta:17603 weight:1817 */
         44497,
@@ -39819,7 +39819,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93bdb5,
          0x3f8cf473,
          0x3fa1afd5},
-        0xffff8000},
+        },
     {
         /* No.724 delta:17338 weight:1723 */
         44497,
@@ -39874,7 +39874,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad1219,
          0x3f9471fc,
          0x3f9ac362},
-        0xffff8000},
+        },
     {
         /* No.725 delta:16477 weight:1869 */
         44497,
@@ -39929,7 +39929,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c9b53,
          0x3fa920f5,
          0x3fa7beda},
-        0xffff8000},
+        },
     {
         /* No.726 delta:16475 weight:1771 */
         44497,
@@ -39984,7 +39984,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f895cf0,
          0x3fb44d18,
          0x3f9b2264},
-        0xffff8000},
+        },
     {
         /* No.727 delta:16579 weight:1457 */
         44497,
@@ -40039,7 +40039,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f94a631,
          0x3f8ad299,
          0x3fb1bc39},
-        0xffff8000},
+        },
     {
         /* No.728 delta:17793 weight:1727 */
         44497,
@@ -40094,7 +40094,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f823c91,
          0x3fb7010d,
          0x3f9d7e9a},
-        0xffff8000},
+        },
     {
         /* No.729 delta:17607 weight:1913 */
         44497,
@@ -40149,7 +40149,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d1aa3,
          0x3fa82701,
          0x3fbdf499},
-        0xffff8000},
+        },
     {
         /* No.730 delta:18105 weight:1733 */
         44497,
@@ -40204,7 +40204,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f90ca56,
          0x3fa2b1bd,
          0x3fbccbda},
-        0xffff8000},
+        },
     {
         /* No.731 delta:17181 weight:1935 */
         44497,
@@ -40259,7 +40259,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab60b4,
          0x3f8e4305,
          0x3fb1fd10},
-        0xffff8000},
+        },
     {
         /* No.732 delta:15895 weight:1939 */
         44497,
@@ -40314,7 +40314,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbceaf9,
          0x3f8c760f,
          0x3f9e8072},
-        0xffff8000},
+        },
     {
         /* No.733 delta:16621 weight:1423 */
         44497,
@@ -40369,7 +40369,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9197c6,
          0x3fbcc950,
          0x3f8a382e},
-        0xffff8000},
+        },
     {
         /* No.734 delta:15819 weight:1839 */
         44497,
@@ -40424,7 +40424,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f892ab1,
          0x3fb5e59d,
          0x3f9a9ba0},
-        0xffff8000},
+        },
     {
         /* No.735 delta:15903 weight:1899 */
         44497,
@@ -40479,7 +40479,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa284f9,
          0x3fb05222,
          0x3f86a5c4},
-        0xffff8000},
+        },
     {
         /* No.736 delta:19471 weight:1301 */
         44497,
@@ -40534,7 +40534,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb41622,
          0x3fab54fa,
          0x3f98f4b3},
-        0xffff8000},
+        },
     {
         /* No.737 delta:17726 weight:1787 */
         44497,
@@ -40589,7 +40589,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9cf116,
          0x3fb01a93,
          0x3fa6c91e},
-        0xffff8000},
+        },
     {
         /* No.738 delta:17816 weight:1923 */
         44497,
@@ -40644,7 +40644,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb23609,
          0x3f9780d5,
          0x3fa07320},
-        0xffff8000},
+        },
     {
         /* No.739 delta:16499 weight:1843 */
         44497,
@@ -40699,7 +40699,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8cf8b1,
          0x3fa92516,
          0x3f9b122a},
-        0xffff8000},
+        },
     {
         /* No.740 delta:16382 weight:1807 */
         44497,
@@ -40754,7 +40754,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0795b,
          0x3fbb06e5,
          0x3f8768a3},
-        0xffff8000},
+        },
     {
         /* No.741 delta:17009 weight:1479 */
         44497,
@@ -40809,7 +40809,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8784cc,
          0x3fb3710a,
          0x3f9836b5},
-        0xffff8000},
+        },
     {
         /* No.742 delta:17275 weight:1889 */
         44497,
@@ -40864,7 +40864,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98c552,
          0x3f932669,
          0x3fa6b99c},
-        0xffff8000},
+        },
     {
         /* No.743 delta:15889 weight:1717 */
         44497,
@@ -40919,7 +40919,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98e5a1,
          0x3fb5233a,
          0x3f86411c},
-        0xffff8000},
+        },
     {
         /* No.744 delta:16077 weight:1863 */
         44497,
@@ -40974,7 +40974,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f854ef3,
          0x3fbedcf6,
          0x3f937bd3},
-        0xffff8000},
+        },
     {
         /* No.745 delta:16780 weight:1891 */
         44497,
@@ -41029,7 +41029,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f96cfbd,
          0x3faae088,
          0x3f84c33a},
-        0xffff8000},
+        },
     {
         /* No.746 delta:15949 weight:1695 */
         44497,
@@ -41084,7 +41084,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f866e5f,
          0x3fb9bee0,
          0x3f921379},
-        0xffff8000},
+        },
     {
         /* No.747 delta:15837 weight:1707 */
         44497,
@@ -41139,7 +41139,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b2475,
          0x3fa7edc4,
          0x3f99ca51},
-        0xffff8000},
+        },
     {
         /* No.748 delta:18490 weight:1881 */
         44497,
@@ -41194,7 +41194,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4fc1f,
          0x3fbf872d,
          0x3f905892},
-        0xffff8000},
+        },
     {
         /* No.749 delta:16116 weight:1853 */
         44497,
@@ -41249,7 +41249,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f865faa,
          0x3fba7d73,
          0x3f8d8b78},
-        0xffff8000},
+        },
     {
         /* No.750 delta:15882 weight:1843 */
         44497,
@@ -41304,7 +41304,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa6bab0,
          0x3fba0d54,
          0x3f91d7a0},
-        0xffff8000},
+        },
     {
         /* No.751 delta:17644 weight:1769 */
         44497,
@@ -41359,7 +41359,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb13926,
          0x3f82d0ae,
          0x3fbf3f37},
-        0xffff8000},
+        },
     {
         /* No.752 delta:16771 weight:1801 */
         44497,
@@ -41414,7 +41414,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f998528,
          0x3f84126f,
          0x3f972fba},
-        0xffff8000},
+        },
     {
         /* No.753 delta:16313 weight:1773 */
         44497,
@@ -41469,7 +41469,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad3323,
          0x3f9c14a9,
          0x3fa7622e},
-        0xffff8000},
+        },
     {
         /* No.754 delta:16536 weight:1667 */
         44497,
@@ -41524,7 +41524,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95cb4c,
          0x3f87d1d9,
          0x3fbcbac7},
-        0xffff8000},
+        },
     {
         /* No.755 delta:17484 weight:1903 */
         44497,
@@ -41579,7 +41579,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86f28f,
          0x3fbbe584,
          0x3f949303},
-        0xffff8000},
+        },
     {
         /* No.756 delta:17639 weight:1943 */
         44497,
@@ -41634,7 +41634,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf909c,
          0x3f847ba6,
          0x3f91099b},
-        0xffff8000},
+        },
     {
         /* No.757 delta:16640 weight:1835 */
         44497,
@@ -41689,7 +41689,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f8cd8,
          0x3fb34688,
          0x3f855744},
-        0xffff8000},
+        },
     {
         /* No.758 delta:16213 weight:1761 */
         44497,
@@ -41744,7 +41744,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89eb38,
          0x3fb315a0,
          0x3fac04bc},
-        0xffff8000},
+        },
     {
         /* No.759 delta:16538 weight:1783 */
         44497,
@@ -41799,7 +41799,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fbe24,
          0x3fb2353f,
          0x3f857e0f},
-        0xffff8000},
+        },
     {
         /* No.760 delta:16593 weight:1805 */
         44497,
@@ -41854,7 +41854,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9c7a2,
          0x3fbbea87,
          0x3f8c5837},
-        0xffff8000},
+        },
     {
         /* No.761 delta:16366 weight:1873 */
         44497,
@@ -41909,7 +41909,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c7dad,
          0x3fb8e133,
          0x3fa2c7f6},
-        0xffff8000},
+        },
     {
         /* No.762 delta:16576 weight:1879 */
         44497,
@@ -41964,7 +41964,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f919b68,
          0x3fb28288,
          0x3fa6f194},
-        0xffff8000},
+        },
     {
         /* No.763 delta:16525 weight:1697 */
         44497,
@@ -42019,7 +42019,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbda461,
          0x3fa7f5d5,
          0x3f93af7a},
-        0xffff8000},
+        },
     {
         /* No.764 delta:16424 weight:1891 */
         44497,
@@ -42074,7 +42074,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87aeb7,
          0x3fa4e4ab,
          0x3f89d30f},
-        0xffff8000},
+        },
     {
         /* No.765 delta:16200 weight:1783 */
         44497,
@@ -42129,7 +42129,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9b87fe,
          0x3fb55d8b,
          0x3fa8687c},
-        0xffff8000},
+        },
     {
         /* No.766 delta:16781 weight:1487 */
         44497,
@@ -42184,7 +42184,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86f1c5,
          0x3fa7e3f9,
          0x3f9220dd},
-        0xffff8000},
+        },
     {
         /* No.767 delta:16552 weight:1803 */
         44497,
@@ -42239,7 +42239,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9b6f5a,
          0x3fb69189,
          0x3faaa0de},
-        0xffff8000},
+        },
     {
         /* No.768 delta:17303 weight:1905 */
         44497,
@@ -42294,7 +42294,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf73bd,
          0x3f95e631,
          0x3fa25999},
-        0xffff8000},
+        },
     {
         /* No.769 delta:16059 weight:1841 */
         44497,
@@ -42349,7 +42349,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8fca3,
          0x3f85a925,
          0x3faf9ab2},
-        0xffff8000},
+        },
     {
         /* No.770 delta:17600 weight:1855 */
         44497,
@@ -42404,7 +42404,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8c72cd,
          0x3fb6e167,
          0x3fa252d0},
-        0xffff8000},
+        },
     {
         /* No.771 delta:16681 weight:1855 */
         44497,
@@ -42459,7 +42459,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4365f,
          0x3fb9e2a8,
          0x3f862077},
-        0xffff8000},
+        },
     {
         /* No.772 delta:16378 weight:1947 */
         44497,
@@ -42514,7 +42514,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2d504,
          0x3f98fb25,
          0x3f8aa9a0},
-        0xffff8000},
+        },
     {
         /* No.773 delta:15825 weight:1843 */
         44497,
@@ -42569,7 +42569,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99aac7,
          0x3fb45f1e,
          0x3faa7fd5},
-        0xffff8000},
+        },
     {
         /* No.774 delta:16619 weight:1637 */
         44497,
@@ -42624,7 +42624,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb1e2bc,
          0x3f85b7a0,
          0x3f92d117},
-        0xffff8000},
+        },
     {
         /* No.775 delta:16372 weight:1907 */
         44497,
@@ -42679,7 +42679,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fbab9,
          0x3f89919e,
          0x3fa4ee3c},
-        0xffff8000},
+        },
     {
         /* No.776 delta:17026 weight:1813 */
         44497,
@@ -42734,7 +42734,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ddab4,
          0x3f9b07c2,
          0x3f86bc8a},
-        0xffff8000},
+        },
     {
         /* No.777 delta:16759 weight:1841 */
         44497,
@@ -42789,7 +42789,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa355eb,
          0x3f9e503f,
          0x3fb4a2b2},
-        0xffff8000},
+        },
     {
         /* No.778 delta:15816 weight:1819 */
         44497,
@@ -42844,7 +42844,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f996812,
          0x3fb276d9,
          0x3fac974c},
-        0xffff8000},
+        },
     {
         /* No.779 delta:16152 weight:1769 */
         44497,
@@ -42899,7 +42899,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb66cad,
          0x3f9a02f2,
          0x3f841f24},
-        0xffff8000},
+        },
     {
         /* No.780 delta:17472 weight:1821 */
         44497,
@@ -42954,7 +42954,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf7983,
          0x3fb820d5,
          0x3f848fcc},
-        0xffff8000},
+        },
     {
         /* No.781 delta:16061 weight:1643 */
         44497,
@@ -43009,7 +43009,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9faec9,
          0x3fbaff71,
          0x3facbd29},
-        0xffff8000},
+        },
     {
         /* No.782 delta:17355 weight:1779 */
         44497,
@@ -43064,7 +43064,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f83d501,
          0x3f930804,
          0x3faeff49},
-        0xffff8000},
+        },
     {
         /* No.783 delta:16128 weight:1859 */
         44497,
@@ -43119,7 +43119,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb7e918,
          0x3f945c96,
          0x3f8b8f0d},
-        0xffff8000},
+        },
     {
         /* No.784 delta:16614 weight:1835 */
         44497,
@@ -43174,7 +43174,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb03eef,
          0x3fbc5717,
          0x3f8a64fb},
-        0xffff8000},
+        },
     {
         /* No.785 delta:17292 weight:1447 */
         44497,
@@ -43229,7 +43229,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a9350,
          0x3fb97626,
          0x3f8d20fb},
-        0xffff8000},
+        },
     {
         /* No.786 delta:16373 weight:1897 */
         44497,
@@ -43284,7 +43284,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa28cec,
          0x3fac511c,
          0x3fb9ecea},
-        0xffff8000},
+        },
     {
         /* No.787 delta:16210 weight:1849 */
         44497,
@@ -43339,7 +43339,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f935e3e,
          0x3fb46dd6,
          0x3fabaf5a},
-        0xffff8000},
+        },
     {
         /* No.788 delta:17528 weight:1791 */
         44497,
@@ -43394,7 +43394,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f844627,
          0x3fa31f38,
          0x3fb8e9ab},
-        0xffff8000},
+        },
     {
         /* No.789 delta:18827 weight:1695 */
         44497,
@@ -43449,7 +43449,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9b5759,
          0x3fb6e551,
          0x3f8943b4},
-        0xffff8000},
+        },
     {
         /* No.790 delta:15926 weight:1349 */
         44497,
@@ -43504,7 +43504,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbddd73,
          0x3f9fb1c9,
          0x3fa9426f},
-        0xffff8000},
+        },
     {
         /* No.791 delta:17846 weight:1821 */
         44497,
@@ -43559,7 +43559,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb34794,
          0x3f98e111,
          0x3f87a215},
-        0xffff8000},
+        },
     {
         /* No.792 delta:16887 weight:1833 */
         44497,
@@ -43614,7 +43614,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f961e38,
          0x3f8b6abc,
          0x3fa49808},
-        0xffff8000},
+        },
     {
         /* No.793 delta:16786 weight:1217 */
         44497,
@@ -43669,7 +43669,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4e537,
          0x3f939019,
          0x3f8ea30c},
-        0xffff8000},
+        },
     {
         /* No.794 delta:16694 weight:1801 */
         44497,
@@ -43724,7 +43724,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9dfea2,
          0x3fb9c119,
          0x3fae1fa7},
-        0xffff8000},
+        },
     {
         /* No.795 delta:16420 weight:1785 */
         44497,
@@ -43779,7 +43779,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb4f86f,
          0x3f88b947,
          0x3f96862a},
-        0xffff8000},
+        },
     {
         /* No.796 delta:17301 weight:1681 */
         44497,
@@ -43834,7 +43834,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89c8af,
          0x3f86559b,
          0x3f9be7b7},
-        0xffff8000},
+        },
     {
         /* No.797 delta:16125 weight:1831 */
         44497,
@@ -43889,7 +43889,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9b338d,
          0x3faf6290,
          0x3fb0d18d},
-        0xffff8000},
+        },
     {
         /* No.798 delta:16112 weight:1873 */
         44497,
@@ -43944,7 +43944,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9cdbe3,
          0x3fb79d4b,
          0x3f83aa9e},
-        0xffff8000},
+        },
     {
         /* No.799 delta:15809 weight:1829 */
         44497,
@@ -43999,7 +43999,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e32f1,
          0x3f9317e8,
          0x3fa1e014},
-        0xffff8000},
+        },
     {
         /* No.800 delta:17774 weight:1811 */
         44497,
@@ -44054,7 +44054,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8623e3,
          0x3fa21a4e,
          0x3f9479d3},
-        0xffff8000},
+        },
     {
         /* No.801 delta:16884 weight:1805 */
         44497,
@@ -44109,7 +44109,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab0387,
          0x3fa7e00f,
          0x3f898008},
-        0xffff8000},
+        },
     {
         /* No.802 delta:17333 weight:1881 */
         44497,
@@ -44164,7 +44164,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85b5d2,
          0x3fa75299,
          0x3fb82c1e},
-        0xffff8000},
+        },
     {
         /* No.803 delta:16066 weight:1855 */
         44497,
@@ -44219,7 +44219,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9cbe4c,
          0x3fb5f37c,
          0x3f8b04e8},
-        0xffff8000},
+        },
     {
         /* No.804 delta:17122 weight:1839 */
         44497,
@@ -44274,7 +44274,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbcc512,
          0x3f8c37f2,
          0x3f87d76d},
-        0xffff8000},
+        },
     {
         /* No.805 delta:16244 weight:1851 */
         44497,
@@ -44329,7 +44329,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa98566,
          0x3f8940c9,
          0x3fbf2357},
-        0xffff8000},
+        },
     {
         /* No.806 delta:15885 weight:1813 */
         44497,
@@ -44384,7 +44384,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa49f05,
          0x3f9b2097,
          0x3f9446b1},
-        0xffff8000},
+        },
     {
         /* No.807 delta:17629 weight:1843 */
         44497,
@@ -44439,7 +44439,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f7538,
          0x3fb0f5dc,
          0x3fa406d0},
-        0xffff8000},
+        },
     {
         /* No.808 delta:17149 weight:1823 */
         44497,
@@ -44494,7 +44494,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe3195,
          0x3fb3993e,
          0x3f98fc91},
-        0xffff8000},
+        },
     {
         /* No.809 delta:15751 weight:1663 */
         44497,
@@ -44549,7 +44549,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faaddf3,
          0x3f985344,
          0x3f853163},
-        0xffff8000},
+        },
     {
         /* No.810 delta:16781 weight:1821 */
         44497,
@@ -44604,7 +44604,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fadb59d,
          0x3fb8fae1,
          0x3fa6dd15},
-        0xffff8000},
+        },
     {
         /* No.811 delta:16616 weight:1835 */
         44497,
@@ -44659,7 +44659,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa95af1,
          0x3f85f0d9,
          0x3f9fe575},
-        0xffff8000},
+        },
     {
         /* No.812 delta:16163 weight:1913 */
         44497,
@@ -44714,7 +44714,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1126d,
          0x3fbd050d,
          0x3f93f451},
-        0xffff8000},
+        },
     {
         /* No.813 delta:18333 weight:1801 */
         44497,
@@ -44769,7 +44769,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f865c9d,
          0x3f9e2e82,
          0x3fb05d1a},
-        0xffff8000},
+        },
     {
         /* No.814 delta:17874 weight:1851 */
         44497,
@@ -44824,7 +44824,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8883a8,
          0x3fb06a8c,
          0x3f9ad988},
-        0xffff8000},
+        },
     {
         /* No.815 delta:16669 weight:1829 */
         44497,
@@ -44879,7 +44879,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f932642,
          0x3fbd16db,
          0x3fa7f745},
-        0xffff8000},
+        },
     {
         /* No.816 delta:15812 weight:1839 */
         44497,
@@ -44934,7 +44934,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f984841,
          0x3fb4a8a1,
          0x3faa83cc},
-        0xffff8000},
+        },
     {
         /* No.817 delta:16157 weight:1705 */
         44497,
@@ -44989,7 +44989,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e7e2e,
          0x3fb5b4c8,
          0x3fa21b38},
-        0xffff8000},
+        },
     {
         /* No.818 delta:17568 weight:1905 */
         44497,
@@ -45044,7 +45044,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb3a7b6,
          0x3f94f144,
          0x3fa94129},
-        0xffff8000},
+        },
     {
         /* No.819 delta:17411 weight:1887 */
         44497,
@@ -45099,7 +45099,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0434b,
          0x3f932929,
          0x3f869686},
-        0xffff8000},
+        },
     {
         /* No.820 delta:15662 weight:1777 */
         44497,
@@ -45154,7 +45154,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa1ff68,
          0x3f91fbf7,
          0x3fad919a},
-        0xffff8000},
+        },
     {
         /* No.821 delta:16118 weight:1793 */
         44497,
@@ -45209,7 +45209,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f86ee5d,
          0x3fac7f94,
          0x3fb1a8eb},
-        0xffff8000},
+        },
     {
         /* No.822 delta:15794 weight:1709 */
         44497,
@@ -45264,7 +45264,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f997313,
          0x3fbbd205,
          0x3fb53def},
-        0xffff8000},
+        },
     {
         /* No.823 delta:16813 weight:1827 */
         44497,
@@ -45319,7 +45319,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb3987d,
          0x3f85aff9,
          0x3fb875e5},
-        0xffff8000},
+        },
     {
         /* No.824 delta:17329 weight:1605 */
         44497,
@@ -45374,7 +45374,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8929c2,
          0x3fb8806f,
          0x3fa35255},
-        0xffff8000},
+        },
     {
         /* No.825 delta:17193 weight:1883 */
         44497,
@@ -45429,7 +45429,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbcd6a6,
          0x3f9ae4b0,
          0x3f852d1b},
-        0xffff8000},
+        },
     {
         /* No.826 delta:16256 weight:1777 */
         44497,
@@ -45484,7 +45484,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa7a2b5,
          0x3fba90bb,
          0x3f9723ad},
-        0xffff8000},
+        },
     {
         /* No.827 delta:17183 weight:1841 */
         44497,
@@ -45539,7 +45539,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa38dfc,
          0x3fb83113,
          0x3f8cdeec},
-        0xffff8000},
+        },
     {
         /* No.828 delta:17547 weight:1799 */
         44497,
@@ -45594,7 +45594,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ee627,
          0x3fb40fbd,
          0x3f892d22},
-        0xffff8000},
+        },
     {
         /* No.829 delta:17249 weight:1783 */
         44497,
@@ -45649,7 +45649,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e7b85,
          0x3fa41574,
          0x3fb2b309},
-        0xffff8000},
+        },
     {
         /* No.830 delta:16500 weight:1593 */
         44497,
@@ -45704,7 +45704,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbb297b,
          0x3f943ce2,
          0x3fa9d873},
-        0xffff8000},
+        },
     {
         /* No.831 delta:16137 weight:1845 */
         44497,
@@ -45759,7 +45759,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87209d,
          0x3fbd8153,
          0x3f9375e6},
-        0xffff8000},
+        },
     {
         /* No.832 delta:16907 weight:1657 */
         44497,
@@ -45814,7 +45814,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe3fbf,
          0x3f8a62d6,
          0x3f945931},
-        0xffff8000},
+        },
     {
         /* No.833 delta:16522 weight:1981 */
         44497,
@@ -45869,7 +45869,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8911d0,
          0x3f939e8e,
          0x3fa4f3dc},
-        0xffff8000},
+        },
     {
         /* No.834 delta:17646 weight:1857 */
         44497,
@@ -45924,7 +45924,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf8210,
          0x3f924714,
          0x3f85f59f},
-        0xffff8000},
+        },
     {
         /* No.835 delta:16880 weight:1807 */
         44497,
@@ -45979,7 +45979,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9206d6,
          0x3fafb7c8,
          0x3f98d183},
-        0xffff8000},
+        },
     {
         /* No.836 delta:17410 weight:1643 */
         44497,
@@ -46034,7 +46034,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb3dd15,
          0x3faf958d,
          0x3f94ca9c},
-        0xffff8000},
+        },
     {
         /* No.837 delta:16136 weight:1801 */
         44497,
@@ -46089,7 +46089,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85c2f5,
          0x3fa22590,
          0x3f96429f},
-        0xffff8000},
+        },
     {
         /* No.838 delta:18017 weight:1837 */
         44497,
@@ -46144,7 +46144,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb40c95,
          0x3fa2fdf5,
          0x3f9ec7f9},
-        0xffff8000},
+        },
     {
         /* No.839 delta:16158 weight:1367 */
         44497,
@@ -46199,7 +46199,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ef8c4,
          0x3f958639,
          0x3fa8f9f4},
-        0xffff8000},
+        },
     {
         /* No.840 delta:16657 weight:1115 */
         44497,
@@ -46254,7 +46254,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a2f54,
          0x3fa8cc29,
          0x3fbd788e},
-        0xffff8000},
+        },
     {
         /* No.841 delta:16351 weight:1907 */
         44497,
@@ -46309,7 +46309,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa83d4b,
          0x3f9d1ef8,
          0x3f8fa4a7},
-        0xffff8000},
+        },
     {
         /* No.842 delta:16137 weight:1369 */
         44497,
@@ -46364,7 +46364,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb6d7cc,
          0x3f9b7688,
          0x3fa4ec64},
-        0xffff8000},
+        },
     {
         /* No.843 delta:16361 weight:1835 */
         44497,
@@ -46419,7 +46419,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd52f0,
          0x3f8d4ce8,
          0x3f93f674},
-        0xffff8000},
+        },
     {
         /* No.844 delta:17028 weight:1863 */
         44497,
@@ -46474,7 +46474,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb067dd,
          0x3f9d00da,
          0x3f8a7655},
-        0xffff8000},
+        },
     {
         /* No.845 delta:17267 weight:1795 */
         44497,
@@ -46529,7 +46529,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd88ae,
          0x3fabebd9,
          0x3f9e4826},
-        0xffff8000},
+        },
     {
         /* No.846 delta:16974 weight:1763 */
         44497,
@@ -46584,7 +46584,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8b3361,
          0x3fa7da6b,
          0x3f9df5de},
-        0xffff8000},
+        },
     {
         /* No.847 delta:17081 weight:1877 */
         44497,
@@ -46639,7 +46639,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fafa659,
          0x3fa476e7,
          0x3f99a03d},
-        0xffff8000},
+        },
     {
         /* No.848 delta:16111 weight:1849 */
         44497,
@@ -46694,7 +46694,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8594f8,
          0x3f8f12fc,
          0x3fb381e0},
-        0xffff8000},
+        },
     {
         /* No.849 delta:17254 weight:1629 */
         44497,
@@ -46749,7 +46749,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9fa07d,
          0x3f8d8ae9,
          0x3fbb394c},
-        0xffff8000},
+        },
     {
         /* No.850 delta:17902 weight:1747 */
         44497,
@@ -46804,7 +46804,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f882adf,
          0x3f9f215d,
          0x3f825b7e},
-        0xffff8000},
+        },
     {
         /* No.851 delta:16622 weight:1997 */
         44497,
@@ -46859,7 +46859,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9ec238,
          0x3f8c5892,
          0x3fb06a97},
-        0xffff8000},
+        },
     {
         /* No.852 delta:15856 weight:1613 */
         44497,
@@ -46914,7 +46914,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0a831,
          0x3f9ad5fc,
          0x3fa446cb},
-        0xffff8000},
+        },
     {
         /* No.853 delta:17012 weight:1915 */
         44497,
@@ -46969,7 +46969,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fabd4d2,
          0x3f965348,
          0x3fa1898d},
-        0xffff8000},
+        },
     {
         /* No.854 delta:15758 weight:1733 */
         44497,
@@ -47024,7 +47024,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe4070,
          0x3f878d13,
          0x3f9813f5},
-        0xffff8000},
+        },
     {
         /* No.855 delta:16471 weight:1945 */
         44497,
@@ -47079,7 +47079,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93bb49,
          0x3f88d085,
          0x3fbf0421},
-        0xffff8000},
+        },
     {
         /* No.856 delta:17379 weight:1725 */
         44497,
@@ -47134,7 +47134,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fae3517,
          0x3f91171f,
          0x3f8c6218},
-        0xffff8000},
+        },
     {
         /* No.857 delta:16169 weight:1861 */
         44497,
@@ -47189,7 +47189,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa45531,
          0x3f879a1b,
          0x3f906fa7},
-        0xffff8000},
+        },
     {
         /* No.858 delta:16962 weight:1815 */
         44497,
@@ -47244,7 +47244,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95f7f6,
          0x3fb7f050,
          0x3f8a568a},
-        0xffff8000},
+        },
     {
         /* No.859 delta:16088 weight:1867 */
         44497,
@@ -47299,7 +47299,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f896369,
          0x3fac89ba,
          0x3f9ee82e},
-        0xffff8000},
+        },
     {
         /* No.860 delta:16637 weight:1461 */
         44497,
@@ -47354,7 +47354,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2ba38,
          0x3f8561e7,
          0x3f995b37},
-        0xffff8000},
+        },
     {
         /* No.861 delta:16439 weight:1783 */
         44497,
@@ -47409,7 +47409,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f3eed,
          0x3f936023,
          0x3fa457e8},
-        0xffff8000},
+        },
     {
         /* No.862 delta:17210 weight:1639 */
         44497,
@@ -47464,7 +47464,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8c828,
          0x3f9edff3,
          0x3fb2e977},
-        0xffff8000},
+        },
     {
         /* No.863 delta:18411 weight:1827 */
         44497,
@@ -47519,7 +47519,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faed9db,
          0x3fb0d20c,
          0x3fa4385c},
-        0xffff8000},
+        },
     {
         /* No.864 delta:17392 weight:1907 */
         44497,
@@ -47574,7 +47574,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87cafa,
          0x3f897d58,
          0x3fbd1774},
-        0xffff8000},
+        },
     {
         /* No.865 delta:18617 weight:1871 */
         44497,
@@ -47629,7 +47629,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9180ad,
          0x3f8ed43f,
          0x3fbaf5ba},
-        0xffff8000},
+        },
     {
         /* No.866 delta:18256 weight:1683 */
         44497,
@@ -47684,7 +47684,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f873390,
          0x3fa07cc5,
          0x3f95493d},
-        0xffff8000},
+        },
     {
         /* No.867 delta:17636 weight:1755 */
         44497,
@@ -47739,7 +47739,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa7e818,
          0x3f889a4f,
          0x3fbdcb3f},
-        0xffff8000},
+        },
     {
         /* No.868 delta:17524 weight:1809 */
         44497,
@@ -47794,7 +47794,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95f94d,
          0x3fa6a8c1,
          0x3fa9dbc9},
-        0xffff8000},
+        },
     {
         /* No.869 delta:16980 weight:1721 */
         44497,
@@ -47849,7 +47849,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa86ccb,
          0x3fa4a241,
          0x3fb2cecd},
-        0xffff8000},
+        },
     {
         /* No.870 delta:16486 weight:1777 */
         44497,
@@ -47904,7 +47904,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f899b31,
          0x3fbbe450,
          0x3fb583ec},
-        0xffff8000},
+        },
     {
         /* No.871 delta:16617 weight:1687 */
         44497,
@@ -47959,7 +47959,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f92a742,
          0x3fa8c7ca,
          0x3fb4b8c6},
-        0xffff8000},
+        },
     {
         /* No.872 delta:17099 weight:1859 */
         44497,
@@ -48014,7 +48014,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9239de,
          0x3f87b67d,
          0x3f89d82e},
-        0xffff8000},
+        },
     {
         /* No.873 delta:16659 weight:1855 */
         44497,
@@ -48069,7 +48069,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8839b6,
          0x3f9a73b0,
          0x3fb01d2e},
-        0xffff8000},
+        },
     {
         /* No.874 delta:15997 weight:1697 */
         44497,
@@ -48124,7 +48124,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb68211,
          0x3f84b961,
          0x3f92dafd},
-        0xffff8000},
+        },
     {
         /* No.875 delta:16568 weight:1823 */
         44497,
@@ -48179,7 +48179,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9115c,
          0x3f8c3773,
          0x3f976c76},
-        0xffff8000},
+        },
     {
         /* No.876 delta:16528 weight:1723 */
         44497,
@@ -48234,7 +48234,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fab8e84,
          0x3f9d99e7,
          0x3fa07ed2},
-        0xffff8000},
+        },
     {
         /* No.877 delta:15924 weight:1873 */
         44497,
@@ -48289,7 +48289,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8e3837,
          0x3faa8629,
          0x3f99a88f},
-        0xffff8000},
+        },
     {
         /* No.878 delta:16137 weight:1821 */
         44497,
@@ -48344,7 +48344,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fba8490,
          0x3fa8ffa2,
          0x3f951a8f},
-        0xffff8000},
+        },
     {
         /* No.879 delta:16047 weight:1891 */
         44497,
@@ -48399,7 +48399,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f36a5,
          0x3f847910,
          0x3fbed78d},
-        0xffff8000},
+        },
     {
         /* No.880 delta:16870 weight:1885 */
         44497,
@@ -48454,7 +48454,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85420e,
          0x3fa7399c,
          0x3fbb8af8},
-        0xffff8000},
+        },
     {
         /* No.881 delta:15805 weight:1819 */
         44497,
@@ -48509,7 +48509,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2c828,
          0x3f86391f,
          0x3f959be6},
-        0xffff8000},
+        },
     {
         /* No.882 delta:18114 weight:1773 */
         44497,
@@ -48564,7 +48564,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e8493,
          0x3f905d0e,
          0x3fa20f89},
-        0xffff8000},
+        },
     {
         /* No.883 delta:15806 weight:1897 */
         44497,
@@ -48619,7 +48619,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99c4ed,
          0x3f92711c,
          0x3fa62e86},
-        0xffff8000},
+        },
     {
         /* No.884 delta:18073 weight:1783 */
         44497,
@@ -48674,7 +48674,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99f6e8,
          0x3fbf4b7a,
          0x3f843de3},
-        0xffff8000},
+        },
     {
         /* No.885 delta:16129 weight:1861 */
         44497,
@@ -48729,7 +48729,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa5250c,
          0x3fb3feb4,
          0x3fae6848},
-        0xffff8000},
+        },
     {
         /* No.886 delta:16739 weight:1881 */
         44497,
@@ -48784,7 +48784,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa71e86,
          0x3f8a4cbd,
          0x3f90938b},
-        0xffff8000},
+        },
     {
         /* No.887 delta:15859 weight:1769 */
         44497,
@@ -48839,7 +48839,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f92fe87,
          0x3fb140a2,
          0x3f9fbb8f},
-        0xffff8000},
+        },
     {
         /* No.888 delta:16037 weight:1729 */
         44497,
@@ -48894,7 +48894,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f831420,
          0x3faa2514,
          0x3fb6f899},
-        0xffff8000},
+        },
     {
         /* No.889 delta:19301 weight:1409 */
         44497,
@@ -48949,7 +48949,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa380e3,
          0x3fb05f17,
          0x3f8f3fb8},
-        0xffff8000},
+        },
     {
         /* No.890 delta:16596 weight:1705 */
         44497,
@@ -49004,7 +49004,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb7a5de,
          0x3f9a2c61,
          0x3f8ceb66},
-        0xffff8000},
+        },
     {
         /* No.891 delta:16343 weight:1713 */
         44497,
@@ -49059,7 +49059,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faff0ea,
          0x3f9b1923,
          0x3fa08286},
-        0xffff8000},
+        },
     {
         /* No.892 delta:16267 weight:1763 */
         44497,
@@ -49114,7 +49114,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbf8b59,
          0x3fa59210,
          0x3f9049a5},
-        0xffff8000},
+        },
     {
         /* No.893 delta:16549 weight:1853 */
         44497,
@@ -49169,7 +49169,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a5f24,
          0x3fa3d849,
          0x3fb1eece},
-        0xffff8000},
+        },
     {
         /* No.894 delta:17448 weight:1843 */
         44497,
@@ -49224,7 +49224,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84ef91,
          0x3f8ef6f2,
          0x3fb33929},
-        0xffff8000},
+        },
     {
         /* No.895 delta:16252 weight:1843 */
         44497,
@@ -49279,7 +49279,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbd4d67,
          0x3f98b8ec,
          0x3f876be2},
-        0xffff8000},
+        },
     {
         /* No.896 delta:15712 weight:1945 */
         44497,
@@ -49334,7 +49334,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc7ecc,
          0x3f976fac,
          0x3f8ad9d2},
-        0xffff8000},
+        },
     {
         /* No.897 delta:16141 weight:1833 */
         44497,
@@ -49389,7 +49389,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fba45c4,
          0x3fa86a16,
          0x3f869cfe},
-        0xffff8000},
+        },
     {
         /* No.898 delta:15729 weight:1809 */
         44497,
@@ -49444,7 +49444,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f847857,
          0x3f8e1dc5,
          0x3fb12678},
-        0xffff8000},
+        },
     {
         /* No.899 delta:18220 weight:1827 */
         44497,
@@ -49499,7 +49499,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89f515,
          0x3fa3fdab,
          0x3f956894},
-        0xffff8000},
+        },
     {
         /* No.900 delta:16417 weight:1741 */
         44497,
@@ -49554,7 +49554,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f842214,
          0x3f8fcf1b,
          0x3fb87913},
-        0xffff8000},
+        },
     {
         /* No.901 delta:17320 weight:1923 */
         44497,
@@ -49609,7 +49609,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9a67d3,
          0x3f96c5da,
          0x3fa91204},
-        0xffff8000},
+        },
     {
         /* No.902 delta:15848 weight:1823 */
         44497,
@@ -49664,7 +49664,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8bd758,
          0x3fb9888b,
          0x3fac23a3},
-        0xffff8000},
+        },
     {
         /* No.903 delta:15839 weight:1769 */
         44497,
@@ -49719,7 +49719,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f139e,
          0x3f92a50d,
          0x3f8446a4},
-        0xffff8000},
+        },
     {
         /* No.904 delta:16675 weight:1741 */
         44497,
@@ -49774,7 +49774,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93a4a4,
          0x3faea704,
          0x3fb88528},
-        0xffff8000},
+        },
     {
         /* No.905 delta:16100 weight:1761 */
         44497,
@@ -49829,7 +49829,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f859cfd,
          0x3fa64f42,
          0x3f936d37},
-        0xffff8000},
+        },
     {
         /* No.906 delta:16749 weight:1819 */
         44497,
@@ -49884,7 +49884,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa4b8a7,
          0x3faf5e56,
          0x3f93087f},
-        0xffff8000},
+        },
     {
         /* No.907 delta:17548 weight:1787 */
         44497,
@@ -49939,7 +49939,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbfd989,
          0x3f92429c,
          0x3fa4e885},
-        0xffff8000},
+        },
     {
         /* No.908 delta:16278 weight:1785 */
         44497,
@@ -49994,7 +49994,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9cf5bd,
          0x3fa66b1a,
          0x3fb25c2e},
-        0xffff8000},
+        },
     {
         /* No.909 delta:18871 weight:1729 */
         44497,
@@ -50049,7 +50049,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb2acf2,
          0x3f8b406a,
          0x3fa13cbe},
-        0xffff8000},
+        },
     {
         /* No.910 delta:16196 weight:1793 */
         44497,
@@ -50104,7 +50104,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa8e288,
          0x3fbcf355,
          0x3f9230bb},
-        0xffff8000},
+        },
     {
         /* No.911 delta:16277 weight:1725 */
         44497,
@@ -50159,7 +50159,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93a284,
          0x3fb4666e,
          0x3fa87366},
-        0xffff8000},
+        },
     {
         /* No.912 delta:16609 weight:1755 */
         44497,
@@ -50214,7 +50214,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa869ec,
          0x3fbc9779,
          0x3fa2bd64},
-        0xffff8000},
+        },
     {
         /* No.913 delta:16298 weight:1655 */
         44497,
@@ -50269,7 +50269,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f846976,
          0x3f96a5de,
          0x3fa2be23},
-        0xffff8000},
+        },
     {
         /* No.914 delta:16737 weight:1745 */
         44497,
@@ -50324,7 +50324,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2c0ea,
          0x3fb56301,
          0x3f8927d7},
-        0xffff8000},
+        },
     {
         /* No.915 delta:16392 weight:1007 */
         44497,
@@ -50379,7 +50379,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9f9afd,
          0x3fa274ac,
          0x3fb1c28d},
-        0xffff8000},
+        },
     {
         /* No.916 delta:17046 weight:1859 */
         44497,
@@ -50434,7 +50434,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fad4a01,
          0x3fa35b15,
          0x3f9f7cb2},
-        0xffff8000},
+        },
     {
         /* No.917 delta:17686 weight:1813 */
         44497,
@@ -50489,7 +50489,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb6abd3,
          0x3f860377,
          0x3f95b8db},
-        0xffff8000},
+        },
     {
         /* No.918 delta:15826 weight:1859 */
         44497,
@@ -50544,7 +50544,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa7af76,
          0x3fb1fdf8,
          0x3f9dcaf1},
-        0xffff8000},
+        },
     {
         /* No.919 delta:16283 weight:1647 */
         44497,
@@ -50599,7 +50599,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f997e7a,
          0x3fb21459,
          0x3f8fc745},
-        0xffff8000},
+        },
     {
         /* No.920 delta:17560 weight:1809 */
         44497,
@@ -50654,7 +50654,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f837d26,
          0x3fb830ae,
          0x3fa56f7d},
-        0xffff8000},
+        },
     {
         /* No.921 delta:16757 weight:1819 */
         44497,
@@ -50709,7 +50709,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99526d,
          0x3f84c178,
          0x3fb3809d},
-        0xffff8000},
+        },
     {
         /* No.922 delta:17238 weight:1883 */
         44497,
@@ -50764,7 +50764,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f966bfb,
          0x3fb3be0b,
          0x3fad747e},
-        0xffff8000},
+        },
     {
         /* No.923 delta:15866 weight:1709 */
         44497,
@@ -50819,7 +50819,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85a2e7,
          0x3f92ed81,
          0x3fbd42b1},
-        0xffff8000},
+        },
     {
         /* No.924 delta:17705 weight:1785 */
         44497,
@@ -50874,7 +50874,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89dc21,
          0x3f87888f,
          0x3fbb5fa0},
-        0xffff8000},
+        },
     {
         /* No.925 delta:16706 weight:1961 */
         44497,
@@ -50929,7 +50929,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbba529,
          0x3f968c88,
          0x3fa17b25},
-        0xffff8000},
+        },
     {
         /* No.926 delta:17258 weight:1841 */
         44497,
@@ -50984,7 +50984,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f83aebd,
          0x3fb618c5,
          0x3fa5bb35},
-        0xffff8000},
+        },
     {
         /* No.927 delta:18396 weight:1887 */
         44497,
@@ -51039,7 +51039,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fae5f16,
          0x3f84c30e,
          0x3f923c13},
-        0xffff8000},
+        },
     {
         /* No.928 delta:17053 weight:1815 */
         44497,
@@ -51094,7 +51094,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f843ec8,
          0x3fa91fed,
          0x3f9e7e16},
-        0xffff8000},
+        },
     {
         /* No.929 delta:17054 weight:1831 */
         44497,
@@ -51149,7 +51149,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d4122,
          0x3fb014ae,
          0x3fa37426},
-        0xffff8000},
+        },
     {
         /* No.930 delta:15841 weight:1921 */
         44497,
@@ -51204,7 +51204,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa10f33,
          0x3f8f57c3,
          0x3fbae024},
-        0xffff8000},
+        },
     {
         /* No.931 delta:18598 weight:1821 */
         44497,
@@ -51259,7 +51259,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb663da,
          0x3fa310d0,
          0x3f89e37e},
-        0xffff8000},
+        },
     {
         /* No.932 delta:15904 weight:1907 */
         44497,
@@ -51314,7 +51314,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fabfe2e,
          0x3f8595ba,
          0x3fb8cd28},
-        0xffff8000},
+        },
     {
         /* No.933 delta:16165 weight:1745 */
         44497,
@@ -51369,7 +51369,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ef04d,
          0x3f84e3c1,
          0x3fb6318a},
-        0xffff8000},
+        },
     {
         /* No.934 delta:16777 weight:1887 */
         44497,
@@ -51424,7 +51424,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f953761,
          0x3f99baab,
          0x3f8f4471},
-        0xffff8000},
+        },
     {
         /* No.935 delta:15822 weight:1977 */
         44497,
@@ -51479,7 +51479,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91c933,
          0x3f8a5f13,
          0x3fbee0b8},
-        0xffff8000},
+        },
     {
         /* No.936 delta:16373 weight:1955 */
         44497,
@@ -51534,7 +51534,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9b8356,
          0x3fa77db1,
          0x3fb86b7d},
-        0xffff8000},
+        },
     {
         /* No.937 delta:16619 weight:1545 */
         44497,
@@ -51589,7 +51589,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f37bc,
          0x3faa86a5,
          0x3f9df19a},
-        0xffff8000},
+        },
     {
         /* No.938 delta:16590 weight:1689 */
         44497,
@@ -51644,7 +51644,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f97c9e4,
          0x3fb8a4a8,
          0x3f8c6add},
-        0xffff8000},
+        },
     {
         /* No.939 delta:16300 weight:1899 */
         44497,
@@ -51699,7 +51699,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8f4f58,
          0x3f9d8da3,
          0x3f8033db},
-        0xffff8000},
+        },
     {
         /* No.940 delta:15870 weight:1723 */
         44497,
@@ -51754,7 +51754,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f97ca6a,
          0x3f8a769e,
          0x3fbde025},
-        0xffff8000},
+        },
     {
         /* No.941 delta:16210 weight:1953 */
         44497,
@@ -51809,7 +51809,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ff5b5,
          0x3f90c026,
          0x3fa33349},
-        0xffff8000},
+        },
     {
         /* No.942 delta:15914 weight:1801 */
         44497,
@@ -51864,7 +51864,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc6da8,
          0x3f9f3b5d,
          0x3fa888f0},
-        0xffff8000},
+        },
     {
         /* No.943 delta:16250 weight:1701 */
         44497,
@@ -51919,7 +51919,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8edb54,
          0x3fbcfbac,
          0x3fa0ee53},
-        0xffff8000},
+        },
     {
         /* No.944 delta:19783 weight:1095 */
         44497,
@@ -51974,7 +51974,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa6110e,
          0x3fb880e1,
          0x3f8db326},
-        0xffff8000},
+        },
     {
         /* No.945 delta:17475 weight:1779 */
         44497,
@@ -52029,7 +52029,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa297d3,
          0x3f9d798f,
          0x3f86e739},
-        0xffff8000},
+        },
     {
         /* No.946 delta:19010 weight:1577 */
         44497,
@@ -52084,7 +52084,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93e884,
          0x3fbb2451,
          0x3f8553d6},
-        0xffff8000},
+        },
     {
         /* No.947 delta:16049 weight:1931 */
         44497,
@@ -52139,7 +52139,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3face753,
          0x3fa23286,
          0x3f96d569},
-        0xffff8000},
+        },
     {
         /* No.948 delta:17581 weight:1859 */
         44497,
@@ -52194,7 +52194,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84e3b5,
          0x3f8e4568,
          0x3fb170f1},
-        0xffff8000},
+        },
     {
         /* No.949 delta:15804 weight:1805 */
         44497,
@@ -52249,7 +52249,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f96f911,
          0x3fa538b3,
          0x3f982618},
-        0xffff8000},
+        },
     {
         /* No.950 delta:15824 weight:1651 */
         44497,
@@ -52304,7 +52304,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f868e85,
          0x3fb93a18,
          0x3facc10d},
-        0xffff8000},
+        },
     {
         /* No.951 delta:17195 weight:1537 */
         44497,
@@ -52359,7 +52359,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2a0c4,
          0x3f9df950,
          0x3fafc15c},
-        0xffff8000},
+        },
     {
         /* No.952 delta:16957 weight:1737 */
         44497,
@@ -52414,7 +52414,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8676b4,
          0x3fb2099c,
          0x3f8c22a0},
-        0xffff8000},
+        },
     {
         /* No.953 delta:16265 weight:1651 */
         44497,
@@ -52469,7 +52469,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f92310b,
          0x3fb01184,
          0x3f8c3712},
-        0xffff8000},
+        },
     {
         /* No.954 delta:16217 weight:1877 */
         44497,
@@ -52524,7 +52524,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d9cb6,
          0x3fa7dadb,
          0x3fb97565},
-        0xffff8000},
+        },
     {
         /* No.955 delta:17732 weight:1767 */
         44497,
@@ -52579,7 +52579,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a6726,
          0x3fa0f230,
          0x3f97e537},
-        0xffff8000},
+        },
     {
         /* No.956 delta:17542 weight:1857 */
         44497,
@@ -52634,7 +52634,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8bf7a7,
          0x3f9de5b9,
          0x3fa1d618},
-        0xffff8000},
+        },
     {
         /* No.957 delta:16931 weight:1905 */
         44497,
@@ -52689,7 +52689,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f951e98,
          0x3fa9a27b,
          0x3f87f49f},
-        0xffff8000},
+        },
     {
         /* No.958 delta:16175 weight:1691 */
         44497,
@@ -52744,7 +52744,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb13072,
          0x3f94a0d9,
          0x3fbb96b9},
-        0xffff8000},
+        },
     {
         /* No.959 delta:15911 weight:1935 */
         44497,
@@ -52799,7 +52799,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa48e97,
          0x3f91d49d,
          0x3fbe6912},
-        0xffff8000},
+        },
     {
         /* No.960 delta:18732 weight:1827 */
         44497,
@@ -52854,7 +52854,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2099f,
          0x3f9112af,
          0x3fbe3b28},
-        0xffff8000},
+        },
     {
         /* No.961 delta:16173 weight:1777 */
         44497,
@@ -52909,7 +52909,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fae2054,
          0x3f8b7568,
          0x3fb96290},
-        0xffff8000},
+        },
     {
         /* No.962 delta:15934 weight:1699 */
         44497,
@@ -52964,7 +52964,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f970b6f,
          0x3fb2c7d9,
          0x3f8594e5},
-        0xffff8000},
+        },
     {
         /* No.963 delta:18202 weight:1775 */
         44497,
@@ -53019,7 +53019,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb20068,
          0x3fa62364,
          0x3f8de0e2},
-        0xffff8000},
+        },
     {
         /* No.964 delta:16723 weight:1761 */
         44497,
@@ -53074,7 +53074,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa90e70,
          0x3fa22544,
          0x3f94deaf},
-        0xffff8000},
+        },
     {
         /* No.965 delta:15809 weight:1741 */
         44497,
@@ -53129,7 +53129,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb0b564,
          0x3f95620f,
          0x3fa3a290},
-        0xffff8000},
+        },
     {
         /* No.966 delta:16683 weight:1865 */
         44497,
@@ -53184,7 +53184,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e1d99,
          0x3fb3854c,
          0x3fa42e73},
-        0xffff8000},
+        },
     {
         /* No.967 delta:17811 weight:1905 */
         44497,
@@ -53239,7 +53239,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9c259b,
          0x3fb04ee3,
          0x3f8ed894},
-        0xffff8000},
+        },
     {
         /* No.968 delta:16788 weight:1875 */
         44497,
@@ -53294,7 +53294,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbc2e10,
          0x3fa65da7,
          0x3f887696},
-        0xffff8000},
+        },
     {
         /* No.969 delta:15870 weight:1713 */
         44497,
@@ -53349,7 +53349,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84806f,
          0x3fbb4f1f,
          0x3f919ce8},
-        0xffff8000},
+        },
     {
         /* No.970 delta:16071 weight:1659 */
         44497,
@@ -53404,7 +53404,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9bdcb5,
          0x3fae73a0,
          0x3fa185b2},
-        0xffff8000},
+        },
     {
         /* No.971 delta:18269 weight:1787 */
         44497,
@@ -53459,7 +53459,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa26548,
          0x3fb73be9,
          0x3f88db25},
-        0xffff8000},
+        },
     {
         /* No.972 delta:16254 weight:1747 */
         44497,
@@ -53514,7 +53514,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbfc7fc,
          0x3f847e9f,
          0x3f98a9b2},
-        0xffff8000},
+        },
     {
         /* No.973 delta:16496 weight:1737 */
         44497,
@@ -53569,7 +53569,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9cb50,
          0x3fb21e4c,
          0x3f8535a1},
-        0xffff8000},
+        },
     {
         /* No.974 delta:16132 weight:1729 */
         44497,
@@ -53624,7 +53624,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb3b5c5,
          0x3fa51614,
          0x3f8e70d9},
-        0xffff8000},
+        },
     {
         /* No.975 delta:16692 weight:1755 */
         44497,
@@ -53679,7 +53679,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faa3148,
          0x3fbef5ce,
          0x3fa17b52},
-        0xffff8000},
+        },
     {
         /* No.976 delta:16535 weight:1703 */
         44497,
@@ -53734,7 +53734,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8a29ee,
          0x3fad9f9a,
          0x3fb0a269},
-        0xffff8000},
+        },
     {
         /* No.977 delta:18103 weight:1841 */
         44497,
@@ -53789,7 +53789,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98aee2,
          0x3f9710f0,
          0x3fa44e86},
-        0xffff8000},
+        },
     {
         /* No.978 delta:16975 weight:1911 */
         44497,
@@ -53844,7 +53844,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa2c991,
          0x3f8e9746,
          0x3f908ccb},
-        0xffff8000},
+        },
     {
         /* No.979 delta:19289 weight:1293 */
         44497,
@@ -53899,7 +53899,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f93bfd0,
          0x3f984645,
          0x3fa20ecc},
-        0xffff8000},
+        },
     {
         /* No.980 delta:17462 weight:1875 */
         44497,
@@ -53954,7 +53954,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f846bae,
          0x3f92cc22,
          0x3fa912a7},
-        0xffff8000},
+        },
     {
         /* No.981 delta:15877 weight:1859 */
         44497,
@@ -54009,7 +54009,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa66256,
          0x3f9480b9,
          0x3fbb16e6},
-        0xffff8000},
+        },
     {
         /* No.982 delta:16420 weight:1903 */
         44497,
@@ -54064,7 +54064,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb7b678,
          0x3fa29f9f,
          0x3f9d4d83},
-        0xffff8000},
+        },
     {
         /* No.983 delta:18401 weight:1877 */
         44497,
@@ -54119,7 +54119,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa9e48c,
          0x3fb2cba2,
          0x3f85b43c},
-        0xffff8000},
+        },
     {
         /* No.984 delta:17308 weight:1819 */
         44497,
@@ -54174,7 +54174,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fba2e3a,
          0x3f883c2a,
          0x3fa5cea4},
-        0xffff8000},
+        },
     {
         /* No.985 delta:16648 weight:1755 */
         44497,
@@ -54229,7 +54229,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa84aa9,
          0x3f842f33,
          0x3f9a687d},
-        0xffff8000},
+        },
     {
         /* No.986 delta:15838 weight:1813 */
         44497,
@@ -54284,7 +54284,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8ea457,
          0x3fb983b4,
          0x3fa2f643},
-        0xffff8000},
+        },
     {
         /* No.987 delta:15828 weight:1881 */
         44497,
@@ -54339,7 +54339,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb86d51,
          0x3fbe6355,
          0x3f939885},
-        0xffff8000},
+        },
     {
         /* No.988 delta:17411 weight:1689 */
         44497,
@@ -54394,7 +54394,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88fecb,
          0x3fad65e1,
          0x3f92d794},
-        0xffff8000},
+        },
     {
         /* No.989 delta:15822 weight:1351 */
         44497,
@@ -54449,7 +54449,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8796a6,
          0x3fab64b7,
          0x3f9587d9},
-        0xffff8000},
+        },
     {
         /* No.990 delta:16241 weight:1755 */
         44497,
@@ -54504,7 +54504,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f955566,
          0x3fa091cd,
          0x3fbf4258},
-        0xffff8000},
+        },
     {
         /* No.991 delta:19064 weight:1497 */
         44497,
@@ -54559,7 +54559,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb60c0b,
          0x3fa0d4d4,
          0x3f9c48db},
-        0xffff8000},
+        },
     {
         /* No.992 delta:17030 weight:1771 */
         44497,
@@ -54614,7 +54614,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f871225,
          0x3fb25db9,
          0x3f9d6530},
-        0xffff8000},
+        },
     {
         /* No.993 delta:15709 weight:1877 */
         44497,
@@ -54669,7 +54669,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91cd9f,
          0x3f8e6d3f,
          0x3fb99e08},
-        0xffff8000},
+        },
     {
         /* No.994 delta:16149 weight:1843 */
         44497,
@@ -54724,7 +54724,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f88eb2c,
          0x3fa84477,
          0x3f872263},
-        0xffff8000},
+        },
     {
         /* No.995 delta:15829 weight:1299 */
         44497,
@@ -54779,7 +54779,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9e90d2,
          0x3fb2e578,
          0x3fa136d6},
-        0xffff8000},
+        },
     {
         /* No.996 delta:16806 weight:1809 */
         44497,
@@ -54834,7 +54834,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb1e146,
          0x3fa370be,
          0x3f9d06d1},
-        0xffff8000},
+        },
     {
         /* No.997 delta:17362 weight:1743 */
         44497,
@@ -54889,7 +54889,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3faf4c06,
          0x3fa08b8e,
          0x3f9db83b},
-        0xffff8000},
+        },
     {
         /* No.998 delta:17010 weight:1875 */
         44497,
@@ -54944,7 +54944,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb066b0,
          0x3fa53a92,
          0x3f8b40a7},
-        0xffff8000},
+        },
     {
         /* No.999 delta:15836 weight:1877 */
         44497,
@@ -54999,7 +54999,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fbe07a7,
          0x3f87fdd8,
          0x3f941037},
-        0xffff8000},
+        },
     {
         /* No.1000 delta:16819 weight:1791 */
         44497,
@@ -55054,7 +55054,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f87ad36,
          0x3fbc598a,
          0x3f91f361},
-        0xffff8000},
+        },
     {
         /* No.1001 delta:16555 weight:1699 */
         44497,
@@ -55109,7 +55109,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f975862,
          0x3f8bcd66,
          0x3fb56ef5},
-        0xffff8000},
+        },
     {
         /* No.1002 delta:16897 weight:1457 */
         44497,
@@ -55164,7 +55164,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb8b058,
          0x3f8c530c,
          0x3f9370de},
-        0xffff8000},
+        },
     {
         /* No.1003 delta:17137 weight:1807 */
         44497,
@@ -55219,7 +55219,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8d4a93,
          0x3f86ec72,
          0x3fba10da},
-        0xffff8000},
+        },
     {
         /* No.1004 delta:17469 weight:1793 */
         44497,
@@ -55274,7 +55274,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84c6c5,
          0x3f88522a,
          0x3fbfeccd},
-        0xffff8000},
+        },
     {
         /* No.1005 delta:16327 weight:1781 */
         44497,
@@ -55329,7 +55329,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f844203,
          0x3facff50,
          0x3f98a5d6},
-        0xffff8000},
+        },
     {
         /* No.1006 delta:16364 weight:1823 */
         44497,
@@ -55384,7 +55384,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fb4e72c,
          0x3f9fa2a0,
          0x3f8955b8},
-        0xffff8000},
+        },
     {
         /* No.1007 delta:16154 weight:1663 */
         44497,
@@ -55439,7 +55439,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f84a872,
          0x3fae04cf,
          0x3fb2352a},
-        0xffff8000},
+        },
     {
         /* No.1008 delta:16248 weight:1815 */
         44497,
@@ -55494,7 +55494,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa820a0,
          0x3fa252e7,
          0x3f9f653b},
-        0xffff8000},
+        },
     {
         /* No.1009 delta:16038 weight:1867 */
         44497,
@@ -55549,7 +55549,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa28afe,
          0x3f9d2a11,
          0x3f898b8c},
-        0xffff8000},
+        },
     {
         /* No.1010 delta:20138 weight:783 */
         44497,
@@ -55604,7 +55604,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f866182,
          0x3fbdb512,
          0x3f989795},
-        0xffff8000},
+        },
     {
         /* No.1011 delta:16938 weight:1743 */
         44497,
@@ -55659,7 +55659,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3fa96666,
          0x3fbbff19,
          0x3fa45085},
-        0xffff8000},
+        },
     {
         /* No.1012 delta:17871 weight:1881 */
         44497,
@@ -55714,7 +55714,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f99fbec,
          0x3fa454c4,
          0x3f938ef9},
-        0xffff8000},
+        },
     {
         /* No.1013 delta:17235 weight:1817 */
         44497,
@@ -55769,7 +55769,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f85e921,
          0x3faf6ab9,
          0x3fb908a9},
-        0xffff8000},
+        },
     {
         /* No.1014 delta:16870 weight:1715 */
         44497,
@@ -55824,7 +55824,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f89648e,
          0x3f974286,
          0x3fa22701},
-        0xffff8000},
+        },
     {
         /* No.1015 delta:17204 weight:1755 */
         44497,
@@ -55879,7 +55879,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9478f5,
          0x3f897af0,
          0x3fa60c74},
-        0xffff8000},
+        },
     {
         /* No.1016 delta:15763 weight:1851 */
         44497,
@@ -55934,7 +55934,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f9d7ad4,
          0x3fb12262,
          0x3f8ab9c8},
-        0xffff8000},
+        },
     {
         /* No.1017 delta:15921 weight:1891 */
         44497,
@@ -55989,7 +55989,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f859278,
          0x3faa4ba5,
          0x3f99d110},
-        0xffff8000},
+        },
     {
         /* No.1018 delta:15696 weight:1839 */
         44497,
@@ -56044,7 +56044,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f942dad,
          0x3fa8550d,
          0x3f9e868b},
-        0xffff8000},
+        },
     {
         /* No.1019 delta:16168 weight:1807 */
         44497,
@@ -56099,7 +56099,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f95885a,
          0x3fb99084,
          0x3f863bd0},
-        0xffff8000},
+        },
     {
         /* No.1020 delta:17389 weight:1745 */
         44497,
@@ -56154,7 +56154,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f91e60a,
          0x3f83a384,
          0x3fbe0412},
-        0xffff8000},
+        },
     {
         /* No.1021 delta:15823 weight:1819 */
         44497,
@@ -56209,7 +56209,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8cbe44,
          0x3fb68f4f,
          0x3fa839d1},
-        0xffff8000},
+        },
     {
         /* No.1022 delta:15846 weight:1791 */
         44497,
@@ -56264,7 +56264,7 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f8465f6,
          0x3f999701,
          0x3fae64df},
-        0xffff8000},
+        },
     {
         /* No.1023 delta:15835 weight:1313 */
         44497,
@@ -56319,6 +56319,6 @@ mtgp32_params_fast_t mtgp32dc_params_fast_44497[]
          0x3f98be0a,
          0x3f8a802c,
          0x3fa5f172},
-        0xffff8000}
+        }
 };
 const int mtgpdc_params_44497_num  = 1024;

@@ -7,7 +7,7 @@ typedef struct MTGP32_PARAMS_FAST_T {
     uint32_t tmp_tbl[16];       /**< a small matrix for tempering. */
     uint32_t flt_tmp_tbl[16];   /**< a small matrix for tempering and
                                  converting to float. */
-    uint32_t mask;              /**< This is a mask for state space */
+//    uint32_t mask;              /**< This is a mask for state space */
 //    std::string poly_sha1[21]; /**< SHA1 digest */
 } mtgp32_params_fast_t;
 
