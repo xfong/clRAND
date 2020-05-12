@@ -13,7 +13,7 @@ typedef struct MTGP64_PARAMS_FAST_T {
 
 #include "mtgp64dc-params-11213.hpp"
 #include "mtgp64dc-params-23209.hpp"
-//#include "mtgp64dc-params-44497.hpp"
+#include "mtgp64dc-params-44497.hpp"
 
 const char * mtgp64_prng_kernel = R"EOK(
 /*
