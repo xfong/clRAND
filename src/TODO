@@ -1,0 +1,25 @@
+The library will provide a set of PRNG objects. These PRNG objects will be configured
+with different PRNG algorithms and parameters for generating random numbers. The
+basic functionality of each PRNG is that it must be able to generate uniformly
+distributed numbers of type uint and ulong (might be exception for MTGP32 and
+MTGP64).
+
+Each PRNG object will have a set of private functions that launches a kernel, which
+will call a function that is defined in the header files (see ../generator). The
+kernels will in turn use the results returned by the functions they call to generate
+the required output. Thus, the two key functions that must be available to the
+kernels are those that generate uniformly distributed random numbers of type uint and
+ulong.
+
+For the library to be useful, the PRNG object must have functions that launch kernels 
+to do the following:
+- Seed the PRNG algorithm
+- Generate uniformly distributed uint
+- Generate uniformly distributed ulong
+- Generate uniformly distributed floats and doubles in the intervals:
+    - [0, 1]
+    - [0, 1)
+    - (0, 1] {same method as for [0, 1) with post-processing to convert 0.0 to 1.0}
+    - (0, 1) {same method as for [0, 1) with post-processing to discard 0.0}
+- Generate random floats with standard normal distribution and also for user-defined
+  mean and standard deviations
