@@ -121,6 +121,13 @@ void clRAND::Init(cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type
     this->context_id = ctx_id;
     this->context = context_id;
     cl_int err;
+    cl_device_fp_config device_fp_config;
+    err = clGetDeviceInfo(dev_id, CL_DEVICE_DOUBLE_FP_CONFIG, sizeof(cl_device_fp_config), &device_fp_config, NULL);
+    if (err) {
+        std::cout << "ERROR: Unable to query device for cl_double support!" << std::endl;
+        return;
+    }
+    this->fp64_flag = (device_fp_config > 0);
     this->com_queue_id = clCreateCommandQueue(context_id, device_id, NULL, &err);
     if (err) {
         std::cout << "ERROR: Unable to create command queue!" << std::endl;

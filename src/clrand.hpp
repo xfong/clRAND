@@ -49,7 +49,7 @@
 #ifndef __CLRAND_HPP
     #define __CLRAND_HPP
     #define CLRAND_VERSION_MAJOR 0
-    #define CLRAND_VERSION_MINOR 1
+    #define CLRAND_VERSION_MINOR 2
     #define CLRAND_VERSION_REV   0
 #endif
 
@@ -98,7 +98,7 @@ enum clrandRngType {
 };
 
 // Prototype class
-CLRAND_DLL class clRAND {
+class CLRAND_DLL clRAND {
     private:
         cl::Device        device;              // OpenCL C++ API
         cl_device_id      device_id;           // OpenCL C API (to support buffer copy)
@@ -142,6 +142,7 @@ CLRAND_DLL class clRAND {
         cl::Buffer        seedArray;           // Array of seed values used to seed the PRNGs (device side)
 
         bool              init_flag;           // Flag for whether stream object has been initialized
+        bool              fp64_flag;           // Flag for whether device supports cl_double
         bool              source_ready;        // Flag for whether kernel source is built
         bool              program_ready;       // Flag for whether kernel program is compiled
         bool              generator_ready;     // Flag for whether the stream object has been completely set up
@@ -206,6 +207,7 @@ CLRAND_DLL class clRAND {
         cl_uint GetNumberOfWorkgroups() { return this->wkgrp_count; }
 
         bool IsInitialized() { return this->init_flag; }
+        bool IsFP64Supported() { return this->fp64_flag; }
         bool IsSourceReady() { return this->source_ready; }
         bool IsProgramReady() { return this->program_ready; }
         bool IsGeneratorReady() { return this->generator_ready; }
@@ -220,38 +222,39 @@ CLRAND_DLL class clRAND {
 #ifdef __cplusplus
 extern "C" {
 #endif
-CLRAND_DLL clRAND* clrand_create_stream();
 
-CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_);
+clRAND* CLRAND_DLL clrand_create_stream();
 
-CLRAND_DLL const char * clrand_get_prng_precision(clRAND* p) {
+cl_int CLRAND_DLL clrand_initialize_prng(clRAND* p, cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_);
+
+const char * CLRAND_DLL clrand_get_prng_precision(clRAND* p) {
     return (*p).GetPrecision().c_str();
 }
 
-CLRAND_DLL int clrand_set_prng_precision(clRAND* p, const char* precision) {
+int CLRAND_DLL clrand_set_prng_precision(clRAND* p, const char* precision) {
     return (*p).SetPrecision(precision);
 }
 
-CLRAND_DLL const char * clrand_get_prng_name(clRAND* p) {
+const char * CLRAND_DLL clrand_get_prng_name(clRAND* p) {
     std::string tmp = (*p).GetRNGName();
     return tmp.c_str();
 }
 
-CLRAND_DLL cl_int clrand_set_prng_name(clRAND* p, clrandRngType rng_type) {
+cl_int CLRAND_DLL clrand_set_prng_name(clRAND* p, clrandRngType rng_type) {
     (*p).SetRNGType(rng_type);
     (*p).BuildSource();
     return (*p).BuildKernelProgram();
 }
 
-CLRAND_DLL void clrand_set_prng_seed(clRAND* p, ulong seedNum) {
+void CLRAND_DLL clrand_set_prng_seed(clRAND* p, ulong seedNum) {
     (*p).SetSeed(seedNum);
 }
 
-CLRAND_DLL cl_int clrand_ready_stream(clRAND* p) {
+cl_int CLRAND_DLL clrand_ready_stream(clRAND* p) {
     return (*p).ReadyGenerator();
 }
 
-CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst);
+cl_int CLRAND_DLL clrand_generate_stream(clRAND* p, int count, cl_mem dst);
 
 #ifdef __cplusplus
 }
