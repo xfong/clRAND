@@ -3,12 +3,12 @@
 // Main C interface functions
 
 // Main call to create a stream object
-CLRAND_DLL clRAND* clrand_create_stream() {
+clRAND* CLRAND_DLL clrand_create_stream() {
     return new clRAND;
 }
 
 // Main call to generate stream in the stream object
-CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
+cl_int CLRAND_DLL clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
     if (count < 0) {
         std::cout << "ERROR: count must be a positive integer!" << std::endl;
         return -1;
@@ -85,7 +85,7 @@ CLRAND_DLL cl_int clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
 }
 
 // Main call to initialize the stream object
-CLRAND_DLL cl_int clrand_initialize_prng(clRAND* p, cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_) {
+cl_int CLRAND_DLL clrand_initialize_prng(clRAND* p, cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_) {
     (*p).Init(dev_id, ctx_id, rng_type_);
     (*p).BuildSource();
     return (*p).BuildKernelProgram();
