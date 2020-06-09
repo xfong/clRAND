@@ -26,43 +26,43 @@ generating floats, and another to extract lower 20-bits for generating doubles
 #define UINT_3FFFFFFF ‭1073741823‬;
 // 
 
-static inline cl_float simple_cc_01_uint(cl_uint x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_cc_01_uint(uint x) {
+    float tmp = (float)(x);
 	return tmp*float_inv_max_uint;
 } // simple_cc_01_uint
 
-static inline cl_float simple_cc_01_ulong(cl_ulong x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_cc_01_ulong(ulong x) {
+    float tmp = (float)(x);
 	return tmp*float_inv_max_ulong;
 } // simple_cc_01_ulong
 
-static inline cl_float simple_co_01_uint(cl_uint x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_co_01_uint(uint x) {
+    float tmp = (float)(x);
 	return tmp*float_inv_nmax_uint;
 } // simple_co_01_uint
 
-static inline cl_float simple_co_01_ulong(cl_ulong x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_co_01_ulong(ulong x) {
+    float tmp = (float)(x);
 	return tmp*float_inv_nmax_ulong;
 } // simple_co_01_ulong
 
-static inline cl_float simple_oc_01_uint(cl_uint x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_oc_01_uint(uint x) {
+    float tmp = (float)(x);
 	return (tmp+1.0f)*float_inv_nmax_uint;
 } // simple_oc_01_uint
 
-static inline cl_float simple_oc_01_ulong(cl_ulong x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_oc_01_ulong(ulong x) {
+    float tmp = (float)(x);
 	return (tmp+1.0f)*float_inv_nmax_ulong;
 } // simple_oc_01_ulong
 
-static inline cl_float simple_oo_01_uint(cl_uint x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_oo_01_uint(uint x) {
+    float tmp = (float)(x);
 	return tmp*float_inv_nmax_uint + float_inv_nmax_uint_adj;
 } // simple_oo_01_uint
 
-static inline cl_float simple_oo_01_ulong(cl_ulong x) {
-    cl_float tmp = (cl_float)(x);
+static inline float simple_oo_01_ulong(ulong x) {
+    float tmp = (float)(x);
 	return tmp*float_inv_nmax_ulong + float_inv_nmax_ulong_adj;
 } // simple_oo_01_ulong
 
@@ -83,12 +83,12 @@ random bit streams given to the functions flt_exponent_co_01() and
 dbl_exponent_co_01() remain unused. One of them can be used to decide whether the
 0.0 gets flipped to 1.0 or remains as 0.0
 */
-static inline cl_uint flt_exponent_co_01(cl_uint[4] x) {
+static inline uint flt_exponent_co_01(uint[4] x) {
 	// Initialize the exponents to be in the correct bit positions
-	cl_uint outexp=126; // Start exponent at +126 and count down
-	cl_uint delta=1;
-	cl_uint step=32;
-	cl_uint idx, tmpbits;
+	uint outexp=126; // Start exponent at +126 and count down
+	uint delta=1;
+	uint step=32;
+	uint idx, tmpbits;
     cl_bool chk=true;
 
 	// Iterate through the array of uint....
@@ -133,12 +133,12 @@ static inline cl_uint flt_exponent_co_01(cl_uint[4] x) {
 	return outexp << 23;
 } // flt_exponent_co_01
 
-static inline cl_uint dbl_exponent_co_01(cl_uint[32] x) {
+static inline uint dbl_exponent_co_01(uint[32] x) {
 	// Initialize the exponents to be in the correct bit positions
-	cl_uint outexp=1022;
-	cl_uint delta=1; // Start exponent at +1022 and count down
-	cl_uint step=32;
-	cl_uint idx, tmpbits;
+	uint outexp=1022;
+	uint delta=1; // Start exponent at +1022 and count down
+	uint step=32;
+	uint idx, tmpbits;
     cl_bool chk=true;
 
 	// Iterate through the array of uint....
@@ -188,8 +188,8 @@ Define function to calculate inverse CDF of standard Gaussian distribution.
 Taken from PhD thesis of Thomas Luu (Department of Mathematics at Universty College
 of London). These are the same as the hybrid approximation functions in the thesis.
 */
-static inline cl_float normcdfinv_float(cl_float u) {
-	cl_float	v, p, q, ushift, tmp;
+static inline float normcdfinv_float(float u) {
+	float	v, p, q, ushift, tmp;
 
 	tmp = u;
 
@@ -257,5 +257,102 @@ static inline cl_float normcdfinv_float(cl_float u) {
 	v = 1.0f / q;
 	return p * v;
 } // normcdfinv_float
+
+// Kernel functions for fast conversion of uint to float while copying between buffers
+kernel void CopyUintAsFlt01CC(global float* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_cc_01_uint(src[ii]);
+	}
+}
+
+kernel void CopyUintAsFlt01CO(global float* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_co_01_uint(src[ii]);
+	}
+}
+
+kernel void CopyUintAsFlt01OC(global float* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_oc_01_uint(src[ii]);
+	}
+}
+
+kernel void CopyUintAsFlt01OO(global float* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_oo_01_uint(src[ii]);
+	}
+}
+
+// Kernel functions for fast conversion of ulong to float while copying between buffers
+kernel void CopyUlongAsFlt01CC(global float* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_cc_01_ulong(src[ii]);
+	}
+}
+
+kernel void CopyUlongAsFlt01CO(global float* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_co_01_ulong(src[ii]);
+	}
+}
+
+kernel void CopyUlongAsFlt01OC(global float* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_oc_01_ulong(src[ii]);
+	}
+}
+
+kernel void CopyUintAsFlt01OO(global float* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = simple_oo_01_ulong(src[ii]);
+	}
+}
+
+// Kernel functions for fast copy of Gaussian float while copying between buffers
+kernel void CopyUintAsNormDbl01OO(global float* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	float localVal;
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		localVal = simple_oo_01_uint(src[ii]);
+		dst[ii] = normcdfinv_float(localVal);
+	}
+}
+
+kernel void CopyUlongAsNormDbl01OO(global float* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	float localVal;
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		localVal = simple_oo_01_ulong(src[ii]);
+		dst[ii] = normcdfinv_float(localVal);
+	}
+}
 
 )EOK";

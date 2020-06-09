@@ -10,43 +10,43 @@ const char * dbl_kernel_util_defs = R"EOK(
 
 #define CLRAND_SQRT2 1.4142135623730951
 
-static inline cl_double dsimple_cc_01_uint(cl_uint x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_cc_01_uint(uint x) {
+    double tmp = (double)(x);
 	return tmp*double_inv_max_uint;
 } // dsimple_cc_01_uint
 
-static inline cl_double dsimple_cc_01_ulong(cl_ulong x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_cc_01_ulong(ulong x) {
+    double tmp = (double)(x);
 	return tmp*double_inv_max_ulong;
 } // dsimple_cc_01_ulong
 
-static inline cl_double dsimple_co_01_uint(cl_uint x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_co_01_uint(uint x) {
+    double tmp = (double)(x);
 	return tmp*double_inv_nmax_uint;
 } // 
 
-static inline cl_double dsimple_co_01_ulong(cl_ulong x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_co_01_ulong(ulong x) {
+    double tmp = (double)(x);
 	return tmp*double_inv_nmax_ulong;
 } // dsimple_co_01_ulong
 
-static inline cl_double dsimple_oc_01_uint(cl_uint x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_oc_01_uint(uint x) {
+    double tmp = (double)(x);
 	return (tmp+1.0)*double_inv_nmax_uint;
 } // dsimple_oc_01_uint
 
-static inline cl_double dsimple_oc_01_ulong(cl_ulong x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_oc_01_ulong(ulong x) {
+    double tmp = (double)(x);
 	return (tmp+1.0)*double_inv_nmax_ulong;
 } // dsimple_oc_01_ulong
 
-static inline cl_double dsimple_oo_01_uint(cl_uint x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_oo_01_uint(uint x) {
+    double tmp = (double)(x);
 	return tmp*double_inv_nmax_uint + double_inv_nmax_uint_adj;
 } // dsimple_oo_01_uint
 
-static inline cl_double dsimple_oo_01_ulong(cl_ulong x) {
-    cl_double tmp = (cl_double)(x);
+static inline double dsimple_oo_01_ulong(ulong x) {
+    double tmp = (double)(x);
 	return tmp*double_inv_nmax_ulong + double_inv_nmax_ulong_adj;
 } // dsimple_oo_01_ulong
 
@@ -112,7 +112,7 @@ This function was taken from clProbDist from Univ. Montreal
 #define DBL_NORMCDF_INV_Q3_8 0.1E1
 
 
-static inline cl_double normcdfinv_double(cl_double u) {
+static inline double normcdfinv_double(double u) {
 	/*
 	* Returns the inverse of the cdf of the normal distribution.
 	* Rational approximations giving 16 decimals of precision.
@@ -122,8 +122,8 @@ static inline cl_double normcdfinv_double(cl_double u) {
 	*/
 
 	cl_bool negatif;
-	cl_double y, z, v, w;
-	cl_double x = u;
+	double y, z, v, w;
+	double x = u;
 
 	if (u < 0.0 || u > 1.0) {
 		return NAN;
@@ -226,11 +226,11 @@ static inline cl_double normcdfinv_double(cl_double u) {
 
 	if (negatif) {
 		if (u < 1.0e-105) {
-			cl_double RACPI = 1.77245385090551602729;
+			double RACPI = 1.77245385090551602729;
 			w = exp(-z * z) / RACPI;  // pdf
 			y = 2.0 * z * z;
 			v = 1.0;
-			cl_double term = 1.0;
+			double term = 1.0;
 
 			// Asymptotic series for erfc(z) (apart from exp factor)
 			term *= -1.0 / y;
@@ -256,5 +256,102 @@ static inline cl_double normcdfinv_double(cl_double u) {
 	}
 
 } // normcdfinv_double
+
+// Kernel functions for fast conversion of uint to double while copying between buffers
+kernel void CopyUintAsDbl01CC(global double* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_cc_01_uint(src[ii]);
+	}
+}
+
+kernel void CopyUintAsDbl01CO(global double* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_co_01_uint(src[ii]);
+	}
+}
+
+kernel void CopyUintAsDbl01OC(global double* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_oc_01_uint(src[ii]);
+	}
+}
+
+kernel void CopyUintAsDbl01OO(global double* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_oo_01_uint(src[ii]);
+	}
+}
+
+// Kernel functions for fast conversion of ulong to double while copying between buffers
+kernel void CopyUlongAsDbl01CC(global double* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_cc_01_ulong(src[ii]);
+	}
+}
+
+kernel void CopyUlongAsDbl01CO(global double* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_co_01_ulong(src[ii]);
+	}
+}
+
+kernel void CopyUlongAsDbl01OC(global double* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_oc_01_ulong(src[ii]);
+	}
+}
+
+kernel void CopyUlongAsDbl01OO(global double* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		dst[ii] = dsimple_oo_01_ulong(src[ii]);
+	}
+}
+
+// Kernel functions for fast copy of Gaussian double while copying between buffers
+kernel void CopyUintAsNormDbl01OO(global double* dst, global uint* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	double localVal;
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		localVal = dsimple_oo_01_uint(src[ii]);
+		dst[ii] = normcdfinv_double(localVal);
+	}
+}
+
+kernel void CopyUlongAsNormDbl01OO(global double* dst, global ulong* src, uint count) {
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	double localVal;
+	
+	for (uint ii = 0; ii < count; ii += gsize) {
+		localVal = dsimple_oo_01_ulong(src[ii]);
+		dst[ii] = normcdfinv_double(localVal);
+	}
+}
 
 )EOK";
