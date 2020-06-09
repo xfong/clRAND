@@ -17,35 +17,6 @@
     typedef unsigned long ulong;
 #endif
 
-#include "../generator/isaac.hpp"
-#include "../generator/kiss09.hpp"
-#include "../generator/kiss99.hpp"
-#include "../generator/lcg6432.hpp"
-#include "../generator/lcg12864.hpp"
-#include "../generator/lfib.hpp"
-#include "../generator/mrg31k3p.hpp"
-#include "../generator/mrg32k3a.hpp"
-#include "../generator/mrg63k3a.hpp"
-#include "../generator/msws.hpp"
-#include "../generator/mt19937.hpp"
-#include "../generator/mtgp32.hpp"
-#include "../generator/mtgp64.hpp"
-#include "../generator/mwc64x.hpp"
-#include "../generator/pcg6432.hpp"
-#include "../generator/philox2x32_10.hpp"
-#include "../generator/philox4x32_10.hpp"
-#include "../generator/ran2.hpp"
-#include "../generator/sobol32.hpp"
-#include "../generator/threefry.hpp"
-#include "../generator/tinymt32.hpp"
-#include "../generator/tinymt64.hpp"
-#include "../generator/tyche.hpp"
-#include "../generator/tyche_i.hpp"
-#include "../generator/well512.hpp"
-#include "../generator/xorshift1024.hpp"
-#include "../generator/xorshift6432star.hpp"
-#include "../generator/xorwow.hpp"
-
 #ifndef __CLRAND_HPP
     #define __CLRAND_HPP
     #define CLRAND_VERSION_MAJOR 0
@@ -214,7 +185,7 @@ class CLRAND_DLL clRAND {
         bool IsSeeded() { return this->seeded; }
 
 	cl_int CopyBufferEntries(cl_mem dst, size_t dst_offset, size_t count);
-        bool SetReady() { this->generator_ready = true; }
+        void SetReady() { this->generator_ready = true; }
 
 };
 
