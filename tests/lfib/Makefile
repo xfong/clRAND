@@ -7,14 +7,14 @@ GCC ?= g++
 INSTALL ?= install
 
 ifeq ($(OS),Windows_NT)
-    CCFLAGS+= -I${CUDA_PATH}\\include
-    LDFLAGS+=-L${CUDA_PATH}\\lib\\x64 -L../../src
+    CCFLAGS+= -I${CUDA_PATH}\\include -DCLRAND_EXPORT
+    LDFLAGS+=-L${CUDA_PATH}\\lib\\x64 -L../../src  -Wl,-rpath=../../src
 else
     CCFLAGS+= -I${CUDAROOT}/include
-    LDFLAGS+=-L${CUDAROOT}/lib64 -L../../src
+    LDFLAGS+=-L${CUDAROOT}/lib64 -L../../src -Wl,-rpath=../../src
 endif
 
-LDLIBS+=-lOpenCL -lclrand
+LDLIBS+=-lOpenCL -Wl,--as-needed -lclrand
 
 #On Windows specify the path to the OpenCL lib file
 #the first commented line is the typical path for NVIDIA GPUs

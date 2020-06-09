@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include "../../src/clrand.hpp"
+#include "../../generator/lcg6432.hpp"
 #include "utils.h"
 
 #define __CL_ENABLE_EXCEPTIONS

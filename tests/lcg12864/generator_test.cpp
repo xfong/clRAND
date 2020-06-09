@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include "../../src/clrand.hpp"
+#include "../../generator/lcg12864.hpp"
 #include "utils.h"
 
 #define __CL_ENABLE_EXCEPTIONS
@@ -129,7 +130,7 @@ int main(int argc, char **argv) {
         }
     } else {
         std::cout << "ERROR: something went wrong setting up memory sizes!" << std::endl;
-        std::cout << "State Structure Size (host side): " << sizeof(isaac_state) << std::endl;
+        std::cout << "State Structure Size (host side): " << sizeof(lcg12864_state) << std::endl;
         std::cout << "State Structure Size (obj side): " << stateStructSize << std::endl;
         std::cout << "Number of PRNGs: " << numPRNGs << std::endl;
         std::cout << "Size of state buffer: " << stateMemSize << std::endl;
