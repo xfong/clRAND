@@ -292,11 +292,11 @@ void clRAND::LookupPRNG() {
 }
 
 // Internal function to generate the kernel codes for the PRNGs
-void clRAND::generateBufferKernel(std::string type) {
+void clRAND::generateBufferKernel() {
     this->source_ready = false;
     this->program_ready = false;
     this->generator_ready = false;
-    this->rng_source = std::string((type=="double") ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
+    this->rng_source = std::string((this->fp64_flag == true) ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
     switch(this->rng_type) {
         case CLRAND_GENERATOR_ISAAC :
             this->rng_source += isaac_prng_kernel;
@@ -422,14 +422,28 @@ void clRAND::generateBufferKernel(std::string type) {
                    "    stateBuf[gid] = local_state[get_local_id(0)];\n"
                    "}\n"
                    "\n"
-                   "kernel void generate(uint num, global ulong* seed, global " + type + "* res, global " + this->rng_name + "_state* stateBuf, local " + this->rng_name + "_state* state){\n"
+                   "kernel void generate_uint(uint num, global ulong* seed, global uint* res, global " + this->rng_name + "_state* stateBuf, local " + this->rng_name + "_state* state){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    uint gsize=get_global_size(0);\n"
                    "\n"
                    "    state[get_local_id(0)] = stateBuf[gid];\n"
                    "    uint num_gsize = ((num - 1) / gsize + 1)*gsize; //next multiple of gsize, larger or equal to N\n"
                    "    for (int i = gid; i<num_gsize; i += gsize) {\n"
-                   "        " + type + " val = " + this->rng_name + "_" + type + "(state); //all threads within workgroup must call generator, even if result is not needed!\n"
+                   "        uint val = " + this->rng_name + "_uint(state); //all threads within workgroup must call generator, even if result is not needed!\n"
+                   "        if (i<num) {\n"
+                   "            res[i] = val;\n"
+                   "        }\n"
+                   "    }\n"
+                   "}\n"
+                   "\n"
+                   "kernel void generate_ulong(uint num, global ulong* seed, global ulong* res, global " + this->rng_name + "_state* stateBuf, local " + this->rng_name + "_state* state){\n"
+                   "    uint gid=get_global_id(0);\n"
+                   "    uint gsize=get_global_size(0);\n"
+                   "\n"
+                   "    state[get_local_id(0)] = stateBuf[gid];\n"
+                   "    uint num_gsize = ((num - 1) / gsize + 1)*gsize; //next multiple of gsize, larger or equal to N\n"
+                   "    for (int i = gid; i<num_gsize; i += gsize) {\n"
+                   "        ulong val = " + this->rng_name + "_ulong(state); //all threads within workgroup must call generator, even if result is not needed!\n"
                    "        if (i<num) {\n"
                    "            res[i] = val;\n"
                    "        }\n"
@@ -496,7 +510,7 @@ void clRAND::BuildSource() {
     this->source_ready = false;
     this->program_ready = false;
     this->generator_ready = false;
-    this->generateBufferKernel(std::string(rng_precision));
+    this->generateBufferKernel();
     this->source_ready = true;
 }
 

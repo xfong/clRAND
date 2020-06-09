@@ -122,7 +122,7 @@ class CLRAND_DLL clRAND {
         bool              buffers_ready;       // Flag for whether the temporary output buffers are ready
 
         void LookupPRNG();
-        void generateBufferKernel(std::string type);
+        void generateBufferKernel();
         cl_int fillBuffer();
         void SetStateSize();
         cl_int PrivateGenerateStream(); // To implement
