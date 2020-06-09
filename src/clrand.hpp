@@ -84,6 +84,7 @@ class CLRAND_DLL clRAND {
         cl::Kernel        seed_rng;            // OpenCL C++ API
         cl::Kernel        seed_rng_array;      // OpenCL C++ API
         cl::Kernel        generate_bitstream;  // OpenCL C++ API
+        cl::Kernel        generate_bitstreamUL;  // OpenCL C++ API
 
         cl::Buffer        stateBuffer;         // OpenCL C++ API
         cl_mem            stateBuffer_id;      // OpenCL C API (to support buffer copy)
@@ -146,11 +147,12 @@ class CLRAND_DLL clRAND {
         size_t GetNumberOfRNGs() { return (this->wkgrp_size * this->wkgrp_count); }
 
         cl_int SetupStreamBuffers(size_t bufMult, size_t numPRNGs);
-        cl_int FillBuffer();
+        cl_int FillBuffer();                   // Generates uint in PRNG buffers
+        cl_int FillBufferUL();                 // Generates ulong in PRNG buffers
 
         bool GetStateOfStateBuffer() { return this->loaded_state; }
         size_t GetStateStructSize() { return this->state_size; }
-        size_t GetStateBufferSize() { return (this->state_size * this->wkgrp_size * this->wkgrp_count); }
+        size_t GetStateBufferSize() { return (this->state_size * this->wkgrp_size * this->wkgrp_count * 34); }
         cl_int CopyStateToDevice();
         cl_int CopyStateToHost(void* hostPtr);
         void* GetHostStatePtr() { return this->local_state_mem; }
@@ -184,7 +186,15 @@ class CLRAND_DLL clRAND {
         bool IsGeneratorReady() { return this->generator_ready; }
         bool IsSeeded() { return this->seeded; }
 
-	cl_int CopyBufferEntries(cl_mem dst, size_t dst_offset, size_t count);
+		cl_int CopyBufferEntries(cl_mem dst, size_t dst_offset, size_t count);
+		cl_int CopyBufferEntriesAsFastFlt01(cl_mem dst, size_t dst_offset, size_t count);    // converting uint to float in the interval [0, 1]
+		cl_int CopyBufferEntriesAsFastFlt01co(cl_mem dst, size_t dst_offset, size_t count);  // converting uint to float in the interval [0, 1)
+		cl_int CopyBufferEntriesAsFastFlt01oc(cl_mem dst, size_t dst_offset, size_t count);  // converting uint to float in the interval (0, 1]
+		cl_int CopyBufferEntriesAsFastFlt01oo(cl_mem dst, size_t dst_offset, size_t count);  // converting uint to float in the interval (0, 1)
+		cl_int CopyBufferEntriesAsFastDbl01(cl_mem dst, size_t dst_offset, size_t count);    // converting uint to double in the interval [0, 1]
+		cl_int CopyBufferEntriesAsFastDbl01co(cl_mem dst, size_t dst_offset, size_t count);  // converting uint to double in the interval [0, 1)
+		cl_int CopyBufferEntriesAsFastDbl01oc(cl_mem dst, size_t dst_offset, size_t count);  // converting uint to double in the interval (0, 1]
+		cl_int CopyBufferEntriesAsFastDbl01oo(cl_mem dst, size_t dst_offset, size_t count);  // converting uint to double in the interval (0, 1)
         void SetReady() { this->generator_ready = true; }
 
 };
@@ -226,6 +236,16 @@ cl_int CLRAND_DLL clrand_ready_stream(clRAND* p) {
 }
 
 cl_int CLRAND_DLL clrand_generate_stream(clRAND* p, int count, cl_mem dst);
+
+cl_int CLRAND_DLL clrand_generate_streamUL(clRAND* p, int count, cl_mem dst);
+
+cl_int CLRAND_DLL clrand_generate_fast_float_01(clRAND* p, int count, cl_mem dst);
+
+cl_int CLRAND_DLL clrand_generate_fast_float_01co(clRAND* p, int count, cl_mem dst);
+
+cl_int CLRAND_DLL clrand_generate_fast_float_01oc(clRAND* p, int count, cl_mem dst);
+
+cl_int CLRAND_DLL clrand_generate_fast_float_01oo(clRAND* p, int count, cl_mem dst);
 
 #ifdef __cplusplus
 }

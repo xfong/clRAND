@@ -114,6 +114,83 @@ cl_int CLRAND_DLL clrand_generate_stream(clRAND* p, int count, cl_mem dst) {
     return err;
 }
 
+// Main call to generate stream in the stream object
+cl_int CLRAND_DLL clrand_generate_streamUL(clRAND* p, int count, cl_mem dst) {
+    if (count < 0) {
+        std::cout << "ERROR: count must be a positive integer!" << std::endl;
+        return -1;
+    }
+    cl_int err;
+    if (p->IsInitialized() && p->IsSourceReady() && p->IsProgramReady() && p->IsSeeded() == false) {
+        std::cout << "ERROR: stream is not fully ready!" << std::endl;
+        return -2;
+    }
+    for (; count > 0;) {
+        if ((count == 0) || (dst == NULL)) {
+            break;
+        }
+        if (p->GetNumValidEntries() <= 0) {
+            if (p->GetStateOfStateBuffer() == false) {
+                err = p->CopyStateToDevice();
+                if (err) {
+                    return err;
+                }
+            }
+            err = p->FillBufferUL();
+            if (err) {
+                std::cout << "ERROR: unable to generate random bit stream!" << std::endl;
+                if (p->GetStateOfStateBuffer()) {
+                    err = p->CopyStateToHost(p->GetHostStatePtr());
+                    if (err) {
+                        return err;
+                    }
+                }
+                return err;
+            }
+            p->SetNumValidEntries(p->GetNumBufferEntries());
+            p->SetBufferOffset(0);
+        }
+        size_t dst_offset = 0;
+        if (count <= p->GetNumValidEntries()) {
+	    err = p->CopyBufferEntries(dst, dst_offset, (size_t)(count));
+            if (err) {
+                std::cout << "ERROR: unable to copy random bit stream from buffer to dst!" << std::endl;
+                if (p->GetStateOfStateBuffer()) {
+                    err = p->CopyStateToHost(p->GetHostStatePtr());
+                    if (err) {
+                        return err;
+                    }
+                }
+                return err;
+            }
+            p->SetNumValidEntries(p->GetNumValidEntries() - count);
+            p->SetBufferOffset(count + p->GetBufferOffset());
+            break;
+        } else {
+	    err = p->CopyBufferEntries(dst, dst_offset, p->GetNumValidEntries());
+	    if (err) {
+                if (p->GetStateOfStateBuffer()) {
+                    err = p->CopyStateToHost(p->GetHostStatePtr());
+                    if (err) {
+                        return err;
+                    }
+                }
+	        return err;
+	    }
+            count -= p->GetNumValidEntries();
+            dst_offset += p->GetNumValidEntries();
+            p->SetNumValidEntries(0);
+        }
+    }
+    if (p->GetStateOfStateBuffer()) {
+        err = p->CopyStateToHost(p->GetHostStatePtr());
+        if (err) {
+            return err;
+        }
+    }
+    return err;
+}
+
 // Main call to initialize the stream object
 cl_int CLRAND_DLL clrand_initialize_prng(clRAND* p, cl_device_id dev_id, cl_context ctx_id, clrandRngType rng_type_) {
     (*p).Init(dev_id, ctx_id, rng_type_);
@@ -465,13 +542,24 @@ void clRAND::generateBufferKernel(std::string type) {
                    "    stateBuf[gid] = state;\n"
                    "}\n"
                    "\n"
-                   "kernel void generate(uint num, global " + this->rng_name + "_state* stateBuf, global " + type + "* res){\n"
+                   "kernel void generate_uint(uint num, global " + this->rng_name + "_state* stateBuf, global uint* res){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    uint gsize=get_global_size(0);\n"
                    "    " + this->rng_name + "_state state;\n"
                    "    state = stateBuf[gid];\n"
                    "    for(uint i=gid;i<num;i+=gsize){\n"
-                   "        res[i]=" + this->rng_name + "_" + type + "(state);\n"
+                   "        res[i]=" + this->rng_name + "_uint(state);\n"
+                   "    }\n"
+                   "    stateBuf[gid] = state;\n"
+                   "}\n"
+                   "\n"
+                   "kernel void generate_ulong(uint num, global " + this->rng_name + "_state* stateBuf, global ulong* res){\n"
+                   "    uint gid=get_global_id(0);\n"
+                   "    uint gsize=get_global_size(0);\n"
+                   "    " + this->rng_name + "_state state;\n"
+                   "    state = stateBuf[gid];\n"
+                   "    for(uint i=gid;i<num;i+=gsize){\n"
+                   "        res[i]=" + this->rng_name + "_ulong(state);\n"
                    "    }\n"
                    "    stateBuf[gid] = state;\n"
                    "}";
@@ -521,32 +609,8 @@ cl_int clRAND::BuildKernelProgram() {
 #ifdef DEBUG1
         std::cout << "Create kernel to generate random bitstream..." << std::endl;
 #endif
-        switch(this->rng_type) {
-			case CLRAND_GENERATOR_MT11213 :
-			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
-				} else {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
-				}
-			    break;
-			case CLRAND_GENERATOR_MT23209 :
-			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
-				} else {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
-				}
-			    break;
-			case CLRAND_GENERATOR_MT44497 :
-			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
-				} else {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
-				}
-			    break;
-			default :
-			    this->generate_bitstream = cl::Kernel(rng_program, "generate");
-				break;
-		}
+	    this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
+	    this->generate_bitstreamUL = cl::Kernel(rng_program, "generate_ulong");
         this->program_ready = true;
         return err;
     }
@@ -570,7 +634,10 @@ cl_int clRAND::ReadyGenerator() {
 
     // Initialize the counters that tracks available random number generators
     size_t numPRNGs = (size_t)(this->wkgrp_count * this->wkgrp_size);
-    size_t bufMult = 2;
+	// Number of random numbers saved in the buffer per work-item needs to be at least 34 in order to support
+	// accurate generation of doubles. This can reduce the number of kernel calls for the other number formats
+	// and thus, be faster at the expense of more memory consumption
+    size_t bufMult = 34;
 
     err = this->SetupStreamBuffers(bufMult, numPRNGs);
 
@@ -631,17 +698,7 @@ cl_int clRAND::SetupStreamBuffers(size_t bufMult, size_t numPRNGs) {
     cl_int err;
     // Determine the number of bytes for each random number generated
     // by a workitem
-    size_t typeSize = 4;
-    bool typeDetection = ((std::string)(this->rng_precision) == "uint") || 
-                         ((std::string)(this->rng_precision) == "ulong") || 
-                         ((std::string)(this->rng_precision) == "float") || 
-                         ((std::string)(this->rng_precision) == "double");
-    if (((std::string)(this->rng_precision) == "double") || ((std::string)(this->rng_precision) == "ulong")) {
-        typeSize = 8;
-    } else if (typeDetection != true) {
-        std::cout << "ERROR: Unknown rng_precision detected!" << std::endl;
-        return -1;
-    }
+    size_t typeSize = 4; // Size of cl_uint
 
     // Create the buffer storing the states of the PRNGs
     this->SetStateSize();
@@ -655,7 +712,7 @@ cl_int clRAND::SetupStreamBuffers(size_t bufMult, size_t numPRNGs) {
 
     // Create the temporary buffer in which random numbers are generated.
     // These numbers will be copied to the desired destination when required.
-    this->total_count = bufMult * numPRNGs;
+    this->total_count = bufMult * numPRNGs; // Track size of buffer as number of uint that it can store
     this->tmpOutputBuffer_id = clCreateBuffer(this->context_id, CL_MEM_READ_WRITE, this->total_count * typeSize, NULL, &err);
     if (err) {
         std::cout << "ERROR: Unable to create temporary buffer or PRNG!" << std::endl;
@@ -987,7 +1044,7 @@ cl_int clRAND::CopyStateToHost(void* hostPtr) {
     return err;
 }
 
-// Internal function that generates random stream
+// Internal function that generates random stream of uint
 // in the stream object by calling the kernel.
 cl_int clRAND::FillBuffer() {
     // Set up kernel to generate random bitstream
@@ -995,6 +1052,56 @@ cl_int clRAND::FillBuffer() {
     std::cout << "Setting total number of generators for kernel argument" << std::endl;
 #endif
     cl_int err = this->generate_bitstream.setArg<uint>(0, (uint)(this->total_count));
+    if (err) {
+        std::cout << "ERROR: Unable to set first argument to kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+#ifdef DEBUG1
+    std::cout << "Setting state buffer for kernel argument" << std::endl;
+#endif
+    err = this->generate_bitstream.setArg<cl::Buffer>(1, this->stateBuffer);
+    if (err) {
+        std::cout << "ERROR: Unable to set second argument to kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+#ifdef DEBUG1
+    std::cout << "Setting output buffer for kernel argument" << std::endl;
+#endif
+    err = this->generate_bitstream.setArg<cl::Buffer>(2, this->tmpOutputBuffer);
+    if (err) {
+        std::cout << "ERROR: Unable to set third argument to kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+
+    // Execute kernel to generate random bitstream
+    cl::Event event;
+#ifdef DEBUG1
+    std::cout << "Executing kernel" << std::endl;
+#endif
+    err = this->com_queue.enqueueNDRangeKernel(this->generate_bitstream, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
+    if (err) {
+        std::cout << "ERROR: Unable to enqueue kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+    std::vector<cl::Event> eventList = { event };
+    err = cl::WaitForEvents(eventList);
+    if (err) {
+        std::cout << "ERROR: unable to wait for copy state from host to device to finish!" << std::endl;
+    }
+#ifdef DEBUG1
+    std::cout << "Buffer of stream object is filled" << std::endl;
+#endif
+    return err;
+}
+
+// Internal function that generates random stream of ulong
+// in the stream object by calling the kernel.
+cl_int clRAND::FillBufferUL() {
+    // Set up kernel to generate random bitstream
+#ifdef DEBUG1
+    std::cout << "Setting total number of generators for kernel argument" << std::endl;
+#endif
+    cl_int err = this->generate_bitstream.setArg<uint>(0, (uint)(this->total_count/2));
     if (err) {
         std::cout << "ERROR: Unable to set first argument to kernel to generate bitstream!" << std::endl;
         return err;
