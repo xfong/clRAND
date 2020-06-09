@@ -988,7 +988,7 @@ cl_int clRAND::CopyStateToHost(void* hostPtr) {
     return err;
 }
 
-// Internal function that generates random stream
+// Internal function that generates random stream of uint
 // in the stream object by calling the kernel.
 cl_int clRAND::FillBuffer() {
     // Set up kernel to generate random bitstream
@@ -1023,6 +1023,56 @@ cl_int clRAND::FillBuffer() {
     std::cout << "Executing kernel" << std::endl;
 #endif
     err = this->com_queue.enqueueNDRangeKernel(this->generate_bitstream, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
+    if (err) {
+        std::cout << "ERROR: Unable to enqueue kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+    std::vector<cl::Event> eventList = { event };
+    err = cl::WaitForEvents(eventList);
+    if (err) {
+        std::cout << "ERROR: unable to wait for copy state from host to device to finish!" << std::endl;
+    }
+#ifdef DEBUG1
+    std::cout << "Buffer of stream object is filled" << std::endl;
+#endif
+    return err;
+}
+
+// Internal function that generates random stream of ulong
+// in the stream object by calling the kernel.
+cl_int clRAND::FillBufferUL() {
+    // Set up kernel to generate random bitstream
+#ifdef DEBUG1
+    std::cout << "Setting total number of generators for kernel argument" << std::endl;
+#endif
+    cl_int err = this->generate_streamUL.setArg<uint>(0, (uint)(this->total_count / 2));
+    if (err) {
+        std::cout << "ERROR: Unable to set first argument to kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+#ifdef DEBUG1
+    std::cout << "Setting state buffer for kernel argument" << std::endl;
+#endif
+    err = this->generate_streamUL.setArg<cl::Buffer>(1, this->stateBuffer);
+    if (err) {
+        std::cout << "ERROR: Unable to set second argument to kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+#ifdef DEBUG1
+    std::cout << "Setting output buffer for kernel argument" << std::endl;
+#endif
+    err = this->generate_streamUL.setArg<cl::Buffer>(2, this->tmpOutputBuffer);
+    if (err) {
+        std::cout << "ERROR: Unable to set third argument to kernel to generate bitstream!" << std::endl;
+        return err;
+    }
+
+    // Execute kernel to generate random bitstream
+    cl::Event event;
+#ifdef DEBUG1
+    std::cout << "Executing kernel" << std::endl;
+#endif
+    err = this->com_queue.enqueueNDRangeKernel(this->generate_streamUL, cl::NDRange(0), cl::NDRange((size_t)(this->wkgrp_count * this->wkgrp_size)), cl::NDRange((size_t)(this->wkgrp_size)), NULL, &event);
     if (err) {
         std::cout << "ERROR: Unable to enqueue kernel to generate bitstream!" << std::endl;
         return err;
