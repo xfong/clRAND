@@ -1,6 +1,6 @@
 #Optionally specify the path to the OpenCL headers
 #and uncomment the line below
-CXXFLAGS=-fPIC -Wall -m64 -pthread -O3
+CXXFLAGS=-fPIC -Wall -m64 -pthread -O3 -std=c++11
 CXX ?= g++
 INSTALL?=install
 LDLIBS+=-lOpenCL

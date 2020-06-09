@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <ctime>
+#include <cstdint>
 #include <string>
 
 #define __CL_ENABLE_EXCEPTIONS
@@ -13,8 +14,8 @@
 #endif
 
 #if defined (__WIN32)
-    typedef unsigned int uint;
-    typedef unsigned long ulong;
+    typedef uint32_t uint;
+    typedef uint64_t ulong;
 #endif
 
 #ifndef __CLRAND_HPP
