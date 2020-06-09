@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include "../../src/clrand.hpp"
+#include "../../generator/msws.hpp"
 #include "utils.h"
 
 #define __CL_ENABLE_EXCEPTIONS

@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include "../../src/clrand.hpp"
+#include "../../generator/philox2x32_10.hpp"
 #include "utils.h"
 
 #define __CL_ENABLE_EXCEPTIONS
