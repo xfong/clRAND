@@ -1,4 +1,6 @@
 #include "clrand.hpp"
+#include "../generator/common/float.hpp"
+#include "../generator/common/double.hpp"
 #include "../generator/isaac.hpp"
 #include "../generator/kiss09.hpp"
 #include "../generator/kiss99.hpp"

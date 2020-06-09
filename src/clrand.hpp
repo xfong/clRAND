@@ -20,8 +20,8 @@
 #ifndef __CLRAND_HPP
     #define __CLRAND_HPP
     #define CLRAND_VERSION_MAJOR 0
-    #define CLRAND_VERSION_MINOR 2
-    #define CLRAND_VERSION_REV   0
+    #define CLRAND_VERSION_MINOR 0
+    #define CLRAND_VERSION_REV   3
 #endif
 
 #if defined( __WIN32 )
