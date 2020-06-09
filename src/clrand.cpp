@@ -296,7 +296,11 @@ void clRAND::generateBufferKernel() {
     this->source_ready = false;
     this->program_ready = false;
     this->generator_ready = false;
-    this->rng_source = std::string((this->fp64_flag == true) ? " #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n" : "");
+	this->rng_source = flt_kernel_util_defs;
+	if (this->fp64_flag) {
+		this->rng_source += std::string(" #pragma OPENCL EXTENSION cl_khr_fp64 : enable \n");
+		this->rng_source += dbl_kernel_util_defs;
+	}
     switch(this->rng_type) {
         case CLRAND_GENERATOR_ISAAC :
             this->rng_source += isaac_prng_kernel;
