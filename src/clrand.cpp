@@ -570,7 +570,7 @@ cl_int clRAND::ReadyGenerator() {
 
     // Initialize the counters that tracks available random number generators
     size_t numPRNGs = (size_t)(this->wkgrp_count * this->wkgrp_size);
-    size_t bufMult = 2;
+    size_t bufMult = 34;
 
     err = this->SetupStreamBuffers(bufMult, numPRNGs);
 
