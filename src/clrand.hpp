@@ -84,6 +84,7 @@ class CLRAND_DLL clRAND {
         cl::Kernel        seed_rng;            // OpenCL C++ API
         cl::Kernel        seed_rng_array;      // OpenCL C++ API
         cl::Kernel        generate_bitstream;  // OpenCL C++ API
+        cl::Kernel        generate_streamUL;   // OpenCL C++ API
 
         cl::Buffer        stateBuffer;         // OpenCL C++ API
         cl_mem            stateBuffer_id;      // OpenCL C API (to support buffer copy)
@@ -147,6 +148,7 @@ class CLRAND_DLL clRAND {
 
         cl_int SetupStreamBuffers(size_t bufMult, size_t numPRNGs);
         cl_int FillBuffer();
+        cl_int FillBufferUL();
 
         bool GetStateOfStateBuffer() { return this->loaded_state; }
         size_t GetStateStructSize() { return this->state_size; }

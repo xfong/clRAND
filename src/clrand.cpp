@@ -465,13 +465,24 @@ void clRAND::generateBufferKernel(std::string type) {
                    "    stateBuf[gid] = state;\n"
                    "}\n"
                    "\n"
-                   "kernel void generate(uint num, global " + this->rng_name + "_state* stateBuf, global " + type + "* res){\n"
+                   "kernel void generate_uint(uint num, global " + this->rng_name + "_state* stateBuf, global uint* res){\n"
                    "    uint gid=get_global_id(0);\n"
                    "    uint gsize=get_global_size(0);\n"
                    "    " + this->rng_name + "_state state;\n"
                    "    state = stateBuf[gid];\n"
                    "    for(uint i=gid;i<num;i+=gsize){\n"
-                   "        res[i]=" + this->rng_name + "_" + type + "(state);\n"
+                   "        res[i]=" + this->rng_name + "_uint(state);\n"
+                   "    }\n"
+                   "    stateBuf[gid] = state;\n"
+                   "}\n"
+                   "\n"
+                   "kernel void generate_ulong(uint num, global " + this->rng_name + "_state* stateBuf, global ulong* res){\n"
+                   "    uint gid=get_global_id(0);\n"
+                   "    uint gsize=get_global_size(0);\n"
+                   "    " + this->rng_name + "_state state;\n"
+                   "    state = stateBuf[gid];\n"
+                   "    for(uint i=gid;i<num;i+=gsize){\n"
+                   "        res[i]=" + this->rng_name + "_ulong(state);\n"
                    "    }\n"
                    "    stateBuf[gid] = state;\n"
                    "}";
@@ -521,32 +532,8 @@ cl_int clRAND::BuildKernelProgram() {
 #ifdef DEBUG1
         std::cout << "Create kernel to generate random bitstream..." << std::endl;
 #endif
-        switch(this->rng_type) {
-			case CLRAND_GENERATOR_MT11213 :
-			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
-				} else {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
-				}
-			    break;
-			case CLRAND_GENERATOR_MT23209 :
-			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
-				} else {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
-				}
-			    break;
-			case CLRAND_GENERATOR_MT44497 :
-			    if (strcmp(this->rng_precision, "uint") || strcmp(this->rng_precision, "float")) {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
-				} else {
-			        this->generate_bitstream = cl::Kernel(rng_program, "generate_ulong");
-				}
-			    break;
-			default :
-			    this->generate_bitstream = cl::Kernel(rng_program, "generate");
-				break;
-		}
+        this->generate_bitstream = cl::Kernel(rng_program, "generate_uint");
+        this->generate_streamUL = cl::Kernel(rng_program, "generate_ulong");
         this->program_ready = true;
         return err;
     }
