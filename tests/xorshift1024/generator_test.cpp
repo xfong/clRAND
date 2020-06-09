@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include "../../src/clrand.hpp"
+#include "../../generator/xorshift1024.hpp"
 #include "utils.h"
 
 #define __CL_ENABLE_EXCEPTIONS
@@ -21,7 +22,7 @@
 #define XORSHIFT1024_RAND_B 27
 #define XORSHIFT1024_RAND_C 24
 
-uint xorshift1024_uint(local xorshift1024_state* stateblock){
+uint xorshift1024_uint(xorshift1024_state* stateblock){
 	/* Indices. */
 	int tid = get_local_id(0) + get_local_size(0) * (get_local_id(1) + get_local_size(1) * get_local_id(2));
 	int wid = tid / XORSHIFT1024_WARPSIZE; // Warp index in block
@@ -60,7 +61,7 @@ uint xorshift1024_uint(local xorshift1024_state* stateblock){
 	return state;
 }
 
-void xorshift1024_seed(local xorshift1024_state* stateblock, ulong seed){
+void xorshift1024_seed(xorshift1024_state* stateblock, ulong seed){
 	int tid = get_local_id(0) + get_local_size(0) * (get_local_id(1) + get_local_size(1) * get_local_id(2));
 	int wid = tid / XORSHIFT1024_WARPSIZE; // Warp index in block
 	int lid = tid % XORSHIFT1024_WARPSIZE; // Thread index in warp
@@ -111,7 +112,7 @@ int main(int argc, char **argv) {
     }
 
     clRAND* test = clrand_create_stream();
-    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_XORSHIFT6432STAR);
+    clrand_initialize_prng(test, (*tmpStructPtr).target_device, (*tmpStructPtr).ctx, CLRAND_GENERATOR_XORSHIFT1024);
     (*tmpStructPtr).queue = test->GetStreamQueue();
 
     err = test->SetupWorkConfigurations();
@@ -137,22 +138,22 @@ int main(int argc, char **argv) {
     size_t stateStructSize = test->GetStateStructSize();
     size_t stateMemSize = test->GetStateBufferSize();
     // Prepare host memory to copy RNG states from device to host
-    xorshift6432star_state* state_mem = new xorshift6432star_state[numPRNGs];
-    if (stateMemSize == numPRNGs * sizeof(xorshift6432star_state)) {
+    xorshift1024_state* state_mem = new xorshift1024_state[numPRNGs];
+    if (stateMemSize == numPRNGs * sizeof(xorshift1024_state)) {
         err = test->CopyStateToHost((void*)(state_mem));
         if (err) {
             std::cout << "ERROR: unable to copy state buffer to host!" << std::endl;
         }
     } else {
         std::cout << "ERROR: something went wrong setting up memory sizes!" << std::endl;
-        std::cout << "State Structure Size (host side): " << sizeof(isaac_state) << std::endl;
+        std::cout << "State Structure Size (host side): " << sizeof(xorshift1024_state) << std::endl;
         std::cout << "State Structure Size (obj side): " << stateStructSize << std::endl;
         std::cout << "Number of PRNGs: " << numPRNGs << std::endl;
         std::cout << "Size of state buffer: " << stateMemSize << std::endl;
     }
 
     // Generate RNG states on host side
-    xorshift6432star_state* golden_states = new xorshift6432star_state[numPRNGs];
+    xorshift1024_state* golden_states = new xorshift1024_state[numPRNGs];
     ulong init_seedVal = test->GetSeed();
     uint err_counts = 0;
     for (int idx = 0; idx < numPRNGs; idx++) {
@@ -162,7 +163,7 @@ int main(int argc, char **argv) {
         if (newSeed == 0) {
             newSeed += 1;
         }
-        xorshift6432star_seed(&golden_states[idx], newSeed);
+        xorshift1024_seed(&golden_states[idx], newSeed);
         if (golden_states[idx] != state_mem[idx]) {
             err_counts++;
             std::cout << "Mismatch at idx = " << idx << std::endl;
@@ -210,7 +211,7 @@ int main(int argc, char **argv) {
     err_counts = 0;
     uint* hostRandomNumbers = new uint[numPRNGs];
     for (int idx = 0; idx < numPRNGs; idx++) {
-        hostRandomNumbers[idx] = xorshift6432star_uint(golden_states[idx]);
+        hostRandomNumbers[idx] = xorshift1024_uint(golden_states[idx]);
         if (hostRandomNumbers[idx] != deviceRandomNumbers[idx]) {
             std::cout << "ERROR: numbers do not match at idx = " << idx << std::endl;
             err_counts++;

@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include "../../src/clrand.hpp"
+#include "../../generator/xorshift1024.hpp"
 #include "utils.h"
 
 #define __CL_ENABLE_EXCEPTIONS
