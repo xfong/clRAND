@@ -77,14 +77,8 @@ generating floats, and another to extract lower 20-bits for generating doubles
 */
 ////////////////////////////////////////////////////////////////////////////////////
 
-// 0x000fffff
-#define LOWER_20b_MASK_uint 1048575
-// 0x007fffff
-#define LOWER_23b_MASK_uint ‭8388607‬
-// 0xffffffff
-#define UINT_FFFFFFFF 4294967295‬
-// 0x3fffffff
-#define UINT_3FFFFFFF ‭1073741823‬
+#define LOWER_20b_MASK_UINT 0x000fffff
+#define LOWER_23b_MASK_UINT ‭0x007fffff
 
 // Kernel should iterate through uint that are equal to 0xffffffff to adjust its
 // copy of the exponent. Once the kernel finds an uint that is not 0xffffffff, it
@@ -283,6 +277,139 @@ kernel void CopyFastUlong01OOAsNormFlt(global float* dst, global ulong* src, uin
 	for (uint ii = 0; ii < count; ii += gsize) {
 		localVal = simple_oo_01_ulong(src[ii]);
 		dst[ii] = normcdfinv_float(localVal);
+	}
+}
+
+// Kernel functions for generating packed float from uint in the buffer of the PRNG
+kernel void CopySlowUint01AsFlt(global uint* dst, global uint* src, uint count, uint offset, uint buf_size) {
+	// dst: destination buffer which we will store the bit pattern of the float
+	// src: source buffer containing the uint we want to convert
+	// count: how many floats we need to generate
+	// offset: offset to get the first valid uint in source buffer
+	// buf_size: total number of uint the source buffer can hold
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	uint end_idx = buf_size - 5;
+
+	for (uint idx = gid; idx < count; idx+=gsize) {
+		// Each float needs 128+32 = 160 bits to generate (5 bytes)
+		// Each work-item will read 5 consecutive uint from the buffer
+		uint lidx = idx * 5 + offset;
+		if (lidx < end_idx) {
+			// Get first uint to generate mantissa
+			uint outNum = src[lidx];
+			outNum &= 0x007fffff;
+			// Compute the exponent...
+			// First, check for the uint that will be used to compute the actual exponent
+			uint outExp = 126;
+			uint tmpUintBuf;
+			tmpUintBuf = src[lidx+1];
+			bool flag = true;
+
+			// Check for the first 32 bits
+			if (tmpUintBuf != as_uint(0xffffffff)) {
+				flag = false;
+			} else {
+				tmpUintBuf = src[lidx+2];
+				outExp = 94;
+			}
+			// Check for the second 32 bits if first 32-bits are all ones
+			if (flag) {
+				if (tmpUintBuf != as_uint(0xffffffff)) {
+					flag = false;
+				} else {
+					tmpUintBuf = src[lidx+3];
+					outExp = 62;
+				}
+			}
+			if (flag) {
+				if (tmpUintBuf != as_uint(0xffffffff)) {
+					flag = false;
+				} else {
+					tmpUintBuf = src[lidx+4];
+					outExp = 30;
+				}
+			}
+			if (flag) {
+				if (tmpUintBuf >= as_uint(0x3fffffff)) {
+					outExp = 0;
+				} else {
+					flag = false;
+				}
+			}
+			if (!flag) {
+			outExp = exponent_adj(tmpUintBuf, outExp);
+			}
+			outNum |= (outExp << 23); // Adjust the exponent bits to the correct position and logical OR with mantissa
+			dst[gid] = outNum; // Store result to output buffer
+		}
+	}
+}
+
+// Kernel function for generating normally distributed packed float
+// from uint in the buffer of the PRNG
+kernel void CopySlowUint01AsNormFlt(global uint* dst, global uint* src, uint count, uint offset, uint buf_size) {
+	// dst: destination buffer which we will store the bit pattern of the float
+	// src: source buffer containing the uint we want to convert
+	// count: how many floats we need to generate
+	// offset: offset to get the first valid uint in source buffer
+	// buf_size: total number of uint the source buffer can hold
+	uint gid = get_global_id(0);
+	uint gsize = get_global_size(0);
+	uint end_idx = buf_size - 5;
+
+	for (uint idx = gid; idx < count; idx+=gsize) {
+		// Each float needs 128+32 = 160 bits to generate (5 bytes)
+		// Each work-item will read 5 consecutive uint from the buffer
+		uint lidx = idx * 5 + offset;
+		if (lidx < end_idx) {
+			// Get first uint to generate mantissa
+			uint outNum = src[lidx];
+			outNum &= 0x007fffff;
+			// Compute the exponent...
+			// First, check for the uint that will be used to compute the actual exponent
+			uint outExp = 126;
+			uint tmpUintBuf;
+			tmpUintBuf = src[lidx+1];
+			bool flag = true;
+
+			// Check for the first 32 bits
+			if (tmpUintBuf != as_uint(0xffffffff)) {
+				flag = false;
+			} else {
+				tmpUintBuf = src[lidx+2];
+				outExp = 94;
+			}
+			// Check for the second 32 bits if first 32-bits are all ones
+			if (flag) {
+				if (tmpUintBuf != as_uint(0xffffffff)) {
+					flag = false;
+				} else {
+					tmpUintBuf = src[lidx+3];
+					outExp = 62;
+				}
+			}
+			if (flag) {
+				if (tmpUintBuf != as_uint(0xffffffff)) {
+					flag = false;
+				} else {
+					tmpUintBuf = src[lidx+4];
+					outExp = 30;
+				}
+			}
+			if (flag) {
+				if (tmpUintBuf >= as_uint(0x3fffffff)) {
+					outExp = 0;
+				} else {
+					flag = false;
+				}
+			}
+			if (!flag) {
+			outExp = exponent_adj(tmpUintBuf, outExp);
+			}
+			outNum |= (outExp << 23); // Adjust the exponent bits to the correct position and logical OR with mantissa
+			dst[gid] = normcdfinv_float(outNum); // Store result to output buffer
+		}
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
