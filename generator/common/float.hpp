@@ -1,71 +1,56 @@
 const char * flt_kernel_util_defs = R"EOK(
-#define float_inv_max_uint 2.3283064370807973754314699618685e-10‬f
-#define float_inv_nmax_uint 2.3283064365386962890625‬e-10f
+////////////////////////////////////////////////////////////////////////////////////
+#define float_inv_max_uint  2.328306437080797e-10f
+#define float_inv_nmax_uint 0x2f800000
 
-#define float_inv_max_ulong 5.4210108624275221703311375920553e-20‬f
-#define float_inv_nmax_ulong 5.4210108624275221700372640043497e-20f
+#define float_inv_max_ulong 5.4210108624275221700372640e-20f
+#define float_inv_nmax_ulong 0x1f800000
 
-#define float_inv_nmax_uint_adj 1.16415321826934814453125e-10‬f
-#define float_inv_nmax_ulong_adj 2.7105054312137610850186320021749e-20‬f
+#define float_inv_nmax_uint_adj 0x2f000000
+#define float_inv_nmax_ulong_adj 0x1f000000
 
-/*
-Mantissa of random doubles can be generated from one ulong or a pair of uint
-From ulong, just and the ulong with 0x000fffffffffffff to extract the lower 52-bits
-A pair of uint can be thought of as a ulong. To extract the lower 52-bits, we keep
-the uint representing the lower 32-bits, and extract the lower 20-bits from the
-other uint. So we need, in total, 2 masks. One to extract lower 23-bits for
-generating floats, and another to extract lower 20-bits for generating doubles
-*/
-// 0x000fffff
-#define LOWER_20b_MASK_uint 1048575
-// 0x007fffff
-#define LOWER_23b_MASK_uint ‭8388607‬
-// 0xffffffff
-#define UINT_FFFFFFFF 4294967295‬;
-// 0x3fffffff
-#define UINT_3FFFFFFF ‭1073741823‬;
-// 
-
-static inline float simple_cc_01_uint(uint x) {
-    float tmp = (float)(x);
-	return tmp*float_inv_max_uint;
+inline float simple_cc_01_uint(uint x) {
+	float tmp = (float)(x);
+	return  tmp*float_inv_max_uint;
 } // simple_cc_01_uint
 
-static inline float simple_cc_01_ulong(ulong x) {
+inline float simple_cc_01_ulong(ulong x) {
     float tmp = (float)(x);
 	return tmp*float_inv_max_ulong;
 } // simple_cc_01_ulong
 
-static inline float simple_co_01_uint(uint x) {
+inline float simple_co_01_uint(uint x) {
     float tmp = (float)(x);
-	return tmp*float_inv_nmax_uint;
+	return tmp*as_float(float_inv_nmax_uint);
 } // simple_co_01_uint
 
-static inline float simple_co_01_ulong(ulong x) {
+inline float simple_co_01_ulong(ulong x) {
     float tmp = (float)(x);
-	return tmp*float_inv_nmax_ulong;
+	return tmp*as_float(float_inv_nmax_ulong);
 } // simple_co_01_ulong
 
-static inline float simple_oc_01_uint(uint x) {
+inline float simple_oc_01_uint(uint x) {
     float tmp = (float)(x);
-	return (tmp+1.0f)*float_inv_nmax_uint;
+	return (tmp+1.0f)*as_float(float_inv_nmax_uint);
 } // simple_oc_01_uint
 
-static inline float simple_oc_01_ulong(ulong x) {
+inline float simple_oc_01_ulong(ulong x) {
     float tmp = (float)(x);
-	return (tmp+1.0f)*float_inv_nmax_ulong;
+	return (tmp+1.0f)*as_float(float_inv_nmax_ulong);
 } // simple_oc_01_ulong
 
-static inline float simple_oo_01_uint(uint x) {
+inline float simple_oo_01_uint(uint x) {
     float tmp = (float)(x);
-	return tmp*float_inv_nmax_uint + float_inv_nmax_uint_adj;
+	return tmp*as_float(float_inv_nmax_uint) + as_float(float_inv_nmax_uint_adj);
 } // simple_oo_01_uint
 
-static inline float simple_oo_01_ulong(ulong x) {
+inline float simple_oo_01_ulong(ulong x) {
     float tmp = (float)(x);
-	return tmp*float_inv_nmax_ulong + float_inv_nmax_ulong_adj;
+	return tmp*as_float(float_inv_nmax_ulong) + as_float(float_inv_nmax_ulong_adj);
 } // simple_oo_01_ulong
+////////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////////
 /*
 The functions to calculate the the exponent for single- and double-precision random
 numbers in the interval [0, 1) are defined as flt_exponent_co_01() and
@@ -82,113 +67,54 @@ in the interval [0, 1) by randomly converting 0.0 to 1.0. At least two bits in t
 random bit streams given to the functions flt_exponent_co_01() and
 dbl_exponent_co_01() remain unused. One of them can be used to decide whether the
 0.0 gets flipped to 1.0 or remains as 0.0
+
+Mantissa of random doubles can be generated from one ulong or a pair of uint
+From ulong, just and the ulong with 0x000fffffffffffff to extract the lower 52-bits
+A pair of uint can be thought of as a ulong. To extract the lower 52-bits, we keep
+the uint representing the lower 32-bits, and extract the lower 20-bits from the
+other uint. So we need, in total, 2 masks. One to extract lower 23-bits for
+generating floats, and another to extract lower 20-bits for generating doubles
 */
-static inline uint flt_exponent_co_01(uint[4] x) {
-	// Initialize the exponents to be in the correct bit positions
-	uint outexp=126; // Start exponent at +126 and count down
-	uint delta=1;
-	uint step=32;
+////////////////////////////////////////////////////////////////////////////////////
+
+// 0x000fffff
+#define LOWER_20b_MASK_uint 1048575
+// 0x007fffff
+#define LOWER_23b_MASK_uint ‭8388607‬
+// 0xffffffff
+#define UINT_FFFFFFFF 4294967295‬
+// 0x3fffffff
+#define UINT_3FFFFFFF ‭1073741823‬
+
+// Kernel should iterate through uint that are equal to 0xffffffff to adjust its
+// copy of the exponent. Once the kernel finds an uint that is not 0xffffffff, it
+// then calls this function to determine the correct exponent, and bit shift
+// accordingly
+inline uint exponent_adj(uint inBits, uint inexp) {
+	uint outexp=inexp; // Start exponent at the input and count down
 	uint idx, tmpbits;
-    cl_bool chk=true;
 
-	// Iterate through the array of uint....
-	//     outexp will not reach 0 in this for loop
-	for (idx = 0; idx < 3; idx++) {
-		if (x[idx] == ‭UINT_FFFFFFFF‬) {  // If 32-bit pattern is all ones...
-			outexp -= step;
-		} else {
-			tmpbits = x[idx];
-			do {
-				if (tmpbits & 0x00000001) {
-					tmpbits >>= 1;
-					outexp -= delta;
-				} else {
-		            // Early termination
-					chk = false;
-					break;
-				}
-			} while (outexp > 0);
-		}
-		// Early termination
-		if (chk == false) {
-			break;
+    if (outexp > 0) {
+		for (idx = 32; idx > 0; idx--) {
+			if ((outexp == 0) || ((tmpbits & 0x00000001) == 0)) {
+				break;
+			}
+			outexp--;
+			tmpbits >>= 1;
 		}
 	}
-	if (chk) { // Only enter this if condition if we need to check the last uint
-		tmpbits = x[3];
-		if (tmpbits >= UINT_3FFFFFFF) {
-			outexp = 0;
-		} else {
-			do {
-				if (tmpbits & 0x00000001) {
-					tmpbits >>= 1;
-					outexp -= delta;
-				} else {
-					chk = false;
-					break;
-				}
-			} while (outexp > 0);
-		}
-	}
-	return outexp << 23;
-} // flt_exponent_co_01
 
-static inline uint dbl_exponent_co_01(uint[32] x) {
-	// Initialize the exponents to be in the correct bit positions
-	uint outexp=1022;
-	uint delta=1; // Start exponent at +1022 and count down
-	uint step=32;
-	uint idx, tmpbits;
-    cl_bool chk=true;
+    return outexp;
+} // exponent_adj
 
-	// Iterate through the array of uint....
-	//     outexp will not reach 0 in this for loop
-	for (idx = 0; idx < 31; idx++) {
-		if (x[idx] == UINT_FFFFFFFF) {  // If 32-bit pattern is all ones...
-			outexp -= step;
-		} else {
-			tmpbits = x[idx];
-			do {
-				if (tmpbits & 0x00000001) {
-					tmpbits >>= 1;
-					outexp -= delta;
-				} else {
-		            // Early termination... break out of while loop
-					chk = false;
-					break;
-				}
-			} while (outexp > 0);
-		}
-		// Early termination (break out of for loop)
-		if (chk == false) {
-			break;
-		}
-	}
-	if (chk) { // Only enter this if condition if we need to check the last uint
-		tmpbits = x[32];
-		if (tmpbits >= UINT_3FFFFFFF) {
-			outexp = 0;
-		} else {
-			do {
-				if (tmpbits & 0x00000001) {
-					tmpbits >>= 1;
-					outexp -= delta;
-				} else {
-					chk = false;
-					break;
-				}
-			} while (chk > 0);
-		}
-	}
-	return outexp << 20;
-} // dbl_exponent_co_01
-
+////////////////////////////////////////////////////////////////////////////////////
 /*
 Define function to calculate inverse CDF of standard Gaussian distribution.
 Taken from PhD thesis of Thomas Luu (Department of Mathematics at Universty College
 of London). These are the same as the hybrid approximation functions in the thesis.
 */
-static inline float normcdfinv_float(float u) {
+////////////////////////////////////////////////////////////////////////////////////
+inline float normcdfinv_float(float u) {
 	float	v, p, q, ushift, tmp;
 
 	tmp = u;
@@ -257,8 +183,13 @@ static inline float normcdfinv_float(float u) {
 	v = 1.0f / q;
 	return p * v;
 } // normcdfinv_float
+////////////////////////////////////////////////////////////////////////////////////
 
-// Kernel functions for fast conversion of uint to float while copying between buffers
+////////////////////////////////////////////////////////////////////////////////////
+/*
+Kernel functions for fast conversion of uint to float while copying between buffers
+*/
+////////////////////////////////////////////////////////////////////////////////////
 kernel void CopyUintAsFlt01CC(global float* dst, global uint* src, uint count) {
 	uint gid = get_global_id(0);
 	uint gsize = get_global_size(0);
@@ -323,7 +254,7 @@ kernel void CopyUlongAsFlt01OC(global float* dst, global ulong* src, uint count)
 	}
 }
 
-kernel void CopyUintAsFlt01OO(global float* dst, global ulong* src, uint count) {
+kernel void CopyUlongAsFlt01OO(global float* dst, global ulong* src, uint count) {
 	uint gid = get_global_id(0);
 	uint gsize = get_global_size(0);
 	
@@ -333,7 +264,7 @@ kernel void CopyUintAsFlt01OO(global float* dst, global ulong* src, uint count) 
 }
 
 // Kernel functions for fast copy of Gaussian float while copying between buffers
-kernel void CopyUintAsNormDbl01OO(global float* dst, global uint* src, uint count) {
+kernel void CopyUintAsNormFlt01OO(global float* dst, global uint* src, uint count) {
 	uint gid = get_global_id(0);
 	uint gsize = get_global_size(0);
 	float localVal;
@@ -344,7 +275,7 @@ kernel void CopyUintAsNormDbl01OO(global float* dst, global uint* src, uint coun
 	}
 }
 
-kernel void CopyUlongAsNormDbl01OO(global float* dst, global ulong* src, uint count) {
+kernel void CopyUlongAsNormFlt01OO(global float* dst, global ulong* src, uint count) {
 	uint gid = get_global_id(0);
 	uint gsize = get_global_size(0);
 	float localVal;
@@ -354,5 +285,6 @@ kernel void CopyUlongAsNormDbl01OO(global float* dst, global ulong* src, uint co
 		dst[ii] = normcdfinv_float(localVal);
 	}
 }
+////////////////////////////////////////////////////////////////////////////////////
 
 )EOK";

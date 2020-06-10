@@ -1,60 +1,64 @@
 const char * dbl_kernel_util_defs = R"EOK(
-#define double_inv_max_uint 2.3283064370807973754314699618685e-10‬
-#define double_inv_nmax_uint 2.3283064365386962890625‬e-10
+////////////////////////////////////////////////////////////////////////////////////
+#define double_inv_max_uint 0x3df0000000100000
+#define double_inv_nmax_uint 0x3df0000000000000
 
-#define double_inv_max_ulong 5.4210108624275221703311375920553e-20‬
-#define double_inv_nmax_ulong 5.4210108624275221700372640043497e-20
-
-#define double_inv_nmax_uint_adj 1.16415321826934814453125e-10‬
-#define double_inv_nmax_ulong_adj 2.7105054312137610850186320021749e-20‬
+#define double_inv_max_ulong 0x3bf0000000000000
+#define double_inv_nmax_ulong 0x3bf0000000000000
+                              
+#define double_inv_nmax_uint_adj 0x3de0000000000000
+#define double_inv_nmax_ulong_adj 0x3be0000000000000
 
 #define CLRAND_SQRT2 1.4142135623730951
 
-static inline double dsimple_cc_01_uint(uint x) {
+inline double dsimple_cc_01_uint(uint x) {
     double tmp = (double)(x);
-	return tmp*double_inv_max_uint;
+	return tmp*as_double(double_inv_max_uint);
 } // dsimple_cc_01_uint
 
-static inline double dsimple_cc_01_ulong(ulong x) {
+inline double dsimple_cc_01_ulong(ulong x) {
     double tmp = (double)(x);
-	return tmp*double_inv_max_ulong;
+	return tmp*as_double(double_inv_max_ulong);
 } // dsimple_cc_01_ulong
 
-static inline double dsimple_co_01_uint(uint x) {
+inline double dsimple_co_01_uint(uint x) {
     double tmp = (double)(x);
-	return tmp*double_inv_nmax_uint;
+	return tmp*as_double(double_inv_nmax_uint);
 } // 
 
-static inline double dsimple_co_01_ulong(ulong x) {
+inline double dsimple_co_01_ulong(ulong x) {
     double tmp = (double)(x);
-	return tmp*double_inv_nmax_ulong;
+	return tmp*as_double(double_inv_nmax_ulong);
 } // dsimple_co_01_ulong
 
-static inline double dsimple_oc_01_uint(uint x) {
+inline double dsimple_oc_01_uint(uint x) {
     double tmp = (double)(x);
-	return (tmp+1.0)*double_inv_nmax_uint;
+	return (tmp+1.0)*as_double(double_inv_nmax_uint);
 } // dsimple_oc_01_uint
 
-static inline double dsimple_oc_01_ulong(ulong x) {
+inline double dsimple_oc_01_ulong(ulong x) {
     double tmp = (double)(x);
-	return (tmp+1.0)*double_inv_nmax_ulong;
+	return (tmp+1.0)*as_double(double_inv_nmax_ulong);
 } // dsimple_oc_01_ulong
 
-static inline double dsimple_oo_01_uint(uint x) {
+inline double dsimple_oo_01_uint(uint x) {
     double tmp = (double)(x);
-	return tmp*double_inv_nmax_uint + double_inv_nmax_uint_adj;
+	return tmp*as_double(double_inv_nmax_uint) + as_double(double_inv_nmax_uint_adj);
 } // dsimple_oo_01_uint
 
-static inline double dsimple_oo_01_ulong(ulong x) {
+inline double dsimple_oo_01_ulong(ulong x) {
     double tmp = (double)(x);
-	return tmp*double_inv_nmax_ulong + double_inv_nmax_ulong_adj;
+	return tmp*as_double(double_inv_nmax_ulong) + as_double(double_inv_nmax_ulong_adj);
 } // dsimple_oo_01_ulong
+////////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////////
 /*
 Define function to calculate inverse CDF of standard Gaussian distribution.
 This function was taken from clProbDist from Univ. Montreal
 */
-
+////////////////////////////////////////////////////////////////////////////////////
+/*
 #define DBL_NORMCDF_INV_P1_0 0.160304955844066229311E2
 #define DBL_NORMCDF_INV_P1_1 -0.90784959262960326650E2
 #define DBL_NORMCDF_INV_P1_2 0.18644914861620987391E3
@@ -110,9 +114,8 @@ This function was taken from clProbDist from Univ. Montreal
 #define DBL_NORMCDF_INV_Q3_6 0.38782858277042011263E1
 #define DBL_NORMCDF_INV_Q3_7 0.20372431817412177929E1
 #define DBL_NORMCDF_INV_Q3_8 0.1E1
-
-
-static inline double normcdfinv_double(double u) {
+*/
+//inline double normcdfinv_double(double u) {
 	/*
 	* Returns the inverse of the cdf of the normal distribution.
 	* Rational approximations giving 16 decimals of precision.
@@ -120,7 +123,7 @@ static inline double normcdfinv_double(double u) {
 	* approximations for the Inverse of the Error Function", in
 	* Mathematics of Computation, Vol. 30, 136, pp 827, (1976)
 	*/
-
+/*
 	cl_bool negatif;
 	double y, z, v, w;
 	double x = u;
@@ -256,8 +259,14 @@ static inline double normcdfinv_double(double u) {
 	}
 
 } // normcdfinv_double
+*/
+////////////////////////////////////////////////////////////////////////////////////
 
-// Kernel functions for fast conversion of uint to double while copying between buffers
+////////////////////////////////////////////////////////////////////////////////////
+/*
+Kernel functions for fast conversion of uint to double while copying between buffers
+*/
+////////////////////////////////////////////////////////////////////////////////////
 kernel void CopyUintAsDbl01CC(global double* dst, global uint* src, uint count) {
 	uint gid = get_global_id(0);
 	uint gsize = get_global_size(0);
@@ -330,7 +339,7 @@ kernel void CopyUlongAsDbl01OO(global double* dst, global ulong* src, uint count
 		dst[ii] = dsimple_oo_01_ulong(src[ii]);
 	}
 }
-
+/*
 // Kernel functions for fast copy of Gaussian double while copying between buffers
 kernel void CopyUintAsNormDbl01OO(global double* dst, global uint* src, uint count) {
 	uint gid = get_global_id(0);
@@ -353,5 +362,7 @@ kernel void CopyUlongAsNormDbl01OO(global double* dst, global ulong* src, uint c
 		dst[ii] = normcdfinv_double(localVal);
 	}
 }
+*/
+////////////////////////////////////////////////////////////////////////////////////
 
 )EOK";
