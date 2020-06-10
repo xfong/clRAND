@@ -264,7 +264,7 @@ kernel void CopyUlongAsFlt01OO(global float* dst, global ulong* src, uint count)
 }
 
 // Kernel functions for fast copy of Gaussian float while copying between buffers
-kernel void CopyUintAsNormFlt01OO(global float* dst, global uint* src, uint count) {
+kernel void CopyFastUint01OOAsNormFlt(global float* dst, global uint* src, uint count) {
 	uint gid = get_global_id(0);
 	uint gsize = get_global_size(0);
 	float localVal;
@@ -275,7 +275,7 @@ kernel void CopyUintAsNormFlt01OO(global float* dst, global uint* src, uint coun
 	}
 }
 
-kernel void CopyUlongAsNormFlt01OO(global float* dst, global ulong* src, uint count) {
+kernel void CopyFastUlong01OOAsNormFlt(global float* dst, global ulong* src, uint count) {
 	uint gid = get_global_id(0);
 	uint gsize = get_global_size(0);
 	float localVal;
