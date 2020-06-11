@@ -32,6 +32,23 @@ INSTALL_LIBDIR=$(PREFIX)/lib
 #LDFLAGS= -L"$(CUDA_PATH)\lib\x64" -lOpenCL
 #LDFLAGS= -L"$(AMDAPPSDKROOT)lib\x86_64" -lOpenCL
 
+ifeq ($(OS),Windows_NT)
+library/shared: clrand.cpp clrand.hpp
+	${CXX} ${CXXFLAGS} -c clrand.cpp -o clrand.o
+	${CXX} ${LDFLAGS} -shared clrand.o -o libclrand${LIBEXT} ${LDLIBS} ${DLLFLAGS}
+
+library/static: clrand.cpp clrand.hpp
+	${CXX} ${CXXFLAGS} -c clrand.cpp -o clrand.o
+	${AR} rcs libclrand.a *.o
+
+all: library/shared library/static
+
+install: all
+	$(INSTALL) -D -m 644 -t $(INSTALL_INCLUDEDIR) ../include/clrand.h
+	$(INSTALL) -D -m 755 -t $(INSTALL_LIBDIR) *.dll
+	$(INSTALL) -D -m 644 -t $(INSTALL_LIBDIR) *.a
+
+else
 library/shared: clrand.cpp clrand.hpp
 	${CXX} ${CXXFLAGS} -c clrand.cpp -o clrand.o
 	${CXX} ${LDFLAGS} -shared clrand.o -o libclrand${LIBEXT} ${LDLIBS} ${DLLFLAGS}
@@ -51,6 +68,7 @@ install: all
 	ln -Lrs $(INSTALL_LIBDIR)/libclrand.so.$(MAJOR_VERSION).$(MINOR_VERSION) $(INSTALL_LIBDIR)/libclrand.so.$(MAJOR_VERSION)
 	ln -Lrs $(INSTALL_LIBDIR)/libclrand.so.$(MAJOR_VERSION) $(INSTALL_LIBDIR)/libclrand.so
 	$(INSTALL) -D -m 644 -t $(INSTALL_LIBDIR) *.a
+endif
 
 clean:
 	rm -f *.o *.lib lib*.so* *.a *.dll

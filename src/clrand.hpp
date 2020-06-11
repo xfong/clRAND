@@ -86,6 +86,10 @@ class CLRAND_DLL clRAND {
         cl::Kernel        seed_rng_array;      // OpenCL C++ API
         cl::Kernel        generate_bitstream;  // OpenCL C++ API
         cl::Kernel        generate_streamUL;   // OpenCL C++ API
+        cl::Kernel        seed_rng64;          // OpenCL C++ API (for PRNGs where kernels for uint and ulong are separate)
+        cl::Kernel        seed_rng_array64;    // OpenCL C++ API (for PRNGs where kernels for uint and ulong are separate)
+        cl::Kernel        generate_bitstream64;// OpenCL C++ API (for PRNGs where kernels for uint and ulong are separate)
+        cl::Kernel        generate_streamUL64; // OpenCL C++ API (for PRNGs where kernels for uint and ulong are separate)
 
         cl::Buffer        stateBuffer;         // OpenCL C++ API
         cl_mem            stateBuffer_id;      // OpenCL C API (to support buffer copy)
@@ -126,7 +130,9 @@ class CLRAND_DLL clRAND {
         void generateBufferKernel();
         cl_int fillBuffer();
         void SetStateSize();
-        cl_int PrivateGenerateStream(); // To implement
+        cl_int PrivateGenerateStream(); // To implement?
+		cl_int SeedMTGPGenerators(); // To implement
+		cl_int SeedMTGPGeneratorsByArray(); // To implement
 
     public:
         clRAND();
