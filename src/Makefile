@@ -14,7 +14,7 @@ ifeq ($(OS),Windows_NT)
     CXXFLAGS+=-I${CUDA_PATH}\\include
     CXXFLAGS+=-D__WIN32 -DCLRAND_EXPORT
     LDFLAGS+=-L${CUDA_PATH}\\lib\\x64
-    DLLFLAGS=-Wl,--out-implib,libclrand.a -Wl,--major-image-version,0,--minor-image-version,2
+    DLLFLAGS=-Wl,--out-implib,libclrand.a -Wl,--major-image-version,0,--minor-image-version,3
     LIBEXT=.dll
 else
     CXXFLAGS+= -I${CUDAROOT}/include
@@ -52,8 +52,10 @@ else
 library/shared: clrand.cpp clrand.hpp
 	${CXX} ${CXXFLAGS} -c clrand.cpp -o clrand.o
 	${CXX} ${LDFLAGS} -shared clrand.o -o libclrand${LIBEXT} ${LDLIBS} ${DLLFLAGS}
-	ln -s libclrand${LIBEXT} libclrand.so.${MAJOR_VERSION}
-	ln -s libclrand.so.${MAJOR_VERSION} libclrand.so
+
+#	ln -s libclrand${LIBEXT} libclrand.so.${MAJOR_VERSION}.${MINOR_VERSION}
+#	ln -s libclrand.so.${MAJOR_VERSION}.${MINOR_VERSION} libclrand.so.${MAJOR_VERSION}
+#	ln -s libclrand.so.${MAJOR_VERSION} libclrand.so
 
 library/static: clrand.cpp clrand.hpp
 	${CXX} ${CXXFLAGS} -c clrand.cpp -o clrand.o
