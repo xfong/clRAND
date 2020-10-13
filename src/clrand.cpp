@@ -431,6 +431,7 @@ void clRAND::generateBufferKernel() {
                    "    uint gsize=get_global_size(0);\n"
                    "\n"
                    "    state[get_local_id(0)] = stateBuf[gid];\n"
+                   "    barrier(CLK_LOCAL_MEM_FENCE);\n"
                    "    uint num_gsize = ((num - 1) / gsize + 1)*gsize; //next multiple of gsize, larger or equal to N\n"
                    "    for (int i = gid; i<num_gsize; i += gsize) {\n"
                    "        uint val = " + this->rng_name + "_uint(state); //all threads within workgroup must call generator, even if result is not needed!\n"
